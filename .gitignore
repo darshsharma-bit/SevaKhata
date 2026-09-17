@@ -1,0 +1,46 @@
+# Dependencies
+node_modules/
+
+# Environment variables & secrets
+.env
+.env.*
+!.env.example
+
+# Logs
+*.log
+logs/
+
+# Operating System Files
+.DS_Store
+.DS_Store?
+Thumbs.db
+desktop.ini
+$RECYCLE.BIN/
+
+# IDE & Editor Files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Temporary & Backup Files
+*.tmp
+*.temp
+*.bak
+*.backup
+
+# Build & Test Caches
+dist/
+build/
+coverage/
+.cache/
+.parcel-cache/
+.vite/
+.tmp/
+temp/
+
+# Python runtime artifacts (e.g. if using python -m http.server)
+__pycache__/
+*.py[cod]
+*$py.class

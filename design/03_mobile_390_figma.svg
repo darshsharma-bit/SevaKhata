@@ -1,0 +1,583 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="390" height="4800" viewBox="0 0 390 4800" font-family="'Inter', -apple-system, BlinkMacSystemFont, sans-serif">
+  <title>03 — Landing / Mobile (390px) | SevaKhata Figma Master</title>
+  <defs>
+    <style>
+      .monumental { font-family: 'Bebas Neue', -apple-system, sans-serif; text-transform: uppercase; }
+      .editorial { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; }
+      .hindi { font-family: 'Noto Sans Devanagari', -apple-system, sans-serif; }
+      .tabular { font-feature-settings: 'tnum'; font-variant-numeric: tabular-nums; }
+    </style>
+
+    <!-- Mobile Slab Drop Shadow -->
+    <filter id="slab-shadow-mob" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="16" stdDeviation="20" flood-color="#000000" flood-opacity="0.8"/>
+    </filter>
+
+    <!-- Emerald Climax Glow -->
+    <filter id="emerald-glow-mob" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="0" stdDeviation="16" flood-color="#059669" flood-opacity="0.35"/>
+    </filter>
+
+    <!-- Circular Red Disk Radial Gradient -->
+    <radialGradient id="hero-seal-radial-mob" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#C8202B" stop-opacity="0.85"/>
+      <stop offset="42%" stop-color="#C8202B" stop-opacity="0.5"/>
+      <stop offset="68%" stop-color="#047857" stop-opacity="0.25"/>
+      <stop offset="72%" stop-color="#047857" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- ======================================================== -->
+  <!-- 00. BASE CANVAS & AMBIENT ARCHITECTURAL ENVIRONMENT      -->
+  <!-- ======================================================== -->
+  <rect id="Canvas / Background" width="390" height="4800" fill="#0C0C0E"/>
+  <line id="Axis / Vertical Center" x1="195" y1="0" x2="195" y2="4800" stroke="#FFFFFF" stroke-opacity="0.04" stroke-width="1"/>
+
+  <!-- Ambient Hero Reticle -->
+  <g id="Environment / Hero Reticles" opacity="0.5">
+    <circle cx="195" cy="220" r="140" fill="none" stroke="#FFFFFF" stroke-opacity="0.06" stroke-width="1" stroke-dasharray="4 6"/>
+    <circle cx="195" cy="220" r="80" fill="none" stroke="#FFFFFF" stroke-opacity="0.05" stroke-width="1"/>
+  </g>
+
+  <!-- ======================================================== -->
+  <!-- 01. EDITORIAL SYSTEM NAVIGATION (MOBILE 362px)           -->
+  <!-- ======================================================== -->
+  <g id="Landing / Navigation" transform="translate(14, 14)">
+    <rect width="362" height="48" rx="24" fill="#121216" fill-opacity="0.9" stroke="#FFFFFF" stroke-opacity="0.16" stroke-width="1"/>
+
+    <!-- Left: Brand Mark & Title -->
+    <g id="Nav / Brand" transform="translate(14, 11)">
+      <rect x="0" y="0" width="10" height="26" rx="2" fill="#047857" fill-opacity="0.2" stroke="#047857" stroke-width="1.2"/>
+      <rect x="15" y="0" width="10" height="26" rx="2" fill="#047857" fill-opacity="0.2" stroke="#047857" stroke-width="1.2"/>
+      <line x1="12.5" y1="0" x2="12.5" y2="26" stroke="#E11D48" stroke-width="1.2"/>
+      <polygon points="12.5,8 16,13 12.5,18 9,13" fill="#059669"/>
+      <text x="32" y="19" class="monumental" font-size="18" letter-spacing="0.05em" fill="#FFFFFF">SEVAKHATA</text>
+    </g>
+
+    <!-- Right: Touch CTA -->
+    <g id="Nav / CTA" transform="translate(252, 6)">
+      <rect width="96" height="36" rx="18" fill="#FFFFFF" fill-opacity="0.08" stroke="#FFFFFF" stroke-opacity="0.2"/>
+      <text x="14" y="22" class="editorial" font-size="11" font-weight="700" fill="#FFFFFF">Ledger →</text>
+    </g>
+  </g>
+
+  <!-- ======================================================== -->
+  <!-- 02. MOVEMENT 01: THE MONUMENTAL HERO STAGE               -->
+  <!-- ======================================================== -->
+  <g id="Landing / Hero Stage" transform="translate(0, 75)">
+
+    <!-- Concentric Crimson Seal Disk -->
+    <g id="Hero / Seal Disk" transform="translate(55, 30)">
+      <circle cx="140" cy="140" r="140" fill="url(#hero-seal-radial-mob)"/>
+      <circle cx="140" cy="140" r="110" fill="none" stroke="#FFFFFF" stroke-opacity="0.18" stroke-width="1"/>
+      <line x1="140" y1="0" x2="140" y2="280" stroke="#FFFFFF" stroke-opacity="0.15" stroke-width="1"/>
+      <line x1="0" y1="140" x2="280" y2="140" stroke="#FFFFFF" stroke-opacity="0.15" stroke-width="1"/>
+    </g>
+
+    <!-- Monumental Typography -->
+    <g id="Hero / Typography" transform="translate(195, 175)">
+      <text x="0" y="0" text-anchor="middle" class="monumental" font-size="68" fill="#FFFFFF" letter-spacing="-0.015em">SEVAKHATA</text>
+
+      <!-- Bilingual Subtitle -->
+      <g id="Hero / Bilingual Subtitle" transform="translate(0, 32)">
+        <text x="-48" y="0" text-anchor="end" class="editorial" font-size="10" font-weight="800" letter-spacing="0.14em" fill="#FFFFFF">DONO KA RECORD</text>
+        <circle cx="0" cy="-3" r="2.5" fill="#E11D48"/>
+        <text x="48" y="1" text-anchor="start" class="hindi" font-size="12" font-weight="700" fill="#FFFFFF" fill-opacity="0.85">एक ही हिसाब</text>
+      </g>
+
+      <!-- Thesis -->
+      <text x="0" y="68" text-anchor="middle" class="editorial" font-size="12" font-weight="400" fill="#FFFFFF" fill-opacity="0.75" width="340">
+        The shared digital work-and-payment ledger.
+      </text>
+      <text x="0" y="86" text-anchor="middle" class="editorial" font-size="12" font-weight="400" fill="#FFFFFF" fill-opacity="0.75" width="340">
+        What both acknowledge becomes the official truth.
+      </text>
+
+      <!-- Scroll Cue Pill -->
+      <g id="Hero / Scroll Cue" transform="translate(-65, 110)">
+        <rect width="130" height="28" rx="14" fill="#111115" stroke="#FFFFFF" stroke-opacity="0.14" stroke-width="1"/>
+        <text x="18" y="18" class="editorial" font-size="9" font-weight="700" letter-spacing="0.08em" fill="#FFFFFF" fill-opacity="0.6">THE SHARED RECORD ↓</text>
+      </g>
+    </g>
+
+    <!-- ====================================================== -->
+    <!-- THE LIVING BAHI-KHATA SLAB (MOBILE RECOMPOSED)         -->
+    <!-- ====================================================== -->
+    <g id="Hero / Living Slab" transform="translate(14, 380)" filter="url(#slab-shadow-mob)">
+
+      <!-- Base Slab Container -->
+      <rect width="362" height="840" rx="14" fill="#111115" stroke="#FFFFFF" stroke-opacity="0.12" stroke-width="1"/>
+      <!-- Crimson Heritage Spine -->
+      <rect x="0" y="0" width="3.5" height="840" rx="1.75" fill="#E11D48"/>
+
+      <!-- 1. Folio Masthead -->
+      <g id="Slab / Masthead" transform="translate(18, 22)">
+        <text x="0" y="16" class="editorial" font-size="15" font-weight="700" fill="#FFFFFF">Sharma Household × Sunita</text>
+        <text x="0" y="34" class="hindi" font-size="11" font-weight="400" fill="#FFFFFF" fill-opacity="0.6">दो फोन · एक साझा हिसाब · अगस्त 2026</text>
+        <text x="326" y="16" text-anchor="end" class="editorial" font-size="10" font-weight="700" letter-spacing="0.08em" fill="#FFFFFF" fill-opacity="0.45">AUG 2026</text>
+      </g>
+
+      <line x1="3.5" y1="70" x2="362" y2="70" stroke="#FFFFFF" stroke-opacity="0.06" stroke-width="1"/>
+
+      <!-- 2. Historical Row 01: 2-Row Card Grid (Date+Status / Desc+Amount) -->
+      <g id="Slab / Row 01 Confirmed" transform="translate(18, 86)">
+        <!-- Top Sub-row: Date + Status -->
+        <text x="0" y="14" class="editorial" font-size="11" font-weight="700" fill="#FFFFFF" fill-opacity="0.6">01–10 AUG</text>
+        <text x="326" y="14" text-anchor="end" class="editorial" font-size="11" font-weight="700" fill="#34D399">Confirmed ✓</text>
+
+        <!-- Bottom Sub-row: Description + Amount -->
+        <text x="0" y="38" class="editorial" font-size="13" font-weight="600" fill="#FFFFFF">8 Full Days Housework &amp; Cooking</text>
+        <text x="326" y="38" text-anchor="end" class="editorial tabular" font-size="16" font-weight="800" fill="#FFFFFF">+₹4,000</text>
+        <text x="0" y="54" class="editorial" font-size="10" font-weight="400" fill="#FFFFFF" fill-opacity="0.4">Both confirmed · Sharma Ji ✓ &amp; Sunita ✓</text>
+      </g>
+
+      <line x1="3.5" y1="158" x2="362" y2="158" stroke="#FFFFFF" stroke-opacity="0.04" stroke-width="1"/>
+
+      <!-- 3. Historical Row 02: Cash Advance (Pesgi) -->
+      <g id="Slab / Row 02 Advance" transform="translate(18, 172)">
+        <!-- Top Sub-row: Date + Status -->
+        <text x="0" y="14" class="editorial" font-size="11" font-weight="700" fill="#FFFFFF" fill-opacity="0.6">05 AUG</text>
+        <text x="326" y="14" text-anchor="end" class="editorial" font-size="11" font-weight="600" fill="#FFFFFF" fill-opacity="0.45">Deducted</text>
+
+        <!-- Bottom Sub-row: Description + Amount -->
+        <text x="0" y="38" class="editorial" font-size="13" font-weight="600" fill="#FFFFFF">Cash Advance (पेसगी)</text>
+        <text x="326" y="38" text-anchor="end" class="editorial tabular" font-size="16" font-weight="800" fill="#F87171">−₹1,000</text>
+        <text x="0" y="54" class="editorial" font-size="10" font-weight="400" fill="#FFFFFF" fill-opacity="0.4">School fee assistance · Acknowledged</text>
+      </g>
+
+      <line x1="3.5" y1="244" x2="362" y2="244" stroke="#FFFFFF" stroke-opacity="0.06" stroke-width="1"/>
+
+      <!-- 4. ACTIVE ROW: TODAY'S ENTRY (MOBILE RECOMPOSED) -->
+      <g id="Slab / Active Record Row" transform="translate(3.5, 244)">
+        <rect width="358.5" height="366" fill="rgba(245, 158, 11, 0.03)"/>
+
+        <!-- Top: Date & Semantic Status Pill -->
+        <g transform="translate(16, 18)">
+          <circle cx="4" cy="4" r="3" fill="#F59E0B"/>
+          <text x="14" y="8" class="editorial" font-size="10" font-weight="800" letter-spacing="0.1em" fill="#F59E0B">TODAY · 13 AUG</text>
+
+          <!-- Single Clean Semantic Pill -->
+          <g id="Slab / Semantic Pill Pending" transform="translate(230, -6)">
+            <rect width="78" height="24" rx="12" fill="rgba(245, 158, 11, 0.15)" stroke="#F59E0B" stroke-opacity="0.4" stroke-width="1"/>
+            <circle cx="12" cy="12" r="2.5" fill="#FBBF24"/>
+            <text x="22" y="16" class="editorial" font-size="9" font-weight="800" letter-spacing="0.08em" fill="#FBBF24">PENDING</text>
+          </g>
+        </g>
+
+        <!-- Middle: Description & Copy -->
+        <g transform="translate(16, 56)">
+          <text x="0" y="14" class="editorial" font-size="15" font-weight="700" fill="#FFFFFF">Full Day Housework &amp; Cooking</text>
+          <text x="0" y="34" class="hindi" font-size="12" font-weight="400" fill="#FFFFFF" fill-opacity="0.75">झाड़ू, पोंछा, बर्तन एवं दोनों समय का खाना</text>
+          <text x="0" y="52" class="hindi" font-size="11" font-weight="400" fill="#FFFFFF" fill-opacity="0.5">मालिक द्वारा दर्ज · सहायक समीक्षा शेष</text>
+          <text x="0" y="72" class="editorial" font-size="10" font-weight="500" fill="#F59E0B">* Recorded by employer. Holds ₹0 on Hisaab.</text>
+
+          <!-- Left-Aligned Stacked Amount -->
+          <text x="0" y="112" class="editorial tabular" font-size="32" font-weight="900" fill="#FFFFFF">+₹500</text>
+        </g>
+
+        <!-- Integrated Verification Action Bar (Full Width Touch Targets >= 48px) -->
+        <g id="Slab / Review Bar" transform="translate(16, 188)">
+          <line x1="0" y1="0" x2="326" y2="0" stroke="#FFFFFF" stroke-opacity="0.06" stroke-width="1"/>
+
+          <!-- Review Question -->
+          <g transform="translate(0, 16)">
+            <text x="0" y="12" class="editorial" font-size="10" font-weight="700" fill="#FFFFFF" fill-opacity="0.5">Sunita's Mobile Review:</text>
+            <text x="0" y="32" class="hindi" font-size="14" font-weight="600" fill="#FFFFFF">क्या 13 अगस्त का यह काम सही है?</text>
+          </g>
+
+          <!-- Touch Buttons (Side by Side, 48px height) -->
+          <g id="Slab / Action Buttons" transform="translate(0, 62)">
+            <!-- Sahi Hai -->
+            <g id="Button / Sahi Hai">
+              <rect width="158" height="48" rx="8" fill="#059669"/>
+              <text x="18" y="30" class="editorial" font-size="12" font-weight="700" fill="#FFFFFF">✓ Sahi Hai · <tspan class="hindi">सही है</tspan></text>
+            </g>
+
+            <!-- Galat Hai -->
+            <g id="Button / Galat Hai" transform="translate(168, 0)">
+              <rect width="158" height="48" rx="8" fill="none" stroke="#FFFFFF" stroke-opacity="0.2" stroke-width="1"/>
+              <text x="16" y="30" class="editorial" font-size="12" font-weight="700" fill="#FFFFFF" fill-opacity="0.8">✕ Galat · <tspan class="hindi">गलत है</tspan></text>
+            </g>
+          </g>
+        </g>
+
+      </g>
+
+      <!-- 5. Folio Balance Area (Mobile Stack) -->
+      <g id="Slab / Balance Footer" transform="translate(3.5, 610)">
+        <line x1="0" y1="0" x2="358.5" y2="0" stroke="#FFFFFF" stroke-opacity="0.08" stroke-width="1"/>
+        <rect y="0" width="358.5" height="230" fill="#0A0A0E" rx="0 0 14 14"/>
+
+        <g transform="translate(16, 20)">
+          <text x="0" y="12" class="editorial" font-size="9" font-weight="700" letter-spacing="0.14em" fill="#FFFFFF" fill-opacity="0.45">
+            OFFICIAL SHARED HISAAB · <tspan class="hindi">साझा हिसाब</tspan>
+          </text>
+          <text x="0" y="34" class="editorial" font-size="11" font-weight="600" fill="#FFFFFF">
+            Confirmed Work (+₹4,000) − Advance (−₹1,000)
+          </text>
+          <text x="0" y="52" class="editorial" font-size="10" font-weight="400" fill="#FFFFFF" fill-opacity="0.4">
+            * Today's ₹500 is pending. Tap "Sahi Hai" to add.
+          </text>
+
+          <!-- Ticker & Badge Stack -->
+          <g transform="translate(0, 80)">
+            <line x1="0" y1="0" x2="326" y2="0" stroke="#FFFFFF" stroke-opacity="0.06" stroke-width="1"/>
+            
+            <g transform="translate(0, 20)">
+              <text x="0" y="34" class="editorial tabular" font-size="38" font-weight="900" fill="#FFFFFF">₹3,000</text>
+              <text x="0" y="54" class="editorial" font-size="10" font-weight="600" fill="#34D399">Net Due on 1st Sept</text>
+
+              <g id="Slab / Sealed Badge" transform="translate(245, 14)">
+                <rect width="80" height="26" rx="13" fill="rgba(5, 150, 105, 0.15)" stroke="#059669" stroke-opacity="0.4" stroke-width="1"/>
+                <text x="14" y="17" class="editorial" font-size="10" font-weight="700" fill="#34D399">✓ Sealed</text>
+              </g>
+            </g>
+          </g>
+        </g>
+      </g>
+
+    </g>
+
+    <!-- 6. Hero Bottom Axiom -->
+    <g id="Hero / Axiom Bar" transform="translate(18, 1260)">
+      <text x="0" y="16" class="editorial" font-size="22" font-weight="700" fill="#E11D48">“</text>
+      <text x="18" y="16" class="editorial" font-size="13" font-weight="700" fill="#FFFFFF">Jo dono maane, wahi hisaab.</text>
+      <text x="18" y="34" class="hindi" font-size="11" font-weight="400" fill="#FFFFFF" fill-opacity="0.6">जो दोनों मानें, वही हिसाब — न एक रुपया कम, न ज्यादा।</text>
+    </g>
+
+  </g>
+
+  <!-- ======================================================== -->
+  <!-- 03. MOVEMENT 02: THE TWO-SIDED MEMORY DIVERGENCE (MOBILE)-->
+  <!-- ======================================================== -->
+  <g id="Movement 02 / Memory Divergence" transform="translate(0, 1420)">
+    <line x1="0" y1="0" x2="390" y2="0" stroke="#FFFFFF" stroke-opacity="0.06" stroke-width="1"/>
+
+    <!-- Section Header -->
+    <g id="Movement 02 / Header" transform="translate(16, 50)">
+      <text x="0" y="0" class="monumental" font-size="13" fill="#E11D48">02 / 05</text>
+      <text x="45" y="0" class="editorial" font-size="9" font-weight="700" letter-spacing="0.14em" fill="#FFFFFF" fill-opacity="0.45">THE UNILATERAL FRACTURE</text>
+
+      <text x="0" y="32" class="editorial" font-size="22" font-weight="800" fill="#FFFFFF" letter-spacing="-0.01em">
+        Two separate memories create contradictory balances.
+      </text>
+      <text x="0" y="62" class="hindi" font-size="12" font-weight="400" fill="#FFFFFF" fill-opacity="0.6">
+        "अकेला हिसाब हर महीने बहस में बदल जाता है।"
+      </text>
+    </g>
+
+    <!-- Stacked Memory Cards (362px wide) -->
+    <g id="Movement 02 / Cards" transform="translate(14, 150)">
+
+      <!-- Employer Card -->
+      <g id="Memory / Employer Card">
+        <rect width="362" height="300" rx="14" fill="#111115" stroke="#FFFFFF" stroke-opacity="0.1" stroke-width="1"/>
+        <text x="20" y="34" class="editorial" font-size="10" font-weight="800" letter-spacing="0.12em" fill="#F59E0B">01 · EMPLOYER'S PERSPECTIVE</text>
+        <text x="20" y="64" class="editorial" font-size="18" font-weight="700" fill="#FFFFFF">The Kitchen Wall Calendar</text>
+        <text x="20" y="90" class="editorial" font-size="12" font-weight="400" fill="#FFFFFF" fill-opacity="0.65" width="322">
+          A pencil tick mark cannot distinguish a full day from a half day. When dates blur, memory becomes an argument.
+        </text>
+
+        <rect x="20" y="150" width="322" height="64" rx="8" fill="#08080A" stroke="#FFFFFF" stroke-opacity="0.06"/>
+        <text x="34" y="174" class="editorial" font-size="9" font-weight="700" letter-spacing="0.1em" fill="#FFFFFF" fill-opacity="0.4">10 AUG · PENCIL TICK</text>
+        <text x="34" y="194" class="editorial" font-size="11" font-style="italic" fill="#FFFFFF">"Did she come in the morning or evening?"</text>
+
+        <rect x="20" y="234" width="180" height="26" rx="6" fill="rgba(239,68,68,0.1)" stroke="#EF4444" stroke-opacity="0.3"/>
+        <text x="30" y="251" class="editorial" font-size="9" font-weight="700" letter-spacing="0.08em" fill="#F87171">FRAGILE · UNVERIFIED TICKS</text>
+      </g>
+
+      <!-- Center VS Badge -->
+      <g id="Memory / Center VS" transform="translate(181, 330)">
+        <circle cx="0" cy="0" r="18" fill="#121216" stroke="#FFFFFF" stroke-opacity="0.15"/>
+        <text x="0" y="5" text-anchor="middle" class="monumental" font-size="14" fill="#FFFFFF" fill-opacity="0.4">VS</text>
+      </g>
+
+      <!-- Helper Card -->
+      <g id="Memory / Helper Card" transform="translate(0, 360)">
+        <rect width="362" height="300" rx="14" fill="#111115" stroke="#FFFFFF" stroke-opacity="0.1" stroke-width="1"/>
+        <text x="20" y="34" class="editorial" font-size="10" font-weight="800" letter-spacing="0.12em" fill="#059669">02 · HELPER'S PERSPECTIVE</text>
+        <text x="20" y="64" class="editorial" font-size="18" font-weight="700" fill="#FFFFFF">The Doorway Advance (पेसगी)</text>
+        <text x="20" y="90" class="editorial" font-size="12" font-weight="400" fill="#FFFFFF" fill-opacity="0.65" width="322">
+          ₹1,000 cash given in a hurry at the door. No slip. No timestamp. By the 31st, one remembers ₹1,000; the other ₹500.
+        </text>
+
+        <rect x="20" y="150" width="322" height="64" rx="8" fill="#08080A" stroke="#FFFFFF" stroke-opacity="0.06"/>
+        <text x="34" y="174" class="editorial" font-size="9" font-weight="700" letter-spacing="0.1em" fill="#FFFFFF" fill-opacity="0.4">05 AUG · CASH HANDOVER</text>
+        <text x="34" y="194" class="editorial" font-size="11" font-style="italic" fill="#FFFFFF">"Was it for school fees or bonus?"</text>
+
+        <rect x="20" y="234" width="200" height="26" rx="6" fill="rgba(239,68,68,0.1)" stroke="#EF4444" stroke-opacity="0.3"/>
+        <text x="30" y="251" class="editorial" font-size="9" font-weight="700" letter-spacing="0.08em" fill="#F87171">UNRECEIPTED · CAUSE OF TENSION</text>
+      </g>
+
+      <!-- Invariant Banner -->
+      <g id="Memory / Invariant Banner" transform="translate(0, 680)">
+        <rect width="362" height="100" rx="12" fill="rgba(5, 150, 105, 0.08)" stroke="#059669" stroke-opacity="0.35" stroke-width="1"/>
+        <circle cx="28" cy="30" r="10" fill="rgba(5,150,105,0.2)"/>
+        <text x="28" y="34" text-anchor="middle" class="editorial" font-size="10" font-weight="800" fill="#34D399">✓</text>
+        <text x="46" y="33" class="editorial" font-size="10" font-weight="800" letter-spacing="0.1em" fill="#34D399">THE SEVAKHATA INVARIANT</text>
+        <text x="16" y="58" class="editorial" font-size="11" font-weight="400" fill="#FFFFFF" width="330">
+          Every day's work and every advance is confirmed tonight on mobile. Only mutually agreed entries exist in the official hisaab.
+        </text>
+      </g>
+
+    </g>
+  </g>
+
+  <!-- ======================================================== -->
+  <!-- 04. MOVEMENT 03: THE CONSENSUS ENGINE (MOBILE)           -->
+  <!-- ======================================================== -->
+  <g id="Movement 03 / Consensus Engine" transform="translate(0, 2450)">
+    <line x1="0" y1="0" x2="390" y2="0" stroke="#FFFFFF" stroke-opacity="0.06" stroke-width="1"/>
+
+    <!-- Header -->
+    <g id="Consensus / Header" transform="translate(16, 50)">
+      <text x="0" y="0" class="monumental" font-size="13" fill="#E11D48">03 / 05</text>
+      <text x="45" y="0" class="editorial" font-size="9" font-weight="700" letter-spacing="0.14em" fill="#FFFFFF" fill-opacity="0.45">THE CONSENSUS ENGINE</text>
+
+      <!-- VERTICAL TYPOGRAPHIC LOCKUP -->
+      <g id="Consensus / Vertical Lockup" transform="translate(180, 50)">
+        <!-- Employer Side -->
+        <g id="Lockup / Employer" transform="translate(0, 0)">
+          <text x="0" y="0" text-anchor="middle" class="monumental" font-size="38" letter-spacing="-0.01em" fill="#FFFFFF">RECORDED</text>
+          <text x="0" y="18" text-anchor="middle" class="editorial" font-size="11" font-weight="700" letter-spacing="0.14em" fill="#FFFFFF" fill-opacity="0.75">BY EMPLOYER</text>
+          <text x="0" y="34" text-anchor="middle" class="hindi" font-size="11" font-weight="400" fill="#FFFFFF" fill-opacity="0.4">मालिक द्वारा दर्ज</text>
+        </g>
+
+        <!-- Symmetric Cross -->
+        <text x="0" y="70" text-anchor="middle" class="monumental" font-size="34" fill="#E11D48">×</text>
+
+        <!-- Helper Side -->
+        <g id="Lockup / Helper" transform="translate(0, 110)">
+          <text x="0" y="0" text-anchor="middle" class="monumental" font-size="38" letter-spacing="-0.01em" fill="#34D399">REVIEWED</text>
+          <text x="0" y="18" text-anchor="middle" class="editorial" font-size="11" font-weight="700" letter-spacing="0.14em" fill="#FFFFFF" fill-opacity="0.75">BY HELPER</text>
+          <text x="0" y="34" text-anchor="middle" class="hindi" font-size="11" font-weight="400" fill="#FFFFFF" fill-opacity="0.4">सहायक द्वारा प्रमाणित</text>
+        </g>
+      </g>
+    </g>
+
+    <!-- Stepper Navigation (3 Horizontal Pills) -->
+    <g id="Consensus / Stepper Tabs" transform="translate(14, 250)">
+      <g id="Tab / 01 Active">
+        <rect width="112" height="36" rx="18" fill="rgba(255,255,255,0.12)" stroke="#FFFFFF" stroke-opacity="0.3"/>
+        <text x="12" y="23" class="monumental" font-size="13" fill="#E11D48">01</text>
+        <text x="32" y="23" class="editorial" font-size="10" font-weight="700" fill="#FFFFFF">Logged</text>
+      </g>
+
+      <g id="Tab / 02" transform="translate(122, 0)">
+        <rect width="112" height="36" rx="18" fill="rgba(255,255,255,0.04)" stroke="#FFFFFF" stroke-opacity="0.08"/>
+        <text x="12" y="23" class="monumental" font-size="13" fill="#E11D48">02</text>
+        <text x="32" y="23" class="editorial" font-size="10" font-weight="600" fill="#FFFFFF" fill-opacity="0.7">Review</text>
+      </g>
+
+      <g id="Tab / 03" transform="translate(244, 0)">
+        <rect width="116" height="36" rx="18" fill="rgba(255,255,255,0.04)" stroke="#FFFFFF" stroke-opacity="0.08"/>
+        <text x="12" y="23" class="monumental" font-size="13" fill="#E11D48">03</text>
+        <text x="32" y="23" class="editorial" font-size="10" font-weight="600" fill="#FFFFFF" fill-opacity="0.7">Sealed</text>
+      </g>
+    </g>
+
+    <!-- Evolving Record Card (Mobile Stack) -->
+    <g id="Consensus / Evolving Card" transform="translate(14, 305)">
+      <rect width="362" height="420" rx="14" fill="#111115" stroke="#FFFFFF" stroke-opacity="0.1" stroke-width="1"/>
+      <rect x="0" y="0" width="3.5" height="420" rx="1.75" fill="#F59E0B"/>
+
+      <!-- Telemetry Header -->
+      <g transform="translate(16, 20)">
+        <rect width="240" height="24" rx="12" fill="rgba(245, 158, 11, 0.15)" stroke="#F59E0B" stroke-opacity="0.4"/>
+        <text x="12" y="16" class="editorial" font-size="9" font-weight="800" letter-spacing="0.08em" fill="#FBBF24">
+          ⏱ STAGE 01 · QUARANTINED (₹0)
+        </text>
+      </g>
+
+      <!-- Main Record Content -->
+      <g transform="translate(16, 64)">
+        <text x="0" y="12" class="editorial" font-size="10" font-weight="700" fill="#FFFFFF" fill-opacity="0.45">13 AUGUST 2026 · 7:30 PM</text>
+        <text x="0" y="38" class="editorial" font-size="18" font-weight="700" fill="#FFFFFF">Full Day Housework &amp; Cooking</text>
+        <text x="0" y="64" class="editorial" font-size="12" font-weight="400" fill="#FFFFFF" fill-opacity="0.7" width="330">
+          Sharma Ji logs attendance. Under the mutual rule, this entry is held in quarantine. It carries ₹0.00 until acknowledged.
+        </text>
+        <text x="0" y="112" class="hindi" font-size="12" font-weight="500" fill="#F59E0B" width="330">
+          "जब तक सुनीता दीदी 'सही है' नहीं दबाएंगी, यह रकम हिसाब में नहीं जुड़ेगी।"
+        </text>
+
+        <!-- Stacked Figure Display -->
+        <g transform="translate(0, 160)">
+          <text x="0" y="30" class="editorial tabular" font-size="34" font-weight="900" fill="#FFFFFF">+₹500</text>
+          <text x="0" y="50" class="editorial" font-size="11" font-weight="600" fill="#F59E0B">Weight on Hisaab: ₹0.00</text>
+        </g>
+      </g>
+
+      <!-- Simulator Buttons -->
+      <g transform="translate(16, 330)">
+        <line x1="0" y1="0" x2="330" y2="0" stroke="#FFFFFF" stroke-opacity="0.06" stroke-width="1"/>
+        <text x="0" y="24" class="editorial" font-size="10" font-weight="600" fill="#FFFFFF" fill-opacity="0.5">Watch Record Morph:</text>
+
+        <g transform="translate(0, 36)">
+          <rect width="102" height="34" rx="6" fill="rgba(255,255,255,0.12)" stroke="#FFFFFF" stroke-opacity="0.2"/>
+          <text x="14" y="22" class="editorial" font-size="10" font-weight="600" fill="#FFFFFF">01. Logged</text>
+
+          <rect x="110" width="102" height="34" rx="6" fill="rgba(255,255,255,0.04)" stroke="#FFFFFF" stroke-opacity="0.08"/>
+          <text x="124" y="22" class="editorial" font-size="10" font-weight="600" fill="#FFFFFF" fill-opacity="0.6">02. Review</text>
+
+          <rect x="220" width="108" height="34" rx="6" fill="rgba(255,255,255,0.04)" stroke="#FFFFFF" stroke-opacity="0.08"/>
+          <text x="234" y="22" class="editorial" font-size="10" font-weight="600" fill="#FFFFFF" fill-opacity="0.6">03. Sealed</text>
+        </g>
+      </g>
+
+    </g>
+  </g>
+
+  <!-- ======================================================== -->
+  <!-- 05. MOVEMENT 04: THE SHARED HISAAB CLIMAX (MOBILE)       -->
+  <!-- ======================================================== -->
+  <g id="Movement 04 / Shared Hisaab" transform="translate(0, 3220)">
+    <line x1="0" y1="0" x2="390" y2="0" stroke="#FFFFFF" stroke-opacity="0.06" stroke-width="1"/>
+
+    <!-- Section Header -->
+    <g id="Hisaab / Header" transform="translate(195, 50)">
+      <text x="0" y="0" text-anchor="middle" class="monumental" font-size="13" fill="#E11D48">04 / 05</text>
+      <text x="0" y="20" text-anchor="middle" class="editorial" font-size="9" font-weight="700" letter-spacing="0.14em" fill="#FFFFFF" fill-opacity="0.45">THE MATHEMATICAL RESOLUTION</text>
+      <text x="0" y="52" text-anchor="middle" class="editorial" font-size="24" font-weight="800" fill="#FFFFFF" letter-spacing="-0.01em">
+        Complete peace on the 1st.
+      </text>
+      <text x="0" y="80" text-anchor="middle" class="hindi" font-size="12" font-weight="400" fill="#FFFFFF" fill-opacity="0.6">
+        "कमाई, पेसगी और पक्का बकाया — सब स्पष्ट।"
+      </text>
+    </g>
+
+    <!-- Stacked Vertical Equation Strip (362px Blocks) -->
+    <g id="Hisaab / Stacked Equation" transform="translate(14, 160)">
+      <!-- Block 1: Confirmed Work -->
+      <g id="Eq / Confirmed Work">
+        <rect width="362" height="74" rx="12" fill="#111115" stroke="#FFFFFF" stroke-opacity="0.1"/>
+        <text x="20" y="26" class="editorial" font-size="9" font-weight="800" letter-spacing="0.12em" fill="#FFFFFF" fill-opacity="0.45">CONFIRMED WORK</text>
+        <text x="20" y="54" class="editorial tabular" font-size="22" font-weight="800" fill="#FFFFFF">+₹4,000</text>
+        <text x="342" y="44" text-anchor="end" class="editorial" font-size="11" font-weight="400" fill="#FFFFFF" fill-opacity="0.4">8 Full Days</text>
+      </g>
+
+      <!-- Block 2: Confirmed Advances -->
+      <g id="Eq / Advances" transform="translate(0, 84)">
+        <rect width="362" height="74" rx="12" fill="#111115" stroke="#FFFFFF" stroke-opacity="0.1"/>
+        <text x="20" y="26" class="editorial" font-size="9" font-weight="800" letter-spacing="0.12em" fill="#FFFFFF" fill-opacity="0.45">CONFIRMED ADVANCES</text>
+        <text x="20" y="54" class="editorial tabular" font-size="22" font-weight="800" fill="#F87171">−₹1,000</text>
+        <text x="342" y="44" text-anchor="end" class="editorial" font-size="11" font-weight="400" fill="#FFFFFF" fill-opacity="0.4">05 Aug Doorway Cash</text>
+      </g>
+
+      <!-- Block 3: Shared Hisaab -->
+      <g id="Eq / Shared Result" transform="translate(0, 168)">
+        <rect width="362" height="78" rx="12" fill="rgba(5,150,105,0.08)" stroke="#059669" stroke-opacity="0.4" stroke-width="1.5"/>
+        <text x="20" y="26" class="editorial" font-size="9" font-weight="800" letter-spacing="0.12em" fill="#34D399">SHARED HISAAB</text>
+        <text x="20" y="56" class="editorial tabular" font-size="24" font-weight="900" fill="#34D399">₹3,000</text>
+        <text x="342" y="46" text-anchor="end" class="editorial" font-size="11" font-weight="600" fill="#FFFFFF" fill-opacity="0.7">Net Payable</text>
+      </g>
+    </g>
+
+    <!-- Monumental Numeral Display -->
+    <g id="Hisaab / Monumental Numeral" transform="translate(195, 430)">
+      <text x="0" y="0" text-anchor="middle" class="editorial" font-size="10" font-weight="800" letter-spacing="0.14em" fill="#FFFFFF" fill-opacity="0.4">
+        OFFICIAL NET PAYABLE BALANCE
+      </text>
+
+      <!-- Colossal ₹3,000 on Mobile -->
+      <text x="0" y="80" text-anchor="middle" class="monumental tabular" font-size="88" fill="#FFFFFF" filter="url(#emerald-glow-mob)">
+        ₹3,000
+      </text>
+
+      <!-- Stacked Dual Signatures -->
+      <g id="Hisaab / Stacked Signatures" transform="translate(0, 125)">
+        <!-- Sharma Ji Signature -->
+        <g transform="translate(0, 0)">
+          <circle cx="-90" cy="0" r="8" fill="rgba(5,150,105,0.2)"/>
+          <text x="-90" y="3" text-anchor="middle" class="editorial" font-size="8" font-weight="800" fill="#34D399">✓</text>
+          <text x="-75" y="-2" class="editorial" font-size="11" font-weight="600" fill="#FFFFFF">Sharma Ji (Employer)</text>
+          <text x="-75" y="12" class="editorial" font-size="9" font-weight="400" fill="#FFFFFF" fill-opacity="0.45">Confirmed 13 Aug 7:35 PM</text>
+        </g>
+
+        <!-- Divider Line -->
+        <line x1="-30" y1="26" x2="30" y2="26" stroke="#FFFFFF" stroke-opacity="0.15" stroke-width="1"/>
+
+        <!-- Sunita Didi Signature -->
+        <g transform="translate(0, 46)">
+          <circle cx="-90" cy="0" r="8" fill="rgba(5,150,105,0.2)"/>
+          <text x="-90" y="3" text-anchor="middle" class="editorial" font-size="8" font-weight="800" fill="#34D399">✓</text>
+          <text x="-75" y="-2" class="editorial" font-size="11" font-weight="600" fill="#FFFFFF">Sunita Didi (Helper)</text>
+          <text x="-75" y="12" class="editorial" font-size="9" font-weight="400" fill="#FFFFFF" fill-opacity="0.45">Confirmed 13 Aug 7:42 PM</text>
+        </g>
+      </g>
+
+      <!-- Mutual Confirmation Badge -->
+      <g id="Hisaab / Confirmation Pill" transform="translate(-150, 205)">
+        <rect width="300" height="30" rx="15" fill="rgba(5, 150, 105, 0.12)" stroke="#059669" stroke-opacity="0.4" stroke-width="1"/>
+        <circle cx="16" cy="15" r="2.5" fill="#34D399"/>
+        <text x="26" y="19" class="editorial" font-size="9" font-weight="800" letter-spacing="0.08em" fill="#34D399">
+          READY FOR PAYOUT · MUTUALLY CONFIRMED
+        </text>
+      </g>
+    </g>
+
+  </g>
+
+  <!-- ======================================================== -->
+  <!-- 06. MOVEMENT 05: THE COVENANT & CLOSING THRESHOLD        -->
+  <!-- ======================================================== -->
+  <g id="Movement 05 / Covenant" transform="translate(0, 3950)">
+    <line x1="0" y1="0" x2="390" y2="0" stroke="#FFFFFF" stroke-opacity="0.06" stroke-width="1"/>
+
+    <g id="Covenant / Content" transform="translate(195, 50)">
+      <!-- Central Emblem -->
+      <g transform="translate(-20, 0)">
+        <rect width="40" height="40" rx="10" fill="#121216" stroke="#FFFFFF" stroke-opacity="0.15"/>
+        <rect x="12" y="8" width="6" height="24" rx="2" fill="#047857" fill-opacity="0.3" stroke="#047857"/>
+        <rect x="22" y="8" width="6" height="24" rx="2" fill="#047857" fill-opacity="0.3" stroke="#047857"/>
+        <line x1="20" y1="6" x2="20" y2="34" stroke="#E11D48" stroke-width="1.8"/>
+      </g>
+
+      <!-- Hindi Poetry -->
+      <text x="0" y="80" text-anchor="middle" class="hindi" font-size="24" font-weight="700" fill="#FFFFFF">
+        अगली पेसगी, रसीद के साथ।
+      </text>
+      <text x="0" y="112" text-anchor="middle" class="hindi" font-size="24" font-weight="700" fill="#34D399">
+        अगला महीना, बिना संकोच।
+      </text>
+
+      <!-- Statement -->
+      <text x="0" y="150" text-anchor="middle" class="editorial" font-size="12" font-weight="400" fill="#FFFFFF" fill-opacity="0.7" width="340">
+        Household work is real work. It deserves the mutual dignity of a shared, transparent digital record.
+      </text>
+      <text x="0" y="174" text-anchor="middle" class="editorial" font-size="12" font-weight="600" fill="#FFFFFF">
+        Two phones. One record. Complete mutual peace.
+      </text>
+
+      <!-- Primary Action Button -->
+      <g id="Covenant / CTA Button" transform="translate(-130, 205)">
+        <rect width="260" height="48" rx="24" fill="#FFFFFF"/>
+        <text x="44" y="30" class="editorial" font-size="13" font-weight="700" fill="#0C0C0E">Open the Shared Khata →</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- ======================================================== -->
+  <!-- 07. EDITORIAL FOOTER                                     -->
+  <!-- ======================================================== -->
+  <g id="Landing / Footer" transform="translate(14, 4320)">
+    <line x1="0" y1="0" x2="362" y2="0" stroke="#FFFFFF" stroke-opacity="0.06" stroke-width="1"/>
+
+    <g transform="translate(0, 30)">
+      <text x="0" y="0" class="monumental" font-size="15" letter-spacing="0.05em" fill="#FFFFFF">SEVAKHATA · <tspan class="hindi">सेवाखाता</tspan></text>
+      <text x="0" y="20" class="editorial" font-size="10" font-weight="400" fill="#FFFFFF" fill-opacity="0.5">
+        Dono ka record, ek hi hisaab.
+      </text>
+
+      <g transform="translate(0, 50)">
+        <text x="0" y="0" class="editorial" font-size="10" font-weight="500" fill="#FFFFFF" fill-opacity="0.6">
+          The Living Ledger  ·  Consensus Engine  ·  Shared Hisaab
+        </text>
+        <text x="0" y="24" class="editorial" font-size="9" font-weight="400" fill="#FFFFFF" fill-opacity="0.3">
+          © 2026 SevaKhata. Designed for mutual trust in Indian households.
+        </text>
+      </g>
+    </g>
+  </g>
+
+</svg>

@@ -1,0 +1,2323 @@
+/* ==========================================================================
+   SEVAKHATA — THE MONUMENTAL MUTUAL LEDGER
+   High-End Editorial Art Direction & Architectural Design System
+   Cinematic Spatial Layering, Strict Mathematical Grid & Direct Manipulation
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   01. DESIGN TOKENS & ATOMIC FOUNDATION
+   -------------------------------------------------------------------------- */
+:root {
+  /* Surfaces & Ambient Canvas */
+  --bg-deep: #08080A;
+  --bg-canvas: #0C0C0E;
+  --bg-surface-base: #111115;
+  --bg-surface-elevated: #16161C;
+  --bg-surface-highlight: #1D1D24;
+
+  /* Traditional Bahi-Khata Heritage Elements */
+  --khata-crimson-spine: #E11D48;
+  --khata-crimson-seal: #C8202B;
+  --khata-paper-tint: #F5F5F0;
+
+  /* Semantic Telemetry Colors */
+  --emerald-core: #059669;
+  --emerald-glow: rgba(5, 150, 105, 0.25);
+  --emerald-border: rgba(5, 150, 105, 0.45);
+  --amber-core: #F59E0B;
+  --amber-glow: rgba(245, 158, 11, 0.2);
+  --amber-border: rgba(245, 158, 11, 0.4);
+  --rose-core: #EF4444;
+  --rose-glow: rgba(239, 68, 68, 0.2);
+  --rose-border: rgba(239, 68, 68, 0.4);
+
+  /* Linework & Architectural Reticles */
+  --rule-hairline: rgba(255, 255, 255, 0.08);
+  --rule-hairline-bright: rgba(255, 255, 255, 0.16);
+  --rule-crosshair: rgba(255, 255, 255, 0.05);
+
+  /* Typography Scale & Metrics */
+  --font-monumental: 'Bebas Neue', -apple-system, sans-serif;
+  --font-editorial: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-hindi: 'Noto Sans Devanagari', -apple-system, sans-serif;
+  --font-hindi-traditional: 'Tiro Devanagari Hindi', serif;
+
+  /* Type Colors */
+  --text-primary: #FFFFFF;
+  --text-secondary: rgba(255, 255, 255, 0.72);
+  --text-tertiary: rgba(255, 255, 255, 0.45);
+  --text-quaternary: rgba(255, 255, 255, 0.28);
+
+  /* Motion & Interaction (Emil Kowalski Craft) */
+  --ease-spring: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-smooth: cubic-bezier(0.16, 1, 0.3, 1);
+  --dur-fast: 160ms;
+  --dur-standard: 260ms;
+  --dur-spring: 360ms;
+
+  /* Layout Constraints */
+  --page-max-width: 1360px;
+  --page-gutter: clamp(1.25rem, 4vw, 3.5rem);
+}
+
+/* --------------------------------------------------------------------------
+   02. RESET & BASE FOUNDATIONS
+   -------------------------------------------------------------------------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: var(--font-editorial);
+  background-color: var(--bg-deep);
+  color: var(--text-primary);
+  scroll-behavior: smooth;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body.editorial-body {
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+  background-color: var(--bg-canvas);
+  background-image: 
+    radial-gradient(circle at 50% 12%, rgba(200, 32, 43, 0.05) 0%, transparent 60%),
+    radial-gradient(circle at 50% 85%, rgba(5, 150, 105, 0.05) 0%, transparent 60%);
+  color: var(--text-primary);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* --------------------------------------------------------------------------
+   03. AMBIENT ARCHITECTURAL ENVIRONMENT (HAIRLINE AXES & RETICLES)
+   -------------------------------------------------------------------------- */
+.ambient-canvas-grid {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.axis-line {
+  position: absolute;
+  background-color: var(--rule-crosshair);
+}
+
+.axis-vertical {
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 1px;
+  transform: translateX(-50%);
+}
+
+.axis-horizontal-hero {
+  left: 0;
+  right: 0;
+  top: 360px;
+  height: 1px;
+}
+
+/* Concentric Reticles & Ambient Grids */
+.section-ambient-grid {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.reticle-target {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+}
+
+.reticle-hero {
+  top: 360px;
+  left: 50%;
+  width: min(780px, 92vw);
+  height: min(780px, 92vw);
+}
+
+.reticle-settlement {
+  top: 45%;
+  left: 50%;
+  width: min(680px, 92vw);
+  height: min(680px, 92vw);
+}
+
+.reticle-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid var(--rule-hairline);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.ring-outer {
+  width: 100%;
+  height: 100%;
+  border-style: dashed;
+  border-dasharray: 4 6;
+  opacity: 0.6;
+}
+
+.ring-mid {
+  width: 65%;
+  height: 65%;
+  border-color: rgba(255, 255, 255, 0.05);
+}
+
+.ring-inner {
+  width: 38%;
+  height: 38%;
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+.reticle-radial-ticks {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: repeating-conic-gradient(
+    from 0deg,
+    rgba(255, 255, 255, 0.04) 0deg 0.5deg,
+    transparent 0.5deg 45deg
+  );
+}
+
+/* --------------------------------------------------------------------------
+   04. EDITORIAL SYSTEM NAVIGATION
+   -------------------------------------------------------------------------- */
+.system-nav-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  padding: 0.85rem var(--page-gutter);
+  background: linear-gradient(to bottom, rgba(8, 8, 10, 0.9) 0%, rgba(8, 8, 10, 0) 100%);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.system-nav {
+  width: 100%;
+  max-width: var(--page-max-width);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1.5rem;
+  background: rgba(18, 18, 22, 0.75);
+  border: 1px solid var(--rule-hairline-bright);
+  border-radius: 100px;
+  box-shadow: 0 12px 32px -8px rgba(0, 0, 0, 0.6);
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.brand-mark-svg {
+  display: block;
+}
+
+.brand-identity {
+  display: flex;
+  align-items: baseline;
+  gap: 0.4rem;
+}
+
+.brand-en {
+  font-family: var(--font-monumental);
+  font-size: 1.25rem;
+  letter-spacing: 0.05em;
+  color: #FFFFFF;
+}
+
+.brand-hi {
+  font-family: var(--font-hindi);
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-tertiary);
+}
+
+.nav-telemetry {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  color: var(--text-secondary);
+}
+
+.telemetry-beacon {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--emerald-core);
+  box-shadow: 0 0 8px var(--emerald-core);
+  margin-right: 0.35rem;
+  animation: pulseBeacon 2.4s infinite;
+}
+
+.telemetry-divider {
+  color: var(--text-quaternary);
+}
+
+.nav-controls {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  flex-shrink: 0;
+}
+
+.nav-link-subtle {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  transition: color var(--dur-fast) ease;
+}
+
+.nav-link-subtle:hover {
+  color: #FFFFFF;
+}
+
+.nav-cta-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.45rem 1.15rem;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 100px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #FFFFFF;
+  letter-spacing: 0.02em;
+  transition: all var(--dur-fast) var(--ease-spring);
+  white-space: nowrap;
+}
+
+.nav-cta-pill:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-1px);
+}
+
+/* --------------------------------------------------------------------------
+   05. MOVEMENT 01: THE STAGED MONUMENTAL HERO
+   Stage 0: Unobscured Monumental Title & Thesis
+   Stage 1: Grided Slab Glides into Resting Position
+   -------------------------------------------------------------------------- */
+.movement-section {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+}
+
+.movement-hero {
+  padding-top: 6rem;
+  padding-bottom: 5rem;
+}
+
+/* Micro-Telemetry Top Bar */
+.hero-metadata-bar {
+  max-width: var(--page-max-width);
+  margin: 0 auto;
+  padding: 1.25rem var(--page-gutter);
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1.5rem;
+  border-bottom: 1px solid var(--rule-hairline);
+  margin-bottom: 3.5rem;
+}
+
+.meta-col {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.meta-tag {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: var(--text-tertiary);
+}
+
+.meta-val {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+.center-col {
+  align-items: center;
+  text-align: center;
+}
+
+.roman-numeral {
+  font-family: var(--font-monumental);
+  font-size: 1.25rem;
+  letter-spacing: 0.1em;
+  color: var(--khata-crimson-spine);
+}
+
+.meta-val-center {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: var(--text-primary);
+}
+
+/* STAGE 0: HERO ART STAGE (SEVAKHATA BREATHES UNOBSCURED) */
+.hero-art-stage {
+  position: relative;
+  max-width: var(--page-max-width);
+  margin: 0 auto;
+  padding: 2rem var(--page-gutter) 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Circular Crimson Mutual Seal Disk */
+.hero-seal-disk {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: clamp(340px, 45vw, 620px);
+  height: clamp(340px, 45vw, 620px);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.hero-seal-disk::before {
+  content: '';
+  position: absolute;
+  inset: 16%;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  pointer-events: none;
+}
+
+.hero-seal-disk::after {
+  content: '';
+  position: absolute;
+  inset: 34%;
+  border-radius: 50%;
+  border: 1px dashed rgba(255, 255, 255, 0.25);
+  pointer-events: none;
+}
+
+.disk-gradient-core {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at center,
+    rgba(200, 32, 43, 0.85) 0%,
+    rgba(200, 32, 43, 0.5) 42%,
+    rgba(4, 120, 87, 0.25) 68%,
+    transparent 72%
+  );
+  box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.6), 0 0 90px rgba(200, 32, 43, 0.35);
+}
+
+.disk-crosshair-v {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 1px;
+  background: linear-gradient(to bottom, transparent, rgba(255,255,255,0.2) 50%, transparent);
+}
+
+.disk-crosshair-h {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(255,255,255,0.2) 50%, transparent);
+}
+
+/* Monumental Typography Container */
+.hero-typography-container {
+  position: relative;
+  z-index: 2;
+  margin-bottom: 2.5rem;
+}
+
+.monumental-title {
+  font-family: var(--font-monumental);
+  font-size: clamp(5.5rem, 16vw, 14.5rem);
+  font-weight: 400;
+  line-height: 0.88;
+  letter-spacing: -0.025em;
+  color: rgba(255, 255, 255, 0.98);
+  text-shadow: 0 4px 36px rgba(0, 0, 0, 0.8);
+  margin-bottom: 0.75rem;
+}
+
+.monumental-bilingual-sub {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.85rem;
+  font-size: clamp(0.85rem, 1.6vw, 1.35rem);
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 1.25rem;
+}
+
+.sub-dot {
+  color: var(--khata-crimson-spine);
+}
+
+.sub-hi {
+  font-family: var(--font-hindi);
+  letter-spacing: 0.05em;
+}
+
+.hero-thesis-statement {
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
+  color: var(--text-secondary);
+  max-width: 620px;
+  margin: 0 auto;
+  line-height: 1.55;
+}
+
+/* Scroll Invitation Cue */
+.hero-scroll-cue {
+  position: relative;
+  z-index: 2;
+  margin-top: 1.5rem;
+}
+
+.scroll-cue-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.55rem 1.35rem;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--rule-hairline-bright);
+  border-radius: 100px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  transition: all var(--dur-fast) var(--ease-spring);
+}
+
+.scroll-cue-pill:hover {
+  background: rgba(255, 255, 255, 0.12);
+  color: #FFFFFF;
+  transform: translateY(2px);
+}
+
+.cue-arrow {
+  color: var(--khata-crimson-spine);
+  font-size: 0.95rem;
+  transition: transform var(--dur-fast) ease;
+}
+
+.scroll-cue-pill:hover .cue-arrow {
+  transform: translateY(3px);
+}
+
+/* STAGE 1: THE LIVING BAHI-KHATA SLAB */
+.hero-slab-stage {
+  position: relative;
+  z-index: 10;
+  max-width: var(--page-max-width);
+  margin: 0 auto;
+  padding: 0 var(--page-gutter);
+}
+
+.hero-focal-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.living-khata-folio {
+  position: relative;
+  background: var(--bg-surface-base);
+  border: 1px solid var(--rule-hairline-bright);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 
+    0 32px 80px -16px rgba(0, 0, 0, 0.85),
+    0 0 0 1px rgba(255, 255, 255, 0.08);
+  transition: transform var(--dur-standard) var(--ease-spring), box-shadow var(--dur-standard) var(--ease-spring);
+}
+
+.living-khata-folio:hover {
+  box-shadow: 
+    0 40px 96px -16px rgba(0, 0, 0, 0.95),
+    0 0 0 1px rgba(255, 255, 255, 0.14);
+}
+
+.folio-red-spine {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 4px;
+  background-color: var(--khata-crimson-spine);
+  box-shadow: 0 0 12px rgba(225, 29, 72, 0.4);
+}
+
+/* Folio Masthead */
+.folio-masthead {
+  padding: 1.5rem 2.25rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--rule-hairline);
+  background: linear-gradient(to right, rgba(225, 29, 72, 0.03), transparent);
+}
+
+.folio-badge-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: var(--text-tertiary);
+  margin-bottom: 0.35rem;
+}
+
+.badge-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--emerald-core);
+}
+
+.badge-dot.pulse {
+  animation: pulseBeacon 2s infinite;
+}
+
+.folio-household-title {
+  font-size: clamp(1.2rem, 2vw, 1.45rem);
+  font-weight: 600;
+  color: #FFFFFF;
+  letter-spacing: -0.015em;
+  margin-bottom: 0.25rem;
+}
+
+.folio-household-title .connector {
+  color: var(--khata-crimson-spine);
+  font-weight: 400;
+  margin: 0 0.2rem;
+}
+
+.folio-sub-hindi {
+  font-family: var(--font-hindi);
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.masthead-period {
+  flex-shrink: 0;
+}
+
+.period-tag {
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: var(--text-tertiary);
+}
+
+.folio-hairline-rule {
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.06);
+}
+
+/* Strict Grid Legend: DATE | ENTRY & AUDIT | AMOUNT | STATE */
+.folio-grid-legend {
+  display: grid;
+  grid-template-columns: 110px 1fr 130px 100px;
+  gap: 1.5rem;
+  align-items: center;
+  padding: 0.75rem 2.25rem;
+  background: rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--text-quaternary);
+}
+
+.legend-amount {
+  text-align: right;
+}
+
+.legend-status {
+  text-align: right;
+}
+
+/* Confirmed Historical Ledger Rows */
+.folio-entry-row {
+  display: grid;
+  grid-template-columns: 110px 1fr 130px 100px;
+  gap: 1.5rem;
+  align-items: center;
+  padding: 1.2rem 2.25rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  transition: background-color var(--dur-fast) ease;
+}
+
+.folio-entry-row:hover {
+  background-color: rgba(255, 255, 255, 0.02);
+}
+
+.entry-date-cell {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  letter-spacing: 0.02em;
+}
+
+.entry-work-title {
+  font-size: 0.98rem;
+  font-weight: 600;
+  color: #FFFFFF;
+  margin-bottom: 0.2rem;
+}
+
+.entry-auth-note {
+  font-size: 0.75rem;
+  color: var(--text-tertiary);
+}
+
+.entry-amount-cell {
+  text-align: right;
+}
+
+.amount-val {
+  font-family: var(--font-editorial);
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  font-variant-numeric: tabular-nums;
+  color: #FFFFFF;
+}
+
+.amount-val.negative {
+  color: #F87171;
+}
+
+.entry-status-cell {
+  text-align: right;
+}
+
+.status-clean-text {
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.status-clean-text.confirmed {
+  color: #34D399;
+}
+
+.status-clean-text.deducted {
+  color: var(--text-tertiary);
+}
+
+/* THE ACTIVE ROW: TODAY'S ENTRY (FOCUSED & DECLUTTERED) */
+.folio-active-row {
+  position: relative;
+  background: rgba(245, 158, 11, 0.03);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  transition: background var(--dur-standard) ease, border-color var(--dur-standard) ease;
+}
+
+.folio-active-row.state-confirmed {
+  background: rgba(5, 150, 105, 0.05);
+}
+
+.folio-active-row.state-disputed {
+  background: rgba(239, 68, 68, 0.05);
+}
+
+/* Active Entry Grid: Shared Strict 4-Column Grid */
+.active-entry-grid {
+  display: grid;
+  grid-template-columns: 110px 1fr 130px 100px;
+  gap: 1.5rem;
+  align-items: flex-start;
+  padding: 1.5rem 2.25rem 1rem;
+}
+
+.active-date-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.active-date-cell .live-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--amber-core);
+  margin-bottom: 0.25rem;
+  animation: pulseBeacon 1.8s infinite;
+}
+
+.active-date-text {
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  color: var(--amber-core);
+}
+
+.active-sub-date {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.active-task-heading {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin-bottom: 0.25rem;
+}
+
+.active-hindi-prose {
+  font-family: var(--font-hindi);
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.4rem;
+  line-height: 1.45;
+}
+
+.active-invariant-note {
+  font-size: 0.75rem;
+  color: var(--amber-core);
+  line-height: 1.45;
+  transition: color var(--dur-standard) ease;
+}
+
+.active-invariant-note.confirmed {
+  color: #34D399;
+}
+
+.active-invariant-note.disputed {
+  color: #F87171;
+}
+
+.active-amount-cell {
+  text-align: right;
+  padding-top: 0.2rem;
+}
+
+.active-val-display {
+  font-family: var(--font-editorial);
+  font-size: 2rem;
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  color: #FFFFFF;
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+}
+
+.active-status-cell {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 0.2rem;
+}
+
+/* The Single Semantic State Pill */
+.semantic-state-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.3rem 0.65rem;
+  border-radius: 100px;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  transition: all var(--dur-standard) ease;
+}
+
+.semantic-state-pill .pill-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: currentColor;
+}
+
+.semantic-state-pill.pending {
+  background: rgba(245, 158, 11, 0.12);
+  border: 1px solid var(--amber-border);
+  color: #FBBF24;
+}
+
+.semantic-state-pill.confirmed {
+  background: rgba(5, 150, 105, 0.16);
+  border: 1px solid var(--emerald-border);
+  color: #34D399;
+}
+
+.semantic-state-pill.disputed {
+  background: rgba(239, 68, 68, 0.16);
+  border: 1px solid var(--rose-border);
+  color: #F87171;
+}
+
+/* Integrated Verification Bar (Part of the Record, Not a Foreign Box) */
+.active-review-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 1rem 2.25rem 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.review-prompt-group {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.prompt-role {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: var(--text-tertiary);
+}
+
+.prompt-question {
+  font-family: var(--font-hindi);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #FFFFFF;
+}
+
+.review-actions-group {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-shrink: 0;
+}
+
+.btn-review-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  min-height: 44px;
+  padding: 0.55rem 1.25rem;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all var(--dur-fast) var(--ease-spring);
+}
+
+.btn-confirm {
+  background: var(--emerald-core);
+  border: 1px solid transparent;
+  color: #FFFFFF;
+}
+
+.btn-confirm:hover, .btn-confirm:focus-visible {
+  background: #10B981;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(5, 150, 105, 0.4);
+}
+
+.btn-confirm:active {
+  transform: scale(0.96);
+}
+
+.btn-confirm.active-action {
+  background: #10B981;
+  box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.45), 0 4px 16px rgba(5, 150, 105, 0.4);
+}
+
+.btn-dispute {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  color: var(--text-secondary);
+}
+
+.btn-dispute:hover, .btn-dispute:focus-visible {
+  border-color: rgba(239, 68, 68, 0.4);
+  background: rgba(239, 68, 68, 0.1);
+  color: #F87171;
+}
+
+.btn-dispute:active {
+  transform: scale(0.96);
+}
+
+.btn-dispute.active-action {
+  background: rgba(239, 68, 68, 0.18);
+  border-color: #EF4444;
+  color: #F87171;
+  box-shadow: 0 0 0 2px rgba(239, 68, 68, 0.35);
+}
+
+/* Slab Balance Area (Official Shared Hisaab) */
+.folio-balance-footer {
+  padding: 1.6rem 2.25rem;
+  background: rgba(10, 10, 14, 0.95);
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.balance-subheading {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: var(--text-tertiary);
+  margin-bottom: 0.35rem;
+}
+
+.balance-equation {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-bottom: 0.25rem;
+}
+
+.balance-audit-note {
+  font-size: 0.72rem;
+  color: var(--text-tertiary);
+}
+
+.balance-figure-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.25rem;
+}
+
+.balance-large-ticker {
+  font-family: var(--font-editorial);
+  font-size: clamp(2.2rem, 3.5vw, 2.9rem);
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  color: #FFFFFF;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+  transition: color var(--dur-fast) ease;
+}
+
+.balance-large-ticker.highlight-change {
+  color: #34D399;
+}
+
+.balance-sealed-tag {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #34D399;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+/* Hero Bottom Telemetry */
+.hero-bottom-telemetry {
+  max-width: var(--page-max-width);
+  margin: 3.5rem auto 0;
+  padding: 0 var(--page-gutter);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.telemetry-quote {
+  display: flex;
+  gap: 0.85rem;
+  max-width: 480px;
+}
+
+.quote-symbol {
+  font-family: var(--font-monumental);
+  font-size: 2.5rem;
+  line-height: 1;
+  color: var(--khata-crimson-spine);
+}
+
+.quote-text-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.quote-text {
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--text-primary);
+}
+
+.quote-hindi {
+  font-family: var(--font-hindi);
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: var(--text-secondary);
+}
+
+/* Rotating Stamp Badge */
+.rotating-stamp-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stamp-rotating-svg {
+  animation: rotateStamp 28s linear infinite;
+}
+
+@keyframes rotateStamp {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.hero-primary-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: var(--text-secondary);
+  padding: 0.75rem 1.5rem;
+  border: 1px solid var(--rule-hairline-bright);
+  border-radius: 100px;
+  background: rgba(255, 255, 255, 0.04);
+  transition: all var(--dur-fast) var(--ease-spring);
+}
+
+.hero-primary-link:hover {
+  background: rgba(255, 255, 255, 0.09);
+  color: #FFFFFF;
+  border-color: rgba(255, 255, 255, 0.25);
+  transform: translateY(-2px);
+}
+
+/* --------------------------------------------------------------------------
+   06. MOVEMENT 02: THE TWO-SIDED MEMORY DIVERGENCE (DYNAMIC CONVERGENCE)
+   -------------------------------------------------------------------------- */
+.movement-diagnostic {
+  padding: 7rem 0 6rem;
+  background: linear-gradient(to bottom, var(--bg-canvas) 0%, #0F0F13 50%, var(--bg-canvas) 100%);
+  border-top: 1px solid var(--rule-hairline);
+  border-bottom: 1px solid var(--rule-hairline);
+}
+
+.section-container {
+  max-width: var(--page-max-width);
+  margin: 0 auto;
+  padding: 0 var(--page-gutter);
+}
+
+.section-editorial-header {
+  margin-bottom: 3.5rem;
+}
+
+.header-kicker-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.section-num {
+  font-family: var(--font-monumental);
+  font-size: 1.15rem;
+  letter-spacing: 0.1em;
+  color: var(--khata-crimson-spine);
+}
+
+.kicker-rule {
+  width: 48px;
+  height: 1px;
+  background-color: var(--rule-hairline-bright);
+}
+
+.kicker-rule.short {
+  width: 32px;
+}
+
+.kicker-title {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: var(--text-tertiary);
+}
+
+.editorial-headline-large {
+  font-size: clamp(2rem, 4.2vw, 3.5rem);
+  font-weight: 800;
+  line-height: 1.12;
+  letter-spacing: -0.03em;
+  color: #FFFFFF;
+  margin-bottom: 0.75rem;
+}
+
+.headline-contrast {
+  color: var(--text-secondary);
+}
+
+.editorial-sub-hindi {
+  font-family: var(--font-hindi);
+  font-size: 1.05rem;
+  color: var(--text-tertiary);
+  font-style: italic;
+}
+
+/* Two-Sided Memory Spatial Field */
+.memory-spatial-field {
+  display: grid;
+  grid-template-columns: 1fr 64px 1fr;
+  align-items: stretch;
+  gap: 2rem;
+  margin-bottom: 3.5rem;
+}
+
+.memory-card-side {
+  background: var(--bg-surface-base);
+  border: 1px solid var(--rule-hairline-bright);
+  border-radius: 14px;
+  padding: 2.25rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 16px 40px -12px rgba(0, 0, 0, 0.6);
+  transition: transform var(--dur-standard) var(--ease-spring), border-color var(--dur-fast) ease;
+}
+
+.memory-card-side:hover {
+  transform: translateY(-3px);
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+.memory-card-masthead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+}
+
+.memory-tag {
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+}
+
+.tag-employer {
+  color: var(--amber-core);
+}
+
+.tag-helper {
+  color: var(--rose-core);
+}
+
+.memory-icon {
+  font-size: 1.5rem;
+}
+
+.memory-card-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  letter-spacing: -0.015em;
+  margin-bottom: 0.85rem;
+}
+
+.memory-card-prose {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin-bottom: 1.75rem;
+}
+
+.memory-fragment-box {
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid var(--rule-hairline);
+  border-radius: 8px;
+  padding: 0.85rem 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.fragment-date {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--text-tertiary);
+  margin-bottom: 0.25rem;
+}
+
+.fragment-vulnerability {
+  font-size: 0.85rem;
+  font-style: italic;
+  color: var(--text-secondary);
+}
+
+.card-failure-tag {
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  color: #F87171;
+  background: rgba(239, 68, 68, 0.1);
+  padding: 0.4rem 0.85rem;
+  border-radius: 6px;
+  border: 1px solid var(--rose-border);
+  align-self: flex-start;
+}
+
+/* Center Convergence Axis */
+.memory-convergence-axis {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.convergence-line-top, .convergence-line-bottom {
+  flex: 1;
+  width: 1px;
+  background-color: var(--rule-hairline-bright);
+}
+
+.convergence-seal-beacon {
+  position: relative;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem 0;
+}
+
+.beacon-ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 1px solid var(--rule-hairline-bright);
+  animation: pulseBeacon 2.5s infinite;
+}
+
+.beacon-vs {
+  font-family: var(--font-monumental);
+  font-size: 1.15rem;
+  color: var(--text-quaternary);
+}
+
+/* Convergence Resolution Banner */
+.divergence-resolution-box {
+  background: rgba(5, 150, 105, 0.08);
+  border: 1px solid var(--emerald-border);
+  border-radius: 14px;
+  padding: 1.5rem 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1.35rem;
+}
+
+.resolution-seal {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(5, 150, 105, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.res-title {
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  color: #34D399;
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.res-body {
+  font-size: 0.95rem;
+  color: #FFFFFF;
+  line-height: 1.55;
+}
+
+/* --------------------------------------------------------------------------
+   07. MOVEMENT 03: THE CONSENSUS ENGINE
+   RECORDED BY EMPLOYER × REVIEWED BY HELPER
+   Rigorous Typographic Composition & Morphing Record Card
+   -------------------------------------------------------------------------- */
+.movement-consensus {
+  padding: 7rem 0 6rem;
+  border-bottom: 1px solid var(--rule-hairline);
+}
+
+/* RIGOROUS TYPOGRAPHIC COMPOSITION */
+.consensus-editorial-lockup {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(1.5rem, 4vw, 3.5rem);
+  margin: 2rem 0 1.25rem;
+  flex-wrap: wrap;
+}
+
+.lockup-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.lockup-verb {
+  font-family: var(--font-monumental);
+  font-size: clamp(3rem, 6.5vw, 5.5rem);
+  line-height: 0.9;
+  letter-spacing: -0.02em;
+}
+
+.col-employer .lockup-verb {
+  color: #FFFFFF;
+}
+
+.col-helper .lockup-verb {
+  color: #34D399;
+}
+
+.lockup-role {
+  font-size: clamp(0.9rem, 1.6vw, 1.3rem);
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: rgba(255, 255, 255, 0.75);
+  margin-top: 0.35rem;
+  text-transform: uppercase;
+}
+
+.lockup-hi {
+  font-family: var(--font-hindi);
+  font-size: 0.9rem;
+  color: var(--text-tertiary);
+  margin-top: 0.25rem;
+}
+
+.lockup-cross-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lockup-cross {
+  font-family: var(--font-monumental);
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  color: var(--khata-crimson-spine);
+  line-height: 1;
+}
+
+/* Stepper Tabs */
+.consensus-stepper-nav {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 3rem 0 2rem;
+  overflow-x: auto;
+  padding-bottom: 0.5rem;
+}
+
+.stepper-tab {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.65rem 1.25rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--rule-hairline);
+  border-radius: 100px;
+  color: var(--text-secondary);
+  transition: all var(--dur-fast) var(--ease-spring);
+  white-space: nowrap;
+}
+
+.stepper-tab.active {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.3);
+  color: #FFFFFF;
+}
+
+.tab-index {
+  font-family: var(--font-monumental);
+  font-size: 1.15rem;
+  color: var(--khata-crimson-spine);
+}
+
+.tab-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.stepper-connector {
+  flex: 1;
+  min-width: 24px;
+  height: 1px;
+  background-color: var(--rule-hairline);
+}
+
+/* Stage Evolving Card */
+.consensus-stage-card {
+  position: relative;
+  background: var(--bg-surface-base);
+  border: 1px solid var(--rule-hairline-bright);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 24px 64px -16px rgba(0, 0, 0, 0.7);
+  transition: opacity var(--dur-fast) ease, transform var(--dur-fast) ease;
+}
+
+.stage-card-spine {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 4px;
+  background-color: var(--amber-core);
+  transition: background-color var(--dur-standard) ease;
+}
+
+.stage-card-body {
+  padding: 2.25rem 2.5rem;
+}
+
+.stage-telemetry-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.75rem;
+}
+
+.stage-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  padding: 0.35rem 0.85rem;
+  background: rgba(245, 158, 11, 0.15);
+  border: 1px solid var(--amber-border);
+  color: #FBBF24;
+  border-radius: 100px;
+  transition: all var(--dur-standard) ease;
+}
+
+.stage-folio-id {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: var(--text-tertiary);
+}
+
+.stage-main-grid {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 3rem;
+  align-items: center;
+  margin-bottom: 2.5rem;
+}
+
+.stage-date {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--text-tertiary);
+  margin-bottom: 0.35rem;
+  display: block;
+}
+
+.stage-title {
+  font-size: clamp(1.35rem, 2.5vw, 1.85rem);
+  font-weight: 700;
+  color: #FFFFFF;
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.02em;
+}
+
+.stage-narrative {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  max-width: 680px;
+  margin-bottom: 0.75rem;
+}
+
+.stage-quote-hindi {
+  font-family: var(--font-hindi);
+  font-size: 0.92rem;
+  color: var(--amber-core);
+  font-style: italic;
+  transition: color var(--dur-standard) ease;
+}
+
+.stage-figure-col {
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.35rem;
+}
+
+.stage-amount-display {
+  font-family: var(--font-editorial);
+  font-size: clamp(2.5rem, 4.5vw, 3.5rem);
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  color: #FFFFFF;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+.stage-weight-indicator {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--amber-core);
+  transition: color var(--dur-standard) ease;
+}
+
+/* Stage Simulator Footer */
+.stage-simulator-footer {
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--rule-hairline);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.sim-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--text-tertiary);
+}
+
+.sim-btn-group {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.sim-btn {
+  padding: 0.45rem 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--rule-hairline);
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  transition: all var(--dur-fast) var(--ease-spring);
+}
+
+.sim-btn.active {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.3);
+  color: #FFFFFF;
+}
+
+/* --------------------------------------------------------------------------
+   08. MOVEMENT 04: THE SHARED HISAAB CLIMAX (THE INVARIANT)
+   -------------------------------------------------------------------------- */
+.movement-hisaab {
+  padding: 8rem 0 7rem;
+  background: radial-gradient(circle at center, rgba(5, 150, 105, 0.06) 0%, transparent 70%);
+  border-bottom: 1px solid var(--rule-hairline);
+}
+
+.text-center {
+  text-align: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.hisaab-equation-strip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  margin: 3.5rem 0 4rem;
+  flex-wrap: wrap;
+}
+
+.eq-block {
+  background: var(--bg-surface-base);
+  border: 1px solid var(--rule-hairline-bright);
+  border-radius: 12px;
+  padding: 1.5rem 2rem;
+  text-align: center;
+  min-width: 220px;
+}
+
+.eq-block.block-climax {
+  background: rgba(5, 150, 105, 0.1);
+  border-color: var(--emerald-border);
+}
+
+.eq-tag {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: var(--text-tertiary);
+  margin-bottom: 0.35rem;
+  display: block;
+}
+
+.eq-tag.highlight {
+  color: #34D399;
+}
+
+.eq-num {
+  font-family: var(--font-editorial);
+  font-size: 2rem;
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  display: block;
+  margin-bottom: 0.25rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.eq-num.pos { color: #FFFFFF; }
+.eq-num.neg { color: var(--rose-core); }
+.eq-num.climax { color: #34D399; }
+
+.eq-detail {
+  font-size: 0.75rem;
+  color: var(--text-tertiary);
+}
+
+.eq-operator {
+  font-family: var(--font-monumental);
+  font-size: 2.5rem;
+  color: var(--text-quaternary);
+}
+
+/* Monumental Display Numeral */
+.monumental-climax-display {
+  max-width: 780px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 3rem 2rem;
+  background: linear-gradient(180deg, rgba(17, 17, 21, 0.8) 0%, rgba(17, 17, 21, 0.4) 100%);
+  border: 1px solid var(--rule-hairline-bright);
+  border-radius: 20px;
+  box-shadow: 0 32px 80px -20px rgba(0, 0, 0, 0.85);
+}
+
+.climax-caption {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: var(--text-tertiary);
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.climax-display-numeral {
+  font-family: var(--font-monumental);
+  font-size: clamp(5rem, 14vw, 10rem);
+  font-weight: 400;
+  line-height: 0.9;
+  letter-spacing: -0.02em;
+  color: #FFFFFF;
+  text-shadow: 0 4px 32px rgba(5, 150, 105, 0.35);
+  margin-bottom: 2rem;
+}
+
+.climax-dual-signatures {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 2.5rem;
+  flex-wrap: wrap;
+}
+
+.sig-node {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.sig-check {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--emerald-core);
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  font-weight: 800;
+  margin-bottom: 0.25rem;
+}
+
+.sig-name {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #FFFFFF;
+}
+
+.sig-time {
+  font-size: 0.72rem;
+  color: var(--text-tertiary);
+}
+
+.sig-divider {
+  width: 48px;
+  height: 1px;
+  background-color: var(--rule-hairline-bright);
+}
+
+.climax-readiness-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1.25rem;
+  background: rgba(5, 150, 105, 0.15);
+  border: 1px solid var(--emerald-border);
+  border-radius: 100px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: #34D399;
+}
+
+.readiness-beacon {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--emerald-core);
+  box-shadow: 0 0 8px var(--emerald-core);
+}
+
+/* --------------------------------------------------------------------------
+   09. MOVEMENT 05: THE COVENANT & CLOSING THRESHOLD
+   -------------------------------------------------------------------------- */
+.movement-covenant {
+  padding: 8rem 0 7rem;
+}
+
+.covenant-mark-wrap {
+  margin-bottom: 2rem;
+}
+
+.covenant-monumental-hindi {
+  font-family: var(--font-hindi);
+  font-size: clamp(2.2rem, 4.8vw, 4rem);
+  font-weight: 700;
+  line-height: 1.2;
+  color: #FFFFFF;
+  margin-bottom: 1.5rem;
+}
+
+.covenant-highlight {
+  color: #34D399;
+}
+
+.covenant-prose {
+  font-size: 1.15rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  max-width: 680px;
+  margin: 0 auto 3rem;
+}
+
+.covenant-action-row {
+  display: flex;
+  justify-content: center;
+}
+
+.threshold-cta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 2.5rem;
+  background: #FFFFFF;
+  color: #08080A;
+  border-radius: 100px;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  box-shadow: 0 12px 32px -4px rgba(255, 255, 255, 0.25);
+  transition: all var(--dur-fast) var(--ease-spring);
+}
+
+.threshold-cta-button:hover {
+  background: #F3F4F6;
+  transform: translateY(-2px);
+  box-shadow: 0 16px 40px -4px rgba(255, 255, 255, 0.4);
+}
+
+.threshold-arrow {
+  font-size: 1.2rem;
+  transition: transform var(--dur-fast) ease;
+}
+
+.threshold-cta-button:hover .threshold-arrow {
+  transform: translateX(4px);
+}
+
+/* --------------------------------------------------------------------------
+   10. EDITORIAL FOOTER
+   -------------------------------------------------------------------------- */
+.editorial-footer {
+  padding: 4rem 0 3rem;
+  border-top: 1px solid var(--rule-hairline);
+  background: var(--bg-deep);
+}
+
+.footer-container {
+  max-width: var(--page-max-width);
+  margin: 0 auto;
+  padding: 0 var(--page-gutter);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.footer-brand-lockup {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin-bottom: 0.5rem;
+}
+
+.footer-brand-name {
+  font-family: var(--font-monumental);
+  font-size: 1.25rem;
+  letter-spacing: 0.05em;
+  color: #FFFFFF;
+}
+
+.footer-tagline-text {
+  font-size: 0.8rem;
+  color: var(--text-tertiary);
+}
+
+.footer-links-col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.5rem;
+}
+
+.footer-nav {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.footer-nav a:hover {
+  color: #FFFFFF;
+}
+
+.nav-sep {
+  color: var(--text-quaternary);
+}
+
+.footer-legal-copy {
+  font-size: 0.72rem;
+  color: var(--text-quaternary);
+}
+
+/* --------------------------------------------------------------------------
+   11. KEYFRAMES & ANIMATIONS
+   -------------------------------------------------------------------------- */
+@keyframes pulseBeacon {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.35); opacity: 0.55; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* --------------------------------------------------------------------------
+   12. RESPONSIVE BREAKPOINTS
+   -------------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+  .hero-metadata-bar {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .center-col {
+    grid-column: span 2;
+  }
+  .memory-spatial-field {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .memory-convergence-axis {
+    display: none;
+  }
+  .stage-main-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .stage-figure-col {
+    align-items: flex-start;
+  }
+  .footer-links-col {
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Navigation on mobile */
+  .nav-telemetry,
+  .nav-link-subtle {
+    display: none;
+  }
+  .system-nav-wrapper {
+    padding: 0.5rem 0.85rem;
+  }
+  .system-nav {
+    padding: 0.5rem 0.85rem;
+  }
+  .brand-en {
+    font-size: 1.05rem;
+  }
+  .brand-hi {
+    display: none;
+  }
+  .nav-cta-pill {
+    padding: 0.45rem 0.95rem;
+    font-size: 0.75rem;
+    min-height: 40px;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  /* Hero adjustments */
+  .hero-art-stage {
+    padding: 1.5rem 1rem 2.5rem;
+  }
+  .hero-seal-disk {
+    width: min(300px, 85vw);
+    height: min(300px, 85vw);
+  }
+  .monumental-title {
+    font-size: clamp(3.6rem, 17vw, 6.5rem);
+    letter-spacing: -0.015em;
+  }
+  .hero-thesis-statement {
+    font-size: 0.92rem;
+    padding: 0 0.5rem;
+  }
+
+  /* Slab Stage & Container */
+  .hero-slab-stage {
+    padding: 0 0.85rem;
+  }
+  .hero-focal-wrapper {
+    max-width: 100%;
+  }
+  .living-khata-folio {
+    border-radius: 12px;
+  }
+  .folio-masthead {
+    padding: 1.1rem 1.1rem;
+  }
+  .folio-household-title {
+    font-size: 1.1rem;
+    line-height: 1.35;
+  }
+  .period-tag {
+    font-size: 0.75rem;
+  }
+
+  /* Mobile Slab Recomposition (Requirement #26 & #46) */
+  .folio-grid-legend {
+    display: none;
+  }
+
+  /* Historical Rows: 2-row card grid (Date+Status / Desc+Amount) */
+  .folio-entry-row {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-areas:
+      "date status"
+      "desc amount";
+    gap: 0.45rem 0.85rem;
+    padding: 1rem 1.1rem;
+    align-items: baseline;
+  }
+  .entry-date-cell {
+    grid-area: date;
+    font-size: 0.75rem;
+  }
+  .entry-status-cell {
+    grid-area: status;
+    text-align: right;
+  }
+  .entry-desc-cell {
+    grid-area: desc;
+  }
+  .entry-amount-cell {
+    grid-area: amount;
+    text-align: right;
+    align-self: center;
+  }
+  .amount-val {
+    font-size: 1.15rem;
+  }
+
+  /* Active Row Mobile Recomposition */
+  .active-entry-grid {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-areas:
+      "date status"
+      "desc desc"
+      "amount amount";
+    gap: 0.5rem 0.85rem;
+    padding: 1.15rem 1.1rem 0.75rem;
+  }
+  .active-date-cell {
+    grid-area: date;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.35rem;
+  }
+  .active-status-cell {
+    grid-area: status;
+    justify-content: flex-end;
+  }
+  .active-desc-cell {
+    grid-area: desc;
+  }
+  .active-task-heading {
+    font-size: 1.15rem;
+  }
+  .active-amount-cell {
+    grid-area: amount;
+    text-align: left;
+    margin-top: 0.2rem;
+  }
+  .active-val-display {
+    font-size: 1.85rem;
+  }
+
+  /* Mobile Review Bar: Full-width touch targets >= 48px */
+  .active-review-bar {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.85rem;
+    padding: 0.95rem 1.1rem 1.25rem;
+  }
+  .review-prompt-group {
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+  .review-actions-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.65rem;
+    width: 100%;
+  }
+  .btn-review-action {
+    justify-content: center;
+    min-height: 48px;
+    padding: 0.65rem 0.5rem;
+    font-size: 0.82rem;
+  }
+
+  /* Balance Footer Mobile */
+  .folio-balance-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1.15rem;
+    padding: 1.2rem 1.1rem;
+  }
+  .balance-figure-stack {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    width: 100%;
+    padding-top: 0.75rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+  }
+  .balance-large-ticker {
+    font-size: 2.25rem;
+  }
+
+  /* Hero bottom telemetry */
+  .hero-bottom-telemetry {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.25rem;
+    padding: 1.5rem 1rem;
+  }
+
+  /* Movement 03: Editorial Lockup & Stepper */
+  .consensus-editorial-lockup {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+  }
+  .lockup-cross-wrapper {
+    margin: 0.25rem 0;
+  }
+  .consensus-stepper-nav {
+    display: flex;
+    gap: 0.5rem;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 0.4rem;
+    width: 100%;
+  }
+  .stepper-connector {
+    display: none;
+  }
+  .stepper-tab {
+    flex: 0 0 auto;
+    padding: 0.55rem 0.85rem;
+    font-size: 0.75rem;
+    flex-direction: row;
+    gap: 0.45rem;
+    text-align: left;
+    min-height: 44px;
+    align-items: center;
+  }
+  .consensus-stage-card {
+    border-radius: 12px;
+  }
+  .stage-card-body {
+    padding: 1.25rem 1rem;
+  }
+  .stage-telemetry-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  .stage-main-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .stage-figure-col {
+    align-items: flex-start;
+    margin-top: 0.35rem;
+  }
+  .stage-amount-display {
+    font-size: 2rem;
+  }
+  .stage-simulator-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.65rem;
+  }
+  .sim-btn-group {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.35rem;
+    width: 100%;
+  }
+  .sim-btn {
+    min-height: 44px;
+    padding: 0.45rem 0.25rem;
+    font-size: 0.72rem;
+    text-align: center;
+  }
+
+  /* Movement 04: Math Strip */
+  .hisaab-equation-strip {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    width: 100%;
+  }
+  .eq-operator {
+    display: none;
+  }
+  .eq-block {
+    width: 100%;
+  }
+  .climax-display-numeral {
+    font-size: clamp(3.2rem, 16vw, 5.5rem);
+  }
+  .climax-dual-signatures {
+    flex-direction: column;
+    gap: 0.75rem;
+    align-items: center;
+  }
+  .sig-divider {
+    width: 40px;
+    height: 1px;
+    margin: 0.25rem 0;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   13. ACCESSIBILITY: PREFERS-REDUCED-MOTION
+   -------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

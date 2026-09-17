@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1800" viewBox="0 0 1600 1800" font-family="'Inter', -apple-system, BlinkMacSystemFont, sans-serif">
+  <title>05 — Design System &amp; Tokens | SevaKhata Figma Master</title>
+  <defs>
+    <style>
+      .monumental { font-family: 'Bebas Neue', -apple-system, sans-serif; text-transform: uppercase; }
+      .editorial { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; }
+      .hindi { font-family: 'Noto Sans Devanagari', -apple-system, sans-serif; }
+      .tabular { font-feature-settings: 'tnum'; font-variant-numeric: tabular-nums; }
+    </style>
+  </defs>
+
+  <!-- Canvas Background -->
+  <rect id="Tokens / Background" width="1600" height="1800" fill="#08080A"/>
+
+  <!-- Architectural Masthead -->
+  <g id="Tokens / Header" transform="translate(80, 70)">
+    <text x="0" y="0" class="monumental" font-size="14" fill="#E11D48">05 / DESIGN SYSTEM &amp; TOKENS</text>
+    <text x="0" y="36" class="editorial" font-size="36" font-weight="800" fill="#FFFFFF">Tokens, Typography &amp; Variables</text>
+    <text x="0" y="66" class="editorial" font-size="14" font-weight="400" fill="#FFFFFF" fill-opacity="0.6">
+      Direct semantic extraction from style.css. All colors, text styles, and geometric rules match the implemented production site.
+    </text>
+    <line x1="0" y1="95" x2="1440" y2="95" stroke="#FFFFFF" stroke-opacity="0.1" stroke-width="1"/>
+  </g>
+
+  <!-- ======================================================== -->
+  <!-- 01. COLOR VARIABLES & SEMANTIC TOKENS                    -->
+  <!-- ======================================================== -->
+  <g id="Section / Color Tokens" transform="translate(80, 220)">
+    <text x="0" y="0" class="editorial" font-size="12" font-weight="700" letter-spacing="0.14em" fill="#34D399">01 · COLOR TOKENS &amp; FIGMA VARIABLES</text>
+
+    <!-- Surfaces Group -->
+    <g transform="translate(0, 30)">
+      <!-- Base Canvas -->
+      <g id="Token / color-bg-canvas">
+        <rect width="165" height="110" rx="8" fill="#0C0C0E" stroke="#FFFFFF" stroke-opacity="0.15"/>
+        <text x="14" y="70" class="editorial" font-size="11" font-weight="700" fill="#FFFFFF">color/bg/canvas</text>
+        <text x="14" y="90" class="editorial" font-size="11" font-weight="400" fill="#FFFFFF" fill-opacity="0.5">#0C0C0E · 100%</text>
+      </g>
+
+      <!-- Deep Background -->
+      <g id="Token / color-bg-deep" transform="translate(180, 0)">
+        <rect width="165" height="110" rx="8" fill="#08080A" stroke="#FFFFFF" stroke-opacity="0.15"/>
+        <text x="14" y="70" class="editorial" font-size="11" font-weight="700" fill="#FFFFFF">color/bg/deep</text>
+        <text x="14" y="90" class="editorial" font-size="11" font-weight="400" fill="#FFFFFF" fill-opacity="0.5">#08080A · 100%</text>
+      </g>
+
+      <!-- Surface Base -->
+      <g id="Token / color-surface-base" transform="translate(360, 0)">
+        <rect width="165" height="110" rx="8" fill="#111115" stroke="#FFFFFF" stroke-opacity="0.15"/>
+        <text x="14" y="70" class="editorial" font-size="11" font-weight="700" fill="#FFFFFF">color/surface/base</text>
+        <text x="14" y="90" class="editorial" font-size="11" font-weight="400" fill="#FFFFFF" fill-opacity="0.5">#111115 · 100%</text>
+      </g>
+
+      <!-- Surface Elevated -->
+      <g id="Token / color-surface-elevated" transform="translate(540, 0)">
+        <rect width="165" height="110" rx="8" fill="#16161C" stroke="#FFFFFF" stroke-opacity="0.15"/>
+        <text x="14" y="70" class="editorial" font-size="11" font-weight="700" fill="#FFFFFF">color/surface/elevated</text>
+        <text x="14" y="90" class="editorial" font-size="11" font-weight="400" fill="#FFFFFF" fill-opacity="0.5">#16161C · 100%</text>
+      </g>
+
+      <!-- Heritage Crimson Spine -->
+      <g id="Token / color-khata-crimson" transform="translate(720, 0)">
+        <rect width="165" height="110" rx="8" fill="#E11D48"/>
+        <text x="14" y="70" class="editorial" font-size="11" font-weight="700" fill="#FFFFFF">color/khata/crimson</text>
+        <text x="14" y="90" class="editorial" font-size="11" font-weight="400" fill="#FFFFFF" fill-opacity="0.8">#E11D48 · Spine</text>
+      </g>
+
+      <!-- Seal Crimson -->
+      <g id="Token / color-khata-seal" transform="translate(900, 0)">
+        <rect width="165" height="110" rx="8" fill="#C8202B"/>
+        <text x="14" y="70" class="editorial" font-size="11" font-weight="700" fill="#FFFFFF">color/khata/seal</text>
+        <text x="14" y="90" class="editorial" font-size="11" font-weight="400" fill="#FFFFFF" fill-opacity="0.8">#C8202B · Disk</text>
+      </g>
+    </g>
+
+    <!-- Semantic States Group -->
+    <g transform="translate(0, 160)">
+      <!-- Confirmed Emerald -->
+      <g id="Token / color-state-confirmed">
+        <rect width="165" height="110" rx="8" fill="#059669"/>
+        <text x="14" y="70" class="editorial" font-size="11" font-weight="700" fill="#FFFFFF">color/state/confirmed</text>
+        <text x="14" y="90" class="editorial" font-size="11" font-weight="400" fill="#FFFFFF" fill-opacity="0.85">#059669 · Emerald</text>
+      </g>
+
+      <!-- Confirmed Bright -->
+      <g id="Token / color-state-confirmed-bright" transform="translate(180, 0)">
+        <rect width="165" height="110" rx="8" fill="#34D399"/>
+        <text x="14" y="70" class="editorial" font-size="11" font-weight="700" fill="#0C0C0E">color/text/confirmed</text>
+        <text x="14" y="90" class="editorial" font-size="11" font-weight="600" fill="#0C0C0E" fill-opacity="0.7">#34D399 · Light Text</text>
+      </g>
+
+      <!-- Pending Amber -->
+      <g id="Token / color-state-pending" transform="translate(360, 0)">
+        <rect width="165" height="110" rx="8" fill="#F59E0B"/>
+        <text x="14" y="70" class="editorial" font-size="11" font-weight="700" fill="#0C0C0E">color/state/pending</text>
+        <text x="14" y="90" class="editorial" font-size="11" font-weight="600" fill="#0C0C0E" fill-opacity="0.7">#F59E0B · Amber</text>
+      </g>
+
+      <!-- Disputed Rose -->
+      <g id="Token / color-state-disputed" transform="translate(540, 0)">
+        <rect width="165" height="110" rx="8" fill="#EF4444"/>
+        <text x="14" y="70" class="editorial" font-size="11" font-weight="700" fill="#FFFFFF">color/state/disputed</text>
+        <text x="14" y="90" class="editorial" font-size="11" font-weight="400" fill="#FFFFFF" fill-opacity="0.85">#EF4444 · Rose Core</text>
+      </g>
+
+      <!-- Hairline Border -->
+      <g id="Token / color-border-subtle" transform="translate(720, 0)">
+        <rect width="165" height="110" rx="8" fill="#111115" stroke="#FFFFFF" stroke-opacity="0.08" stroke-width="2"/>
+        <text x="14" y="70" class="editorial" font-size="11" font-weight="700" fill="#FFFFFF">color/border/subtle</text>
+        <text x="14" y="90" class="editorial" font-size="11" font-weight="400" fill="#FFFFFF" fill-opacity="0.5">rgba(255,255,255,0.08)</text>
+      </g>
+
+      <!-- Bright Border -->
+      <g id="Token / color-border-bright" transform="translate(900, 0)">
+        <rect width="165" height="110" rx="8" fill="#111115" stroke="#FFFFFF" stroke-opacity="0.16" stroke-width="2"/>
+        <text x="14" y="70" class="editorial" font-size="11" font-weight="700" fill="#FFFFFF">color/border/bright</text>
+        <text x="14" y="90" class="editorial" font-size="11" font-weight="400" fill="#FFFFFF" fill-opacity="0.5">rgba(255,255,255,0.16)</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- ======================================================== -->
+  <!-- 02. TYPOGRAPHY SCALE & TEXT STYLES                       -->
+  <!-- ======================================================== -->
+  <g id="Section / Typography Scale" transform="translate(80, 560)">
+    <text x="0" y="0" class="editorial" font-size="12" font-weight="700" letter-spacing="0.14em" fill="#34D399">02 · TYPOGRAPHIC HIERARCHY &amp; STYLES</text>
+
+    <!-- Type Rows -->
+    <g transform="translate(0, 30)">
+      
+      <!-- Monumental Display XL -->
+      <g id="Style / Display-XL" transform="translate(0, 0)">
+        <text x="0" y="45" class="editorial" font-size="11" font-weight="700" letter-spacing="0.1em" fill="#E11D48">DISPLAY / MONUMENTAL XL</text>
+        <text x="0" y="65" class="editorial" font-size="11" font-weight="400" fill="#FFFFFF" fill-opacity="0.4">Bebas Neue · 185px · Caps</text>
+        <text x="340" y="55" class="monumental" font-size="72" fill="#FFFFFF">SEVAKHATA</text>
+        <line x1="0" y1="80" x2="1440" y2="80" stroke="#FFFFFF" stroke-opacity="0.06"/>
+      </g>
+
+      <!-- Numeric Hero Tabular -->
+      <g id="Style / Numeric-Hero" transform="translate(0, 95)">
+        <text x="0" y="45" class="editorial" font-size="11" font-weight="700" letter-spacing="0.1em" fill="#34D399">NUMERIC / HERO CLIMAX</text>
+        <text x="0" y="65" class="editorial" font-size="11" font-weight="400" fill="#FFFFFF" fill-opacity="0.4">Bebas Neue · 160px · Tabular</text>
+        <text x="340" y="60" class="monumental tabular" font-size="70" fill="#FFFFFF">₹3,000</text>
+        <line x1="0" y1="85" x2="1440" y2="85" stroke="#FFFFFF" stroke-opacity="0.06"/>
+      </g>
+
+      <!-- Heading L -->
+      <g id="Style / Heading-L" transform="translate(0, 195)">
+        <text x="0" y="30" class="editorial" font-size="11" font-weight="700" letter-spacing="0.1em" fill="#FFFFFF" fill-opacity="0.6">HEADING / L</text>
+        <text x="0" y="50" class="editorial" font-size="11" font-weight="400" fill="#FFFFFF" fill-opacity="0.4">Inter · 40px · Weight 800</text>
+        <text x="340" y="40" class="editorial" font-size="34" font-weight="800" fill="#FFFFFF">Two separate memories create contradiction.</text>
+        <line x1="0" y1="70" x2="1440" y2="70" stroke="#FFFFFF" stroke-opacity="0.06"/>
+      </g>
+
+      <!-- Hindi Authentic Headline -->
+      <g id="Style / Hindi-Headline" transform="translate(0, 280)">
+        <text x="0" y="30" class="editorial" font-size="11" font-weight="700" letter-spacing="0.1em" fill="#34D399">HINDI / AUTHENTIC DISPLAY</text>
+        <text x="0" y="50" class="editorial" font-size="11" font-weight="400" fill="#FFFFFF" fill-opacity="0.4">Noto Sans Devanagari · 44px</text>
+        <text x="340" y="42" class="hindi" font-size="36" font-weight="700" fill="#FFFFFF">
+          अगली पेसगी, रसीद के साथ। अगला महीना, बिना संकोच।
+        </text>
+        <line x1="0" y1="75" x2="1440" y2="75" stroke="#FFFFFF" stroke-opacity="0.06"/>
+      </g>
+
+      <!-- Body M -->
+      <g id="Style / Body-M" transform="translate(0, 370)">
+        <text x="0" y="24" class="editorial" font-size="11" font-weight="700" letter-spacing="0.1em" fill="#FFFFFF" fill-opacity="0.6">BODY / M</text>
+        <text x="0" y="44" class="editorial" font-size="11" font-weight="400" fill="#FFFFFF" fill-opacity="0.4">Inter · 15px · Weight 400</text>
+        <text x="340" y="30" class="editorial" font-size="15" font-weight="400" fill="#FFFFFF" fill-opacity="0.8">
+          The shared digital work-and-payment ledger between domestic employers and helpers.
+        </text>
+        <line x1="0" y1="65" x2="1440" y2="65" stroke="#FFFFFF" stroke-opacity="0.06"/>
+      </g>
+
+      <!-- Label Metadata XS -->
+      <g id="Style / Label-XS" transform="translate(0, 450)">
+        <text x="0" y="24" class="editorial" font-size="11" font-weight="700" letter-spacing="0.1em" fill="#FFFFFF" fill-opacity="0.6">LABEL / METADATA XS</text>
+        <text x="0" y="44" class="editorial" font-size="11" font-weight="400" fill="#FFFFFF" fill-opacity="0.4">Inter · 10px · Weight 800</text>
+        <text x="340" y="30" class="editorial" font-size="11" font-weight="800" letter-spacing="0.14em" fill="#34D399">
+          RECORD NO. 42 · CONFIRMED ENTRY · AUGUST 2026
+        </text>
+        <line x1="0" y1="65" x2="1440" y2="65" stroke="#FFFFFF" stroke-opacity="0.06"/>
+      </g>
+
+    </g>
+  </g>
+
+  <!-- ======================================================== -->
+  <!-- 03. SPACING LADDER & CORNER RADII                        -->
+  <!-- ======================================================== -->
+  <g id="Section / Spacing &amp; Geometry" transform="translate(80, 1140)">
+    <text x="0" y="0" class="editorial" font-size="12" font-weight="700" letter-spacing="0.14em" fill="#34D399">03 · SPACING LADDER &amp; CORNER RADII</text>
+
+    <!-- Spacing Steps -->
+    <g transform="translate(0, 30)">
+      <!-- 4px -->
+      <g transform="translate(0, 0)">
+        <rect width="4" height="60" fill="#E11D48"/>
+        <text x="0" y="80" class="editorial" font-size="10" font-weight="700" fill="#FFFFFF">4px</text>
+      </g>
+      <!-- 8px -->
+      <g transform="translate(40, 0)">
+        <rect width="8" height="60" fill="#E11D48"/>
+        <text x="0" y="80" class="editorial" font-size="10" font-weight="700" fill="#FFFFFF">8px</text>
+      </g>
+      <!-- 12px -->
+      <g transform="translate(80, 0)">
+        <rect width="12" height="60" fill="#E11D48"/>
+        <text x="0" y="80" class="editorial" font-size="10" font-weight="700" fill="#FFFFFF">12px</text>
+      </g>
+      <!-- 16px -->
+      <g transform="translate(130, 0)">
+        <rect width="16" height="60" fill="#E11D48"/>
+        <text x="0" y="80" class="editorial" font-size="10" font-weight="700" fill="#FFFFFF">16px</text>
+      </g>
+      <!-- 24px -->
+      <g transform="translate(190, 0)">
+        <rect width="24" height="60" fill="#E11D48"/>
+        <text x="0" y="80" class="editorial" font-size="10" font-weight="700" fill="#FFFFFF">24px</text>
+      </g>
+      <!-- 32px -->
+      <g transform="translate(260, 0)">
+        <rect width="32" height="60" fill="#E11D48"/>
+        <text x="0" y="80" class="editorial" font-size="10" font-weight="700" fill="#FFFFFF">32px</text>
+      </g>
+      <!-- 48px -->
+      <g transform="translate(340, 0)">
+        <rect width="48" height="60" fill="#E11D48"/>
+        <text x="0" y="80" class="editorial" font-size="10" font-weight="700" fill="#FFFFFF">48px</text>
+      </g>
+      <!-- 64px -->
+      <g transform="translate(430, 0)">
+        <rect width="64" height="60" fill="#E11D48"/>
+        <text x="0" y="80" class="editorial" font-size="10" font-weight="700" fill="#FFFFFF">64px</text>
+      </g>
+    </g>
+
+    <!-- Corner Radii Samples -->
+    <g transform="translate(680, 30)">
+      <!-- Radius 6px -->
+      <g transform="translate(0, 0)">
+        <rect width="70" height="60" rx="6" fill="#111115" stroke="#FFFFFF" stroke-opacity="0.2"/>
+        <text x="14" y="34" class="editorial" font-size="11" font-weight="600" fill="#FFFFFF">6px</text>
+      </g>
+      <!-- Radius 12px -->
+      <g transform="translate(90, 0)">
+        <rect width="70" height="60" rx="12" fill="#111115" stroke="#FFFFFF" stroke-opacity="0.2"/>
+        <text x="14" y="34" class="editorial" font-size="11" font-weight="600" fill="#FFFFFF">12px</text>
+      </g>
+      <!-- Radius 16px -->
+      <g transform="translate(180, 0)">
+        <rect width="70" height="60" rx="16" fill="#111115" stroke="#FFFFFF" stroke-opacity="0.2"/>
+        <text x="14" y="34" class="editorial" font-size="11" font-weight="600" fill="#FFFFFF">16px</text>
+      </g>
+      <!-- Radius 26px (Full Pill) -->
+      <g transform="translate(270, 0)">
+        <rect width="120" height="52" rx="26" fill="#FFFFFF"/>
+        <text x="24" y="32" class="editorial" font-size="12" font-weight="700" fill="#0C0C0E">Pill 26px</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- ======================================================== -->
+  <!-- 04. ELEVATION & SHADOW SYSTEM                            -->
+  <!-- ======================================================== -->
+  <g id="Section / Elevation" transform="translate(80, 1340)">
+    <text x="0" y="0" class="editorial" font-size="12" font-weight="700" letter-spacing="0.14em" fill="#34D399">04 · ELEVATION &amp; ATMOSPHERIC SHADOWS</text>
+
+    <g transform="translate(0, 30)">
+      <!-- Elevation 01: Flat Card -->
+      <g transform="translate(0, 0)">
+        <rect width="320" height="120" rx="12" fill="#111115" stroke="#FFFFFF" stroke-opacity="0.08"/>
+        <text x="24" y="44" class="editorial" font-size="13" font-weight="700" fill="#FFFFFF">Elevation 01 · Flat Surface</text>
+        <text x="24" y="68" class="editorial" font-size="11" font-weight="400" fill="#FFFFFF" fill-opacity="0.5">
+          Border: 1px subtle · No drop shadow
+        </text>
+      </g>
+
+      <!-- Elevation 02: Living Slab (Deep Spatial Elevation) -->
+      <g transform="translate(360, 0)">
+        <rect width="360" height="120" rx="12" fill="#111115" stroke="#FFFFFF" stroke-opacity="0.16"/>
+        <text x="24" y="44" class="editorial" font-size="13" font-weight="700" fill="#FFFFFF">Elevation 02 · The Living Slab</text>
+        <text x="24" y="68" class="editorial" font-size="11" font-weight="400" fill="#FFFFFF" fill-opacity="0.5">
+          Y: 32px · Blur: 40px · Opacity: 0.85 Black
+        </text>
+        <text x="24" y="88" class="editorial" font-size="11" font-weight="400" fill="#FFFFFF" fill-opacity="0.5">
+          Secondary: Y: 4px · Blur: 12px · Opacity: 0.4
+        </text>
+      </g>
+
+      <!-- Elevation 03: Climax Glow -->
+      <g transform="translate(760, 0)">
+        <rect width="360" height="120" rx="12" fill="#111115" stroke="#059669" stroke-opacity="0.4"/>
+        <text x="24" y="44" class="editorial" font-size="13" font-weight="700" fill="#34D399">Elevation 03 · Emerald Invariant Glow</text>
+        <text x="24" y="68" class="editorial" font-size="11" font-weight="400" fill="#FFFFFF" fill-opacity="0.5">
+          Blur: 24px · Flood: #059669 · Opacity: 0.4
+        </text>
+      </g>
+    </g>
+  </g>
+
+</svg>

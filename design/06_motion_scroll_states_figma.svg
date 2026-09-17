@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="3400" viewBox="0 0 1600 3400" font-family="'Inter', -apple-system, BlinkMacSystemFont, sans-serif">
+  <title>06 — Motion / Scroll States | SevaKhata Figma Master</title>
+  <defs>
+    <style>
+      .monumental { font-family: 'Bebas Neue', -apple-system, sans-serif; text-transform: uppercase; }
+      .editorial { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; }
+      .hindi { font-family: 'Noto Sans Devanagari', -apple-system, sans-serif; }
+      .tabular { font-feature-settings: 'tnum'; font-variant-numeric: tabular-nums; }
+    </style>
+  </defs>
+
+  <!-- Background Canvas -->
+  <rect id="Motion / Background" width="1600" height="3400" fill="#08080A"/>
+
+  <!-- Masthead -->
+  <g id="Motion / Header" transform="translate(80, 70)">
+    <text x="0" y="0" class="monumental" font-size="14" fill="#E11D48">06 / MOTION ARCHITECTURE &amp; PROTOTYPE STATES</text>
+    <text x="0" y="36" class="editorial" font-size="36" font-weight="800" fill="#FFFFFF">Scroll Transitions &amp; State Machine</text>
+    <text x="0" y="66" class="editorial" font-size="14" font-weight="400" fill="#FFFFFF" fill-opacity="0.6">
+      Specification for Figma Smart Animate and CSS transitions. Exact trigger definitions, start/end properties, and interactive states.
+    </text>
+    <line x1="0" y1="95" x2="1440" y2="95" stroke="#FFFFFF" stroke-opacity="0.1" stroke-width="1"/>
+  </g>
+
+  <!-- ======================================================== -->
+  <!-- TRANSITION 01: HERO MONUMENTAL TO SLAB SETTLE           -->
+  <!-- ======================================================== -->
+  <g id="Motion / Transition 01" transform="translate(80, 220)">
+    <text x="0" y="0" class="editorial" font-size="13" font-weight="700" letter-spacing="0.14em" fill="#34D399">
+      TRANSITION 01: MONUMENTAL REVEAL → LIVING SLAB SETTLE
+    </text>
+
+    <!-- State Frame 00: Initial Hero -->
+    <g id="State / Hero-00-Initial" transform="translate(0, 30)">
+      <rect width="690" height="380" rx="14" fill="#111115" stroke="#FFFFFF" stroke-opacity="0.12"/>
+      <text x="24" y="32" class="editorial" font-size="11" font-weight="700" letter-spacing="0.1em" fill="#E11D48">
+        STATE 00 · INITIAL HERO VIEWPORT (SCROLL = 0px)
+      </text>
+
+      <!-- Mini Graphic -->
+      <circle cx="345" cy="180" r="110" fill="#C8202B" fill-opacity="0.2"/>
+      <text x="345" y="195" text-anchor="middle" class="monumental" font-size="64" fill="#FFFFFF">SEVAKHATA</text>
+      <text x="345" y="225" text-anchor="middle" class="editorial" font-size="12" font-weight="700" letter-spacing="0.1em" fill="#FFFFFF" fill-opacity="0.7">
+        DONO KA RECORD · <tspan class="hindi">एक ही हिसाब</tspan>
+      </text>
+
+      <!-- Slab peek at bottom -->
+      <g transform="translate(145, 300)">
+        <rect width="400" height="80" rx="8" fill="#16161C" stroke="#FFFFFF" stroke-opacity="0.1"/>
+        <rect x="0" y="0" width="3" height="80" fill="#E11D48"/>
+        <text x="20" y="30" class="editorial" font-size="11" font-weight="600" fill="#FFFFFF" fill-opacity="0.5">
+          Sharma Household × Sunita Sharma [Peeking into view]
+        </text>
+      </g>
+    </g>
+
+    <!-- State Frame 01: Slab Settled -->
+    <g id="State / Hero-01-Settled" transform="translate(750, 30)">
+      <rect width="690" height="380" rx="14" fill="#111115" stroke="#059669" stroke-opacity="0.3"/>
+      <text x="24" y="32" class="editorial" font-size="11" font-weight="700" letter-spacing="0.1em" fill="#34D399">
+        STATE 01 · SLAB SETTLED IN PRIMARY FOCAL FIELD (SCROLL = 420px)
+      </text>
+
+      <!-- Faded title -->
+      <text x="345" y="90" text-anchor="middle" class="monumental" font-size="42" fill="#FFFFFF" fill-opacity="0.35">SEVAKHATA</text>
+
+      <!-- Fully settled slab -->
+      <g transform="translate(45, 120)">
+        <rect width="600" height="230" rx="12" fill="#16161C" stroke="#FFFFFF" stroke-opacity="0.2"/>
+        <rect x="0" y="0" width="4" height="230" rx="2" fill="#E11D48"/>
+        <text x="24" y="32" class="editorial" font-size="14" font-weight="700" fill="#FFFFFF">Sharma Household × Sunita Sharma</text>
+        <text x="24" y="52" class="hindi" font-size="11" font-weight="400" fill="#FFFFFF" fill-opacity="0.5">दो फोन · एक साझा हिसाब</text>
+
+        <!-- Active Row in slab -->
+        <g transform="translate(24, 75)">
+          <rect width="552" height="70" rx="6" fill="rgba(245,158,11,0.06)" stroke="#F59E0B" stroke-opacity="0.3"/>
+          <text x="16" y="24" class="editorial" font-size="10" font-weight="800" fill="#F59E0B">TODAY 13 AUG</text>
+          <text x="16" y="44" class="editorial" font-size="13" font-weight="600" fill="#FFFFFF">Full Day Housework &amp; Cooking</text>
+          <text x="536" y="40" text-anchor="end" class="editorial tabular" font-size="20" font-weight="800" fill="#FFFFFF">+₹500</text>
+        </g>
+
+        <!-- Balance -->
+        <g transform="translate(24, 175)">
+          <text x="0" y="26" class="editorial" font-size="12" font-weight="600" fill="#FFFFFF">Shared Balance: ₹3,000</text>
+          <g transform="translate(460, 8)">
+            <rect width="80" height="24" rx="12" fill="rgba(5,150,105,0.15)" stroke="#059669" stroke-opacity="0.4"/>
+            <text x="14" y="16" class="editorial" font-size="10" font-weight="700" fill="#34D399">✓ Sealed</text>
+          </g>
+        </g>
+      </g>
+    </g>
+
+    <!-- Motion Spec Card -->
+    <g id="Spec / Transition-01" transform="translate(0, 430)">
+      <rect width="1440" height="90" rx="10" fill="#0E0E12" stroke="#FFFFFF" stroke-opacity="0.08"/>
+      <g transform="translate(24, 26)">
+        <text x="0" y="14" class="editorial" font-size="11" font-weight="700" letter-spacing="0.1em" fill="#34D399">MOTION SPECIFICATION</text>
+        <text x="0" y="38" class="editorial" font-size="13" font-weight="400" fill="#FFFFFF" fill-opacity="0.8">
+          <tspan font-weight="700" fill="#FFFFFF">Trigger:</tspan> Scroll Progression (0px → 400px)  ·  
+          <tspan font-weight="700" fill="#FFFFFF">Properties:</tspan> Slab translateY(140px → 0px), scale(0.96 → 1.0), opacity(0.7 → 1.0)  ·  
+          <tspan font-weight="700" fill="#FFFFFF">Title:</tspan> scale(1.0 → 0.85), opacity(1.0 → 0.35)  ·  
+          <tspan font-weight="700" fill="#FFFFFF">Figma Smart Animate:</tspan> Ease Out, 350ms
+        </text>
+      </g>
+    </g>
+  </g>
+
+  <!-- ======================================================== -->
+  <!-- TRANSITION 02: THE CONSENSUS DIRECT MANIPULATION         -->
+  <!-- ======================================================== -->
+  <g id="Motion / Transition 02" transform="translate(80, 800)">
+    <text x="0" y="0" class="editorial" font-size="13" font-weight="700" letter-spacing="0.14em" fill="#34D399">
+      TRANSITION 02: DIRECT MANIPULATION STATE MACHINE (CONSENSUS ENGINE)
+    </text>
+
+    <!-- 4 Sequential States -->
+    <g transform="translate(0, 30)">
+      
+      <!-- State 00: Logged (Quarantined) -->
+      <g id="State / Consensus-00-Logged" transform="translate(0, 0)">
+        <rect width="345" height="340" rx="12" fill="#111115" stroke="#F59E0B" stroke-opacity="0.3"/>
+        <rect x="0" y="0" width="3" height="340" fill="#F59E0B"/>
+        <text x="18" y="28" class="editorial" font-size="10" font-weight="800" letter-spacing="0.08em" fill="#F59E0B">STATE 00 · LOGGED</text>
+
+        <g transform="translate(18, 50)">
+          <rect width="180" height="22" rx="11" fill="rgba(245,158,11,0.15)" stroke="#F59E0B" stroke-opacity="0.4"/>
+          <text x="10" y="15" class="editorial" font-size="9" font-weight="800" fill="#FBBF24">QUARANTINE (₹0 ON BALANCE)</text>
+
+          <text x="0" y="55" class="editorial" font-size="14" font-weight="700" fill="#FFFFFF">Full Day Work Logged</text>
+          <text x="0" y="75" class="editorial" font-size="11" font-weight="400" fill="#FFFFFF" fill-opacity="0.6" width="300">
+            Recorded by Sharma Ji. Carries ₹0.00 financial weight until confirmed.
+          </text>
+
+          <text x="0" y="130" class="editorial tabular" font-size="28" font-weight="900" fill="#FFFFFF">+₹500</text>
+          <text x="0" y="150" class="editorial" font-size="11" font-weight="600" fill="#F59E0B">Impact: ₹0.00</text>
+        </g>
+
+        <!-- Status -->
+        <g transform="translate(18, 275)">
+          <rect width="309" height="36" rx="6" fill="#08080A"/>
+          <text x="14" y="22" class="editorial" font-size="11" font-weight="600" fill="#FFFFFF" fill-opacity="0.4">Awaiting Helper Action...</text>
+        </g>
+      </g>
+
+      <!-- State 01: Helper Prompt Active -->
+      <g id="State / Consensus-01-Review" transform="translate(365, 0)">
+        <rect width="345" height="340" rx="12" fill="#111115" stroke="#FFFFFF" stroke-opacity="0.16"/>
+        <rect x="0" y="0" width="3" height="340" fill="#FFFFFF" fill-opacity="0.4"/>
+        <text x="18" y="28" class="editorial" font-size="10" font-weight="800" letter-spacing="0.08em" fill="#FFFFFF">STATE 01 · REVIEW PROMPT</text>
+
+        <g transform="translate(18, 50)">
+          <text x="0" y="20" class="editorial" font-size="11" font-weight="600" fill="#FFFFFF" fill-opacity="0.5">Sunita's Phone Notification:</text>
+          <text x="0" y="45" class="hindi" font-size="15" font-weight="600" fill="#FFFFFF">क्या 13 अगस्त का यह काम सही है?</text>
+          
+          <text x="0" y="85" class="editorial" font-size="12" font-weight="400" fill="#FFFFFF" fill-opacity="0.6">
+            1 Full Day Cooking &amp; Housework (+₹500)
+          </text>
+        </g>
+
+        <!-- Interactive Buttons -->
+        <g transform="translate(18, 230)">
+          <rect width="148" height="44" rx="6" fill="#059669"/>
+          <text x="16" y="27" class="editorial" font-size="12" font-weight="700" fill="#FFFFFF">✓ Sahi Hai · सही है</text>
+
+          <rect x="160" width="148" height="44" rx="6" fill="none" stroke="#FFFFFF" stroke-opacity="0.2"/>
+          <text x="176" y="27" class="editorial" font-size="12" font-weight="700" fill="#FFFFFF" fill-opacity="0.7">✕ Galat · गलत है</text>
+        </g>
+
+        <g transform="translate(18, 290)">
+          <text x="0" y="20" class="editorial" font-size="10" font-weight="600" fill="#34D399">← Click Sahi Hai to trigger State 02</text>
+        </g>
+      </g>
+
+      <!-- State 02: Confirmed (Sahi Hai Pressed) -->
+      <g id="State / Consensus-02-Confirmed" transform="translate(730, 0)">
+        <rect width="345" height="340" rx="12" fill="#111115" stroke="#059669" stroke-opacity="0.4"/>
+        <rect x="0" y="0" width="3" height="340" fill="#059669"/>
+        <text x="18" y="28" class="editorial" font-size="10" font-weight="800" letter-spacing="0.08em" fill="#34D399">STATE 02 · MUTUALLY CONFIRMED</text>
+
+        <g transform="translate(18, 50)">
+          <rect width="160" height="22" rx="11" fill="rgba(5,150,105,0.15)" stroke="#059669" stroke-opacity="0.4"/>
+          <text x="10" y="15" class="editorial" font-size="9" font-weight="800" fill="#34D399">✓ COMMITTED TO HISAAB</text>
+
+          <text x="0" y="55" class="editorial" font-size="14" font-weight="700" fill="#FFFFFF">Confirmed by Sunita Didi</text>
+          <text x="0" y="75" class="editorial" font-size="11" font-weight="400" fill="#FFFFFF" fill-opacity="0.6" width="300">
+            Confirmed on mobile at 7:42 PM. Full +₹500 integrated into net balance.
+          </text>
+
+          <text x="0" y="130" class="editorial tabular" font-size="28" font-weight="900" fill="#34D399">+₹500</text>
+          <text x="0" y="150" class="editorial" font-size="11" font-weight="600" fill="#34D399">Shared Balance: ₹3,500</text>
+        </g>
+
+        <!-- Feedback Pill -->
+        <g transform="translate(18, 260)">
+          <rect width="309" height="50" rx="8" fill="rgba(5,150,105,0.1)" stroke="#059669" stroke-opacity="0.3"/>
+          <text x="16" y="30" class="editorial" font-size="12" font-weight="700" fill="#34D399">✓ Dual signatures sealed</text>
+        </g>
+      </g>
+
+      <!-- State 03: Disputed (Galat Hai Pressed) -->
+      <g id="State / Consensus-03-Disputed" transform="translate(1095, 0)">
+        <rect width="345" height="340" rx="12" fill="#111115" stroke="#EF4444" stroke-opacity="0.4"/>
+        <rect x="0" y="0" width="3" height="340" fill="#EF4444"/>
+        <text x="18" y="28" class="editorial" font-size="10" font-weight="800" letter-spacing="0.08em" fill="#F87171">STATE 03 · FLAGGED / DISPUTED</text>
+
+        <g transform="translate(18, 50)">
+          <rect width="180" height="22" rx="11" fill="rgba(239,68,68,0.15)" stroke="#EF4444" stroke-opacity="0.4"/>
+          <text x="10" y="15" class="editorial" font-size="9" font-weight="800" fill="#F87171">✕ EXCLUDED FROM HISAAB</text>
+
+          <text x="0" y="55" class="editorial" font-size="14" font-weight="700" fill="#FFFFFF">Flagged by Sunita Didi</text>
+          <text x="0" y="75" class="editorial" font-size="11" font-weight="400" fill="#FFFFFF" fill-opacity="0.6" width="300">
+            Sunita indicated non-attendance. Kept in review. Balance unaffected at ₹3,000.
+          </text>
+
+          <text x="0" y="130" class="editorial tabular" font-size="28" font-weight="900" fill="#F87171">+₹500 [Held]</text>
+          <text x="0" y="150" class="editorial" font-size="11" font-weight="600" fill="#F87171">Shared Balance: ₹3,000</text>
+        </g>
+
+        <!-- Feedback Pill -->
+        <g transform="translate(18, 260)">
+          <rect width="309" height="50" rx="8" fill="rgba(239,68,68,0.1)" stroke="#EF4444" stroke-opacity="0.3"/>
+          <text x="16" y="30" class="editorial" font-size="12" font-weight="700" fill="#F87171">Flagged · Prompting clarification</text>
+        </g>
+      </g>
+
+    </g>
+
+    <!-- State Machine Spec -->
+    <g id="Spec / Transition-02" transform="translate(0, 390)">
+      <rect width="1440" height="90" rx="10" fill="#0E0E12" stroke="#FFFFFF" stroke-opacity="0.08"/>
+      <g transform="translate(24, 26)">
+        <text x="0" y="14" class="editorial" font-size="11" font-weight="700" letter-spacing="0.1em" fill="#34D399">PROTOTYPE INTERACTION SPECS</text>
+        <text x="0" y="38" class="editorial" font-size="13" font-weight="400" fill="#FFFFFF" fill-opacity="0.8">
+          <tspan font-weight="700" fill="#FFFFFF">Sahi Hai Tap:</tspan> On Click → Navigate to State 02  ·  Smart Animate (Spring, 260ms)  ·  Counter animates ₹3,000 → ₹3,500
+          <tspan font-weight="700" fill="#FFFFFF">Galat Hai Tap:</tspan> On Click → Navigate to State 03  ·  Pill flips to Rose Disputed  ·  Counter remains invariant at ₹3,000
+        </text>
+      </g>
+    </g>
+  </g>
+
+  <!-- ======================================================== -->
+  <!-- TRANSITION 03: HISAAB MATHEMATICAL RESOLUTION            -->
+  <!-- ======================================================== -->
+  <g id="Motion / Transition 03" transform="translate(80, 1370)">
+    <text x="0" y="0" class="editorial" font-size="13" font-weight="700" letter-spacing="0.14em" fill="#34D399">
+      TRANSITION 03: THE HISAAB INVARIANT CLIMAX
+    </text>
+
+    <!-- Side-by-side Base vs Settled -->
+    <g transform="translate(0, 30)">
+      <!-- Base Hisaab -->
+      <g id="State / Hisaab-Base" transform="translate(0, 0)">
+        <rect width="690" height="360" rx="14" fill="#111115" stroke="#FFFFFF" stroke-opacity="0.12"/>
+        <text x="24" y="32" class="editorial" font-size="11" font-weight="700" letter-spacing="0.1em" fill="#FFFFFF" fill-opacity="0.5">
+          BASE HISAAB (TODAY PENDING): ₹3,000 NET PAYABLE
+        </text>
+
+        <g transform="translate(24, 60)">
+          <!-- Eq strip -->
+          <text x="0" y="24" class="editorial" font-size="13" font-weight="600" fill="#FFFFFF">
+            Confirmed Work (+₹4,000) − Confirmed Advance (−₹1,000)
+          </text>
+          <text x="0" y="110" class="monumental tabular" font-size="88" fill="#FFFFFF">₹3,000</text>
+          
+          <g transform="translate(0, 150)">
+            <rect width="320" height="32" rx="16" fill="rgba(255,255,255,0.06)" stroke="#FFFFFF" stroke-opacity="0.15"/>
+            <text x="16" y="20" class="editorial" font-size="11" font-weight="700" fill="#FFFFFF">Ready for 1st Sept Payout</text>
+          </g>
+        </g>
+      </g>
+
+      <!-- Updated Hisaab -->
+      <g id="State / Hisaab-Updated" transform="translate(750, 0)">
+        <rect width="690" height="360" rx="14" fill="#111115" stroke="#059669" stroke-opacity="0.4"/>
+        <text x="24" y="32" class="editorial" font-size="11" font-weight="700" letter-spacing="0.1em" fill="#34D399">
+          LIVE UPDATED HISAAB (TODAY CONFIRMED): ₹3,500 NET PAYABLE
+        </text>
+
+        <g transform="translate(24, 60)">
+          <!-- Eq strip -->
+          <text x="0" y="24" class="editorial" font-size="13" font-weight="600" fill="#FFFFFF">
+            Confirmed Work (+₹4,500) − Confirmed Advance (−₹1,000)
+          </text>
+          <text x="0" y="110" class="monumental tabular" font-size="88" fill="#34D399">₹3,500</text>
+
+          <g transform="translate(0, 150)">
+            <rect width="360" height="32" rx="16" fill="rgba(5,150,105,0.15)" stroke="#059669" stroke-opacity="0.4"/>
+            <text x="16" y="20" class="editorial" font-size="11" font-weight="700" fill="#34D399">✓ 13 Aug Added · Mutually Confirmed</text>
+          </g>
+        </g>
+      </g>
+    </g>
+
+    <!-- Spec -->
+    <g id="Spec / Transition-03" transform="translate(0, 410)">
+      <rect width="1440" height="90" rx="10" fill="#0E0E12" stroke="#FFFFFF" stroke-opacity="0.08"/>
+      <g transform="translate(24, 26)">
+        <text x="0" y="14" class="editorial" font-size="11" font-weight="700" letter-spacing="0.1em" fill="#34D399">NUMERIC SPRING SPECIFICATION</text>
+        <text x="0" y="38" class="editorial" font-size="13" font-weight="400" fill="#FFFFFF" fill-opacity="0.8">
+          <tspan font-weight="700" fill="#FFFFFF">Trigger:</tspan> State 02 Confirmed Event  ·  
+          <tspan font-weight="700" fill="#FFFFFF">Numeral Counter:</tspan> Tabular numeric roll with 260ms spring damping (0.23, 1, 0.32, 1)  ·  
+          <tspan font-weight="700" fill="#FFFFFF">Glow Bloom:</tspan> Emerald halo expands to 32px blur, settles at 24px
+        </text>
+      </g>
+    </g>
+  </g>
+
+</svg>
