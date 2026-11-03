@@ -1,20 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login — SevaKhata (सेवाखाता)</title>
-  <meta name="description" content="Sign in to your shared domestic work and payment ledger. Two phones, one mutual record, clear hisaab.">
+  <meta name="description"
+    content="Sign in to your shared domestic work and payment ledger. Two phones, one mutual record, clear hisaab.">
   <link rel="icon" type="image/svg+xml" href="assets/brand/favicon.svg">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600&family=Noto+Sans+Devanagari:wght@400;500;600;700;800&family=Tiro+Devanagari+Hindi&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600&family=Noto+Sans+Devanagari:wght@400;500;600;700;800&family=Tiro+Devanagari+Hindi&display=swap"
+    rel="stylesheet">
 
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="pages.css">
   <link rel="stylesheet" href="login.css">
 </head>
+
 <body class="editorial-body inner-page login-body" data-page="login">
   <a class="skip-link" href="#main" data-i18n="common.skip">Skip to content</a>
 
@@ -48,7 +53,7 @@
       </a>
       <div class="nav-telemetry" role="status" aria-live="polite">
         <span class="telemetry-beacon"></span>
-        <span class="telemetry-text">Consensus Folio Authentication · August 2026 Audit</span>
+
       </div>
       <div class="nav-links" id="navLinks">
         <a href="index.html#hero" data-i18n="nav.home">Home</a>
@@ -64,7 +69,8 @@
           <button type="button" data-lang="en" aria-pressed="true">EN</button>
           <button type="button" data-lang="hi" lang="hi" aria-pressed="false">हिं</button>
         </div>
-        <button type="button" class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Menu" data-i18n-aria="nav.menu">
+        <button type="button" class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks"
+          aria-label="Menu" data-i18n-aria="nav.menu">
           <span aria-hidden="true">☰</span>
         </button>
       </div>
@@ -78,10 +84,7 @@
       <!-- Left Column: Editorial & Brand Philosophy -->
       <section class="login-editorial" aria-label="Brand Overview">
         <div class="editorial-stamp-anchor">
-          <img src="assets/brand/sevakhata-seal-stamp.svg" alt="Official SevaKhata Mutual Seal" class="rotating-seal">
           <div class="editorial-stamp-tag">
-            <span class="tag-kicker" data-i18n="login.eyebrow">Authentication Folio</span>
-            <span class="tag-sub">Bilateral Trust Ledger</span>
           </div>
         </div>
 
@@ -94,25 +97,17 @@
           </div>
         </div>
 
-        <p class="login-editorial-lead" data-i18n="login.lead">
-          Sign in to access your mutual ledger, review daily work, and verify settlements. What both acknowledge becomes the official truth.
-        </p>
-
-        <!-- Heritage Covenant Card -->
-        <div class="editorial-quote-covenant">
-          <p class="covenant-quote-hi" lang="hi">"जो दोनों मानें, वही हिसाब। अगली पेसगी, रसीद के साथ। अगला महीना, बिना संकोच।"</p>
-          <span class="covenant-attribution">The Consensus Axiom · दोनों का साझा भरोसा</span>
-        </div>
-
         <!-- Telemetry Status Chip -->
         <div class="editorial-telemetry-chip">
           <span class="pulse-dot"></span>
           <span>Bilateral Ledger Sync · Active Node</span>
         </div>
 
-        <div class="login-sync-tools" style="display: flex; align-items: center; gap: 0.75rem; margin-top: 1.25rem; flex-wrap: wrap;">
+        <div class="login-sync-tools"
+          style="display: flex; align-items: center; gap: 0.75rem; margin-top: 1.25rem; flex-wrap: wrap;">
           <span class="sync-badge" data-sync-status role="status">Checking server…</span>
-          <button type="button" class="btn btn-ghost btn-small" data-export="logins" data-i18n="common.exportJson">Export JSON</button>
+          <button type="button" class="btn btn-ghost btn-small" data-export="logins"
+            data-i18n="common.exportJson">Export JSON</button>
         </div>
       </section>
 
@@ -140,12 +135,22 @@
 
             <!-- Mode Switcher (Email ⇄ Mobile OTP) -->
             <div class="auth-mode-switch" role="tablist" aria-label="Sign-in methods">
-              <button type="button" class="auth-tab-btn" id="tabEmail" role="tab" aria-selected="true" aria-controls="paneEmail">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+              <button type="button" class="auth-tab-btn" id="tabEmail" role="tab" aria-selected="true"
+                aria-controls="paneEmail">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" aria-hidden="true">
+                  <rect width="20" height="16" x="2" y="4" rx="2" />
+                  <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                </svg>
                 <span data-i18n="login.tabEmail">Email & Password</span>
               </button>
-              <button type="button" class="auth-tab-btn" id="tabMobile" role="tab" aria-selected="false" aria-controls="paneMobile">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/></svg>
+              <button type="button" class="auth-tab-btn" id="tabMobile" role="tab" aria-selected="false"
+                aria-controls="paneMobile">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" aria-hidden="true">
+                  <rect width="14" height="20" x="5" y="2" rx="2" ry="2" />
+                  <path d="M12 18h.01" />
+                </svg>
                 <span data-i18n="login.tabMobile">Mobile & OTP</span>
               </button>
             </div>
@@ -156,12 +161,17 @@
               <!-- Pane 1: Email Login Form -->
               <div class="auth-pane" id="paneEmail" role="tabpanel" aria-labelledby="tabEmail">
                 <form id="loginEmailForm" novalidate>
-                  
+
                   <div class="field">
                     <label for="loginEmail" data-i18n="login.email">Email address</label>
                     <div class="input-with-icon">
-                      <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-                      <input type="email" id="loginEmail" name="email" required autocomplete="email" placeholder="sharma.household@example.com" data-i18n-placeholder="login.email.ph">
+                      <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <rect width="20" height="16" x="2" y="4" rx="2" />
+                        <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                      </svg>
+                      <input type="email" id="loginEmail" name="email" required autocomplete="email"
+                        placeholder="sharma.household@example.com" data-i18n-placeholder="login.email.ph">
                     </div>
                     <p class="field-error"></p>
                   </div>
@@ -169,11 +179,30 @@
                   <div class="field">
                     <label for="loginPassword" data-i18n="login.password">Password</label>
                     <div class="input-with-icon">
-                      <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-                      <input type="password" id="loginPassword" name="password" required minlength="6" autocomplete="current-password" placeholder="••••••••" data-i18n-placeholder="login.password.ph">
-                      <button type="button" class="btn-toggle-password" id="btnTogglePassword" aria-label="Show password" aria-pressed="false">
-                        <svg class="eye-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
-                        <svg class="eye-closed" style="display:none;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-.722-3.25"/><path d="M2 8a10.645 10.645 0 0 0 20 0"/><path d="m20 15-1.726-2.05"/><path d="m4 15 1.726-2.05"/><path d="m9 18 .722-3.25"/></svg>
+                      <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <rect width="18" height="11" x="3" y="11" rx="2" ry="2" />
+                        <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                      </svg>
+                      <input type="password" id="loginPassword" name="password" required minlength="6"
+                        autocomplete="current-password" placeholder="••••••••"
+                        data-i18n-placeholder="login.password.ph">
+                      <button type="button" class="btn-toggle-password" id="btnTogglePassword"
+                        aria-label="Show password" aria-pressed="false">
+                        <svg class="eye-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                          stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                          <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z" />
+                          <circle cx="12" cy="12" r="3" />
+                        </svg>
+                        <svg class="eye-closed" style="display:none;" viewBox="0 0 24 24" fill="none"
+                          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                          aria-hidden="true">
+                          <path d="m15 18-.722-3.25" />
+                          <path d="M2 8a10.645 10.645 0 0 0 20 0" />
+                          <path d="m20 15-1.726-2.05" />
+                          <path d="m4 15 1.726-2.05" />
+                          <path d="m9 18 .722-3.25" />
+                        </svg>
                       </button>
                     </div>
                     <p class="field-error"></p>
@@ -182,9 +211,11 @@
                   <div class="auth-secondary-bar">
                     <div class="check-field" style="display:flex; align-items:center; gap:0.5rem;">
                       <input type="checkbox" id="loginRemember" name="remember">
-                      <label for="loginRemember" style="margin:0; font-size:0.8rem;" data-i18n="login.remember">Remember this device</label>
+                      <label for="loginRemember" style="margin:0; font-size:0.8rem;" data-i18n="login.remember">Remember
+                        this device</label>
                     </div>
-                    <button type="button" class="btn-link-forgot" id="btnForgotPass" data-i18n="login.forgot">Forgot password?</button>
+                    <button type="button" class="btn-link-forgot" id="btnForgotPass" data-i18n="login.forgot">Forgot
+                      password?</button>
                   </div>
 
                   <button type="submit" class="btn btn-primary btn-auth-submit" id="btnSubmitEmail">
@@ -205,12 +236,19 @@
                       <label for="loginPhone" data-i18n="login.phone">Mobile number</label>
                       <div class="mobile-input-group">
                         <div class="country-code-pill" aria-label="Country code: India +91">
-                          <svg class="flag-in" viewBox="0 0 640 480" aria-hidden="true"><path fill="#f93" d="M0 0h640v160H0z"/><path fill="#fff" d="M0 160h640v160H0z"/><path fill="#128807" d="M0 320h640v160H0z"/><circle cx="320" cy="240" r="40" fill="#008"/></svg>
+                          <svg class="flag-in" viewBox="0 0 640 480" aria-hidden="true">
+                            <path fill="#f93" d="M0 0h640v160H0z" />
+                            <path fill="#fff" d="M0 160h640v160H0z" />
+                            <path fill="#128807" d="M0 320h640v160H0z" />
+                            <circle cx="320" cy="240" r="40" fill="#008" />
+                          </svg>
                           <span>+91</span>
                         </div>
-                        <input type="tel" id="loginPhone" name="phone" inputmode="numeric" pattern="[6-9][0-9]{9}" maxlength="10" placeholder="98100 12345" data-i18n-placeholder="login.phone.ph">
+                        <input type="tel" id="loginPhone" name="phone" inputmode="numeric" pattern="[6-9][0-9]{9}"
+                          maxlength="10" placeholder="98100 12345" data-i18n-placeholder="login.phone.ph">
                       </div>
-                      <p class="hint" data-i18n="login.phone.hint">Enter 10-digit Indian mobile number (starts with 6–9).</p>
+                      <p class="hint" data-i18n="login.phone.hint">Enter 10-digit Indian mobile number (starts with
+                        6–9).</p>
                       <p class="field-error"></p>
                     </div>
 
@@ -225,19 +263,26 @@
                     <div class="otp-verify-stage">
                       <div class="otp-target-meta">
                         <span>Code sent to <strong id="otpTargetPhone">+91 ••••• •••••</strong></span>
-                        <button type="button" class="btn-change-number" id="btnChangePhone" data-i18n="login.changePhone">Change</button>
+                        <button type="button" class="btn-change-number" id="btnChangePhone"
+                          data-i18n="login.changePhone">Change</button>
                       </div>
 
                       <div class="field">
                         <label for="otp1" data-i18n="login.otp">Verification code</label>
                         <input type="hidden" id="hiddenOtpValue" name="otp">
                         <div class="otp-boxes-grid" role="group" aria-label="6-digit verification code">
-                          <input type="text" class="otp-digit-input" id="otp1" maxlength="1" inputmode="numeric" pattern="[0-9]" autocomplete="one-time-code" aria-label="Digit 1">
-                          <input type="text" class="otp-digit-input" id="otp2" maxlength="1" inputmode="numeric" pattern="[0-9]" aria-label="Digit 2">
-                          <input type="text" class="otp-digit-input" id="otp3" maxlength="1" inputmode="numeric" pattern="[0-9]" aria-label="Digit 3">
-                          <input type="text" class="otp-digit-input" id="otp4" maxlength="1" inputmode="numeric" pattern="[0-9]" aria-label="Digit 4">
-                          <input type="text" class="otp-digit-input" id="otp5" maxlength="1" inputmode="numeric" pattern="[0-9]" aria-label="Digit 5">
-                          <input type="text" class="otp-digit-input" id="otp6" maxlength="1" inputmode="numeric" pattern="[0-9]" aria-label="Digit 6">
+                          <input type="text" class="otp-digit-input" id="otp1" maxlength="1" inputmode="numeric"
+                            pattern="[0-9]" autocomplete="one-time-code" aria-label="Digit 1">
+                          <input type="text" class="otp-digit-input" id="otp2" maxlength="1" inputmode="numeric"
+                            pattern="[0-9]" aria-label="Digit 2">
+                          <input type="text" class="otp-digit-input" id="otp3" maxlength="1" inputmode="numeric"
+                            pattern="[0-9]" aria-label="Digit 3">
+                          <input type="text" class="otp-digit-input" id="otp4" maxlength="1" inputmode="numeric"
+                            pattern="[0-9]" aria-label="Digit 4">
+                          <input type="text" class="otp-digit-input" id="otp5" maxlength="1" inputmode="numeric"
+                            pattern="[0-9]" aria-label="Digit 5">
+                          <input type="text" class="otp-digit-input" id="otp6" maxlength="1" inputmode="numeric"
+                            pattern="[0-9]" aria-label="Digit 6">
                         </div>
                         <p class="field-error" id="otpFieldError"></p>
                         <p class="hint" data-i18n="login.otp.hint">Demo mode: Any 6-digit code will verify.</p>
@@ -274,8 +319,14 @@
               </div>
 
               <div class="folio-prototype-notice">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-                <span data-i18n="login.disclaimer">Prototype Preview: Real SMS gateway & JWT sessions planned for Evaluation 3. Client credentials are encrypted and not shared.</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" aria-hidden="true">
+                  <circle cx="12" cy="12" r="10" />
+                  <line x1="12" y1="8" x2="12" y2="12" />
+                  <line x1="12" y1="16" x2="12.01" y2="16" />
+                </svg>
+                <span data-i18n="login.disclaimer">Prototype Preview: Real SMS gateway & JWT sessions planned for
+                  Evaluation 3. Client credentials are encrypted and not shared.</span>
               </div>
             </footer>
 
@@ -333,5 +384,5 @@
   <script src="js/ui.js"></script>
   <script src="js/pages/login.js"></script>
 </body>
-</html>
 
+</html>

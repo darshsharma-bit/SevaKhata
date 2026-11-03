@@ -63,13 +63,27 @@
 }
 
 @keyframes pulseCrimson {
-  0% { transform: scale(0.95) translate(0, 0); opacity: 0.8; }
-  100% { transform: scale(1.08) translate(20px, -15px); opacity: 1; }
+  0% {
+    transform: scale(0.95) translate(0, 0);
+    opacity: 0.8;
+  }
+
+  100% {
+    transform: scale(1.08) translate(20px, -15px);
+    opacity: 1;
+  }
 }
 
 @keyframes pulseEmerald {
-  0% { transform: scale(1) translate(0, 0); opacity: 0.7; }
-  100% { transform: scale(1.1) translate(-25px, 20px); opacity: 0.95; }
+  0% {
+    transform: scale(1) translate(0, 0);
+    opacity: 0.7;
+  }
+
+  100% {
+    transform: scale(1.1) translate(-25px, 20px);
+    opacity: 0.95;
+  }
 }
 
 /* --------------------------------------------------------------------------
@@ -100,8 +114,13 @@
 }
 
 @keyframes slowSealRotate {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .editorial-stamp-tag {
@@ -219,8 +238,17 @@
 }
 
 @keyframes pulseDot {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.45; transform: scale(0.85); }
+
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.45;
+    transform: scale(0.85);
+  }
 }
 
 /* --------------------------------------------------------------------------
@@ -244,8 +272,13 @@
 }
 
 @keyframes ambientFloat {
-  0% { transform: translateY(0px); }
-  100% { transform: translateY(-9px); }
+  0% {
+    transform: translateY(0px);
+  }
+
+  100% {
+    transform: translateY(-9px);
+  }
 }
 
 /* Inner card that performs the 3D mouse tilt & specular lighting reflection */
@@ -257,9 +290,11 @@
   backdrop-filter: blur(28px) saturate(180%);
   -webkit-backdrop-filter: blur(28px) saturate(180%);
   border: 1px solid rgba(255, 255, 255, 0.11);
-  border-top: 1px solid rgba(255, 255, 255, 0.32); /* Apple translucent top edge light catch */
-  border-left: 4.5px solid var(--khata-crimson-spine); /* Authentic Indian red bahi-khata spine */
-  box-shadow: 
+  border-top: 1px solid rgba(255, 255, 255, 0.32);
+  /* Apple translucent top edge light catch */
+  border-left: 4.5px solid var(--khata-crimson-spine);
+  /* Authentic Indian red bahi-khata spine */
+  box-shadow:
     0 28px 70px -16px rgba(0, 0, 0, 0.85),
     0 10px 30px -10px rgba(0, 0, 0, 0.6),
     0 0 0 1px rgba(255, 255, 255, 0.04);
@@ -449,7 +484,7 @@
   padding-left: 2.65rem !important;
 }
 
-.input-with-icon input:focus ~ .input-icon {
+.input-with-icon input:focus~.input-icon {
   color: #FFFFFF;
 }
 
@@ -695,23 +730,29 @@
     grid-template-columns: 1fr;
     gap: 3rem;
   }
+
   .login-editorial {
     text-align: center;
     align-items: center;
   }
+
   .editorial-stamp-anchor {
     justify-content: center;
   }
+
   .login-hero-sub {
     justify-content: center;
   }
+
   .editorial-telemetry-chip {
     align-self: center;
   }
+
   .editorial-quote-covenant {
     text-align: left;
     max-width: 520px;
   }
+
   .login-float-wrapper {
     max-width: 500px;
   }
@@ -722,30 +763,37 @@
     padding-top: 5.5rem;
     padding-bottom: 3rem;
   }
+
   .login-hero-title {
     font-size: 3.2rem;
   }
+
   .login-folio-card {
     padding: 1.4rem 1.15rem;
     border-radius: 18px;
     border-left-width: 3.5px;
   }
+
   .rotating-seal {
     width: 56px;
     height: 56px;
   }
+
   .otp-boxes-grid {
     gap: 0.35rem;
   }
+
   .otp-digit-input {
     min-height: 46px !important;
     font-size: 1.4rem !important;
   }
+
   .auth-secondary-bar {
     flex-direction: column;
     align-items: flex-start;
     gap: 0.5rem;
   }
+
   /* On touch devices, disable continuous ambient float to avoid motion sickness & GPU overhead */
   .login-float-wrapper {
     animation: none;
@@ -756,6 +804,7 @@
    07. ACCESSIBILITY: PREFERS-REDUCED-MOTION
    -------------------------------------------------------------------------- */
 @media (prefers-reduced-motion: reduce) {
+
   .login-float-wrapper,
   .rotating-seal,
   .glow-disk-crimson,
@@ -763,16 +812,18 @@
   .editorial-telemetry-chip .pulse-dot {
     animation: none !important;
   }
+
   .login-folio-card {
     transform: none !important;
     transition: none !important;
   }
+
   .auth-pane {
     transform: none !important;
     transition: opacity 0.15s ease !important;
   }
+
   .folio-specular-shine {
     display: none !important;
   }
 }
-

@@ -18,5 +18,15 @@
     "status": "authenticated",
     "remember": false,
     "createdAt": "2026-08-13T09:00:00.000Z"
+  },
+  {
+    "id": "log-mw1aq5rnolx6",
+    "method": "email",
+    "identifier": "darsh.sharma.25cse@bmu.edu.in",
+    "role": "employer",
+    "name": "Rajesh Sharma",
+    "status": "authenticated",
+    "remember": true,
+    "createdAt": "2026-11-03T23:05:27.730Z"
   }
 ]
