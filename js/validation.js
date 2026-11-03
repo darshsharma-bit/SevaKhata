@@ -182,6 +182,16 @@
       subject: [required(), minLen(5), maxLen(100)],
       message: [required(), minLen(20), maxLen(1000)],
       rating: (all) => (all.kind === 'feedback' ? [required('v.rating', 'Please give a rating.'), number({ min: 1, max: 5 })] : [number({ min: 1, max: 5 })])
+    },
+
+    loginEmail: {
+      email: [required(), email()],
+      password: [required(), minLen(6, 'v.password', 'Password must be at least 6 characters.')]
+    },
+
+    loginMobile: {
+      phone: [required(), phone()],
+      otp: (all) => (all.step === 'otp' ? [required(), pattern(/^\d{4,6}$/, 'v.otp', 'Enter the 4-to-6 digit verification code.')] : [])
     }
   };
 

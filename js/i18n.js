@@ -36,12 +36,17 @@
     'v.positive': 'Enter an amount greater than 0.', 'v.choice': 'Please choose a valid option.', 'v.date': 'Enter a valid date.',
     'v.dateFuture': 'Date cannot be in the future.', 'v.datePast': 'Date cannot be in the past.',
     'v.consent': 'Please agree before submitting.', 'v.rating': 'Please give a rating.', 'v.chooseWorker': 'Please pick the helper.',
-    'v.skills': 'Add at least one skill (2+ letters each, comma separated).'
+    'v.skills': 'Add at least one skill (2+ letters each, comma separated).',
+    'nav.login': 'Login', 'v.password': 'Password must be at least 6 characters.', 'v.otp': 'Please enter a valid 4-to-6 digit code.',
+    'login.success': 'Signed in successfully. Welcome to SevaKhata.',
+    'login.otpSent': 'Verification code sent to {phone}.',
+    'login.forgotTitle': 'Password Assistance',
+    'login.forgotBody': 'In this Evaluation 2 preview, live email delivery is mocked. For account recovery assistance or help logging in, please contact support or use Mobile login.'
   };
 
   const HI = {
     /* navigation, footer, shared */
-    'nav.home': 'होम', 'nav.hire': 'काम पर रखें', 'nav.register': 'पंजीकरण', 'nav.directory': 'सूची', 'nav.ledger': 'खाता', 'nav.support': 'सहायता',
+    'nav.home': 'होम', 'nav.hire': 'काम पर रखें', 'nav.register': 'पंजीकरण', 'nav.directory': 'सूची', 'nav.ledger': 'खाता', 'nav.support': 'सहायता', 'nav.login': 'लॉगिन',
     'nav.language': 'भाषा', 'nav.menu': 'मेन्यू',
     'footer.tagline': 'साझा घरेलू रोज़गार खाता।', 'footer.copy': '© 2026 सेवाखाता। भारतीय घरों में आपसी भरोसे और सम्मान के लिए बनाया गया।',
     'common.skip': 'मुख्य सामग्री पर जाएँ', 'common.exportJson': 'JSON डाउनलोड करें', 'common.optional': '(वैकल्पिक)', 'common.reset': 'फ़ॉर्म साफ़ करें',
@@ -71,6 +76,37 @@
     'v.skills': 'कम से कम एक हुनर लिखें (हर हुनर 2+ अक्षर, कॉमा से अलग)।', 'v.idLast4': 'पहचान संदर्भ ठीक 4 अक्षर/अंक का होना चाहिए।',
     'v.id.aadhaar': 'आधार 12 अंकों का होना चाहिए और 0 या 1 से शुरू नहीं हो सकता।', 'v.id.voter': 'वोटर आईडी ऐसा दिखता है: ABC1234567।',
     'v.id.dl': 'ड्राइविंग लाइसेंस ऐसा दिखता है: HR0620110012345।', 'v.id.pan': 'पैन ऐसा दिखता है: ABCDE1234F।',
+    'v.password': 'पासवर्ड कम से कम 6 अक्षरों का होना चाहिए।', 'v.otp': 'कृपया सही 4 से 6 अंकों का कोड दर्ज करें।',
+    'login.success': 'सफलतापूर्वक प्रवेश किया। सेवाखाता में आपका स्वागत है।',
+    'login.otpSent': '{phone} पर सत्यापन कोड भेजा गया।',
+    'login.forgotTitle': 'पासवर्ड सहायता',
+    'login.forgotBody': 'इस मूल्यांकन 2 पूर्वावलोकन में, लाइव ईमेल वितरण डेमो मोड में है। खाता पुनर्प्राप्ति या लॉगिन सहायता के लिए, कृपया सहायता से संपर्क करें या मोबाइल लॉगिन का उपयोग करें।',
+    'login.eyebrow': 'खाता प्रमाणीकरण',
+    'login.title': 'खाते में प्रवेश करें',
+    'login.lead': 'अपने साझा खाते तक पहुँचने, दैनिक कार्य की समीक्षा करने और हिसाब सत्यापित करने के लिए लॉगिन करें। जो दोनों मानें, वही आधिकारिक सत्य बनता है।',
+    'login.tabEmail': 'ईमेल और पासवर्ड',
+    'login.tabMobile': 'मोबाइल और ओटीपी',
+    'login.email': 'ईमेल पता',
+    'login.email.ph': 'sharma.household@example.com',
+    'login.password': 'पासवर्ड',
+    'login.password.ph': '••••••••',
+    'login.showPass': 'पासवर्ड दिखाएँ',
+    'login.hidePass': 'पासवर्ड छिपाएँ',
+    'login.remember': 'इस डिवाइस को याद रखें',
+    'login.forgot': 'पासवर्ड भूल गए?',
+    'login.submitEmail': 'सेवाखाता में प्रवेश करें',
+    'login.phone': 'मोबाइल नंबर',
+    'login.phone.ph': '98100 12345',
+    'login.phone.hint': '10 अंकों का भारतीय मोबाइल नंबर लिखें (6–9 से शुरू)।',
+    'login.sendOtp': 'सत्यापन कोड प्राप्त करें',
+    'login.otp': 'सत्यापन कोड (ओटीपी)',
+    'login.otp.hint': 'डेमो मोड: कोई भी 6-अंकीय कोड सत्यापित करेगा।',
+    'login.verifyOtp': 'सत्यापित करें और खाते में जाएँ',
+    'login.changePhone': 'बदलें',
+    'login.noAccount': 'खाता नहीं है?',
+    'login.registerHelper': 'सहायक पंजीकरण →',
+    'login.hireHelper': 'सहायक रखें →',
+    'login.disclaimer': 'प्रोटोटाइप पूर्वावलोकन: वास्तविक एसएमएस गेटवे और जेडब्ल्यूटी सत्र मूल्यांकन 3 के लिए नियोजित हैं। क्रेडेंशियल्स सुरक्षित हैं।',
 
     /* landing page gateways */
     'gw.eyebrow': 'मूल्यांकन 2 · कार्यप्रवाह', 'gw.title': 'हर कदम, एक ही जगह',
@@ -205,6 +241,8 @@
   };
 
   I.init = function () {
+    const qLang = (typeof location !== 'undefined') ? new URLSearchParams(location.search).get('lang') : null;
+    if (qLang === 'hi' || qLang === 'en') I.lang = qLang;
     document.querySelectorAll('.lang-toggle [data-lang]').forEach((b) => b.addEventListener('click', () => I.set(b.dataset.lang)));
     apply();
   };

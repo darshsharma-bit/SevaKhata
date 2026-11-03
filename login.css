@@ -1,0 +1,778 @@
+/* ==========================================================================
+   SEVAKHATA — PREMIUM FLOATING LOGIN EXPERIENCE
+   Art-directed authentication folio with Apple Liquid Glass material,
+   3D perspective tilt, and Emil Kowalski motion engineering.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   01. STAGE & ASYMMETRIC COMPOSITION
+   -------------------------------------------------------------------------- */
+.login-stage-wrapper {
+  position: relative;
+  z-index: 2;
+  min-height: calc(100vh - 160px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6.5rem var(--page-gutter) 4.5rem;
+}
+
+.login-stage {
+  width: 100%;
+  max-width: var(--page-max-width);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.95fr);
+  gap: clamp(2rem, 5vw, 5rem);
+  align-items: center;
+}
+
+/* Atmospheric glow in the background */
+.login-ambient-glow {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.glow-disk-crimson {
+  position: absolute;
+  top: 25%;
+  left: 20%;
+  width: 580px;
+  height: 580px;
+  border-radius: 50%;
+  background: radial-gradient(circle at center, rgba(200, 32, 43, 0.12) 0%, rgba(200, 32, 43, 0.02) 45%, transparent 70%);
+  filter: blur(60px);
+  transform: translate3d(0, 0, 0);
+  animation: pulseCrimson 12s ease-in-out infinite alternate;
+}
+
+.glow-disk-emerald {
+  position: absolute;
+  bottom: 15%;
+  right: 15%;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle at center, rgba(5, 150, 105, 0.1) 0%, rgba(5, 150, 105, 0.015) 50%, transparent 70%);
+  filter: blur(55px);
+  transform: translate3d(0, 0, 0);
+  animation: pulseEmerald 14s ease-in-out infinite alternate;
+}
+
+@keyframes pulseCrimson {
+  0% { transform: scale(0.95) translate(0, 0); opacity: 0.8; }
+  100% { transform: scale(1.08) translate(20px, -15px); opacity: 1; }
+}
+
+@keyframes pulseEmerald {
+  0% { transform: scale(1) translate(0, 0); opacity: 0.7; }
+  100% { transform: scale(1.1) translate(-25px, 20px); opacity: 0.95; }
+}
+
+/* --------------------------------------------------------------------------
+   02. LEFT EDITORIAL COLUMN (BRAND & PHILOSOPHY)
+   -------------------------------------------------------------------------- */
+.login-editorial {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  padding: 1rem 0;
+}
+
+.editorial-stamp-anchor {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.rotating-seal {
+  width: 72px;
+  height: 72px;
+  flex-shrink: 0;
+  animation: slowSealRotate 38s linear infinite;
+  filter: drop-shadow(0 8px 24px rgba(5, 150, 105, 0.3));
+}
+
+@keyframes slowSealRotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.editorial-stamp-tag {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.editorial-stamp-tag .tag-kicker {
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--khata-crimson-spine);
+}
+
+.editorial-stamp-tag .tag-sub {
+  font-size: 0.82rem;
+  color: var(--text-tertiary);
+  font-weight: 500;
+}
+
+.login-title-lockup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.login-hero-title {
+  font-family: var(--font-monumental);
+  font-size: clamp(3.2rem, 7.5vw, 5.8rem);
+  line-height: 0.92;
+  letter-spacing: 0.02em;
+  color: #FFFFFF;
+  margin: 0;
+}
+
+.login-hero-sub {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.65rem;
+  font-size: clamp(1rem, 2.2vw, 1.35rem);
+  font-weight: 700;
+  color: var(--text-secondary);
+}
+
+.login-hero-sub .sub-dot {
+  color: var(--khata-crimson-spine);
+}
+
+.login-hero-sub .sub-hi {
+  font-family: var(--font-hindi);
+  font-weight: 600;
+  color: #34D399;
+}
+
+.login-editorial-lead {
+  max-width: 52ch;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+}
+
+/* Consensus quote card */
+.editorial-quote-covenant {
+  position: relative;
+  padding: 1.25rem 1.4rem;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid var(--rule-hairline);
+  border-left: 3px solid var(--khata-crimson-spine);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.covenant-quote-hi {
+  font-family: var(--font-hindi-traditional);
+  font-size: 1.15rem;
+  line-height: 1.5;
+  color: #FFFFFF;
+}
+
+.covenant-attribution {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+}
+
+/* Live Telemetry Pill */
+.editorial-telemetry-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  align-self: flex-start;
+  padding: 0.5rem 0.95rem;
+  border-radius: 100px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--rule-hairline-bright);
+  font-size: 0.76rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.editorial-telemetry-chip .pulse-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--emerald-core);
+  box-shadow: 0 0 10px var(--emerald-core);
+  animation: pulseDot 2s infinite ease-in-out;
+}
+
+@keyframes pulseDot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.45; transform: scale(0.85); }
+}
+
+/* --------------------------------------------------------------------------
+   03. RIGHT COLUMN: 3D FLOATING AUTHENTICATION FOLIO (LIQUID GLASS)
+   -------------------------------------------------------------------------- */
+.login-card-viewport {
+  position: relative;
+  perspective: 1200px;
+  perspective-origin: center center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Outer floating wrapper that applies the calm ambient vertical breath */
+.login-float-wrapper {
+  width: 100%;
+  max-width: 480px;
+  animation: ambientFloat 6.5s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+@keyframes ambientFloat {
+  0% { transform: translateY(0px); }
+  100% { transform: translateY(-9px); }
+}
+
+/* Inner card that performs the 3D mouse tilt & specular lighting reflection */
+.login-folio-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 22px;
+  background: rgba(18, 18, 24, 0.76);
+  backdrop-filter: blur(28px) saturate(180%);
+  -webkit-backdrop-filter: blur(28px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.11);
+  border-top: 1px solid rgba(255, 255, 255, 0.32); /* Apple translucent top edge light catch */
+  border-left: 4.5px solid var(--khata-crimson-spine); /* Authentic Indian red bahi-khata spine */
+  box-shadow: 
+    0 28px 70px -16px rgba(0, 0, 0, 0.85),
+    0 10px 30px -10px rgba(0, 0, 0, 0.6),
+    0 0 0 1px rgba(255, 255, 255, 0.04);
+  padding: clamp(1.6rem, 3.8vw, 2.4rem);
+  transform-style: preserve-3d;
+  transition: transform 0.16s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.28s ease;
+  will-change: transform;
+}
+
+/* Specular light sheen that glides with mouse coordinates */
+.folio-specular-shine {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  border-radius: inherit;
+  opacity: 0;
+  background: radial-gradient(circle 360px at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255, 255, 255, 0.12) 0%, transparent 70%);
+  transition: opacity 0.35s ease;
+}
+
+.login-folio-card:hover .folio-specular-shine {
+  opacity: 1;
+}
+
+/* Card Header */
+.folio-header {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 1.25rem;
+  margin-bottom: 1.4rem;
+  border-bottom: 1px solid var(--rule-hairline);
+}
+
+.folio-brand-mark {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.folio-brand-mark .brand-svg {
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+}
+
+.folio-reg-meta {
+  display: flex;
+  flex-direction: column;
+}
+
+.folio-reg-num {
+  font-family: var(--font-monumental);
+  font-size: 1.15rem;
+  letter-spacing: 0.08em;
+  line-height: 1;
+  color: #FFFFFF;
+}
+
+.folio-reg-date {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+  margin-top: 0.15rem;
+}
+
+.folio-seal-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.28rem 0.65rem;
+  border-radius: 100px;
+  font-size: 0.66rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: rgba(5, 150, 105, 0.15);
+  border: 1px solid var(--emerald-border);
+  color: #34D399;
+}
+
+.folio-seal-status::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--emerald-core);
+}
+
+/* --------------------------------------------------------------------------
+   04. AUTHENTICATION MODE SWITCHER (SEGMENTED SLIDER)
+   -------------------------------------------------------------------------- */
+.auth-mode-switch {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 4px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--rule-hairline-bright);
+  margin-bottom: 1.6rem;
+}
+
+.auth-tab-btn {
+  position: relative;
+  z-index: 2;
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  border-radius: 10px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  transition: color var(--dur-fast) ease;
+}
+
+.auth-tab-btn:hover {
+  color: #FFFFFF;
+}
+
+.auth-tab-btn[aria-selected="true"] {
+  color: #08080A;
+  background: #FFFFFF;
+  box-shadow: 0 4px 14px -2px rgba(255, 255, 255, 0.25);
+}
+
+.auth-tab-btn svg {
+  width: 15px;
+  height: 15px;
+}
+
+/* --------------------------------------------------------------------------
+   05. FORM PANES & SMOOTH MODE TRANSITION
+   -------------------------------------------------------------------------- */
+.auth-panes-container {
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+  transition: min-height 0.3s var(--ease-smooth);
+}
+
+.auth-pane {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 0.24s ease, transform 0.28s var(--ease-spring);
+}
+
+.auth-pane.is-inactive {
+  display: none;
+  opacity: 0;
+  transform: translateX(18px);
+  pointer-events: none;
+}
+
+/* Inputs with tactile icons & focus highlight */
+.input-with-icon {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-with-icon .input-icon {
+  position: absolute;
+  left: 0.95rem;
+  width: 18px;
+  height: 18px;
+  color: var(--text-tertiary);
+  pointer-events: none;
+  transition: color var(--dur-fast) ease;
+}
+
+.input-with-icon input {
+  padding-left: 2.65rem !important;
+}
+
+.input-with-icon input:focus ~ .input-icon {
+  color: #FFFFFF;
+}
+
+/* Password reveal toggle button */
+.btn-toggle-password {
+  position: absolute;
+  right: 0.6rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  border-radius: 8px;
+  color: var(--text-tertiary);
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  transition: color var(--dur-fast) ease, background var(--dur-fast) ease;
+}
+
+.btn-toggle-password:hover {
+  color: #FFFFFF;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.btn-toggle-password:focus-visible {
+  outline: 2px solid #FFFFFF;
+  color: #FFFFFF;
+}
+
+.btn-toggle-password svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* Secondary Actions Bar (Remember Me + Forgot Password) */
+.auth-secondary-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-top: -0.25rem;
+}
+
+.btn-link-forgot {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.2rem 0;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: rgba(255, 255, 255, 0.25);
+  transition: color var(--dur-fast) ease, text-decoration-color var(--dur-fast) ease;
+}
+
+.btn-link-forgot:hover {
+  color: #FFFFFF;
+  text-decoration-color: #FFFFFF;
+}
+
+/* Mobile input group */
+.mobile-input-group {
+  display: grid;
+  grid-template-columns: 85px 1fr;
+  gap: 0.6rem;
+}
+
+.country-code-pill {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  min-height: 46px;
+  background: var(--bg-surface-base);
+  border: 1px solid var(--rule-hairline-bright);
+  border-radius: 10px;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+  user-select: none;
+}
+
+.flag-in {
+  width: 18px;
+  height: 13px;
+  border-radius: 2px;
+  object-fit: cover;
+}
+
+/* OTP Step Container */
+.otp-verify-stage {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  padding: 1.1rem;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px dashed var(--rule-hairline-bright);
+}
+
+.otp-target-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.8rem;
+}
+
+.otp-target-meta strong {
+  color: #FFFFFF;
+  letter-spacing: 0.04em;
+}
+
+.btn-change-number {
+  font-size: 0.78rem;
+  color: var(--emerald-bright);
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+/* 6-box OTP entry grid */
+.otp-boxes-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 0.5rem;
+}
+
+.otp-digit-input {
+  width: 100% !important;
+  min-height: 52px !important;
+  text-align: center;
+  font-family: var(--font-monumental) !important;
+  font-size: 1.6rem !important;
+  padding: 0 !important;
+  border-radius: 10px !important;
+  letter-spacing: 0.05em;
+  background: var(--bg-surface-base) !important;
+  border: 1.5px solid var(--rule-hairline-bright) !important;
+}
+
+.otp-digit-input:focus {
+  border-color: #34D399 !important;
+  box-shadow: 0 0 0 3px var(--emerald-glow) !important;
+}
+
+.otp-resend-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.76rem;
+  color: var(--text-tertiary);
+}
+
+.btn-resend-otp {
+  color: var(--text-secondary);
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.btn-resend-otp[disabled] {
+  opacity: 0.45;
+  cursor: not-allowed;
+  text-decoration: none;
+}
+
+/* Primary Auth Submit Button */
+.btn-auth-submit {
+  width: 100%;
+  min-height: 50px;
+  font-size: 0.95rem;
+  margin-top: 0.4rem;
+  box-shadow: 0 12px 30px -8px rgba(255, 255, 255, 0.28);
+}
+
+/* Card Bottom Footer */
+.folio-card-footer {
+  position: relative;
+  z-index: 2;
+  margin-top: 1.6rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--rule-hairline);
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.folio-new-account-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  color: var(--text-tertiary);
+}
+
+.folio-new-account-links a {
+  font-weight: 600;
+  color: #FFFFFF;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  transition: color var(--dur-fast) ease;
+}
+
+.folio-new-account-links a:hover {
+  color: #34D399;
+}
+
+.folio-prototype-notice {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  padding: 0.65rem 0.85rem;
+  border-radius: 10px;
+  background: rgba(245, 158, 11, 0.08);
+  border: 1px solid rgba(245, 158, 11, 0.25);
+  font-size: 0.72rem;
+  line-height: 1.45;
+  color: #FCD34D;
+}
+
+.folio-prototype-notice svg {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* --------------------------------------------------------------------------
+   06. RESPONSIVE DESIGN (1440, 1024, 768, 390)
+   -------------------------------------------------------------------------- */
+@media (max-width: 1100px) {
+  .login-stage {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  .login-editorial {
+    text-align: center;
+    align-items: center;
+  }
+  .editorial-stamp-anchor {
+    justify-content: center;
+  }
+  .login-hero-sub {
+    justify-content: center;
+  }
+  .editorial-telemetry-chip {
+    align-self: center;
+  }
+  .editorial-quote-covenant {
+    text-align: left;
+    max-width: 520px;
+  }
+  .login-float-wrapper {
+    max-width: 500px;
+  }
+}
+
+@media (max-width: 640px) {
+  .login-stage-wrapper {
+    padding-top: 5.5rem;
+    padding-bottom: 3rem;
+  }
+  .login-hero-title {
+    font-size: 3.2rem;
+  }
+  .login-folio-card {
+    padding: 1.4rem 1.15rem;
+    border-radius: 18px;
+    border-left-width: 3.5px;
+  }
+  .rotating-seal {
+    width: 56px;
+    height: 56px;
+  }
+  .otp-boxes-grid {
+    gap: 0.35rem;
+  }
+  .otp-digit-input {
+    min-height: 46px !important;
+    font-size: 1.4rem !important;
+  }
+  .auth-secondary-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  /* On touch devices, disable continuous ambient float to avoid motion sickness & GPU overhead */
+  .login-float-wrapper {
+    animation: none;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   07. ACCESSIBILITY: PREFERS-REDUCED-MOTION
+   -------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  .login-float-wrapper,
+  .rotating-seal,
+  .glow-disk-crimson,
+  .glow-disk-emerald,
+  .editorial-telemetry-chip .pulse-dot {
+    animation: none !important;
+  }
+  .login-folio-card {
+    transform: none !important;
+    transition: none !important;
+  }
+  .auth-pane {
+    transform: none !important;
+    transition: opacity 0.15s ease !important;
+  }
+  .folio-specular-shine {
+    display: none !important;
+  }
+}
+

@@ -87,7 +87,7 @@ git checkout -- data/ # Restore original clean evaluation records after a live d
 
 | # | Parameter | Source Files | Implemented Capability |
 | :-- | :--- | :--- | :--- |
-| **1** | **Multi-Page Workflows & Complete Linking** | [`index.html`](./index.html), [`ledger.html`](./ledger.html), [`directory.html`](./directory.html), [`register-worker.html`](./register-worker.html), [`hire-household.html`](./hire-household.html), [`contact-feedback.html`](./contact-feedback.html), [`pages.css`](./pages.css) | Six dedicated pages sharing responsive navigation (with mobile hamburger drawer), consistent footers, active-page visual state, and **zero broken `#` placeholder links**. Cross-linked state transitions (e.g., directory profile links directly to pre-filled hire form: `hire-household.html?worker=w-1001`). |
+| **1** | **Multi-Page Workflows & Complete Linking** | [`index.html`](./index.html), [`ledger.html`](./ledger.html), [`directory.html`](./directory.html), [`register-worker.html`](./register-worker.html), [`hire-household.html`](./hire-household.html), [`contact-feedback.html`](./contact-feedback.html), [`login.html`](./login.html), [`pages.css`](./pages.css), [`login.css`](./login.css) | Seven dedicated pages sharing responsive navigation (with mobile hamburger drawer), consistent footers, active-page visual state, and **zero broken `#` placeholder links**. Cross-linked state transitions (e.g., directory profile links directly to pre-filled hire form: `hire-household.html?worker=w-1001`, and all navigation bars include direct access to the floating authentication folio). |
 | **2** | **Validation, Interactions & Bilingual UX** | [`js/validation.js`](./js/validation.js), [`js/ui.js`](./js/ui.js), [`js/i18n.js`](./js/i18n.js), [`js/pages/`](./js/pages/) | Real-time inline field validation on `input`/`blur` (red/green states without native browser alert popups). Regex enforcement for Indian mobile numbers (`^[6-9]\d{9}$`), email formats, Aadhaar/PAN validation, and positive wages. Live search/filtering in directory and ledger. Persistent **EN ⇄ हिं** toggle translating both static text and dynamic validation messages across page reloads. |
 | **3** | **Asynchronous Form Submissions** | [`js/pages/*.js`](./js/pages/), [`js/ui.js`](./js/ui.js) (`bindForm`), [`js/store.js`](./js/store.js) | Form submissions intercepted via `e.preventDefault()`, executed through `fetch()` with `async/await`. Visual loading states with button spinners, animated confirmation modals returning unique reference IDs (`w-...`, `b-...`, `l-...`, `f-...`), and immediate in-memory UI updates without full page reload. |
 | **4** | **Data Persistence in Local JSON Files** | [`server.js`](./server.js), [`data/*.json`](./data/), [`js/store.js`](./js/store.js), [`js/seed-data.js`](./js/seed-data.js) | Express endpoints (`/api/workers`, `/api/bookings`, `/api/ledger`, `/api/feedback`) performing serialized, atomic writes to disk (`.tmp` write followed by `fs.rename`). Offline mode transparently falls back to `localStorage` with client-side JSON file downloads. |
@@ -344,6 +344,7 @@ SevaKhata comprises six cohesive, inter-linked application pages built with vani
 | **Worker Onboarding** | [`register-worker.html`](./register-worker.html) | Multi-step helper registration; category picker; dynamic skill tags; wage type selection; real-time Aadhaar/PAN regex validation (stores only last 4 characters); success modal with ID. | `POST /api/workers`<br>[`data/workers.json`](./data/workers.json) |
 | **Household Booking** | [`hire-household.html`](./hire-household.html) | Request household services; supports new general requests or targeted bookings (`?worker=w-1001`); schedule specifications; offered budget validation; auto-populates worker details. | `POST /api/bookings`<br>[`data/bookings.json`](./data/bookings.json) |
 | **Support & Feedback** | [`contact-feedback.html`](./contact-feedback.html) | Inquiries across support, disputes, profile verification, and general feedback; star rating selector; character count validation; generates trackable ticket reference ID. | `POST /api/feedback`<br>[`data/feedback.json`](./data/feedback.json) |
+| **Authentication Folio** | [`login.html`](./login.html) | Floating Apple-grade translucent folio with interactive 3D perspective tilt physics; Email & Password mode with show/hide toggle; Mobile OTP tab with 6-digit auto-advancing input; complete bilingual validation & session state. | Prototype Session / Auth Gateway |
 
 ### Transparent Trust Score Calculation
 
@@ -667,7 +668,9 @@ SevaKhata/
 │   │   ├── 04-register-worker.svg     # Worker onboarding intake
 │   │   ├── 05-hire-household.svg      # Household hiring request
 │   │   ├── 06-contact-feedback.svg    # Support ticket and dispute form
-│   │   └── 07-components-and-popups.svg # UI stickersheet, modals, and toasts
+│   │   ├── 07-components-and-popups.svg # UI stickersheet, modals, and toasts
+│   │   └── 08-login-authentication.svg # 100% editable Figma login artboard
+│   ├── 08-login-desktop-1440.svg      # Figma-compatible standalone login canvas
 │   ├── FIGMA_DESIGN_SYSTEM.md         # Figma handoff guide, tokens, and font specifications
 │   └── sevakhata-landing-figma.svg    # Synced desktop vector canvas
 ├── js/                                # Vanilla modular JavaScript engine
@@ -676,6 +679,7 @@ SevaKhata/
 │   │   ├── directory.js               # Helper search, filtering, and trust score rendering
 │   │   ├── hire-household.js          # Booking submission & pre-filled worker logic
 │   │   ├── ledger.js                  # Ledger folio, role toggle, confirm/dispute modals
+│   │   ├── login.js                   # 3D perspective physics, OTP auto-advance & tab interactions
 │   │   └── register-worker.js         # Worker registration & validation handling
 │   ├── i18n.js                        # English/Hindi translation dictionary & toggle engine
 │   ├── records.js                     # Shared UMD state machine, Hisaab math & trust scoring
@@ -694,6 +698,8 @@ SevaKhata/
 ├── hire-household.html                # Household booking request page
 ├── index.html                         # Editorial landing page & living khata prototype
 ├── ledger.html                        # Bilateral digital ledger page
+├── login.html                         # Floating Apple-grade authentication folio
+├── login.css                          # Apple Liquid Glass styling, specular highlights & tilt styles
 ├── register-worker.html               # Domestic worker registration page
 ├── main.js                            # Landing page scroll choreography & ease-out ticker
 ├── pages.css                          # Shared styles for inner workflow pages
