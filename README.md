@@ -22,7 +22,7 @@
   <img src="https://img.shields.io/badge/architecture-bilateral_consensus-E11D48.svg?style=flat-square" alt="Bilateral Consensus Architecture" />
   <img src="https://img.shields.io/badge/i18n-English%20%7C%20%E0%A4%B9%E0%A4%BF%E0%A4%A8%E0%A5%8D%E0%A4%A6%E0%A5%80-E11D48.svg?style=flat-square" alt="Bilingual Support" />
   <a href="./scripts/smoke-test.js"><img src="https://img.shields.io/badge/tests-passing_suite-059669.svg?style=flat-square&logo=node.js&logoColor=white" alt="Smoke Tests Passing" /></a>
-  <a href="./design/FIGMA_DESIGN_SYSTEM.md"><img src="https://img.shields.io/badge/figma-vector_suite-F24E1E.svg?style=flat-square&logo=figma&logoColor=white" alt="Figma Vector Suite" /></a>
+  <a href="./design/figma-svgs/"><img src="https://img.shields.io/badge/figma-vector_suite-F24E1E.svg?style=flat-square&logo=figma&logoColor=white" alt="Figma Vector Suite" /></a>
 </p>
 
 <p align="center">
@@ -363,7 +363,7 @@ $$\text{Trust Score} = \text{ID Check (30)} + \text{Rating (30)} + \text{Experie
 ## Technology Stack
 
 <p align="center">
-  <img src="https://skillicons.dev/icons?i=html,css,js,nodejs,express,figma,postman" alt="Verified Technologies: HTML5, CSS3, JavaScript, Node.js, Express, Figma, Postman" />
+  <img src="https://skillicons.dev/icons?i=html,css,js,nodejs,express,figma" alt="Verified Technologies: HTML5, CSS3, JavaScript, Node.js, Express, Figma" />
 </p>
 
 The SevaKhata architecture leverages clean, standards-compliant web technologies with minimal runtime overhead:
@@ -398,7 +398,7 @@ The SevaKhata architecture leverages clean, standards-compliant web technologies
 | **Persistence (Offline)** | Web Storage API | `localStorage` + `Blob` | ![WebStorage](https://img.shields.io/badge/Web_Storage-059669?style=flat-square) | Automatic fallback persistence when server is absent; dynamic client-side JSON export download. |
 | **Quality Assurance** | Node.js Test Harness | Built-in `assert` | ![Tests](https://img.shields.io/badge/Node_Assert-339933?style=flat-square&logo=node.js&logoColor=white) | Zero-dependency automated test runner in [`scripts/smoke-test.js`](./scripts/smoke-test.js). |
 | **Design Specification** | Figma Vector Suite | SVG 1.1 Standard | ![Figma](https://img.shields.io/badge/Figma_Suite-F24E1E?style=flat-square&logo=figma&logoColor=white) | 7 component-structured, native text vector artboards in [`design/figma-svgs/`](./design/figma-svgs/). |
-| **API Tooling** | Postman | Globals Config | ![Postman](https://img.shields.io/badge/Postman-FF6C37?style=flat-square&logo=postman&logoColor=white) | Workspace globals configuration in [`.postman`](./.postman) / [`postman/`](./postman/). |
+| **API Tooling** | Built-in Test Runner | Zero Dependency | ![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=node.js&logoColor=white) | Automated verification suite in [`scripts/smoke-test.js`](./scripts/smoke-test.js). |
 
 ---
 
@@ -653,8 +653,7 @@ SevaKhata/
 │   └── brand/                         # Vector brand assets and seals
 │       ├── favicon.svg                # Browser tab favicon
 │       ├── sevakhata-mark.svg         # Primary brand mark (converging folios & emerald seal)
-│       ├── sevakhata-seal-stamp.svg   # Circular rotating mutual agreement seal
-│       └── sevakhata-wordmark.svg     # Master bilingual typographic lockup
+│       └── sevakhata-seal-stamp.svg   # Circular rotating mutual agreement seal
 ├── data/                              # Atomic JSON database written by server.js
 │   ├── bookings.json                  # Household service requests
 │   ├── feedback.json                  # Support tickets, disputes, and reviews
@@ -669,10 +668,7 @@ SevaKhata/
 │   │   ├── 05-hire-household.svg      # Household hiring request
 │   │   ├── 06-contact-feedback.svg    # Support ticket and dispute form
 │   │   ├── 07-components-and-popups.svg # UI stickersheet, modals, and toasts
-│   │   └── 08-login-authentication.svg # 100% editable Figma login artboard
-│   ├── 08-login-desktop-1440.svg      # Figma-compatible standalone login canvas
-│   ├── FIGMA_DESIGN_SYSTEM.md         # Figma handoff guide, tokens, and font specifications
-│   └── sevakhata-landing-figma.svg    # Synced desktop vector canvas
+│   │   └── 08-login-desktop-1440.svg  # 100% editable Figma login artboard
 ├── js/                                # Vanilla modular JavaScript engine
 │   ├── pages/                         # Page-specific controller scripts
 │   │   ├── contact-feedback.js        # Support form handling & rating interaction
@@ -689,8 +685,6 @@ SevaKhata/
 │   ├── ui.js                          # Toast notifications, modal dialogs, and inline form binder
 │   └── validation.js                  # Shared canonical validation schemas (browser + server)
 ├── scripts/                           # Maintenance and verification utilities
-│   ├── figma/                         # Modular SVG generation scripts
-│   ├── generate-figma-svgs.js         # Master generator for all 7 Figma SVGs
 │   ├── smoke-test.js                  # Automated zero-dependency test runner (npm test)
 │   └── sync-seed.js                   # Synchronizes js/seed-data.js from data/*.json
 ├── contact-feedback.html              # Support inquiries & dispute reporting page
@@ -707,7 +701,6 @@ SevaKhata/
 ├── package.json                       # Project metadata, scripts, and dependencies
 ├── package-lock.json                  # Pinned dependency lockfile
 ├── server.js                          # Express HTTP server & atomic JSON API
-├── walkthrough.md                     # Detailed verification report and viva checklist
 └── README.md                          # Project documentation
 ```
 
