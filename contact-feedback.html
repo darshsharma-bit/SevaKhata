@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Help and Feedback — SevaKhata</title>
+  <meta name="description" content="Raise a support ticket, send feedback, or report a verification issue.">
+  <link rel="icon" type="image/svg+xml" href="assets/brand/favicon.svg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600&family=Noto+Sans+Devanagari:wght@400;500;600;700;800&family=Tiro+Devanagari+Hindi&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="pages.css">
+</head>
+<body class="editorial-body inner-page" data-page="support">
+  <a class="skip-link" href="#main" data-i18n="common.skip">Skip to content</a>
+
+  <header class="system-nav-wrapper" role="banner">
+    <nav class="system-nav" id="systemNav" aria-label="Primary Navigation">
+      <a href="index.html" class="nav-brand" aria-label="SevaKhata Home">
+        <img src="assets/brand/sevakhata-mark.svg" alt="" width="26" height="26" class="brand-mark-svg">
+        <div class="brand-identity">
+          <span class="brand-en">SEVAKHATA</span>
+          <span class="brand-hi" lang="hi">सेवाखाता</span>
+        </div>
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html#hero" data-i18n="nav.home">Home</a>
+        <a href="hire-household.html" data-i18n="nav.hire">Hire</a>
+        <a href="register-worker.html" data-i18n="nav.register">Register</a>
+        <a href="directory.html" data-i18n="nav.directory">Directory</a>
+        <a href="ledger.html" data-i18n="nav.ledger">Ledger</a>
+        <a href="contact-feedback.html" aria-current="page" data-i18n="nav.support">Support</a>
+      </div>
+      <div class="nav-extras">
+        <div class="lang-toggle" role="group" aria-label="Language" data-i18n-aria="nav.language">
+          <button type="button" data-lang="en" aria-pressed="true">EN</button>
+          <button type="button" data-lang="hi" lang="hi" aria-pressed="false">हिं</button>
+        </div>
+        <button type="button" class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Menu" data-i18n-aria="nav.menu"><span aria-hidden="true">☰</span></button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main" class="page-shell">
+    <header class="page-hero">
+      <div>
+        <p class="eyebrow" data-i18n="sup.eyebrow">Support and feedback</p>
+        <h1 class="page-title" data-i18n="sup.title">Help and feedback</h1>
+        <p class="page-title-hi" lang="hi" data-i18n="sup.titleHi">सहायता और सुझाव</p>
+        <p class="page-lead" data-i18n="sup.lead">Raise a support ticket, share feedback about SevaKhata, or report a problem with a profile verification.</p>
+      </div>
+      <div class="page-hero-tools">
+        <span class="sync-badge" data-sync-status role="status">Checking server…</span>
+        <button type="button" class="btn btn-ghost btn-small" data-export="feedback" data-i18n="common.exportJson">Export JSON</button>
+      </div>
+    </header>
+    <div class="layout-split">
+      <section class="panel" aria-labelledby="supFormTitle">
+        <h2 class="panel-title" id="supFormTitle" data-i18n="sup.formTitle">Write to us</h2>
+        <p class="panel-sub" data-i18n="sup.formSub">We keep your message in the project’s feedback file. Fields marked * are required.</p>
+        <form id="supportForm" novalidate>
+          <div class="form-grid">
+        <div class="field span-2">
+          <label ><span data-i18n="sup.kind">What is this about?</span><span class="req" aria-hidden="true">*</span></label>
+          <div class="segmented" role="radiogroup" aria-label="Message type" data-i18n-aria="sup.kind">
+            <label><input type="radio" name="kind" value="support" checked><span data-i18n="sup.kindSupport">Support ticket</span></label>
+            <label><input type="radio" name="kind" value="feedback"><span data-i18n="sup.kindFeedback">Feedback</span></label>
+            <label><input type="radio" name="kind" value="verification"><span data-i18n="sup.kindVerification">Verification issue</span></label>
+          </div>
+        </div>
+        <div class="field">
+          <label for="sName"><span data-i18n="sup.name">Your name</span><span class="req" aria-hidden="true">*</span></label>
+          <input id="sName" name="name" type="text" autocomplete="name" maxlength="60" placeholder="Your name" data-i18n-placeholder="hire.contact.ph">
+        </div>
+        <div class="field">
+          <label for="sEmail"><span data-i18n="sup.email">Email</span><span class="req" aria-hidden="true">*</span></label>
+          <input id="sEmail" name="email" type="email" autocomplete="email" maxlength="80" placeholder="name@example.com">
+        </div>
+        <div class="field">
+          <label for="sPhone"><span data-i18n="sup.phone">Mobile number</span> <span class="hint" data-i18n="common.optional">(optional)</span></label>
+          <input id="sPhone" name="phone" type="tel" inputmode="numeric" autocomplete="tel-national" maxlength="10" placeholder="10-digit mobile" data-i18n-placeholder="reg.phone.ph">
+        </div>
+        <div class="field" id="relatedField" hidden>
+          <label for="sRelated"><span data-i18n="sup.related">Which profile?</span> <span class="hint" data-i18n="common.optional">(optional)</span></label>
+          <select id="sRelated" name="relatedWorkerId"></select>
+        </div>
+        <div class="field span-2">
+          <label for="sSubject"><span data-i18n="sup.subject">Subject</span><span class="req" aria-hidden="true">*</span></label>
+          <input id="sSubject" name="subject" type="text" maxlength="100" placeholder="Short summary" data-i18n-placeholder="sup.subject.ph">
+        </div>
+        <div class="field span-2" id="ratingField" hidden>
+          <span class="label"><span data-i18n="sup.rating">Your rating</span><span class="req" aria-hidden="true">*</span></span>
+          <div class="star-rating" role="radiogroup" aria-label="Rating" data-i18n-aria="sup.rating">
+            <input type="radio" id="star5" name="rating" value="5"><label for="star5" title="5" aria-label="5 stars">★</label>
+            <input type="radio" id="star4" name="rating" value="4"><label for="star4" title="4" aria-label="4 stars">★</label>
+            <input type="radio" id="star3" name="rating" value="3"><label for="star3" title="3" aria-label="3 stars">★</label>
+            <input type="radio" id="star2" name="rating" value="2"><label for="star2" title="2" aria-label="2 stars">★</label>
+            <input type="radio" id="star1" name="rating" value="1"><label for="star1" title="1" aria-label="1 star">★</label>
+          </div>
+        </div>
+        <div class="field span-2">
+          <label for="sMessage"><span data-i18n="sup.message">Message</span><span class="req" aria-hidden="true">*</span></label>
+          <textarea id="sMessage" name="message" maxlength="1000" rows="5" placeholder="Tell us what happened (at least 20 characters)" data-i18n-placeholder="sup.message.ph"></textarea><span class="hint" id="msgCount" aria-live="off">0 / 1000</span>
+        </div>
+          </div>
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary" data-i18n="sup.submit">Send message</button>
+            <button type="reset" class="btn btn-ghost" id="sReset" data-i18n="common.reset">Clear form</button>
+          </div>
+        </form>
+      </section>
+
+      <aside class="stack" aria-label="Help">
+        <section class="panel">
+          <h2 class="panel-title" data-i18n="sup.disputeTitle">Disagree with an entry?</h2>
+          <p class="panel-sub" data-i18n="sup.disputeSub">You do not need a ticket for that.</p>
+          <p class="modal-body" data-i18n="sup.disputeBody">Open the shared ledger and choose “Dispute” on the entry, with a short reason. It stays out of the balance until the employer corrects and resends it. Raise a ticket here only if something is still unresolved.</p>
+          <div class="form-actions"><a class="btn btn-ghost btn-small" href="ledger.html" data-i18n="sup.toLedger">Go to the ledger →</a></div>
+        </section>
+        <section class="panel" aria-labelledby="recentSupTitle">
+          <h2 class="panel-title" id="recentSupTitle" data-i18n="sup.recent">Recent messages</h2>
+          <p class="panel-sub" data-i18n="sup.recentSub">Only the subject is shown. Contact details stay private.</p>
+          <ul class="mini-list" id="recentFeedback" aria-live="polite"></ul>
+        </section>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="editorial-footer" role="contentinfo">
+    <div class="footer-container">
+      <div class="footer-brand-col">
+        <div class="footer-brand-lockup">
+          <img src="assets/brand/sevakhata-mark.svg" alt="" width="26" height="26">
+          <span class="footer-brand-name">SEVAKHATA · <span lang="hi">सेवाखाता</span></span>
+        </div>
+        <p class="footer-tagline-text">
+          Dono ka record, ek hi hisaab · <span data-i18n="footer.tagline">The shared domestic employment ledger.</span>
+        </p>
+      </div>
+
+      <div class="footer-links-col">
+        <nav class="footer-nav" aria-label="Footer Links">
+          <a href="index.html#hero" data-i18n="nav.home">Home</a>
+          <span class="nav-sep">·</span>
+          <a href="hire-household.html" data-i18n="nav.hire">Hire</a>
+          <span class="nav-sep">·</span>
+          <a href="register-worker.html" data-i18n="nav.register">Register</a>
+          <span class="nav-sep">·</span>
+          <a href="directory.html" data-i18n="nav.directory">Directory</a>
+          <span class="nav-sep">·</span>
+          <a href="ledger.html" data-i18n="nav.ledger">Ledger</a>
+          <span class="nav-sep">·</span>
+          <a href="contact-feedback.html" aria-current="page" data-i18n="nav.support">Support</a>
+        </nav>
+        <div class="footer-legal-copy" data-i18n="footer.copy">
+          © 2026 SevaKhata. Designed for mutual trust and dignity in Indian households.
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/validation.js"></script>
+  <script src="js/records.js"></script>
+  <script src="js/seed-data.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/pages/contact-feedback.js"></script>
+</body>
+</html>

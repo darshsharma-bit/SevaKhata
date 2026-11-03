@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hire a Helper — SevaKhata</title>
+  <meta name="description" content="Browse helper categories and submit a hiring request or log an existing employment record.">
+  <link rel="icon" type="image/svg+xml" href="assets/brand/favicon.svg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600&family=Noto+Sans+Devanagari:wght@400;500;600;700;800&family=Tiro+Devanagari+Hindi&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="pages.css">
+</head>
+<body class="editorial-body inner-page" data-page="hire">
+  <a class="skip-link" href="#main" data-i18n="common.skip">Skip to content</a>
+
+  <header class="system-nav-wrapper" role="banner">
+    <nav class="system-nav" id="systemNav" aria-label="Primary Navigation">
+      <a href="index.html" class="nav-brand" aria-label="SevaKhata Home">
+        <img src="assets/brand/sevakhata-mark.svg" alt="" width="26" height="26" class="brand-mark-svg">
+        <div class="brand-identity">
+          <span class="brand-en">SEVAKHATA</span>
+          <span class="brand-hi" lang="hi">सेवाखाता</span>
+        </div>
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html#hero" data-i18n="nav.home">Home</a>
+        <a href="hire-household.html" aria-current="page" data-i18n="nav.hire">Hire</a>
+        <a href="register-worker.html" data-i18n="nav.register">Register</a>
+        <a href="directory.html" data-i18n="nav.directory">Directory</a>
+        <a href="ledger.html" data-i18n="nav.ledger">Ledger</a>
+        <a href="contact-feedback.html" data-i18n="nav.support">Support</a>
+      </div>
+      <div class="nav-extras">
+        <div class="lang-toggle" role="group" aria-label="Language" data-i18n-aria="nav.language">
+          <button type="button" data-lang="en" aria-pressed="true">EN</button>
+          <button type="button" data-lang="hi" lang="hi" aria-pressed="false">हिं</button>
+        </div>
+        <button type="button" class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Menu" data-i18n-aria="nav.menu"><span aria-hidden="true">☰</span></button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main" class="page-shell">
+    <header class="page-hero">
+      <div>
+        <p class="eyebrow" data-i18n="hire.eyebrow">Hire a helper</p>
+        <h1 class="page-title" data-i18n="hire.title">Hire a helper</h1>
+        <p class="page-title-hi" lang="hi" data-i18n="hire.titleHi">सहायक को काम पर रखें</p>
+        <p class="page-lead" data-i18n="hire.lead">Find a cook, maid, driver or caregiver, send a hiring request, or log an arrangement you already have so work and payments can be recorded together.</p>
+      </div>
+      <div class="page-hero-tools">
+        <span class="sync-badge" data-sync-status role="status">Checking server…</span>
+        <button type="button" class="btn btn-ghost btn-small" data-export="bookings" data-i18n="common.exportJson">Export JSON</button>
+      </div>
+    </header>
+    <section class="panel" aria-labelledby="browseTitle" style="margin-bottom:1.5rem">
+      <h2 class="panel-title" id="browseTitle" data-i18n="hire.browseTitle">Browse by category</h2>
+      <p class="panel-sub" data-i18n="hire.browseSub">Pick a category to see matching helpers, then send a request below.</p>
+      <div class="category-grid" id="categoryGrid" role="group" aria-label="Categories" data-i18n-aria="hire.browseTitle"></div>
+      <ul class="mini-list" id="matchList" style="margin-top:1.25rem" aria-live="polite"></ul>
+    </section>
+
+    <div class="layout-split">
+      <section class="panel" aria-labelledby="hireFormTitle">
+        <h2 class="panel-title" id="hireFormTitle" data-i18n="hire.formTitle">Send a hiring request</h2>
+        <p class="panel-sub" data-i18n="hire.formSub">Fields marked * are required.</p>
+        <form id="hireForm" novalidate>
+          <div class="form-grid">
+        <div class="field span-2">
+          <label ><span data-i18n="hire.kind">What would you like to do?</span><span class="req" aria-hidden="true">*</span></label>
+          <div class="segmented" role="radiogroup" aria-label="Request type" data-i18n-aria="hire.kind">
+            <label><input type="radio" name="requestKind" value="new" checked><span data-i18n="hire.kindNew">Hire a new helper</span></label>
+            <label><input type="radio" name="requestKind" value="existing"><span data-i18n="hire.kindExisting">Log an existing arrangement</span></label>
+          </div>
+        </div>
+        <div class="field">
+          <label for="hHousehold"><span data-i18n="hire.household">Household name</span><span class="req" aria-hidden="true">*</span></label>
+          <input id="hHousehold" name="householdName" type="text" maxlength="60" placeholder="e.g. Sharma Household" data-i18n-placeholder="hire.household.ph">
+        </div>
+        <div class="field">
+          <label for="hContact"><span data-i18n="hire.contact">Contact person</span><span class="req" aria-hidden="true">*</span></label>
+          <input id="hContact" name="contactName" type="text" autocomplete="name" maxlength="60" placeholder="Your name" data-i18n-placeholder="hire.contact.ph">
+        </div>
+        <div class="field">
+          <label for="hPhone"><span data-i18n="hire.phone">Mobile number</span><span class="req" aria-hidden="true">*</span></label>
+          <input id="hPhone" name="phone" type="tel" inputmode="numeric" autocomplete="tel-national" maxlength="10" placeholder="10-digit mobile" data-i18n-placeholder="reg.phone.ph">
+        </div>
+        <div class="field">
+          <label for="hEmail"><span data-i18n="reg.email">Email</span> <span class="hint" data-i18n="common.optional">(optional)</span></label>
+          <input id="hEmail" name="email" type="email" autocomplete="email" maxlength="80" placeholder="name@example.com">
+        </div>
+        <div class="field">
+          <label for="hCategory"><span data-i18n="hire.category">Type of help needed</span><span class="req" aria-hidden="true">*</span></label>
+          <select id="hCategory" name="category" data-fill="categories"></select>
+        </div>
+        <div class="field">
+          <label for="hWorker"><span data-i18n="hire.worker">Helper</span><span class="req" aria-hidden="true">*</span></label>
+          <select id="hWorker" name="workerId"></select>
+          <span class="hint" data-i18n="hire.worker.hint">Optional for a new request. Required when logging an existing arrangement.</span>
+        </div>
+        <div class="field">
+          <label for="hLocation"><span data-i18n="hire.location">Household location</span><span class="req" aria-hidden="true">*</span></label>
+          <input id="hLocation" name="location" type="text" maxlength="80" placeholder="e.g. DLF Phase 3, Gurugram" data-i18n-placeholder="hire.location.ph">
+        </div>
+        <div class="field">
+          <label for="hStart"><span data-i18n="hire.start">Start date</span><span class="req" aria-hidden="true">*</span></label>
+          <input id="hStart" name="startDate" type="date">
+        </div>
+        <div class="field">
+          <label for="hSchedule"><span data-i18n="hire.schedule">Days and timing</span><span class="req" aria-hidden="true">*</span></label>
+          <input id="hSchedule" name="schedule" type="text" maxlength="80" placeholder="e.g. Mon–Sat, 7am–11am" data-i18n-placeholder="hire.schedule.ph">
+        </div>
+        <div class="field">
+          <label for="hRate"><span data-i18n="hire.rate">Offered pay (₹)</span> <span class="hint" data-i18n="common.optional">(optional)</span></label>
+          <input id="hRate" name="offeredRate" type="number" inputmode="numeric" min="1" step="1" placeholder="e.g. 12000">
+          <span class="hint" data-i18n="hire.rate.hint">Per month or per day, as agreed with the helper.</span>
+        </div>
+        <div class="field span-2">
+          <label for="hNotes"><span data-i18n="hire.notes">Notes</span> <span class="hint" data-i18n="common.optional">(optional)</span></label>
+          <textarea id="hNotes" name="notes" maxlength="400" rows="3" placeholder="Anything else the helper should know"></textarea>
+        </div>
+          </div>
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary" data-i18n="hire.submit">Send request</button>
+            <button type="reset" class="btn btn-ghost" id="hReset" data-i18n="common.reset">Clear form</button>
+          </div>
+        </form>
+      </section>
+
+      <aside class="panel" aria-labelledby="recentReqTitle">
+        <h2 class="panel-title" id="recentReqTitle" data-i18n="hire.recent">Recent requests</h2>
+        <p class="panel-sub" data-i18n="hire.recentSub">Newest first. Phone numbers are not shown here.</p>
+        <ul class="mini-list" id="recentBookings" aria-live="polite"></ul>
+        <div class="form-actions"><a class="btn btn-ghost btn-small" href="ledger.html" data-i18n="hire.toLedger">Open the shared ledger →</a></div>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="editorial-footer" role="contentinfo">
+    <div class="footer-container">
+      <div class="footer-brand-col">
+        <div class="footer-brand-lockup">
+          <img src="assets/brand/sevakhata-mark.svg" alt="" width="26" height="26">
+          <span class="footer-brand-name">SEVAKHATA · <span lang="hi">सेवाखाता</span></span>
+        </div>
+        <p class="footer-tagline-text">
+          Dono ka record, ek hi hisaab · <span data-i18n="footer.tagline">The shared domestic employment ledger.</span>
+        </p>
+      </div>
+
+      <div class="footer-links-col">
+        <nav class="footer-nav" aria-label="Footer Links">
+          <a href="index.html#hero" data-i18n="nav.home">Home</a>
+          <span class="nav-sep">·</span>
+          <a href="hire-household.html" aria-current="page" data-i18n="nav.hire">Hire</a>
+          <span class="nav-sep">·</span>
+          <a href="register-worker.html" data-i18n="nav.register">Register</a>
+          <span class="nav-sep">·</span>
+          <a href="directory.html" data-i18n="nav.directory">Directory</a>
+          <span class="nav-sep">·</span>
+          <a href="ledger.html" data-i18n="nav.ledger">Ledger</a>
+          <span class="nav-sep">·</span>
+          <a href="contact-feedback.html" data-i18n="nav.support">Support</a>
+        </nav>
+        <div class="footer-legal-copy" data-i18n="footer.copy">
+          © 2026 SevaKhata. Designed for mutual trust and dignity in Indian households.
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/validation.js"></script>
+  <script src="js/records.js"></script>
+  <script src="js/seed-data.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/pages/hire-household.js"></script>
+</body>
+</html>

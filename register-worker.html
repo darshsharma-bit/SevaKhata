@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register as a Helper — SevaKhata</title>
+  <meta name="description" content="Create a SevaKhata worker profile with skills, experience, rate and ID format check.">
+  <link rel="icon" type="image/svg+xml" href="assets/brand/favicon.svg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600&family=Noto+Sans+Devanagari:wght@400;500;600;700;800&family=Tiro+Devanagari+Hindi&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="pages.css">
+</head>
+<body class="editorial-body inner-page" data-page="register">
+  <a class="skip-link" href="#main" data-i18n="common.skip">Skip to content</a>
+
+  <header class="system-nav-wrapper" role="banner">
+    <nav class="system-nav" id="systemNav" aria-label="Primary Navigation">
+      <a href="index.html" class="nav-brand" aria-label="SevaKhata Home">
+        <img src="assets/brand/sevakhata-mark.svg" alt="" width="26" height="26" class="brand-mark-svg">
+        <div class="brand-identity">
+          <span class="brand-en">SEVAKHATA</span>
+          <span class="brand-hi" lang="hi">सेवाखाता</span>
+        </div>
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html#hero" data-i18n="nav.home">Home</a>
+        <a href="hire-household.html" data-i18n="nav.hire">Hire</a>
+        <a href="register-worker.html" aria-current="page" data-i18n="nav.register">Register</a>
+        <a href="directory.html" data-i18n="nav.directory">Directory</a>
+        <a href="ledger.html" data-i18n="nav.ledger">Ledger</a>
+        <a href="contact-feedback.html" data-i18n="nav.support">Support</a>
+      </div>
+      <div class="nav-extras">
+        <div class="lang-toggle" role="group" aria-label="Language" data-i18n-aria="nav.language">
+          <button type="button" data-lang="en" aria-pressed="true">EN</button>
+          <button type="button" data-lang="hi" lang="hi" aria-pressed="false">हिं</button>
+        </div>
+        <button type="button" class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Menu" data-i18n-aria="nav.menu"><span aria-hidden="true">☰</span></button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main" class="page-shell">
+    <header class="page-hero">
+      <div>
+        <p class="eyebrow" data-i18n="reg.eyebrow">Helper registration</p>
+        <h1 class="page-title" data-i18n="reg.title">Register as a helper</h1>
+        <p class="page-title-hi" lang="hi" data-i18n="reg.titleHi">सहायक के रूप में पंजीकरण</p>
+        <p class="page-lead" data-i18n="reg.lead">Create a profile with your skills, experience and rate. Households can then find you in the directory and record your work in a shared ledger.</p>
+      </div>
+      <div class="page-hero-tools">
+        <span class="sync-badge" data-sync-status role="status">Checking server…</span>
+        <button type="button" class="btn btn-ghost btn-small" data-export="workers" data-i18n="common.exportJson">Export JSON</button>
+      </div>
+    </header>
+    <div class="layout-split">
+      <section class="panel" aria-labelledby="regFormTitle">
+        <h2 class="panel-title" id="regFormTitle" data-i18n="reg.formTitle">Create your SevaKhata profile</h2>
+        <p class="panel-sub" data-i18n="reg.formSub">Fields marked * are required. Errors appear as you type.</p>
+
+        <form id="workerForm" novalidate>
+          <div class="form-grid">
+        <div class="field">
+          <label for="wName"><span data-i18n="reg.name">Full name</span><span class="req" aria-hidden="true">*</span></label>
+          <input id="wName" name="name" type="text" autocomplete="name" maxlength="60" placeholder="e.g. Sunita Sharma" data-i18n-placeholder="reg.name.ph">
+        </div>
+        <div class="field">
+          <label for="wPhone"><span data-i18n="reg.phone">Mobile number</span><span class="req" aria-hidden="true">*</span></label>
+          <input id="wPhone" name="phone" type="tel" inputmode="numeric" autocomplete="tel-national" maxlength="10" placeholder="10-digit mobile" data-i18n-placeholder="reg.phone.ph">
+          <span class="hint" data-i18n="reg.phone.hint">Starts with 6, 7, 8 or 9.</span>
+        </div>
+        <div class="field">
+          <label for="wEmail"><span data-i18n="reg.email">Email</span> <span class="hint" data-i18n="common.optional">(optional)</span></label>
+          <input id="wEmail" name="email" type="email" autocomplete="email" maxlength="80" placeholder="name@example.com">
+        </div>
+        <div class="field">
+          <label for="wCategory"><span data-i18n="reg.category">Type of work</span><span class="req" aria-hidden="true">*</span></label>
+          <select id="wCategory" name="category" data-fill="categories"></select>
+        </div>
+        <div class="field span-2">
+          <label for="wSkills"><span data-i18n="reg.skills">Skills</span><span class="req" aria-hidden="true">*</span></label>
+          <input id="wSkills" name="skills" type="text" maxlength="120" placeholder="Cooking, Cleaning, Elder care" data-i18n-placeholder="reg.skills.ph">
+          <span class="hint" data-i18n="reg.skills.hint">Separate skills with commas.</span>
+        </div>
+        <div class="field">
+          <label for="wExp"><span data-i18n="reg.exp">Experience (years)</span><span class="req" aria-hidden="true">*</span></label>
+          <input id="wExp" name="experienceYears" type="number" inputmode="decimal" min="0" max="50" step="0.5" placeholder="0">
+        </div>
+        <div class="field">
+          <label for="wLocation"><span data-i18n="reg.location">Area / locality</span><span class="req" aria-hidden="true">*</span></label>
+          <input id="wLocation" name="location" type="text" autocomplete="address-level2" maxlength="80" placeholder="e.g. Sector 49, Gurugram" data-i18n-placeholder="reg.location.ph">
+        </div>
+        <div class="field">
+          <label ><span data-i18n="reg.rateType">Rate type</span><span class="req" aria-hidden="true">*</span></label>
+          <div class="segmented" role="radiogroup" aria-label="Rate type" data-i18n-aria="reg.rateType">
+            <label><input type="radio" name="rateType" value="daily" checked><span data-i18n="common.daily">Daily</span></label>
+            <label><input type="radio" name="rateType" value="monthly"><span data-i18n="common.monthly">Monthly</span></label>
+          </div>
+        </div>
+        <div class="field">
+          <label for="wRate"><span data-i18n="reg.rate">Rate (₹)</span><span class="req" aria-hidden="true">*</span></label>
+          <input id="wRate" name="rate" type="number" inputmode="numeric" min="1" step="1" placeholder="500">
+          <span class="hint" data-i18n="reg.rate.hint">Daily: ₹100–5,000 · Monthly: ₹1,000–1,00,000</span>
+        </div>
+        <div class="field">
+          <label for="wIdType"><span data-i18n="reg.idType">ID type</span><span class="req" aria-hidden="true">*</span></label>
+          <select id="wIdType" name="idType" data-fill="idTypes"></select>
+        </div>
+        <div class="field">
+          <label for="wIdNumber"><span data-i18n="reg.idNumber">ID number</span><span class="req" aria-hidden="true">*</span></label>
+          <input id="wIdNumber" name="idNumber" type="text" autocomplete="off" inputmode="text" maxlength="20" placeholder="Enter ID number" data-i18n-placeholder="reg.idNumber.ph">
+          <span class="hint" data-i18n="reg.idNumber.hint">Checked for format only. SevaKhata keeps just the last 4 characters.</span>
+        </div>
+        <div class="field span-2">
+          <label for="wAbout"><span data-i18n="reg.about">About your work</span> <span class="hint" data-i18n="common.optional">(optional)</span></label>
+          <textarea id="wAbout" name="about" maxlength="300" rows="3" placeholder="Anything a household should know about you"></textarea>
+        </div>
+            <div class="field check-field span-2">
+              <input id="wConsent" name="consent" type="checkbox">
+              <label for="wConsent" data-i18n="reg.consent">I confirm these details are mine and agree that households can see my profile in the directory.</label>
+              <p class="field-error" aria-live="polite"></p>
+            </div>
+          </div>
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary" data-i18n="reg.submit">Create profile</button>
+            <button type="reset" class="btn btn-ghost" id="wReset" data-i18n="common.reset">Clear form</button>
+          </div>
+        </form>
+      </section>
+
+      <aside class="stack" aria-label="Information">
+        <section class="panel">
+          <h2 class="panel-title" data-i18n="reg.howTitle">How verification works</h2>
+          <p class="panel-sub" data-i18n="reg.howSub">New profiles start as “verification pending”.</p>
+          <p class="modal-body" data-i18n="reg.howBody">In this milestone verification is a flag in the data, not a real government check. Your ID number is only checked for format in your browser and the server. Only the last 4 characters are stored, never the full number.</p>
+          <p class="note-box info" style="margin-top:1rem" data-i18n="reg.demoNote">Demo project: please do not enter a real Aadhaar number. A sample such as 234567890123 passes the format check.</p>
+        </section>
+        <section class="panel" aria-labelledby="recentWorkersTitle">
+          <h2 class="panel-title" id="recentWorkersTitle" data-i18n="reg.recent">Recently registered</h2>
+          <ul class="mini-list" id="recentWorkers" aria-live="polite"></ul>
+          <div class="form-actions"><a class="btn btn-ghost btn-small" href="directory.html" data-i18n="reg.openDirectory">Open directory →</a></div>
+        </section>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="editorial-footer" role="contentinfo">
+    <div class="footer-container">
+      <div class="footer-brand-col">
+        <div class="footer-brand-lockup">
+          <img src="assets/brand/sevakhata-mark.svg" alt="" width="26" height="26">
+          <span class="footer-brand-name">SEVAKHATA · <span lang="hi">सेवाखाता</span></span>
+        </div>
+        <p class="footer-tagline-text">
+          Dono ka record, ek hi hisaab · <span data-i18n="footer.tagline">The shared domestic employment ledger.</span>
+        </p>
+      </div>
+
+      <div class="footer-links-col">
+        <nav class="footer-nav" aria-label="Footer Links">
+          <a href="index.html#hero" data-i18n="nav.home">Home</a>
+          <span class="nav-sep">·</span>
+          <a href="hire-household.html" data-i18n="nav.hire">Hire</a>
+          <span class="nav-sep">·</span>
+          <a href="register-worker.html" aria-current="page" data-i18n="nav.register">Register</a>
+          <span class="nav-sep">·</span>
+          <a href="directory.html" data-i18n="nav.directory">Directory</a>
+          <span class="nav-sep">·</span>
+          <a href="ledger.html" data-i18n="nav.ledger">Ledger</a>
+          <span class="nav-sep">·</span>
+          <a href="contact-feedback.html" data-i18n="nav.support">Support</a>
+        </nav>
+        <div class="footer-legal-copy" data-i18n="footer.copy">
+          © 2026 SevaKhata. Designed for mutual trust and dignity in Indian households.
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/validation.js"></script>
+  <script src="js/records.js"></script>
+  <script src="js/seed-data.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/pages/register-worker.js"></script>
+</body>
+</html>

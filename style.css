@@ -1,7 +1,6 @@
 /* ==========================================================================
-   SEVAKHATA — THE MONUMENTAL MUTUAL LEDGER
-   High-End Editorial Art Direction & Architectural Design System
-   Cinematic Spatial Layering, Strict Mathematical Grid & Direct Manipulation
+   SevaKhata — Main Stylesheet
+   Landing page typography, grid, cards and interaction states
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
@@ -48,7 +47,7 @@
   --text-tertiary: rgba(255, 255, 255, 0.45);
   --text-quaternary: rgba(255, 255, 255, 0.28);
 
-  /* Motion & Interaction (Emil Kowalski Craft) */
+  /* Motion & Transitions */
   --ease-spring: cubic-bezier(0.23, 1, 0.32, 1);
   --ease-smooth: cubic-bezier(0.16, 1, 0.3, 1);
   --dur-fast: 160ms;
@@ -286,54 +285,8 @@ button {
   animation: pulseBeacon 2.4s infinite;
 }
 
-.telemetry-divider {
-  color: var(--text-quaternary);
-}
-
-.nav-controls {
-  display: flex;
-  align-items: center;
-  gap: 1.25rem;
-  flex-shrink: 0;
-}
-
-.nav-link-subtle {
-  font-size: 0.8rem;
-  font-weight: 500;
-  color: var(--text-secondary);
-  transition: color var(--dur-fast) ease;
-}
-
-.nav-link-subtle:hover {
-  color: #FFFFFF;
-}
-
-.nav-cta-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.35rem;
-  padding: 0.45rem 1.15rem;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  border-radius: 100px;
-  font-size: 0.78rem;
-  font-weight: 600;
-  color: #FFFFFF;
-  letter-spacing: 0.02em;
-  transition: all var(--dur-fast) var(--ease-spring);
-  white-space: nowrap;
-}
-
-.nav-cta-pill:hover {
-  background: rgba(255, 255, 255, 0.15);
-  border-color: rgba(255, 255, 255, 0.3);
-  transform: translateY(-1px);
-}
-
 /* --------------------------------------------------------------------------
-   05. MOVEMENT 01: THE STAGED MONUMENTAL HERO
-   Stage 0: Unobscured Monumental Title & Thesis
-   Stage 1: Grided Slab Glides into Resting Position
+   05. HERO SECTION
    -------------------------------------------------------------------------- */
 .movement-section {
   position: relative;
@@ -346,58 +299,7 @@ button {
   padding-bottom: 5rem;
 }
 
-/* Micro-Telemetry Top Bar */
-.hero-metadata-bar {
-  max-width: var(--page-max-width);
-  margin: 0 auto;
-  padding: 1.25rem var(--page-gutter);
-  width: 100%;
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 1.5rem;
-  border-bottom: 1px solid var(--rule-hairline);
-  margin-bottom: 3.5rem;
-}
-
-.meta-col {
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
-}
-
-.meta-tag {
-  font-size: 0.65rem;
-  font-weight: 700;
-  letter-spacing: 0.15em;
-  color: var(--text-tertiary);
-}
-
-.meta-val {
-  font-size: 0.8rem;
-  font-weight: 500;
-  color: var(--text-secondary);
-}
-
-.center-col {
-  align-items: center;
-  text-align: center;
-}
-
-.roman-numeral {
-  font-family: var(--font-monumental);
-  font-size: 1.25rem;
-  letter-spacing: 0.1em;
-  color: var(--khata-crimson-spine);
-}
-
-.meta-val-center {
-  font-size: 0.68rem;
-  font-weight: 700;
-  letter-spacing: 0.16em;
-  color: var(--text-primary);
-}
-
-/* STAGE 0: HERO ART STAGE (SEVAKHATA BREATHES UNOBSCURED) */
+/* Hero Art Stage */
 .hero-art-stage {
   position: relative;
   max-width: var(--page-max-width);
@@ -610,28 +512,6 @@ button {
   justify-content: space-between;
   border-bottom: 1px solid var(--rule-hairline);
   background: linear-gradient(to right, rgba(225, 29, 72, 0.03), transparent);
-}
-
-.folio-badge-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  font-size: 0.65rem;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  color: var(--text-tertiary);
-  margin-bottom: 0.35rem;
-}
-
-.badge-dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background-color: var(--emerald-core);
-}
-
-.badge-dot.pulse {
-  animation: pulseBeacon 2s infinite;
 }
 
 .folio-household-title {
@@ -1996,12 +1876,6 @@ button {
    12. RESPONSIVE BREAKPOINTS
    -------------------------------------------------------------------------- */
 @media (max-width: 1024px) {
-  .hero-metadata-bar {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .center-col {
-    grid-column: span 2;
-  }
   .memory-spatial-field {
     grid-template-columns: 1fr;
     gap: 2rem;
@@ -2022,29 +1896,11 @@ button {
 }
 
 @media (max-width: 768px) {
-  /* Navigation on mobile */
-  .nav-telemetry,
-  .nav-link-subtle {
-    display: none;
-  }
-  .system-nav-wrapper {
-    padding: 0.5rem 0.85rem;
-  }
-  .system-nav {
-    padding: 0.5rem 0.85rem;
-  }
   .brand-en {
     font-size: 1.05rem;
   }
   .brand-hi {
     display: none;
-  }
-  .nav-cta-pill {
-    padding: 0.45rem 0.95rem;
-    font-size: 0.75rem;
-    min-height: 40px;
-    display: inline-flex;
-    align-items: center;
   }
 
   /* Hero adjustments */

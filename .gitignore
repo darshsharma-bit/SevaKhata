@@ -44,3 +44,13 @@ temp/
 __pycache__/
 *.py[cod]
 *$py.class
+
+# Agent, skill & evaluation artifacts
+.agents/
+.claude/
+agent/
+skills-lock.json
+actual_metrics_1440.json
+walkthrough.md
+AGENTS.md
+

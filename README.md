@@ -40,6 +40,61 @@ Unlike conventional unilateral tracking tools, SevaKhata operates on a strict **
 23. [Future Engineering Roadmap](#future-engineering-roadmap)
 24. [Design System Reference](#design-system-reference)
 
+> **Evaluation 2 reviewers:** start at [Evaluation 2: Run Guide & Checklist](#evaluation-2-run-guide--checklist) below.
+
+---
+
+## Evaluation 2: Run Guide & Checklist
+
+Evaluation 2 turns the single landing page into a **six-page, form-driven application** with shared navigation, real-time validation, and **form submissions saved to local JSON files**.
+
+### How to run it
+
+**Option A (recommended): live saving to the JSON files** (needs Node.js 18+)
+
+```bash
+npm install
+npm start            # same as: node server.js
+```
+
+Open **http://localhost:3000**. Submissions are `POST`ed to the local server, which appends them to `data/workers.json`, `data/bookings.json`, `data/ledger.json` and `data/feedback.json` (the header badge on each page reads *"Live server · saving to data/*.json"*). Use a different port with `PORT=4000 npm start`.
+
+**Option B: no server** (double-click `index.html`, or VS Code Live Server). The pages detect that no API exists and switch to **offline demo mode** (badge: *"Offline demo · saving in this browser"*): data is seeded from `js/seed-data.js`, saved in `localStorage`, and every page has an **Export JSON** button that downloads the updated `.json` file as a `Blob`. If you run Live Server *and* `node server.js` together, the pages find the server on `localhost:3000` automatically.
+
+```bash
+npm test                    # shared validation rules + API checks (no extra dependencies)
+git checkout -- data/       # restore the original seed records after a demo
+npm run sync-seed           # regenerate js/seed-data.js after editing data/*.json
+```
+
+### Checklist: where each evaluation parameter is implemented
+
+| # | Parameter | Where to look | What to show |
+| :-- | :--- | :--- | :--- |
+| **1** | **Additional pages & complete inter-page linking** | [`index.html`](./index.html), [`register-worker.html`](./register-worker.html), [`hire-household.html`](./hire-household.html), [`ledger.html`](./ledger.html), [`directory.html`](./directory.html), [`contact-feedback.html`](./contact-feedback.html). Shared styling in [`pages.css`](./pages.css). | The same responsive nav bar (hamburger on mobile) and footer on every page, current page highlighted, **no `#` placeholder links**. On the home page the gateway cards and CTA buttons route to the new pages. Ledger and directory link to each other (`ledger.html?worker=…`, `hire-household.html?worker=…`). |
+| **2** | **JavaScript interactions, validation & UX** | Validation rules: [`js/validation.js`](./js/validation.js). Inline error binding on `input`/`blur`: `bindForm()` in [`js/ui.js`](./js/ui.js). Language toggle: [`js/i18n.js`](./js/i18n.js). Page logic: [`js/pages/`](./js/pages/). | Empty submit → field-specific red/green states and messages (not browser popups). Phone `^[6-9]\d{9}$`, email, ID formats, positive wages, minimum text lengths. Live search/filter in the **directory** and **ledger**. **EN ⇄ हिं** toggle (remembered across pages; validation messages translate too). Toasts and modals confirm every submission. Tables and cards render from the saved JSON on page load. |
+| **3** | **Form submission** | `onSubmit` handlers in [`js/pages/*.js`](./js/pages/), `e.preventDefault()` + validation in `bindForm()` ([`js/ui.js`](./js/ui.js)), `fetch()` with `async/await` in [`js/store.js`](./js/store.js). | Submit the *Register*, *Hire*, *Ledger* and *Support* forms: a spinner on the button, a success modal with a reference ID, and the list re-renders immediately. |
+| **4** | **Saving data to local JSON files** | Server: [`server.js`](./server.js) (`/api/workers`, `/api/bookings`, `/api/ledger`, `/api/feedback`) writing [`data/*.json`](./data/). Fallback: `localStorage` + **Export JSON** in [`js/store.js`](./js/store.js); seeds in [`js/seed-data.js`](./js/seed-data.js). | Submit a form, then open `data/workers.json` (or the other file) in the editor and see the new record. Stop the server, reload: pages still work and **Export JSON** downloads the file. Each data file is seeded with realistic records. |
+
+### Suggested 3-minute viva demo
+
+1. **Home → Register:** submit with errors to show inline validation; fix them; submit; open `data/workers.json`.
+2. **Directory:** search "elder care", toggle *Verified only*, open a profile's *Hire* link (the form arrives pre-filled).
+3. **Ledger as Employer:** add an entry; it appears as **Pending** and the confirmed balance does **not** change.
+4. **Ledger as Helper** (switch *View as Helper*): **Confirm** it (balance rises) and **Dispute** another with a reason (kept out of the balance).
+5. **Back as Employer:** *Correct & resend* the disputed entry.
+6. **EN ⇄ हिं** toggle, then **Export JSON**.
+
+### Design decisions worth mentioning
+
+- **The core rule is enforced, not just displayed.** `js/records.js` is shared by the browser and the server: new entries are always `pending` (any client-supplied status is ignored), only the helper can confirm/dispute, only the employer can correct a disputed entry, and *confirmed is final*. The balance is computed from confirmed entries only; pending and disputed totals are shown separately.
+- **Aadhaar/ID numbers are never stored.** The form checks the format, then only the **last 4 characters** are sent and saved (`idLast4`).
+- **One source of truth for validation.** `js/validation.js` runs in the browser for instant feedback and again on the server, so the JSON files cannot receive data the form would have rejected.
+- **Trust score** (directory) is transparent: ID flag 30 + rating 30 + experience 10 + **ledger reliability 30** (confirmed ÷ reviewed entries from `ledger.json`).
+
+> [!IMPORTANT]
+> **Honest scope:** there is **no authentication yet**. The "View as Employer / Helper" switch and the `actor` field on the API are demonstration controls, not security. "Verified" badges and ratings in the seed data are sample values; no real KYC or review system exists. See [Known Limitations](#known-limitations).
+
 ---
 
 ## Product Overview
@@ -166,7 +221,7 @@ The interactive prototype embedded in [`index.html`](./index.html) and [`main.js
 ## Current Implementation Status
 
 > [!NOTE]
-> **Prototype Scope Notice:** This repository currently contains a **high-fidelity interactive frontend prototype and design specification**. It serves as the design system, client-side interaction engine, and architectural blueprint. A persistent backend server (Node.js/Express) and database persistence (MongoDB/Mongoose) are planned for subsequent development phases.
+> **Prototype Scope Notice:** This repository currently contains a **high-fidelity interactive frontend prototype and design specification**. It serves as the design system, client-side interaction engine, and architectural blueprint. **Evaluation 2 update:** the repository now also contains five additional workflow pages and a small Node.js/Express server that saves form submissions to local JSON files (see [Evaluation 2](#evaluation-2-run-guide--checklist)). Authentication and database persistence (MongoDB/Mongoose) are still planned for subsequent phases.
 
 | System Layer | Current Status | Description |
 | :--- | :--- | :--- |
@@ -175,8 +230,11 @@ The interactive prototype embedded in [`index.html`](./index.html) and [`main.js
 | **Motion & Scroll Choreography** | **Implemented** | Spatial scroll staging, two-sided memory parallax, and cubic ease-out counter animations. |
 | **Bilingual UI** | **Implemented** | English and Hindi (Devanagari) embedded directly in typographic hierarchies. |
 | **Figma Vector Suite** | **Implemented** | Unlocked, non-flattened vector artboards and design tokens in [`design/`](./design/). |
-| **Backend REST API** | **Planned** | Node.js / Express routes for managing households, records, and authentication sessions. |
-| **Database Persistence** | **Planned** | MongoDB collections for multi-tenant accounts, transaction ledgers, and audit trails. |
+| **Multi-page workflows (Eval 2)** | **Implemented** | Register worker, hire household, shared ledger, helper directory and support pages with shared navigation and footer. |
+| **Form validation & bilingual toggle (Eval 2)** | **Implemented** | Inline real-time validation, toasts/modals, and a persistent English / Hindi toggle in vanilla JavaScript. |
+| **Local JSON API (Eval 2)** | **Implemented** | `server.js` (Express) reads/writes `data/*.json`; the browser falls back to `localStorage` plus **Export JSON** when no server is running. |
+| **Authentication & Sessions** | **Planned** | Mobile OTP / role-based access control. Not implemented: roles on the ledger page are a demo switch. |
+| **Database Persistence** | **Planned** | MongoDB collections for multi-tenant accounts, transaction ledgers, and audit trails. Current persistence is flat JSON files. |
 | **Multi-Device Synchronization** | **Planned** | Server-coordinated push updates (WebSockets / Server-Sent Events / SMS triggers). |
 
 ---
@@ -452,8 +510,28 @@ SevaKhata Final/
 │   ├── FIGMA_DESIGN_SYSTEM.md              # Figma import guide and layout documentation
 │   └── sevakhata-landing-figma.svg         # Synced master artboard
 ├── actual_metrics_1440.json                # Measured layout coordinates from QA rendering
-├── index.html                              # Primary semantic HTML5 application file
-├── main.js                                 # Client-side state machine & motion engine
+├── data/                                   # [Eval 2] JSON "database" written by server.js
+│   ├── workers.json  bookings.json  ledger.json  feedback.json
+├── js/                                     # [Eval 2] Modular vanilla JavaScript
+│   ├── validation.js                       # Shared rules + form schemas (browser AND server)
+│   ├── records.js                          # Shared state machine, balance and trust-score logic
+│   ├── store.js                            # fetch() API client, localStorage fallback, Export JSON
+│   ├── ui.js                               # Toast, modal, mobile nav, inline-validation form binder
+│   ├── i18n.js                             # English / Hindi dictionary and toggle
+│   ├── seed-data.js                        # Generated from data/*.json for no-server mode
+│   ├── site.js                             # Nav + language wiring for the landing page
+│   └── pages/                              # One script per page
+├── scripts/                                # sync-seed.js (regenerate seed), smoke-test.js (npm test)
+├── index.html                              # Landing page (home)
+├── register-worker.html                    # [Eval 2] Worker onboarding
+├── hire-household.html                     # [Eval 2] Household hiring requests
+├── ledger.html                             # [Eval 2] Digital khata: attendance, payments, confirm/dispute
+├── directory.html                          # [Eval 2] Searchable helper directory with trust scores
+├── contact-feedback.html                   # [Eval 2] Support tickets, feedback, verification issues
+├── main.js                                 # Landing page state machine & motion engine
+├── pages.css                               # [Eval 2] Inner-page components (built on style.css tokens)
+├── package.json                            # [Eval 2] npm start / npm test
+├── server.js                               # [Eval 2] Express server + JSON-file API
 ├── skills-lock.json                        # Skill dependency lockfile
 ├── style.css                               # Master stylesheet & CSS custom properties
 ├── walkthrough.md                          # Implementation summary and verification report
@@ -464,7 +542,7 @@ SevaKhata Final/
 
 ## Local Setup & Execution
 
-No local npm package dependencies or build toolchains are required to run the current prototype. The application loads web fonts remotely from Google Fonts (`Bebas Neue`, `Inter`, `Noto Sans Devanagari`, `Tiro Devanagari Hindi`).
+The landing page needs no build toolchain. To use the Evaluation 2 pages with **live saving to `data/*.json`**, run `npm install && npm start` (see the [run guide](#evaluation-2-run-guide--checklist)); without it, every page still works in offline demo mode. The application loads web fonts remotely from Google Fonts (`Bebas Neue`, `Inter`, `Noto Sans Devanagari`, `Tiro Devanagari Hindi`).
 
 ### Option 1: Direct Browser File Opening (No Server Required)
 Open [`index.html`](./index.html) directly in any modern web browser (Chrome, Safari, Firefox, Edge).
@@ -490,7 +568,7 @@ npx serve .
 ## Testing & Quality Assurance
 
 > [!NOTE]
-> Automated unit or end-to-end test suites (e.g., Jest, Playwright, Cypress) are not currently included in the repository.
+> `npm test` runs a dependency-free smoke test of the shared validation rules, the ledger state machine and the JSON API (against a temporary copy of `data/`). Browser-level end-to-end suites (Playwright, Cypress) are not included.
 
 ### Manual Verification Conducted
 
@@ -532,9 +610,10 @@ npx serve .
 ## Security, Privacy & Data Integrity
 
 ### Current Prototype Scope
-- The current implementation operates **entirely within local browser memory**.
-- No credentials, session tokens, or personal identifiers are stored or transmitted across a network.
-- Application state resets to default values upon page reload.
+- The landing page demo operates **entirely within local browser memory** and resets on reload.
+- **Evaluation 2 pages** store form submissions in `data/*.json` (server) or `localStorage` (no-server mode). There are **no accounts, passwords or session tokens**, and no authentication.
+- Aadhaar / ID numbers are validated for format in the browser and only their **last 4 characters** are sent and stored.
+- The server re-validates every write and never trusts a client-supplied status, but its `actor` field (helper / employer) is honour-system, not access control.
 - Confirmation indicators in the UI demonstrate the intended user experience and do not represent cryptographic signatures or authenticated sessions.
 
 ### Proposed Future Architecture Principles
@@ -547,11 +626,13 @@ npx serve .
 
 ## Known Limitations
 
-1. **In-Memory State:** Interactive confirmations and disputes do not persist to a database upon browser reload.
+1. **Flat-file persistence:** Evaluation 2 saves to JSON files (server) or `localStorage` (no server), not a database. There is no multi-user locking beyond a single-process write queue, and records created offline are not merged back into `data/*.json` automatically (use **Export JSON**).
 2. **Hardcoded Demonstration Dataset:** The active demo is hardcoded to *Sharma Household × Sunita Sharma (August 2026)*.
 3. **Single Active Interactive Row:** While historical rows demonstrate the ledger structure, only the August 13 entry features interactive toggle controls.
 4. **No Real-Time Multi-Device Sync:** Interactions cannot currently be broadcast simultaneously to a second physical phone without an active server/WebSocket layer.
-5. **Absence of Automated Test Harness:** Testing currently relies on manual DOM inspection and headless browser verification.
+5. **Limited automated testing:** `npm test` covers the shared rules and API only; page behaviour was verified in a DOM test harness, not in real browsers on real phones.
+6. **No authentication:** the Employer/Helper switch and API `actor` field are demonstration controls. "Verified" badges, ratings and trust-score inputs in the seed data are sample values, not real KYC or reviews.
+7. **Partial translation of the landing page:** the English/Hindi toggle translates the navigation, footer and gateway cards on `index.html`; the five workflow pages are translated end to end.
 
 ---
 

@@ -4,26 +4,23 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SevaKhata — Dono ka record, ek hi hisaab</title>
-  <meta name="description" content="The shared domestic employment ledger. Two people, one record, one indisputable hisaab.">
+  <meta name="description" content="The shared domestic work and payment ledger. Two people, one record, clear hisaab.">
   <link rel="icon" type="image/svg+xml" href="assets/brand/favicon.svg">
 
-  <!-- Optical Typography: Bebas Neue (Monumental Condensed) + Inter (Editorial Precision) + Noto Sans Devanagari + Tiro Devanagari Hindi -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600&family=Noto+Sans+Devanagari:wght@400;500;600;700;800&family=Tiro+Devanagari+Hindi&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="pages.css">
 </head>
-<body class="editorial-body">
+<body class="editorial-body" data-page="index">
+  <a class="skip-link" href="#mainCanvas" data-i18n="common.skip">Skip to content</a>
 
-  <!-- ======================================================== -->
-  <!-- 00. AMBIENT ARCHITECTURAL ENVIRONMENT & RETICLES        -->
-  <!-- ======================================================== -->
   <div class="ambient-canvas-grid" aria-hidden="true">
     <div class="axis-line axis-vertical"></div>
     <div class="axis-line axis-horizontal-hero"></div>
 
-    <!-- Concentric Audit Reticles (Hero Focal Target) -->
     <div class="reticle-target reticle-hero">
       <div class="reticle-ring ring-outer"></div>
       <div class="reticle-ring ring-mid"></div>
@@ -32,55 +29,50 @@
     </div>
   </div>
 
-  <!-- ======================================================== -->
-  <!-- 01. EDITORIAL SYSTEM NAVIGATION                         -->
-  <!-- ======================================================== -->
   <header class="system-nav-wrapper" role="banner">
     <nav class="system-nav" id="systemNav" aria-label="Primary Navigation">
-      <!-- Left: Brand Lockup with Original SVG Mark -->
-      <a href="#hero" class="nav-brand" aria-label="SevaKhata Home">
+      <a href="index.html" class="nav-brand" aria-label="SevaKhata Home">
         <img src="assets/brand/sevakhata-mark.svg" alt="" width="26" height="26" class="brand-mark-svg">
         <div class="brand-identity">
           <span class="brand-en">SEVAKHATA</span>
           <span class="brand-hi" lang="hi">सेवाखाता</span>
         </div>
       </a>
-
-      <!-- Center: Authentic Household Context -->
       <div class="nav-telemetry" role="status" aria-live="polite">
         <span class="telemetry-beacon"></span>
         <span class="telemetry-text">Sharma Household × Sunita Sharma · August 2026</span>
       </div>
-
-      <!-- Right: Direct Threshold Actions -->
-      <div class="nav-controls">
-        <a href="#hisaab" class="nav-link-subtle">Shared Hisaab</a>
-        <a href="#livingKhataObject" class="nav-cta-pill">Open Ledger →</a>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html#hero" aria-current="page" data-i18n="nav.home">Home</a>
+        <a href="hire-household.html" data-i18n="nav.hire">Hire</a>
+        <a href="register-worker.html" data-i18n="nav.register">Register</a>
+        <a href="directory.html" data-i18n="nav.directory">Directory</a>
+        <a href="ledger.html" data-i18n="nav.ledger">Ledger</a>
+        <a href="contact-feedback.html" data-i18n="nav.support">Support</a>
+      </div>
+      <div class="nav-extras">
+        <div class="lang-toggle" role="group" aria-label="Language" data-i18n-aria="nav.language">
+          <button type="button" data-lang="en" aria-pressed="true">EN</button>
+          <button type="button" data-lang="hi" lang="hi" aria-pressed="false">हिं</button>
+        </div>
+        <button type="button" class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Menu" data-i18n-aria="nav.menu"><span aria-hidden="true">☰</span></button>
       </div>
     </nav>
   </header>
 
   <main id="mainCanvas">
 
-    <!-- ======================================================== -->
-    <!-- 02. MOVEMENT 01: THE MONUMENTAL REVEAL                   -->
-    <!-- Staged Choreography:                                     -->
-    <!-- State 0: Majestic SEVAKHATA + Thesis (Unobscured)        -->
-    <!-- State 1: On Scroll, Typography recedes, Slab floats in   -->
-    <!-- ======================================================== -->
-    <section class="movement-section movement-hero" id="hero" aria-label="Hero: The Monumental Mutual Ledger">
+    <!-- 01. Hero Section -->
+    <section class="movement-section movement-hero" id="hero" aria-label="Hero: Shared Household Ledger">
 
-      <!-- STAGE 0: PROUD, UNOBSCURED MONUMENTAL TYPOGRAPHY & THESIS -->
       <div class="hero-art-stage">
         
-        <!-- Concentric Crimson Mutual Seal Disk -->
         <div class="hero-seal-disk" aria-hidden="true">
           <div class="disk-gradient-core"></div>
           <div class="disk-crosshair-v"></div>
           <div class="disk-crosshair-h"></div>
         </div>
 
-        <!-- Colossal Display Typography (Breathes with Full Negative Space) -->
         <div class="hero-typography-container" id="heroTypography">
           <h1 class="monumental-title">SEVAKHATA</h1>
           <div class="monumental-bilingual-sub">
@@ -273,24 +265,19 @@
 
     </section>
 
-    <!-- ======================================================== -->
-    <!-- 03. MOVEMENT 02: THE TWO-SIDED MEMORY DIVERGENCE         -->
-    <!-- Spatial Tension: Left Perspective + Right Perspective    -->
-    <!-- Dynamic Parallax & Convergence into the Invariant        -->
-    <!-- ======================================================== -->
-    <section class="movement-section movement-diagnostic" id="diagnostic" aria-label="Movement 02: Why Separate Notes Fail">
+    <!-- 02. Why Separate Notes Fail -->
+    <section class="movement-section movement-diagnostic" id="diagnostic" aria-label="Why Separate Notes Fail">
       <div class="section-ambient-grid" aria-hidden="true">
         <div class="arc-coordinate-guide"></div>
       </div>
 
       <div class="section-container">
         
-        <!-- Editorial Section Header -->
         <header class="section-editorial-header">
           <div class="header-kicker-row">
             <span class="section-num">02 / 05</span>
             <span class="kicker-rule"></span>
-            <span class="kicker-title">THE UNILATERAL FRACTURE</span>
+            <span class="kicker-title">THE PROBLEM WITH SEPARATE NOTES</span>
           </div>
 
           <h2 class="editorial-headline-large">
@@ -303,13 +290,12 @@
           </p>
         </header>
 
-        <!-- Dynamic Two-Sided Memory Field with Spatial Parallax -->
         <div class="memory-spatial-field" id="memoryField">
 
-          <!-- Left Perspective: Employer's Kitchen Wall Calendar -->
+          <!-- Left: Employer's Note -->
           <div class="memory-card-side side-employer" id="memCardLeft">
             <div class="memory-card-masthead">
-              <span class="memory-tag tag-employer">01 · EMPLOYER'S PERSPECTIVE</span>
+              <span class="memory-tag tag-employer">01 · EMPLOYER'S RECORD</span>
               <span class="memory-icon" aria-hidden="true">🗓</span>
             </div>
 
@@ -324,10 +310,10 @@
               <div class="fragment-vulnerability">"Did she come in the morning or evening?"</div>
             </div>
 
-            <div class="card-failure-tag">FRAGILE · UNVERIFIED TICK MARKS</div>
+            <div class="card-failure-tag">UNVERIFIED TICK MARKS · EASY TO FORGET</div>
           </div>
 
-          <!-- Central Convergence Axis & Mutual Tension Wire -->
+          <!-- Central Axis -->
           <div class="memory-convergence-axis" aria-hidden="true">
             <div class="convergence-line-top"></div>
             <div class="convergence-seal-beacon">
@@ -337,10 +323,10 @@
             <div class="convergence-line-bottom"></div>
           </div>
 
-          <!-- Right Perspective: Helper's Pocket Diary / Cash Advance -->
+          <!-- Right: Helper's Diary -->
           <div class="memory-card-side side-helper" id="memCardRight">
             <div class="memory-card-masthead">
-              <span class="memory-tag tag-helper">02 · HELPER'S PERSPECTIVE</span>
+              <span class="memory-tag tag-helper">02 · HELPER'S RECORD</span>
               <span class="memory-icon" aria-hidden="true">💵</span>
             </div>
 
@@ -355,18 +341,17 @@
               <div class="fragment-vulnerability">"Was it for school fees or festival bonus?"</div>
             </div>
 
-            <div class="card-failure-tag">UNRECEIPTED · CAUSE OF RESENTMENT</div>
+            <div class="card-failure-tag">UNRECORDED ADVANCE · CAUSE OF CONFUSION</div>
           </div>
 
         </div>
 
-        <!-- The Convergence Resolution Banner -->
         <div class="divergence-resolution-box">
           <div class="resolution-seal">
             <img src="assets/brand/sevakhata-mark.svg" alt="" width="24" height="24">
           </div>
           <div class="resolution-text">
-            <span class="res-title">THE SEVAKHATA INVARIANT:</span>
+            <span class="res-title">THE CORE SEVAKHATA RULE:</span>
             <p class="res-body">
               Every day's work and every rupee of advance is acknowledged tonight on mobile. 
               Only entries confirmed by both sides exist in the shared hisaab.
@@ -377,21 +362,17 @@
       </div>
     </section>
 
-    <!-- ======================================================== -->
-    <!-- 04. MOVEMENT 03: THE CONSENSUS ENGINE (RECORD LIFECYCLE) -->
-    <!-- Redesigned Typographic Lockup + Shared-Element Morph     -->
-    <!-- ======================================================== -->
-    <section class="movement-section movement-consensus" id="consensus" aria-label="Movement 03: The Consensus Engine">
+    <!-- 03. How Mutual Approval Works -->
+    <section class="movement-section movement-consensus" id="consensus" aria-label="How Mutual Approval Works">
       <div class="section-container">
         
         <header class="section-editorial-header">
           <div class="header-kicker-row">
             <span class="section-num">03 / 05</span>
             <span class="kicker-rule"></span>
-            <span class="kicker-title">THE CONSENSUS ENGINE</span>
+            <span class="kicker-title">HOW MUTUAL APPROVAL WORKS</span>
           </div>
 
-          <!-- RIGOROUS TYPOGRAPHIC COMPOSITION: RECORDED BY EMPLOYER × REVIEWED BY HELPER -->
           <div class="consensus-editorial-lockup">
             <div class="lockup-group col-employer">
               <span class="lockup-verb">RECORDED</span>
@@ -404,7 +385,7 @@
             </div>
 
             <div class="lockup-group col-helper">
-              <span class="lockup-verb">REVIEWED</span>
+              <span class="lockup-verb">CONFIRMED</span>
               <span class="lockup-role">BY HELPER</span>
               <span class="lockup-hi" lang="hi">सहायक द्वारा प्रमाणित</span>
             </div>
@@ -416,24 +397,24 @@
         </header>
 
         <!-- Stepper Timeline Nav -->
-        <div class="consensus-stepper-nav" role="tablist" aria-label="Consensus Stages">
+        <div class="consensus-stepper-nav" role="tablist" aria-label="Approval Stages">
           <button type="button" class="stepper-tab active" id="stepTab1" role="tab" aria-selected="true">
             <span class="tab-index">01</span>
-            <span class="tab-label">Logged (Quarantined)</span>
+            <span class="tab-label">Logged (Pending)</span>
           </button>
           <div class="stepper-connector" aria-hidden="true"></div>
           <button type="button" class="stepper-tab" id="stepTab2" role="tab" aria-selected="false">
             <span class="tab-index">02</span>
-            <span class="tab-label">Helper Mobile Review</span>
+            <span class="tab-label">Helper Phone Review</span>
           </button>
           <div class="stepper-connector" aria-hidden="true"></div>
           <button type="button" class="stepper-tab" id="stepTab3" role="tab" aria-selected="false">
             <span class="tab-index">03</span>
-            <span class="tab-label">Sealed into Truth</span>
+            <span class="tab-label">Confirmed in Ledger</span>
           </button>
         </div>
 
-        <!-- The Single Traveling Evolving Record Object (Continuous Morph) -->
+        <!-- 3-stage preview card -->
         <div class="consensus-stage-card" id="consensusCard">
           <div class="stage-card-spine" aria-hidden="true"></div>
 
@@ -442,7 +423,7 @@
             <div class="stage-telemetry-header">
               <div class="stage-badge" id="consensusBadge">
                 <span class="badge-icon" id="consensusIcon">⏱</span>
-                <span class="badge-status-text" id="consensusStatusText">STAGE 01 · PENDING REVIEW (₹0 ON HISAAB)</span>
+                <span class="badge-status-text" id="consensusStatusText">STAGE 01 · PENDING CONFIRMATION</span>
               </div>
               <span class="stage-folio-id">RECORD NO. 42 · 13 AUG 2026</span>
             </div>
@@ -452,8 +433,7 @@
                 <span class="stage-date">13 AUGUST 2026 · 7:30 PM</span>
                 <h3 class="stage-title" id="consensusTitle">Full Day Housework &amp; Cooking Logged</h3>
                 <p class="stage-narrative" id="consensusNarrative">
-                  Sharma Ji logs today’s attendance. Under SevaKhata’s mutual rule, this entry is in strict quarantine. 
-                  It holds ₹0.00 financial gravity and cannot modify what is owed until acknowledged.
+                  Sharma Ji logs today’s attendance. Under SevaKhata’s mutual rule, this entry stays pending and is not added to the payable balance until Sunita Didi confirms it.
                 </p>
                 <div class="stage-quote-hindi" id="consensusHindiQuote" lang="hi">
                   "जब तक सुनीता दीदी 'सही है' नहीं दबाएंगी, यह रकम हिसाब में नहीं जुड़ेगी।"
@@ -462,17 +442,17 @@
 
               <div class="stage-figure-col">
                 <div class="stage-amount-display" id="consensusAmountDisplay">+₹500</div>
-                <div class="stage-weight-indicator" id="consensusWeightIndicator">Weight on Hisaab: ₹0.00</div>
+                <div class="stage-weight-indicator" id="consensusWeightIndicator">Added to Total: ₹0.00 (Pending)</div>
               </div>
             </div>
 
             <!-- Interactive Stage Simulator Buttons -->
             <div class="stage-simulator-footer">
-              <span class="sim-label">Watch the Record Morph:</span>
+              <span class="sim-label">Preview Each Step:</span>
               <div class="sim-btn-group">
-                <button type="button" class="sim-btn active" id="btnSimStep1">01. Logged</button>
+                <button type="button" class="sim-btn active" id="btnSimStep1">01. Entry Logged</button>
                 <button type="button" class="sim-btn" id="btnSimStep2">02. Review Prompt</button>
-                <button type="button" class="sim-btn" id="btnSimStep3">03. Sealed Hisaab</button>
+                <button type="button" class="sim-btn" id="btnSimStep3">03. Mutually Confirmed</button>
               </div>
             </div>
 
@@ -482,13 +462,9 @@
       </div>
     </section>
 
-    <!-- ======================================================== -->
-    <!-- 05. MOVEMENT 04: THE SHARED HISAAB CLIMAX (THE INVARIANT)-->
-    <!-- Spatial Transition into the Undisputable Net Truth       -->
-    <!-- ======================================================== -->
-    <section class="movement-section movement-hisaab" id="hisaab" aria-label="Movement 04: Shared Hisaab Climax">
+    <!-- 04. Month-End Settlement -->
+    <section class="movement-section movement-hisaab" id="hisaab" aria-label="Month-End Settlement">
       <div class="section-ambient-grid" aria-hidden="true">
-        <!-- Monumental Concentric Settlement Reticle -->
         <div class="reticle-target reticle-settlement">
           <div class="reticle-ring ring-outer"></div>
           <div class="reticle-ring ring-mid"></div>
@@ -502,7 +478,7 @@
           <div class="header-kicker-row justify-center">
             <span class="section-num">04 / 05</span>
             <span class="kicker-rule short"></span>
-            <span class="kicker-title">THE MATHEMATICAL RESOLUTION</span>
+            <span class="kicker-title">MONTH-END CALCULATION</span>
           </div>
 
           <h2 class="editorial-headline-large">
@@ -514,7 +490,6 @@
           </p>
         </header>
 
-        <!-- The Transparent Mathematical Equation Strip -->
         <div class="hisaab-equation-strip">
           <div class="eq-block">
             <span class="eq-tag">CONFIRMED WORK</span>
@@ -539,9 +514,8 @@
           </div>
         </div>
 
-        <!-- Monumental Numeral Display -->
         <div class="monumental-climax-display">
-          <span class="climax-caption">OFFICIAL NET PAYABLE BALANCE</span>
+          <span class="climax-caption">NET PAYABLE AMOUNT</span>
           <div class="climax-display-numeral" id="climaxNumeral">₹3,000</div>
           
           <div class="climax-dual-signatures">
@@ -560,17 +534,55 @@
 
           <div class="climax-readiness-pill">
             <span class="readiness-beacon"></span>
-            <span>READY FOR MONTH-END PAYOUT · MUTUALLY CONFIRMED</span>
+            <span>READY FOR MONTH-END PAYMENT · CONFIRMED BY BOTH</span>
           </div>
         </div>
 
       </div>
     </section>
 
-    <!-- ======================================================== -->
-    <!-- 06. MOVEMENT 05: THE COVENANT & CLOSING THRESHOLD        -->
-    <!-- ======================================================== -->
-    <section class="movement-section movement-covenant" aria-label="Movement 05: The Household Covenant">
+    <!-- 05. Gateways & Closing -->
+    <section class="gateway-section" id="gateways" aria-labelledby="gatewayTitle">
+      <div class="gateway-head">
+        <p class="eyebrow" data-i18n="gw.eyebrow">Evaluation 2 · Workflows</p>
+        <h2 id="gatewayTitle" data-i18n="gw.title">Every step, in one place</h2>
+        <p data-i18n="gw.lead">Register helpers, hire, record the day’s work and payments, and resolve disagreements, all on the same shared record.</p>
+      </div>
+      <div class="gateway-grid">
+        <a class="gateway-card" href="hire-household.html">
+          <span class="gateway-num">01</span>
+          <h3><span data-i18n="gw.c1.t">Hire a helper</span><span lang="hi">सहायक को काम पर रखें</span></h3>
+          <p data-i18n="gw.c1.d">Browse categories, send a hiring request, or log an arrangement you already have.</p>
+          <span class="gateway-go" data-i18n="gw.c1.go">Open hiring →</span>
+        </a>
+        <a class="gateway-card" href="register-worker.html">
+          <span class="gateway-num">02</span>
+          <h3><span data-i18n="gw.c2.t">Register as a helper</span><span lang="hi">सहायक के रूप में पंजीकरण</span></h3>
+          <p data-i18n="gw.c2.d">Create a profile with your skills, experience and rate so households can find you.</p>
+          <span class="gateway-go" data-i18n="gw.c2.go">Create a profile →</span>
+        </a>
+        <a class="gateway-card" href="ledger.html">
+          <span class="gateway-num">03</span>
+          <h3><span data-i18n="gw.c3.t">Shared ledger</span><span lang="hi">साझा खाता</span></h3>
+          <p data-i18n="gw.c3.d">Log attendance, advances and payments. The helper confirms or disputes each entry.</p>
+          <span class="gateway-go" data-i18n="gw.c3.go">Open the ledger →</span>
+        </a>
+        <a class="gateway-card" href="directory.html">
+          <span class="gateway-num">04</span>
+          <h3><span data-i18n="gw.c4.t">Helper directory</span><span lang="hi">सहायक सूची</span></h3>
+          <p data-i18n="gw.c4.d">Search registered helpers and see a transparent trust score for each profile.</p>
+          <span class="gateway-go" data-i18n="gw.c4.go">Browse helpers →</span>
+        </a>
+        <a class="gateway-card" href="contact-feedback.html">
+          <span class="gateway-num">05</span>
+          <h3><span data-i18n="gw.c5.t">Help and feedback</span><span lang="hi">सहायता और सुझाव</span></h3>
+          <p data-i18n="gw.c5.d">Raise a ticket, share feedback, or report a verification problem.</p>
+          <span class="gateway-go" data-i18n="gw.c5.go">Get in touch →</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="movement-section movement-covenant" aria-label="Mutual Trust and Respect">
       <div class="section-container text-center">
         
         <div class="covenant-mark-wrap">
@@ -588,10 +600,14 @@
         </p>
 
         <div class="covenant-action-row">
-          <a href="#livingKhataObject" class="threshold-cta-button">
+          <a href="ledger.html" class="threshold-cta-button">
             <span>Open the Shared Khata</span>
             <span class="threshold-arrow" aria-hidden="true">→</span>
           </a>
+        </div>
+        <div class="covenant-secondary">
+          <a class="btn btn-ghost" href="register-worker.html" data-i18n="gw.regCta">Register as a helper</a>
+          <a class="btn btn-ghost" href="hire-household.html" data-i18n="gw.hireCta">Hire a helper</a>
         </div>
 
       </div>
@@ -610,27 +626,36 @@
           <span class="footer-brand-name">SEVAKHATA · <span lang="hi">सेवाखाता</span></span>
         </div>
         <p class="footer-tagline-text">
-          Dono ka record, ek hi hisaab · The shared domestic employment ledger.
+          Dono ka record, ek hi hisaab · <span data-i18n="footer.tagline">The shared domestic employment ledger.</span>
         </p>
       </div>
 
       <div class="footer-links-col">
         <nav class="footer-nav" aria-label="Footer Links">
-          <a href="#hero">The Monumental Ledger</a>
+          <a href="index.html#hero" aria-current="page" data-i18n="nav.home">Home</a>
           <span class="nav-sep">·</span>
-          <a href="#diagnostic">Why Notes Fail</a>
+          <a href="hire-household.html" data-i18n="nav.hire">Hire</a>
           <span class="nav-sep">·</span>
-          <a href="#consensus">Consensus Engine</a>
+          <a href="register-worker.html" data-i18n="nav.register">Register</a>
           <span class="nav-sep">·</span>
-          <a href="#hisaab">Shared Hisaab</a>
+          <a href="directory.html" data-i18n="nav.directory">Directory</a>
+          <span class="nav-sep">·</span>
+          <a href="ledger.html" data-i18n="nav.ledger">Ledger</a>
+          <span class="nav-sep">·</span>
+          <a href="contact-feedback.html" data-i18n="nav.support">Support</a>
         </nav>
-        <div class="footer-legal-copy">
+        <div class="footer-legal-copy" data-i18n="footer.copy">
           © 2026 SevaKhata. Designed for mutual trust and dignity in Indian households.
         </div>
       </div>
     </div>
   </footer>
 
+  <script src="js/validation.js"></script>
+  <script src="js/records.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/site.js"></script>
   <script src="main.js"></script>
 </body>
 </html>
