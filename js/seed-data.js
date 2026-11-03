@@ -326,5 +326,27 @@ window.SEVAKHATA_SEED = {
       "status": "open",
       "createdAt": "2026-08-22T12:00:00.000Z"
     }
+  ],
+  "logins": [
+    {
+      "id": "log-1001",
+      "method": "email",
+      "identifier": "rajesh.sharma@example.in",
+      "role": "employer",
+      "name": "Rajesh Sharma",
+      "status": "authenticated",
+      "remember": true,
+      "createdAt": "2026-08-13T08:30:00.000Z"
+    },
+    {
+      "id": "log-1002",
+      "method": "mobile",
+      "identifier": "+919810012345",
+      "role": "helper",
+      "name": "Sunita Sharma",
+      "status": "authenticated",
+      "remember": false,
+      "createdAt": "2026-08-13T09:00:00.000Z"
+    }
   ]
 };

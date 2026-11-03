@@ -84,6 +84,23 @@ const ok = (name, fn) => Promise.resolve().then(fn).then(() => { passed++; conso
     assert.strictEqual((await call('POST', '/api/feedback', { kind: 'support', name: 'Asha Rao', email: 'asha@example.com', subject: 'Cannot log in', message: 'I cannot open my ledger on my phone since yesterday.' })).status, 201);
     assert.strictEqual((await call('POST', '/api/bookings', { requestKind: 'new', householdName: 'Rao Household', contactName: 'Asha Rao', phone: '9812345678', category: 'cook', location: 'Pune', startDate: '2026-09-01', schedule: 'Daily, 8am' })).status, 201);
   });
+  await ok('login via email and mobile persists to logins.json', async () => {
+    const emailLogin = await call('POST', '/api/logins', { method: 'email', email: 'sharma.employer@example.in', password: 'password123' });
+    assert.strictEqual(emailLogin.status, 201);
+    assert.strictEqual(emailLogin.body.status, 'authenticated');
+    assert.strictEqual(emailLogin.body.method, 'email');
+
+    const mobileLogin = await call('POST', '/api/logins', { method: 'mobile', phone: '9810012345', otp: '123456', step: 'otp' });
+    assert.strictEqual(mobileLogin.status, 201);
+    assert.strictEqual(mobileLogin.body.role, 'helper'); // matched to Sunita Sharma in seed data
+
+    const invalid = await call('POST', '/api/logins', { method: 'email', email: 'bad-email' });
+    assert.strictEqual(invalid.status, 400);
+
+    const onDisk = JSON.parse(fs.readFileSync(path.join(tmp, 'logins.json'), 'utf8'));
+    assert.ok(onDisk.some((l) => l.id === emailLogin.body.id));
+    assert.ok(onDisk.some((l) => l.id === mobileLogin.body.id));
+  });
   await ok('server source and data folder are not served as static files', async () => {
     for (const p of ['/server.js', '/package.json', '/data/workers.json']) assert.strictEqual((await fetch(base + p)).status, 404);
   });

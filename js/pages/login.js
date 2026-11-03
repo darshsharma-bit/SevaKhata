@@ -189,13 +189,21 @@
           localStorage.removeItem('sk_remember_email');
         }
 
-        // Simulate network latency of authentication
-        await new Promise((r) => setTimeout(r, 650));
+        const res = await window.SKStore.create('logins', {
+          method: 'email',
+          email: vals.email,
+          password: vals.password,
+          remember: Boolean(rememberCheckbox && rememberCheckbox.checked)
+        });
 
         sessionStorage.setItem('sk_user_session', JSON.stringify({
+          id: res.record.id,
           type: 'email',
-          identifier: vals.email,
-          signedInAt: new Date().toISOString()
+          identifier: res.record.identifier,
+          role: res.record.role,
+          name: res.record.name,
+          signedInAt: res.record.createdAt,
+          via: res.via
         }));
 
         UI.toast(t('login.success', 'Signed in successfully. Welcome to SevaKhata.'), 'success');
@@ -203,11 +211,11 @@
         UI.successModal({
           title: t('login.title', 'Enter the Ledger'),
           lines: [
-            fmt('login.welcomeMsg', { user: vals.email }, 'Authentication verified for {user}.'),
+            fmt('login.welcomeMsg', { user: res.record.name || vals.email }, 'Authentication verified for {user}.'),
             'Your mutual ledger records and pending settlements are synchronized.'
           ],
-          reference: 'SK-AUTH-' + Math.floor(100000 + Math.random() * 900000),
-          via: 'session',
+          reference: res.record.id,
+          via: res.via,
           actions: [
             { label: t('nav.ledger', 'Open Shared Ledger'), onClick: () => { location.href = 'ledger.html'; }, primary: true },
             { label: t('nav.directory', 'View Directory'), onClick: () => { location.href = 'directory.html'; }, close: false }
@@ -381,29 +389,47 @@
         submitBtn.classList.add('is-busy');
       }
 
-      await new Promise((r) => setTimeout(r, 650));
+      try {
+        const res = await window.SKStore.create('logins', {
+          method: 'mobile',
+          phone: currentPhone,
+          otp: otpVal,
+          step: 'otp'
+        });
 
-      sessionStorage.setItem('sk_user_session', JSON.stringify({
-        type: 'mobile',
-        identifier: '+91' + currentPhone,
-        signedInAt: new Date().toISOString()
-      }));
+        sessionStorage.setItem('sk_user_session', JSON.stringify({
+          id: res.record.id,
+          type: 'mobile',
+          identifier: res.record.identifier,
+          role: res.record.role,
+          name: res.record.name,
+          signedInAt: res.record.createdAt,
+          via: res.via
+        }));
 
-      UI.toast(t('login.success', 'Signed in successfully. Welcome to SevaKhata.'), 'success');
+        UI.toast(t('login.success', 'Signed in successfully. Welcome to SevaKhata.'), 'success');
 
-      UI.successModal({
-        title: t('login.title', 'Enter the Ledger'),
-        lines: [
-          fmt('login.welcomeMsg', { user: `+91 ${currentPhone}` }, 'Mobile authentication verified for {user}.'),
-          'Your mutual ledger records and pending settlements are synchronized.'
-        ],
-        reference: 'SK-MOBILE-' + Math.floor(100000 + Math.random() * 900000),
-        via: 'session',
-        actions: [
-          { label: t('nav.ledger', 'Open Shared Ledger'), onClick: () => { location.href = 'ledger.html'; }, primary: true },
-          { label: t('nav.directory', 'View Directory'), onClick: () => { location.href = 'directory.html'; }, close: false }
-        ]
-      });
+        UI.successModal({
+          title: t('login.title', 'Enter the Ledger'),
+          lines: [
+            fmt('login.welcomeMsg', { user: res.record.name || `+91 ${currentPhone}` }, 'Mobile authentication verified for {user}.'),
+            'Your mutual ledger records and pending settlements are synchronized.'
+          ],
+          reference: res.record.id,
+          via: res.via,
+          actions: [
+            { label: t('nav.ledger', 'Open Shared Ledger'), onClick: () => { location.href = 'ledger.html'; }, primary: true },
+            { label: t('nav.directory', 'View Directory'), onClick: () => { location.href = 'directory.html'; }, close: false }
+          ]
+        });
+      } catch (err) {
+        UI.toast((err && err.message) || 'Authentication failed', 'error');
+      } finally {
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.classList.remove('is-busy');
+        }
+      }
     });
   });
 })();

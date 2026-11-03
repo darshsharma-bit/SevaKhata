@@ -22,7 +22,7 @@ const Records = require('./js/records.js');
 const ROOT = __dirname;
 const DATA_DIR = process.env.SEVAKHATA_DATA_DIR || path.join(ROOT, 'data');
 const PORT = Number(process.env.PORT) || 3000;
-const RESOURCES = ['workers', 'bookings', 'ledger', 'feedback'];
+const RESOURCES = ['workers', 'bookings', 'ledger', 'feedback', 'logins'];
 
 /* ------------------------------ JSON file store ------------------------------ */
 const fileFor = (resource) => path.join(DATA_DIR, resource + '.json');
@@ -93,8 +93,8 @@ RESOURCES.forEach((resource) => {
   app.post('/api/' + resource, async (req, res, next) => {
     try {
       const record = await mutate(resource, async (items) => {
-        // Ledger and bookings need to look up the worker the entry refers to.
-        const ctx = (resource === 'ledger' || resource === 'bookings') ? { workers: await readAll('workers') } : {};
+        // Ledger, bookings, and logins need to look up helper accounts.
+        const ctx = (resource === 'ledger' || resource === 'bookings' || resource === 'logins') ? { workers: await readAll('workers') } : {};
         const built = Records.buildRecord(resource, req.body, ctx);
         if (built.errors) return { result: { errors: built.errors } };
         return { items: items.concat([built.record]), result: { record: built.record } };

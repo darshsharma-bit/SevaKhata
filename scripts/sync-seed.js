@@ -9,7 +9,7 @@ const fs = require('fs');
 const path = require('path');
 
 const root = path.join(__dirname, '..');
-const resources = ['workers', 'bookings', 'ledger', 'feedback'];
+const resources = ['workers', 'bookings', 'ledger', 'feedback', 'logins'];
 const seed = {};
 resources.forEach((r) => { seed[r] = JSON.parse(fs.readFileSync(path.join(root, 'data', r + '.json'), 'utf8')); });
 

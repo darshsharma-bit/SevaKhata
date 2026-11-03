@@ -12,7 +12,7 @@
 (function () {
   'use strict';
   const R = window.SKRecords;
-  const RESOURCES = ['workers', 'bookings', 'ledger', 'feedback'];
+  const RESOURCES = ['workers', 'bookings', 'ledger', 'feedback', 'logins'];
   const LS = (r) => 'sk_data_' + r;
   const CANDIDATES = location.protocol === 'file:' ? ['http://localhost:3000'] : ['', 'http://localhost:3000'];
 

@@ -92,6 +92,47 @@
         }
       };
     }
+
+    if (resource === 'logins') {
+      const isMobile = p.method === 'mobile' || (!p.email && !!p.phone);
+      const schema = isMobile ? V.SCHEMAS.loginMobile : V.SCHEMAS.loginEmail;
+      const check = V.validate(schema, p);
+      if (!check.valid) return { errors: check.errors };
+
+      const identifier = isMobile ? ('+91' + clean(p.phone, 10)) : clean(p.email, 80).toLowerCase();
+      let role = clean(p.role, 20) || 'user';
+      let name = clean(p.name, 60);
+
+      if (ctx.workers) {
+        const rawPhone = clean(p.phone, 10);
+        const worker = ctx.workers.find((w) => (p.email && w.email && w.email.toLowerCase() === identifier) || (rawPhone && w.phone === rawPhone));
+        if (worker) {
+          role = 'helper';
+          if (!name) name = worker.name;
+        }
+      }
+      if (!name) {
+        if (identifier.includes('rajesh') || identifier.includes('sharma')) {
+          role = 'employer';
+          name = 'Rajesh Sharma';
+        } else {
+          name = isMobile ? ('User ' + identifier) : identifier.split('@')[0];
+        }
+      }
+
+      return {
+        record: {
+          id: makeId('log'),
+          method: isMobile ? 'mobile' : 'email',
+          identifier,
+          role,
+          name,
+          status: 'authenticated',
+          remember: Boolean(p.remember),
+          createdAt: now
+        }
+      };
+    }
     return { errors: { _: { key: 'v.unknown', en: 'Unknown resource.' } } };
   }
 
