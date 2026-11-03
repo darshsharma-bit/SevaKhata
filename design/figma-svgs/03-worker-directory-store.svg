@@ -1,0 +1,706 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="2150" viewBox="0 0 1440 2150" font-family="'Inter', -apple-system, BlinkMacSystemFont, sans-serif">
+  <title>03 — Verified Worker Directory (1440px) | SevaKhata Website Master</title>
+  <defs>
+    <style>
+      .monumental { font-family: 'Bebas Neue', -apple-system, sans-serif; text-transform: uppercase; }
+      .editorial { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+      .hindi { font-family: 'Noto Sans Devanagari', -apple-system, sans-serif; }
+      .tabular { font-feature-settings: 'tnum'; font-variant-numeric: tabular-nums; }
+    </style>
+
+    <!-- Deep Elevation Shadow for living slabs & modals -->
+    <filter id="slab-elevation-shadow" x="-5%" y="-5%" width="110%" height="115%" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="28" stdDeviation="36" flood-color="#000000" flood-opacity="0.85"/>
+      <feDropShadow dx="0" dy="4" stdDeviation="10" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+
+    <filter id="modal-shadow" x="-10%" y="-10%" width="120%" height="125%" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="32" stdDeviation="40" flood-color="#000000" flood-opacity="0.9"/>
+      <feDropShadow dx="0" dy="8" stdDeviation="16" flood-color="#000000" flood-opacity="0.5"/>
+    </filter>
+
+    <!-- Emerald Glow -->
+    <filter id="emerald-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="0" stdDeviation="24" flood-color="#059669" flood-opacity="0.4"/>
+    </filter>
+
+    <!-- Hero Seal Radial Gradient -->
+    <radialGradient id="hero-seal-radial" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#C8202B" stop-opacity="0.85"/>
+      <stop offset="42%" stop-color="#C8202B" stop-opacity="0.5"/>
+      <stop offset="68%" stop-color="#047857" stop-opacity="0.25"/>
+      <stop offset="72%" stop-color="#047857" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Avatar Crimson Gradient -->
+    <linearGradient id="avatar-crimson" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#C8202B"/>
+      <stop offset="100%" stop-color="#7F1D1D"/>
+    </linearGradient>
+
+    <!-- Subtle Card Gradient -->
+    <linearGradient id="card-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#16161C"/>
+      <stop offset="100%" stop-color="#111115"/>
+    </linearGradient>
+  </defs>
+
+  <!-- 00. BASE CANVAS -->
+  <rect id="Canvas-Background" width="1440" height="2150" fill="#0C0C0E"/>
+
+  <!-- 01. NAVIGATION BAR (DIRECTORY ACTIVE) -->
+    <!-- ======================================================== -->
+  <!-- 01. SYSTEM NAVIGATION BAR (EXACT WEBSITE MATCH)           -->
+  <!-- ======================================================== -->
+  <g id="Navbar" transform="translate(40, 14)">
+    <rect width="1360" height="58" rx="29" fill="#121216" fill-opacity="0.85" stroke="#FFFFFF" stroke-opacity="0.16" stroke-width="1"/>
+
+    <!-- Left: Brand -->
+    <g id="Nav-Brand-Lockup" transform="translate(24, 14)">
+    <g id="Brand-Mark-Icon" transform="translate(0, 3) scale(0.8125)">
+    <!-- Left Folio Page -->
+    <path d="M7 6C7 4.89543 7.89543 4 9 4H14.5C15.3284 4 16 4.67157 16 5.5V26.5C16 27.3284 15.3284 28 14.5 28H9C7.89543 28 7 27.1046 7 26V6Z" fill="#047857" fill-opacity="0.18" stroke="#047857" stroke-width="1.8" stroke-linejoin="round"/>
+    <!-- Right Folio Page -->
+    <path d="M25 6C25 4.89543 24.1046 4 23 4H17.5C16.6716 4 16 4.67157 16 5.5V26.5C16 27.3284 16.6716 28 17.5 28H23C24.1046 28 25 27.1046 25 26V6Z" fill="#047857" fill-opacity="0.18" stroke="#047857" stroke-width="1.8" stroke-linejoin="round"/>
+    <!-- Central Ledger Spine Rule (Crimson Margin) -->
+    <line x1="16" y1="3" x2="16" y2="29" stroke="#E11D48" stroke-width="1.2" stroke-linecap="round"/>
+    <!-- Central Mutual Seal Diamond -->
+    <path d="M16 11L19.5 16L16 21L12.5 16L16 11Z" fill="#047857"/>
+    <circle cx="16" cy="16" r="1.5" fill="#FFFFFF"/>
+  </g>
+    <text x="36" y="19" class="monumental" font-size="20" letter-spacing="0.05em" fill="#FFFFFF">SEVAKHATA</text>
+    <text x="138" y="18" class="hindi" font-size="13" font-weight="500" fill="#FFFFFF" fill-opacity="0.55">सेवाखाता</text>
+  </g>
+
+    
+    <!-- Center: Links Cluster (Inner Pages) -->
+    <g id="Nav-Links" transform="translate(450, 13)">
+      
+        <g id="Nav-Link-home" transform="translate(0, 0)">
+          <text x="29" y="20" text-anchor="middle" class="editorial" font-size="12" font-weight="500" fill="#FFFFFF" fill-opacity="0.72">Home</text>
+        </g>
+        <g id="Nav-Link-hire" transform="translate(62, 0)">
+          <text x="29" y="20" text-anchor="middle" class="editorial" font-size="12" font-weight="500" fill="#FFFFFF" fill-opacity="0.72">Hire</text>
+        </g>
+        <g id="Nav-Link-register" transform="translate(124, 0)">
+          <text x="46" y="20" text-anchor="middle" class="editorial" font-size="12" font-weight="500" fill="#FFFFFF" fill-opacity="0.72">Register</text>
+        </g>
+        <g id="Nav-Link-directory-Active" transform="translate(220, 0)">
+          <rect width="100.5" height="32" rx="16" fill="#FFFFFF" fill-opacity="0.12"/>
+          <text x="50.25" y="20" text-anchor="middle" class="editorial" font-size="12" font-weight="600" fill="#FFFFFF">Directory</text>
+        </g>
+        <g id="Nav-Link-ledger" transform="translate(324.5, 0)">
+          <text x="37.5" y="20" text-anchor="middle" class="editorial" font-size="12" font-weight="500" fill="#FFFFFF" fill-opacity="0.72">Ledger</text>
+        </g>
+        <g id="Nav-Link-support" transform="translate(403.5, 0)">
+          <text x="41.75" y="20" text-anchor="middle" class="editorial" font-size="12" font-weight="500" fill="#FFFFFF" fill-opacity="0.72">Support</text>
+        </g>
+    </g>
+    
+
+    <!-- Right: Language Toggle & Menu Button -->
+    <g id="Nav-Extras" transform="translate(1220, 13)">
+      <!-- Language Toggle -->
+      <g id="Lang-Toggle">
+        <rect width="78" height="32" rx="16" fill="rgba(255,255,255,0.04)" stroke="#FFFFFF" stroke-opacity="0.16"/>
+        <rect x="3" y="3" width="36" height="26" rx="13" fill="#FFFFFF"/>
+        <text x="21" y="20" text-anchor="middle" class="editorial" font-size="11" font-weight="700" fill="#08080A">EN</text>
+        <text x="57" y="20" text-anchor="middle" class="hindi" font-size="11" font-weight="700" fill="rgba(255,255,255,0.45)">हिं</text>
+      </g>
+      <!-- Mobile Nav Icon (desktop placeholder) -->
+      <circle cx="106" cy="16" r="16" fill="none" stroke="#FFFFFF" stroke-opacity="0.16"/>
+      <text x="106" y="21" text-anchor="middle" class="editorial" font-size="14" fill="#FFFFFF">☰</text>
+    </g>
+  </g>
+
+  <!-- 02. PAGE HERO -->
+    <!-- ======================================================== -->
+  <!-- PAGE HERO HEADER (EXACT WEBSITE MATCH)                   -->
+  <!-- ======================================================== -->
+  <g id="Page-Hero" transform="translate(40, 110)">
+    <!-- Left Column: Eyebrow, Title & Lead -->
+    <g id="Hero-Text">
+      <text x="0" y="0" class="editorial" font-size="11" font-weight="800" letter-spacing="0.22em" fill="#E11D48">HELPER DIRECTORY</text>
+      <text x="0" y="58" class="monumental" font-size="72" letter-spacing="0.02em" fill="#FFFFFF">Find a helper</text>
+      <text x="0" y="98" class="hindi" font-size="20" font-weight="500" fill="#FFFFFF" fill-opacity="0.5">सहायक खोजें</text>
+      <text x="0" y="136" class="editorial" font-size="15" font-weight="400" fill="#FFFFFF" fill-opacity="0.72">
+        Search and filter registered helpers. Each profile shows a transparent trust score, including how often their ledger entries are confirmed.
+      </text>
+    </g>
+
+    <!-- Right Column: Tools (Sync Badge + Export Button) -->
+    <g id="Hero-Tools" transform="translate(1360, 24)">
+      <!-- Sync Status Badge -->
+      <g id="Badge-Sync" transform="translate(-290, 0)">
+        <rect width="180" height="38" rx="19" fill="#111115" stroke="#FFFFFF" stroke-opacity="0.16" stroke-width="1"/>
+        <circle cx="20" cy="19" r="3.5" fill="#059669"/>
+        <text x="32" y="23" class="editorial" font-size="11" font-weight="600" fill="#FFFFFF" fill-opacity="0.75">Live server connected · JSON sync</text>
+      </g>
+
+      <!-- Export Button -->
+      <g id="Button-Export" transform="translate(-96, 0)">
+        <rect width="96" height="38" rx="19" fill="none" stroke="#FFFFFF" stroke-opacity="0.2" stroke-width="1"/>
+        <text x="48" y="23" text-anchor="middle" class="editorial" font-size="11" font-weight="700" fill="#FFFFFF">Export JSON</text>
+      </g>
+    </g>
+
+    <line x1="0" y1="180" x2="1360" y2="180" stroke="#FFFFFF" stroke-opacity="0.08" stroke-width="1"/>
+  </g>
+
+  <!-- ======================================================== -->
+  <!-- 03. FILTER & SEARCH BAR                                  -->
+  <!-- ======================================================== -->
+  <g id="Filter-Section" transform="translate(40, 330)">
+    <rect width="1360" height="74" rx="16" fill="#16161C" stroke="#FFFFFF" stroke-opacity="0.08"/>
+
+    <!-- Search Input -->
+    <g transform="translate(20, 14)">
+      <text x="0" y="0" class="editorial" font-size="10" font-weight="700" letter-spacing="0.08em" fill="#FFFFFF" fill-opacity="0.5">SEARCH</text>
+      <rect y="8" width="380" height="38" rx="8" fill="#111115" stroke="#FFFFFF" stroke-opacity="0.16"/>
+      <text x="14" y="32" class="editorial" font-size="12" fill="#FFFFFF" fill-opacity="0.4">Name, skill or area</text>
+    </g>
+
+    <!-- Type of Work Select -->
+    <g transform="translate(420, 14)">
+      <text x="0" y="0" class="editorial" font-size="10" font-weight="700" letter-spacing="0.08em" fill="#FFFFFF" fill-opacity="0.5">TYPE OF WORK</text>
+      <rect y="8" width="220" height="38" rx="8" fill="#111115" stroke="#FFFFFF" stroke-opacity="0.16"/>
+      <text x="14" y="32" class="editorial" font-size="12" fill="#FFFFFF">All types ▾</text>
+    </g>
+
+    <!-- Minimum Rating Select -->
+    <g transform="translate(660, 14)">
+      <text x="0" y="0" class="editorial" font-size="10" font-weight="700" letter-spacing="0.08em" fill="#FFFFFF" fill-opacity="0.5">MINIMUM RATING</text>
+      <rect y="8" width="180" height="38" rx="8" fill="#111115" stroke="#FFFFFF" stroke-opacity="0.16"/>
+      <text x="14" y="32" class="editorial" font-size="12" fill="#FFFFFF">4 and above ▾</text>
+    </g>
+
+    <!-- Sort By Select -->
+    <g transform="translate(860, 14)">
+      <text x="0" y="0" class="editorial" font-size="10" font-weight="700" letter-spacing="0.08em" fill="#FFFFFF" fill-opacity="0.5">SORT BY</text>
+      <rect y="8" width="180" height="38" rx="8" fill="#111115" stroke="#FFFFFF" stroke-opacity="0.16"/>
+      <text x="14" y="32" class="editorial" font-size="12" fill="#FFFFFF">Trust score ▾</text>
+    </g>
+
+    <!-- Verified Checkbox -->
+    <g transform="translate(1060, 30)">
+      <rect width="18" height="18" rx="4" fill="#059669"/>
+      <text x="9" y="14" text-anchor="middle" class="editorial" font-size="12" font-weight="800" fill="#FFFFFF">✓</text>
+      <text x="28" y="14" class="editorial" font-size="12" font-weight="600" fill="#FFFFFF">Verified only</text>
+    </g>
+
+    <!-- Clear Filters Button -->
+    <g transform="translate(1230, 22)">
+      <rect width="110" height="38" rx="8" fill="none" stroke="#FFFFFF" stroke-opacity="0.16"/>
+      <text x="55" y="23" text-anchor="middle" class="editorial" font-size="11" font-weight="600" fill="#FFFFFF" fill-opacity="0.8">Clear filters</text>
+    </g>
+  </g>
+
+  <!-- Results Count Indicator -->
+  <g id="Result-Meta" transform="translate(40, 435)">
+    <text x="0" y="0" class="editorial" font-size="13" font-weight="600" fill="#FFFFFF" fill-opacity="0.55">
+      4 registered helpers found in directory
+    </text>
+  </g>
+
+  <!-- ======================================================== -->
+  <!-- 04. WORKER CARDS GRID (2 COLUMNS × 2 ROWS)                -->
+  <!-- ======================================================== -->
+  <g id="Worker-Grid" transform="translate(40, 460)">
+    
+    <!-- CARD 1: SUNITA SHARMA (COOK) -->
+    
+    <g id="Worker-Card-Sunita" transform="translate(0, 0)">
+      <rect width="668" height="420" rx="18" fill="#16161C" stroke="#FFFFFF" stroke-opacity="0.1" stroke-width="1"/>
+
+      <!-- Header: Avatar, Name & Category -->
+      <g transform="translate(28, 28)">
+        <!-- Avatar Circle -->
+        <circle cx="28" cy="28" r="28" fill="url(#avatar-crimson)"/>
+        <text x="28" y="38" text-anchor="middle" class="monumental" font-size="28" fill="#FFFFFF">S</text>
+
+        <!-- Name & Locality -->
+        <g transform="translate(72, 14)">
+          <text x="0" y="0" class="editorial" font-size="18" font-weight="700" fill="#FFFFFF">Sunita Sharma</text>
+          <text x="0" y="22" class="editorial" font-size="13" font-weight="500" fill="#FFFFFF" fill-opacity="0.55">Cook · Sector 49, Gurugram</text>
+        </g>
+      </g>
+
+      <!-- Badge Row -->
+      <g transform="translate(28, 102)">
+        
+        <g id="Badge-Verified">
+          <rect width="94" height="26" rx="13" fill="rgba(5,150,105,0.15)" stroke="#059669" stroke-opacity="0.4"/>
+          <text x="47" y="17" text-anchor="middle" class="editorial" font-size="11" font-weight="700" fill="#34D399">✓ Verified</text>
+        </g>
+
+        
+        <g id="Badge-Rating" transform="translate(104, 0)">
+          <rect width="105" height="26" rx="13" fill="rgba(255,255,255,0.06)" stroke="#FFFFFF" stroke-opacity="0.12"/>
+          <text x="14" y="17" class="editorial" font-size="11" fill="#F59E0B">★</text>
+          <text x="28" y="17" class="editorial" font-size="11" font-weight="700" fill="#FFFFFF">4.8 <tspan fill="#FFFFFF" fill-opacity="0.45">(14)</tspan></text>
+        </g>
+      </g>
+
+      <!-- Metadata Strip: Experience & Rate -->
+      <g transform="translate(28, 150)">
+        <g>
+          <text x="0" y="0" class="editorial" font-size="10" font-weight="700" letter-spacing="0.12em" fill="#FFFFFF" fill-opacity="0.4">EXPERIENCE</text>
+          <text x="0" y="24" class="editorial" font-size="14" font-weight="600" fill="#FFFFFF">8 years</text>
+        </g>
+        <g transform="translate(220, 0)">
+          <text x="0" y="0" class="editorial" font-size="10" font-weight="700" letter-spacing="0.12em" fill="#FFFFFF" fill-opacity="0.4">RATE</text>
+          <text x="0" y="24" class="editorial tabular" font-size="15" font-weight="700" fill="#FFFFFF">₹500 / day</text>
+        </g>
+      </g>
+
+      <!-- Skills Row -->
+      <g transform="translate(28, 204)">
+        
+      <g transform="translate(0, 0)">
+        <rect width="72.5" height="26" rx="6" fill="rgba(255,255,255,0.06)"/>
+        <text x="36.25" y="17" text-anchor="middle" class="editorial" font-size="11" fill="#FFFFFF" fill-opacity="0.8">Cooking</text>
+      </g>
+      <g transform="translate(80.5, 0)">
+        <rect width="110" height="26" rx="6" fill="rgba(255,255,255,0.06)"/>
+        <text x="55" y="17" text-anchor="middle" class="editorial" font-size="11" fill="#FFFFFF" fill-opacity="0.8">Housekeeping</text>
+      </g>
+      <g transform="translate(198.5, 0)">
+        <rect width="80" height="26" rx="6" fill="rgba(255,255,255,0.06)"/>
+        <text x="40" y="17" text-anchor="middle" class="editorial" font-size="11" fill="#FFFFFF" fill-opacity="0.8">Utensils</text>
+      </g>
+      </g>
+
+      <!-- Trust Score Meter Component -->
+      <g id="Trust-Meter" transform="translate(28, 248)">
+        <text x="0" y="0" class="editorial" font-size="11" font-weight="700" fill="#FFFFFF" fill-opacity="0.75">
+          Trust score · <tspan fill="#34D399">High trust</tspan>
+        </text>
+        <text x="612" y="0" text-anchor="end" class="monumental" font-size="24" fill="#FFFFFF">
+          98<tspan font-family="'Inter', sans-serif" font-size="12" fill="#FFFFFF" fill-opacity="0.45">/100</tspan>
+        </text>
+
+        <!-- Progress Track & Bar -->
+        <rect y="12" width="612" height="6" rx="3" fill="rgba(255,255,255,0.08)"/>
+        <rect y="12" width="599.76" height="6" rx="3" fill="#059669"/>
+
+        <!-- Breakdown Details -->
+        <text x="0" y="34" class="editorial" font-size="11" fill="#FFFFFF" fill-opacity="0.5">
+          ID 30 · rating 29 · experience 8 · records 30
+        </text>
+        <text x="0" y="50" class="editorial" font-size="11" fill="#FFFFFF" fill-opacity="0.5">
+          4 confirmed · 0 disputed
+        </text>
+      </g>
+
+      <!-- Action Buttons -->
+      <g id="Card-Actions" transform="translate(28, 350)">
+        <g id="Button-Hire">
+          <rect width="130" height="42" rx="21" fill="#FFFFFF"/>
+          <text x="65" y="26" text-anchor="middle" class="editorial" font-size="12" font-weight="700" fill="#08080A">Hire</text>
+        </g>
+        <g id="Button-View-Ledger" transform="translate(144, 0)">
+          <rect width="140" height="42" rx="21" fill="none" stroke="#FFFFFF" stroke-opacity="0.2"/>
+          <text x="70" y="26" text-anchor="middle" class="editorial" font-size="12" font-weight="600" fill="#FFFFFF" fill-opacity="0.8">View ledger</text>
+        </g>
+      </g>
+    </g>
+
+    <!-- CARD 2: RAMESH KUMAR (DRIVER) -->
+    
+    <g id="Worker-Card-Ramesh" transform="translate(692, 0)">
+      <rect width="668" height="420" rx="18" fill="#16161C" stroke="#FFFFFF" stroke-opacity="0.1" stroke-width="1"/>
+
+      <!-- Header: Avatar, Name & Category -->
+      <g transform="translate(28, 28)">
+        <!-- Avatar Circle -->
+        <circle cx="28" cy="28" r="28" fill="url(#avatar-crimson)"/>
+        <text x="28" y="38" text-anchor="middle" class="monumental" font-size="28" fill="#FFFFFF">R</text>
+
+        <!-- Name & Locality -->
+        <g transform="translate(72, 14)">
+          <text x="0" y="0" class="editorial" font-size="18" font-weight="700" fill="#FFFFFF">Ramesh Kumar</text>
+          <text x="0" y="22" class="editorial" font-size="13" font-weight="500" fill="#FFFFFF" fill-opacity="0.55">Driver · Dwarka, New Delhi</text>
+        </g>
+      </g>
+
+      <!-- Badge Row -->
+      <g transform="translate(28, 102)">
+        
+        <g id="Badge-Verified">
+          <rect width="94" height="26" rx="13" fill="rgba(5,150,105,0.15)" stroke="#059669" stroke-opacity="0.4"/>
+          <text x="47" y="17" text-anchor="middle" class="editorial" font-size="11" font-weight="700" fill="#34D399">✓ Verified</text>
+        </g>
+
+        
+        <g id="Badge-Rating" transform="translate(104, 0)">
+          <rect width="105" height="26" rx="13" fill="rgba(255,255,255,0.06)" stroke="#FFFFFF" stroke-opacity="0.12"/>
+          <text x="14" y="17" class="editorial" font-size="11" fill="#F59E0B">★</text>
+          <text x="28" y="17" class="editorial" font-size="11" font-weight="700" fill="#FFFFFF">4.5 <tspan fill="#FFFFFF" fill-opacity="0.45">(9)</tspan></text>
+        </g>
+      </g>
+
+      <!-- Metadata Strip: Experience & Rate -->
+      <g transform="translate(28, 150)">
+        <g>
+          <text x="0" y="0" class="editorial" font-size="10" font-weight="700" letter-spacing="0.12em" fill="#FFFFFF" fill-opacity="0.4">EXPERIENCE</text>
+          <text x="0" y="24" class="editorial" font-size="14" font-weight="600" fill="#FFFFFF">12 years</text>
+        </g>
+        <g transform="translate(220, 0)">
+          <text x="0" y="0" class="editorial" font-size="10" font-weight="700" letter-spacing="0.12em" fill="#FFFFFF" fill-opacity="0.4">RATE</text>
+          <text x="0" y="24" class="editorial tabular" font-size="15" font-weight="700" fill="#FFFFFF">₹14,000 / month</text>
+        </g>
+      </g>
+
+      <!-- Skills Row -->
+      <g transform="translate(28, 204)">
+        
+      <g transform="translate(0, 0)">
+        <rect width="102.5" height="26" rx="6" fill="rgba(255,255,255,0.06)"/>
+        <text x="51.25" y="17" text-anchor="middle" class="editorial" font-size="11" fill="#FFFFFF" fill-opacity="0.8">Car driving</text>
+      </g>
+      <g transform="translate(110.5, 0)">
+        <rect width="110" height="26" rx="6" fill="rgba(255,255,255,0.06)"/>
+        <text x="55" y="17" text-anchor="middle" class="editorial" font-size="11" fill="#FFFFFF" fill-opacity="0.8">Airport runs</text>
+      </g>
+      <g transform="translate(228.5, 0)">
+        <rect width="125" height="26" rx="6" fill="rgba(255,255,255,0.06)"/>
+        <text x="62.5" y="17" text-anchor="middle" class="editorial" font-size="11" fill="#FFFFFF" fill-opacity="0.8">Basic car care</text>
+      </g>
+      </g>
+
+      <!-- Trust Score Meter Component -->
+      <g id="Trust-Meter" transform="translate(28, 248)">
+        <text x="0" y="0" class="editorial" font-size="11" font-weight="700" fill="#FFFFFF" fill-opacity="0.75">
+          Trust score · <tspan fill="#34D399">High trust</tspan>
+        </text>
+        <text x="612" y="0" text-anchor="end" class="monumental" font-size="24" fill="#FFFFFF">
+          91<tspan font-family="'Inter', sans-serif" font-size="12" fill="#FFFFFF" fill-opacity="0.45">/100</tspan>
+        </text>
+
+        <!-- Progress Track & Bar -->
+        <rect y="12" width="612" height="6" rx="3" fill="rgba(255,255,255,0.08)"/>
+        <rect y="12" width="556.92" height="6" rx="3" fill="#059669"/>
+
+        <!-- Breakdown Details -->
+        <text x="0" y="34" class="editorial" font-size="11" fill="#FFFFFF" fill-opacity="0.5">
+          ID 30 · rating 27 · experience 10 · records 24
+        </text>
+        <text x="0" y="50" class="editorial" font-size="11" fill="#FFFFFF" fill-opacity="0.5">
+          1 confirmed · 1 disputed
+        </text>
+      </g>
+
+      <!-- Action Buttons -->
+      <g id="Card-Actions" transform="translate(28, 350)">
+        <g id="Button-Hire">
+          <rect width="130" height="42" rx="21" fill="#FFFFFF"/>
+          <text x="65" y="26" text-anchor="middle" class="editorial" font-size="12" font-weight="700" fill="#08080A">Hire</text>
+        </g>
+        <g id="Button-View-Ledger" transform="translate(144, 0)">
+          <rect width="140" height="42" rx="21" fill="none" stroke="#FFFFFF" stroke-opacity="0.2"/>
+          <text x="70" y="26" text-anchor="middle" class="editorial" font-size="12" font-weight="600" fill="#FFFFFF" fill-opacity="0.8">View ledger</text>
+        </g>
+      </g>
+    </g>
+
+    <!-- CARD 3: KAVITA RAWAT (CAREGIVER) -->
+    
+    <g id="Worker-Card-Kavita" transform="translate(0, 440)">
+      <rect width="668" height="420" rx="18" fill="#16161C" stroke="#FFFFFF" stroke-opacity="0.1" stroke-width="1"/>
+
+      <!-- Header: Avatar, Name & Category -->
+      <g transform="translate(28, 28)">
+        <!-- Avatar Circle -->
+        <circle cx="28" cy="28" r="28" fill="url(#avatar-crimson)"/>
+        <text x="28" y="38" text-anchor="middle" class="monumental" font-size="28" fill="#FFFFFF">K</text>
+
+        <!-- Name & Locality -->
+        <g transform="translate(72, 14)">
+          <text x="0" y="0" class="editorial" font-size="18" font-weight="700" fill="#FFFFFF">Kavita Rawat</text>
+          <text x="0" y="22" class="editorial" font-size="13" font-weight="500" fill="#FFFFFF" fill-opacity="0.55">Caregiver · Sohna Road, Gurugram</text>
+        </g>
+      </g>
+
+      <!-- Badge Row -->
+      <g transform="translate(28, 102)">
+        
+        <g id="Badge-Verified">
+          <rect width="94" height="26" rx="13" fill="rgba(5,150,105,0.15)" stroke="#059669" stroke-opacity="0.4"/>
+          <text x="47" y="17" text-anchor="middle" class="editorial" font-size="11" font-weight="700" fill="#34D399">✓ Verified</text>
+        </g>
+
+        
+        <g id="Badge-Rating" transform="translate(104, 0)">
+          <rect width="105" height="26" rx="13" fill="rgba(255,255,255,0.06)" stroke="#FFFFFF" stroke-opacity="0.12"/>
+          <text x="14" y="17" class="editorial" font-size="11" fill="#F59E0B">★</text>
+          <text x="28" y="17" class="editorial" font-size="11" font-weight="700" fill="#FFFFFF">4.9 <tspan fill="#FFFFFF" fill-opacity="0.45">(11)</tspan></text>
+        </g>
+      </g>
+
+      <!-- Metadata Strip: Experience & Rate -->
+      <g transform="translate(28, 150)">
+        <g>
+          <text x="0" y="0" class="editorial" font-size="10" font-weight="700" letter-spacing="0.12em" fill="#FFFFFF" fill-opacity="0.4">EXPERIENCE</text>
+          <text x="0" y="24" class="editorial" font-size="14" font-weight="600" fill="#FFFFFF">6 years</text>
+        </g>
+        <g transform="translate(220, 0)">
+          <text x="0" y="0" class="editorial" font-size="10" font-weight="700" letter-spacing="0.12em" fill="#FFFFFF" fill-opacity="0.4">RATE</text>
+          <text x="0" y="24" class="editorial tabular" font-size="15" font-weight="700" fill="#FFFFFF">₹16,000 / month</text>
+        </g>
+      </g>
+
+      <!-- Skills Row -->
+      <g transform="translate(28, 204)">
+        
+      <g transform="translate(0, 0)">
+        <rect width="95" height="26" rx="6" fill="rgba(255,255,255,0.06)"/>
+        <text x="47.5" y="17" text-anchor="middle" class="editorial" font-size="11" fill="#FFFFFF" fill-opacity="0.8">Elder care</text>
+      </g>
+      <g transform="translate(103, 0)">
+        <rect width="170" height="26" rx="6" fill="rgba(255,255,255,0.06)"/>
+        <text x="85" y="17" text-anchor="middle" class="editorial" font-size="11" fill="#FFFFFF" fill-opacity="0.8">Medication reminders</text>
+      </g>
+      <g transform="translate(281, 0)">
+        <rect width="170" height="26" rx="6" fill="rgba(255,255,255,0.06)"/>
+        <text x="85" y="17" text-anchor="middle" class="editorial" font-size="11" fill="#FFFFFF" fill-opacity="0.8">Physiotherapy assist</text>
+      </g>
+      </g>
+
+      <!-- Trust Score Meter Component -->
+      <g id="Trust-Meter" transform="translate(28, 248)">
+        <text x="0" y="0" class="editorial" font-size="11" font-weight="700" fill="#FFFFFF" fill-opacity="0.75">
+          Trust score · <tspan fill="#34D399">High trust</tspan>
+        </text>
+        <text x="612" y="0" text-anchor="end" class="monumental" font-size="24" fill="#FFFFFF">
+          96<tspan font-family="'Inter', sans-serif" font-size="12" fill="#FFFFFF" fill-opacity="0.45">/100</tspan>
+        </text>
+
+        <!-- Progress Track & Bar -->
+        <rect y="12" width="612" height="6" rx="3" fill="rgba(255,255,255,0.08)"/>
+        <rect y="12" width="587.52" height="6" rx="3" fill="#059669"/>
+
+        <!-- Breakdown Details -->
+        <text x="0" y="34" class="editorial" font-size="11" fill="#FFFFFF" fill-opacity="0.5">
+          ID 30 · rating 29 · experience 6 · records 30
+        </text>
+        <text x="0" y="50" class="editorial" font-size="11" fill="#FFFFFF" fill-opacity="0.5">
+          2 confirmed · 0 disputed
+        </text>
+      </g>
+
+      <!-- Action Buttons -->
+      <g id="Card-Actions" transform="translate(28, 350)">
+        <g id="Button-Hire">
+          <rect width="130" height="42" rx="21" fill="#FFFFFF"/>
+          <text x="65" y="26" text-anchor="middle" class="editorial" font-size="12" font-weight="700" fill="#08080A">Hire</text>
+        </g>
+        <g id="Button-View-Ledger" transform="translate(144, 0)">
+          <rect width="140" height="42" rx="21" fill="none" stroke="#FFFFFF" stroke-opacity="0.2"/>
+          <text x="70" y="26" text-anchor="middle" class="editorial" font-size="12" font-weight="600" fill="#FFFFFF" fill-opacity="0.8">View ledger</text>
+        </g>
+      </g>
+    </g>
+
+    <!-- CARD 4: MOHAN LAL (GARDENER) -->
+    
+    <g id="Worker-Card-Mohan" transform="translate(692, 440)">
+      <rect width="668" height="420" rx="18" fill="#16161C" stroke="#FFFFFF" stroke-opacity="0.1" stroke-width="1"/>
+
+      <!-- Header: Avatar, Name & Category -->
+      <g transform="translate(28, 28)">
+        <!-- Avatar Circle -->
+        <circle cx="28" cy="28" r="28" fill="url(#avatar-crimson)"/>
+        <text x="28" y="38" text-anchor="middle" class="monumental" font-size="28" fill="#FFFFFF">M</text>
+
+        <!-- Name & Locality -->
+        <g transform="translate(72, 14)">
+          <text x="0" y="0" class="editorial" font-size="18" font-weight="700" fill="#FFFFFF">Mohan Lal</text>
+          <text x="0" y="22" class="editorial" font-size="13" font-weight="500" fill="#FFFFFF" fill-opacity="0.55">Gardener · Vasant Kunj, New Delhi</text>
+        </g>
+      </g>
+
+      <!-- Badge Row -->
+      <g transform="translate(28, 102)">
+        
+        <g id="Badge-Pending">
+          <rect width="145" height="26" rx="13" fill="rgba(245,158,11,0.12)" stroke="#F59E0B" stroke-opacity="0.4"/>
+          <text x="72" y="17" text-anchor="middle" class="editorial" font-size="11" font-weight="700" fill="#FBBF24">… Verification pending</text>
+        </g>
+
+        
+        <g id="Badge-Unrated" transform="translate(155, 0)">
+          <rect width="100" height="26" rx="13" fill="rgba(255,255,255,0.06)" stroke="#FFFFFF" stroke-opacity="0.12"/>
+          <text x="50" y="17" text-anchor="middle" class="editorial" font-size="11" fill="#FFFFFF" fill-opacity="0.5">Not rated yet</text>
+        </g>
+      </g>
+
+      <!-- Metadata Strip: Experience & Rate -->
+      <g transform="translate(28, 150)">
+        <g>
+          <text x="0" y="0" class="editorial" font-size="10" font-weight="700" letter-spacing="0.12em" fill="#FFFFFF" fill-opacity="0.4">EXPERIENCE</text>
+          <text x="0" y="24" class="editorial" font-size="14" font-weight="600" fill="#FFFFFF">3 years</text>
+        </g>
+        <g transform="translate(220, 0)">
+          <text x="0" y="0" class="editorial" font-size="10" font-weight="700" letter-spacing="0.12em" fill="#FFFFFF" fill-opacity="0.4">RATE</text>
+          <text x="0" y="24" class="editorial tabular" font-size="15" font-weight="700" fill="#FFFFFF">₹450 / day</text>
+        </g>
+      </g>
+
+      <!-- Skills Row -->
+      <g transform="translate(28, 204)">
+        
+      <g transform="translate(0, 0)">
+        <rect width="87.5" height="26" rx="6" fill="rgba(255,255,255,0.06)"/>
+        <text x="43.75" y="17" text-anchor="middle" class="editorial" font-size="11" fill="#FFFFFF" fill-opacity="0.8">Lawn care</text>
+      </g>
+      <g transform="translate(95.5, 0)">
+        <rect width="125" height="26" rx="6" fill="rgba(255,255,255,0.06)"/>
+        <text x="62.5" y="17" text-anchor="middle" class="editorial" font-size="11" fill="#FFFFFF" fill-opacity="0.8">Kitchen garden</text>
+      </g>
+      <g transform="translate(228.5, 0)">
+        <rect width="72.5" height="26" rx="6" fill="rgba(255,255,255,0.06)"/>
+        <text x="36.25" y="17" text-anchor="middle" class="editorial" font-size="11" fill="#FFFFFF" fill-opacity="0.8">Pruning</text>
+      </g>
+      </g>
+
+      <!-- Trust Score Meter Component -->
+      <g id="Trust-Meter" transform="translate(28, 248)">
+        <text x="0" y="0" class="editorial" font-size="11" font-weight="700" fill="#FFFFFF" fill-opacity="0.75">
+          Trust score · <tspan fill="#FBBF24">Moderate trust</tspan>
+        </text>
+        <text x="612" y="0" text-anchor="end" class="monumental" font-size="24" fill="#FFFFFF">
+          48<tspan font-family="'Inter', sans-serif" font-size="12" fill="#FFFFFF" fill-opacity="0.45">/100</tspan>
+        </text>
+
+        <!-- Progress Track & Bar -->
+        <rect y="12" width="612" height="6" rx="3" fill="rgba(255,255,255,0.08)"/>
+        <rect y="12" width="293.76" height="6" rx="3" fill="#F59E0B"/>
+
+        <!-- Breakdown Details -->
+        <text x="0" y="34" class="editorial" font-size="11" fill="#FFFFFF" fill-opacity="0.5">
+          ID 0 · rating 15 · experience 3 · records 15
+        </text>
+        <text x="0" y="50" class="editorial" font-size="11" fill="#FFFFFF" fill-opacity="0.5">
+          No ledger entries reviewed yet
+        </text>
+      </g>
+
+      <!-- Action Buttons -->
+      <g id="Card-Actions" transform="translate(28, 350)">
+        <g id="Button-Hire">
+          <rect width="130" height="42" rx="21" fill="#FFFFFF"/>
+          <text x="65" y="26" text-anchor="middle" class="editorial" font-size="12" font-weight="700" fill="#08080A">Hire</text>
+        </g>
+        <g id="Button-View-Ledger" transform="translate(144, 0)">
+          <rect width="140" height="42" rx="21" fill="none" stroke="#FFFFFF" stroke-opacity="0.2"/>
+          <text x="70" y="26" text-anchor="middle" class="editorial" font-size="12" font-weight="600" fill="#FFFFFF" fill-opacity="0.8">View ledger</text>
+        </g>
+      </g>
+    </g>
+
+  </g>
+
+  <!-- ======================================================== -->
+  <!-- 05. TRUST SCORE EXPLANATION PANEL                        -->
+  <!-- ======================================================== -->
+  <g id="Trust-Explanation-Panel" transform="translate(40, 1400)">
+    <rect width="1360" height="280" rx="18" fill="#16161C" stroke="#FFFFFF" stroke-opacity="0.08"/>
+
+    <g transform="translate(32, 28)">
+      <text x="0" y="0" class="monumental" font-size="22" fill="#FFFFFF">HOW THE TRUST SCORE WORKS</text>
+      <text x="0" y="24" class="editorial" font-size="13" fill="#FFFFFF" fill-opacity="0.5">
+        A 0–100 score built from four visible parts.
+      </text>
+
+      <!-- 4 Pillars Grid -->
+      <g transform="translate(0, 50)">
+        <!-- Pillar 1 -->
+        <g id="Pillar-1">
+          <rect width="310" height="90" rx="12" fill="#111115" stroke="#FFFFFF" stroke-opacity="0.06"/>
+          <text x="16" y="28" class="editorial" font-size="12" font-weight="700" fill="#34D399">30 · ID check flag</text>
+          <text x="16" y="52" class="editorial" font-size="11" fill="#FFFFFF" fill-opacity="0.6">
+            Awarded when the profile is marked verified with valid ID format.
+          </text>
+        </g>
+
+        <!-- Pillar 2 -->
+        <g id="Pillar-2" transform="translate(328, 0)">
+          <rect width="310" height="90" rx="12" fill="#111115" stroke="#FFFFFF" stroke-opacity="0.06"/>
+          <text x="16" y="28" class="editorial" font-size="12" font-weight="700" fill="#34D399">30 · Rating</text>
+          <text x="16" y="52" class="editorial" font-size="11" fill="#FFFFFF" fill-opacity="0.6">
+            Average rating out of 5 from previous employers, scaled to 30 points.
+          </text>
+        </g>
+
+        <!-- Pillar 3 -->
+        <g id="Pillar-3" transform="translate(656, 0)">
+          <rect width="310" height="90" rx="12" fill="#111115" stroke="#FFFFFF" stroke-opacity="0.06"/>
+          <text x="16" y="28" class="editorial" font-size="12" font-weight="700" fill="#34D399">10 · Experience</text>
+          <text x="16" y="52" class="editorial" font-size="11" fill="#FFFFFF" fill-opacity="0.6">
+            One point per year of verifiable experience, up to 10 points.
+          </text>
+        </g>
+
+        <!-- Pillar 4 -->
+        <g id="Pillar-4" transform="translate(984, 0)">
+          <rect width="310" height="90" rx="12" fill="#111115" stroke="#FFFFFF" stroke-opacity="0.06"/>
+          <text x="16" y="28" class="editorial" font-size="12" font-weight="700" fill="#34D399">30 · Record reliability</text>
+          <text x="16" y="52" class="editorial" font-size="11" fill="#FFFFFF" fill-opacity="0.6">
+            Share of reviewed ledger entries that helper confirmed without dispute.
+          </text>
+        </g>
+      </g>
+
+      <!-- Demo Note Box -->
+      <g transform="translate(0, 160)">
+        <rect width="1296" height="42" rx="10" fill="rgba(245,158,11,0.08)" stroke="#F59E0B" stroke-opacity="0.3"/>
+        <text x="16" y="26" class="editorial" font-size="12" fill="#FCD34D">
+          Note: Ratings and verification in this milestone are sample data to demonstrate the interface. They are not real reviews or government checks.
+        </text>
+      </g>
+    </g>
+  </g>
+
+  <!-- 06. EDITORIAL FOOTER -->
+    <!-- ======================================================== -->
+  <!-- EDITORIAL FOOTER (EXACT WEBSITE MATCH)                   -->
+  <!-- ======================================================== -->
+  <g id="Footer" transform="translate(40, 2030)">
+    <line x1="0" y1="0" x2="1360" y2="0" stroke="#FFFFFF" stroke-opacity="0.08" stroke-width="1"/>
+
+    <g transform="translate(0, 42)">
+      <!-- Brand & Tagline Column -->
+      <g id="Footer-Brand-Col">
+        <g transform="translate(0, 0)">
+          <g id="Brand-Mark-Icon" transform="translate(0, 0) scale(0.8125)">
+    <!-- Left Folio Page -->
+    <path d="M7 6C7 4.89543 7.89543 4 9 4H14.5C15.3284 4 16 4.67157 16 5.5V26.5C16 27.3284 15.3284 28 14.5 28H9C7.89543 28 7 27.1046 7 26V6Z" fill="#047857" fill-opacity="0.18" stroke="#047857" stroke-width="1.8" stroke-linejoin="round"/>
+    <!-- Right Folio Page -->
+    <path d="M25 6C25 4.89543 24.1046 4 23 4H17.5C16.6716 4 16 4.67157 16 5.5V26.5C16 27.3284 16.6716 28 17.5 28H23C24.1046 28 25 27.1046 25 26V6Z" fill="#047857" fill-opacity="0.18" stroke="#047857" stroke-width="1.8" stroke-linejoin="round"/>
+    <!-- Central Ledger Spine Rule (Crimson Margin) -->
+    <line x1="16" y1="3" x2="16" y2="29" stroke="#E11D48" stroke-width="1.2" stroke-linecap="round"/>
+    <!-- Central Mutual Seal Diamond -->
+    <path d="M16 11L19.5 16L16 21L12.5 16L16 11Z" fill="#047857"/>
+    <circle cx="16" cy="16" r="1.5" fill="#FFFFFF"/>
+  </g>
+          <text x="32" y="18" class="monumental" font-size="18" letter-spacing="0.04em" fill="#FFFFFF">SEVAKHATA · <tspan class="hindi" font-size="14">सेवाखाता</tspan></text>
+        </g>
+        <text x="0" y="44" class="editorial" font-size="12" font-weight="400" fill="#FFFFFF" fill-opacity="0.55">
+          Dono ka record, ek hi hisaab · The shared domestic employment ledger.
+        </text>
+      </g>
+
+      <!-- Right Navigation Links & Legal -->
+      <g id="Footer-Links-Col" transform="translate(1360, 0)">
+        <text x="0" y="16" text-anchor="end" class="editorial" font-size="12" font-weight="500" fill="#FFFFFF" fill-opacity="0.75">
+          Home   ·   Hire   ·   Register   ·   Directory   ·   Ledger   ·   Support
+        </text>
+        <text x="0" y="44" text-anchor="end" class="editorial" font-size="11" font-weight="400" fill="#FFFFFF" fill-opacity="0.35">
+          © 2026 SevaKhata. Designed for mutual trust and dignity in Indian households.
+        </text>
+      </g>
+    </g>
+  </g>
+
+</svg>

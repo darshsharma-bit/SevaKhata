@@ -1,0 +1,529 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1750" viewBox="0 0 1600 1750" font-family="'Inter', -apple-system, BlinkMacSystemFont, sans-serif">
+  <title>07 — Master UI Kit &amp; Interaction Specifications | SevaKhata Figma Master</title>
+  <defs>
+    <style>
+      .monumental { font-family: 'Bebas Neue', -apple-system, sans-serif; text-transform: uppercase; }
+      .editorial { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+      .hindi { font-family: 'Noto Sans Devanagari', -apple-system, sans-serif; }
+      .tabular { font-feature-settings: 'tnum'; font-variant-numeric: tabular-nums; }
+    </style>
+
+    <!-- Deep Elevation Shadow for living slabs & modals -->
+    <filter id="slab-elevation-shadow" x="-5%" y="-5%" width="110%" height="115%" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="28" stdDeviation="36" flood-color="#000000" flood-opacity="0.85"/>
+      <feDropShadow dx="0" dy="4" stdDeviation="10" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+
+    <filter id="modal-shadow" x="-10%" y="-10%" width="120%" height="125%" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="32" stdDeviation="40" flood-color="#000000" flood-opacity="0.9"/>
+      <feDropShadow dx="0" dy="8" stdDeviation="16" flood-color="#000000" flood-opacity="0.5"/>
+    </filter>
+
+    <!-- Emerald Glow -->
+    <filter id="emerald-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="0" stdDeviation="24" flood-color="#059669" flood-opacity="0.4"/>
+    </filter>
+
+    <!-- Hero Seal Radial Gradient -->
+    <radialGradient id="hero-seal-radial" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#C8202B" stop-opacity="0.85"/>
+      <stop offset="42%" stop-color="#C8202B" stop-opacity="0.5"/>
+      <stop offset="68%" stop-color="#047857" stop-opacity="0.25"/>
+      <stop offset="72%" stop-color="#047857" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Avatar Crimson Gradient -->
+    <linearGradient id="avatar-crimson" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#C8202B"/>
+      <stop offset="100%" stop-color="#7F1D1D"/>
+    </linearGradient>
+
+    <!-- Subtle Card Gradient -->
+    <linearGradient id="card-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#16161C"/>
+      <stop offset="100%" stop-color="#111115"/>
+    </linearGradient>
+  </defs>
+
+  <!-- 00. BASE CANVAS -->
+  <rect id="Canvas-Background" width="1600" height="1750" fill="#08080A"/>
+
+  <!-- ======================================================== -->
+  <!-- HEADER MASTHEAD                                          -->
+  <!-- ======================================================== -->
+  <g id="Header-Masthead" transform="translate(80, 50)">
+    <text x="0" y="0" class="editorial" font-size="12" font-weight="800" letter-spacing="0.22em" fill="#E11D48">07 / COMPONENT SPECIFICATIONS &amp; INTERACTION STATES</text>
+    <text x="0" y="42" class="monumental" font-size="44" letter-spacing="0.02em" fill="#FFFFFF">MASTER UI KIT &amp; COMPONENT STATES</text>
+    <text x="0" y="72" class="editorial" font-size="14" fill="#FFFFFF" fill-opacity="0.6">
+      Production UI components, real-time validation states, popups, modals, and toasts extracted from SevaKhata.
+    </text>
+    <line x1="0" y1="95" x2="1440" y2="95" stroke="#FFFFFF" stroke-opacity="0.1" stroke-width="1"/>
+  </g>
+
+  <!-- ======================================================== -->
+  <!-- 01. NAVIGATION BAR STATES                                -->
+  <!-- ======================================================== -->
+  <g id="Section-Navbar-States" transform="translate(80, 180)">
+    <text x="0" y="0" class="editorial" font-size="12" font-weight="700" letter-spacing="0.14em" fill="#059669">01 · SYSTEM NAVIGATION BAR STATES</text>
+
+    <!-- State A: Desktop Navbar (English Active: Home) -->
+    <g id="Nav-Desktop-English" transform="translate(0, 24)">
+      
+    <g id="Nav-EN">
+      <rect width="1440" height="58" rx="29" fill="#121216" stroke="#FFFFFF" stroke-opacity="0.16" stroke-width="1"/>
+      <g id="Nav-Brand-Lockup" transform="translate(24, 14)">
+    <g id="Brand-Mark-Icon" transform="translate(0, 3) scale(0.8125)">
+    <!-- Left Folio Page -->
+    <path d="M7 6C7 4.89543 7.89543 4 9 4H14.5C15.3284 4 16 4.67157 16 5.5V26.5C16 27.3284 15.3284 28 14.5 28H9C7.89543 28 7 27.1046 7 26V6Z" fill="#047857" fill-opacity="0.18" stroke="#047857" stroke-width="1.8" stroke-linejoin="round"/>
+    <!-- Right Folio Page -->
+    <path d="M25 6C25 4.89543 24.1046 4 23 4H17.5C16.6716 4 16 4.67157 16 5.5V26.5C16 27.3284 16.6716 28 17.5 28H23C24.1046 28 25 27.1046 25 26V6Z" fill="#047857" fill-opacity="0.18" stroke="#047857" stroke-width="1.8" stroke-linejoin="round"/>
+    <!-- Central Ledger Spine Rule (Crimson Margin) -->
+    <line x1="16" y1="3" x2="16" y2="29" stroke="#E11D48" stroke-width="1.2" stroke-linecap="round"/>
+    <!-- Central Mutual Seal Diamond -->
+    <path d="M16 11L19.5 16L16 21L12.5 16L16 11Z" fill="#047857"/>
+    <circle cx="16" cy="16" r="1.5" fill="#FFFFFF"/>
+  </g>
+    <text x="36" y="19" class="monumental" font-size="20" letter-spacing="0.05em" fill="#FFFFFF">SEVAKHATA</text>
+    <text x="138" y="18" class="hindi" font-size="13" font-weight="500" fill="#FFFFFF" fill-opacity="0.55">सेवाखाता</text>
+  </g>
+      
+      <g id="Nav-EN-Telemetry" transform="translate(240, 33)">
+        <circle cx="0" cy="-4" r="3" fill="#059669"/>
+        <text x="10" y="0" class="editorial" font-size="11" font-weight="600" letter-spacing="0.06em" fill="#FFFFFF" fill-opacity="0.75">
+          Sharma Household × Sunita Sharma · August 2026
+        </text>
+      </g>
+      <g id="Nav-EN-Links" transform="translate(680, 13)">
+        
+        <g id="Nav-EN-Link-home-Active" transform="translate(0, 0)">
+          <rect width="56" height="32" rx="16" fill="#FFFFFF" fill-opacity="0.12"/>
+          <text x="28" y="20" text-anchor="middle" class="editorial" font-size="12" font-weight="600" fill="#FFFFFF">Home</text>
+        </g>
+        <g id="Nav-EN-Link-hire" transform="translate(60, 0)">
+          <text x="28" y="20" text-anchor="middle" class="editorial" font-size="12" font-weight="500" fill="#FFFFFF" fill-opacity="0.72">Hire</text>
+        </g>
+        <g id="Nav-EN-Link-register" transform="translate(120, 0)">
+          <text x="44" y="20" text-anchor="middle" class="editorial" font-size="12" font-weight="500" fill="#FFFFFF" fill-opacity="0.72">Register</text>
+        </g>
+        <g id="Nav-EN-Link-directory" transform="translate(212, 0)">
+          <text x="48" y="20" text-anchor="middle" class="editorial" font-size="12" font-weight="500" fill="#FFFFFF" fill-opacity="0.72">Directory</text>
+        </g>
+        <g id="Nav-EN-Link-ledger" transform="translate(312, 0)">
+          <text x="36" y="20" text-anchor="middle" class="editorial" font-size="12" font-weight="500" fill="#FFFFFF" fill-opacity="0.72">Ledger</text>
+        </g>
+        <g id="Nav-EN-Link-support" transform="translate(388, 0)">
+          <text x="40" y="20" text-anchor="middle" class="editorial" font-size="12" font-weight="500" fill="#FFFFFF" fill-opacity="0.72">Support</text>
+        </g>
+      </g>
+      
+      <g id="Nav-EN-Extras" transform="translate(1300, 13)">
+        <g id="Nav-EN-LangToggle">
+          <rect width="76" height="32" rx="16" fill="#1B1B22" stroke="#FFFFFF" stroke-opacity="0.14" stroke-width="1"/>
+          
+          <rect x="2" y="2" width="34" height="28" rx="14" fill="#FFFFFF"/>
+          <text x="19" y="20" text-anchor="middle" class="editorial" font-size="11" font-weight="700" fill="#08080A">EN</text>
+          <text x="56" y="20" text-anchor="middle" class="hindi" font-size="11" font-weight="600" fill="#FFFFFF" fill-opacity="0.7">हिं</text>
+          
+        </g>
+        <g id="Nav-EN-MenuBtn" transform="translate(86, 0)">
+          <rect width="32" height="32" rx="16" fill="none" stroke="#FFFFFF" stroke-opacity="0.14" stroke-width="1"/>
+          <text x="16" y="21" text-anchor="middle" font-size="14" fill="#FFFFFF" fill-opacity="0.75">☰</text>
+        </g>
+      </g>
+    </g>
+    </g>
+
+    <!-- State B: Desktop Navbar (Hindi Active: Ledger) -->
+    <g id="Nav-Desktop-Hindi" transform="translate(0, 100)">
+      
+    <g id="Nav-HI">
+      <rect width="1440" height="58" rx="29" fill="#121216" stroke="#FFFFFF" stroke-opacity="0.16" stroke-width="1"/>
+      <g id="Nav-Brand-Lockup" transform="translate(24, 14)">
+    <g id="Brand-Mark-Icon" transform="translate(0, 3) scale(0.8125)">
+    <!-- Left Folio Page -->
+    <path d="M7 6C7 4.89543 7.89543 4 9 4H14.5C15.3284 4 16 4.67157 16 5.5V26.5C16 27.3284 15.3284 28 14.5 28H9C7.89543 28 7 27.1046 7 26V6Z" fill="#047857" fill-opacity="0.18" stroke="#047857" stroke-width="1.8" stroke-linejoin="round"/>
+    <!-- Right Folio Page -->
+    <path d="M25 6C25 4.89543 24.1046 4 23 4H17.5C16.6716 4 16 4.67157 16 5.5V26.5C16 27.3284 16.6716 28 17.5 28H23C24.1046 28 25 27.1046 25 26V6Z" fill="#047857" fill-opacity="0.18" stroke="#047857" stroke-width="1.8" stroke-linejoin="round"/>
+    <!-- Central Ledger Spine Rule (Crimson Margin) -->
+    <line x1="16" y1="3" x2="16" y2="29" stroke="#E11D48" stroke-width="1.2" stroke-linecap="round"/>
+    <!-- Central Mutual Seal Diamond -->
+    <path d="M16 11L19.5 16L16 21L12.5 16L16 11Z" fill="#047857"/>
+    <circle cx="16" cy="16" r="1.5" fill="#FFFFFF"/>
+  </g>
+    <text x="36" y="19" class="monumental" font-size="20" letter-spacing="0.05em" fill="#FFFFFF">SEVAKHATA</text>
+    <text x="138" y="18" class="hindi" font-size="13" font-weight="500" fill="#FFFFFF" fill-opacity="0.55">सेवाखाता</text>
+  </g>
+      
+      <g id="Nav-HI-Links" transform="translate(480, 13)">
+        
+        <g id="Nav-HI-Link-home" transform="translate(0, 0)">
+          <text x="24" y="20" text-anchor="middle" class="hindi" font-size="12" font-weight="500" fill="#FFFFFF" fill-opacity="0.72">होम</text>
+        </g>
+        <g id="Nav-HI-Link-hire" transform="translate(52, 0)">
+          <text x="56" y="20" text-anchor="middle" class="hindi" font-size="12" font-weight="500" fill="#FFFFFF" fill-opacity="0.72">काम पर रखें</text>
+        </g>
+        <g id="Nav-HI-Link-register" transform="translate(168, 0)">
+          <text x="40" y="20" text-anchor="middle" class="hindi" font-size="12" font-weight="500" fill="#FFFFFF" fill-opacity="0.72">पंजीकरण</text>
+        </g>
+        <g id="Nav-HI-Link-directory" transform="translate(252, 0)">
+          <text x="52" y="20" text-anchor="middle" class="hindi" font-size="12" font-weight="500" fill="#FFFFFF" fill-opacity="0.72">सहायक सूची</text>
+        </g>
+        <g id="Nav-HI-Link-ledger-Active" transform="translate(360, 0)">
+          <rect width="96" height="32" rx="16" fill="#FFFFFF" fill-opacity="0.12"/>
+          <text x="48" y="20" text-anchor="middle" class="hindi" font-size="12" font-weight="600" fill="#FFFFFF">साझा खाता</text>
+        </g>
+        <g id="Nav-HI-Link-support" transform="translate(460, 0)">
+          <text x="36" y="20" text-anchor="middle" class="hindi" font-size="12" font-weight="500" fill="#FFFFFF" fill-opacity="0.72">सहायता</text>
+        </g>
+      </g>
+      
+      <g id="Nav-HI-Extras" transform="translate(1300, 13)">
+        <g id="Nav-HI-LangToggle">
+          <rect width="76" height="32" rx="16" fill="#1B1B22" stroke="#FFFFFF" stroke-opacity="0.14" stroke-width="1"/>
+          
+          <rect x="40" y="2" width="34" height="28" rx="14" fill="#FFFFFF"/>
+          <text x="19" y="20" text-anchor="middle" class="editorial" font-size="11" font-weight="600" fill="#FFFFFF" fill-opacity="0.7">EN</text>
+          <text x="57" y="20" text-anchor="middle" class="hindi" font-size="11" font-weight="700" fill="#08080A">हिं</text>
+          
+        </g>
+        <g id="Nav-HI-MenuBtn" transform="translate(86, 0)">
+          <rect width="32" height="32" rx="16" fill="none" stroke="#FFFFFF" stroke-opacity="0.14" stroke-width="1"/>
+          <text x="16" y="21" text-anchor="middle" font-size="14" fill="#FFFFFF" fill-opacity="0.75">☰</text>
+        </g>
+      </g>
+    </g>
+    </g>
+  </g>
+
+  <!-- ======================================================== -->
+  <!-- 02. FORM VALIDATION STATES                               -->
+  <!-- ======================================================== -->
+  <g id="Section-Form-Validation" transform="translate(80, 380)">
+    <text x="0" y="0" class="editorial" font-size="12" font-weight="700" letter-spacing="0.14em" fill="#059669">02 · FORM INPUT &amp; REAL-TIME VALIDATION STATES</text>
+
+    <!-- State 1: Default Field -->
+    <g id="Input-State-Default" transform="translate(0, 26)">
+      <rect width="330" height="110" rx="14" fill="#111115" stroke="#FFFFFF" stroke-opacity="0.08"/>
+      <g transform="translate(20, 18)">
+        <text x="0" y="0" class="editorial" font-size="11" font-weight="700" fill="#FFFFFF" fill-opacity="0.75">MOBILE NUMBER <tspan fill="#E11D48">*</tspan></text>
+        <rect y="8" width="290" height="44" rx="10" fill="#16161C" stroke="#FFFFFF" stroke-opacity="0.16"/>
+        <text x="14" y="35" class="editorial" font-size="13" fill="#FFFFFF" fill-opacity="0.4">10-digit mobile</text>
+        <text x="0" y="68" class="editorial" font-size="10.5" fill="#FFFFFF" fill-opacity="0.4">Starts with 6, 7, 8 or 9.</text>
+      </g>
+    </g>
+
+    <!-- State 2: Active / Focused Field -->
+    <g id="Input-State-Focused" transform="translate(360, 26)">
+      <rect width="330" height="110" rx="14" fill="#111115" stroke="#FFFFFF" stroke-opacity="0.08"/>
+      <g transform="translate(20, 18)">
+        <text x="0" y="0" class="editorial" font-size="11" font-weight="700" fill="#FFFFFF">AREA / LOCALITY <tspan fill="#E11D48">*</tspan></text>
+        <rect y="8" width="290" height="44" rx="10" fill="#16161C" stroke="#FFFFFF" stroke-opacity="0.6" stroke-width="1.5"/>
+        <text x="14" y="35" class="editorial" font-size="13" fill="#FFFFFF">Sector 49<tspan fill="#059669">|</tspan></text>
+        <text x="0" y="68" class="editorial" font-size="10.5" fill="#FFFFFF" fill-opacity="0.5">Focused input with active typing cursor</text>
+      </g>
+    </g>
+
+    <!-- State 3: Error State Field (Invalid Phone) -->
+    <g id="Input-State-Error" transform="translate(720, 26)">
+      <rect width="350" height="110" rx="14" fill="#111115" stroke="#EF4444" stroke-opacity="0.3"/>
+      <g transform="translate(20, 18)">
+        <text x="0" y="0" class="editorial" font-size="11" font-weight="700" fill="#EF4444">MOBILE NUMBER <tspan fill="#E11D48">*</tspan></text>
+        <rect y="8" width="310" height="44" rx="10" fill="#16161C" stroke="#EF4444" stroke-width="1.5"/>
+        <text x="14" y="35" class="editorial tabular" font-size="13" fill="#FFFFFF">98100</text>
+        <text x="284" y="35" class="editorial" font-size="13" font-weight="700" fill="#EF4444">✕</text>
+        <text x="0" y="68" class="editorial" font-size="10.5" font-weight="600" fill="#EF4444">✕ Enter a valid 10-digit number</text>
+      </g>
+    </g>
+
+    <!-- State 4: Validated / Success Field (Valid Name) -->
+    <g id="Input-State-Success" transform="translate(1100, 26)">
+      <rect width="340" height="110" rx="14" fill="#111115" stroke="#059669" stroke-opacity="0.3"/>
+      <g transform="translate(20, 18)">
+        <text x="0" y="0" class="editorial" font-size="11" font-weight="700" fill="#059669">FULL NAME <tspan fill="#E11D48">*</tspan> ✓</text>
+        <rect y="8" width="300" height="44" rx="10" fill="#16161C" stroke="#059669" stroke-width="1.5"/>
+        <text x="14" y="35" class="editorial" font-size="13" fill="#FFFFFF">Sunita Sharma</text>
+        <text x="274" y="35" class="editorial" font-size="13" font-weight="700" fill="#059669">✓</text>
+        <text x="0" y="68" class="editorial" font-size="10.5" font-weight="600" fill="#059669">✓ Validated format</text>
+      </g>
+    </g>
+
+    <!-- State 5: Segmented Radio Control -->
+    <g id="Input-State-Segmented" transform="translate(0, 156)">
+      <rect width="330" height="96" rx="14" fill="#111115" stroke="#FFFFFF" stroke-opacity="0.08"/>
+      <g transform="translate(20, 18)">
+        <text x="0" y="0" class="editorial" font-size="11" font-weight="700" fill="#FFFFFF" fill-opacity="0.75">RATE TYPE <tspan fill="#E11D48">*</tspan></text>
+        <g transform="translate(0, 8)">
+          <rect width="290" height="44" rx="12" fill="#16161C" stroke="#FFFFFF" stroke-opacity="0.14"/>
+          <rect x="3" y="3" width="140" height="38" rx="9" fill="#FFFFFF"/>
+          <text x="73" y="27" text-anchor="middle" class="editorial" font-size="12" font-weight="700" fill="#08080A">Daily</text>
+          <text x="215" y="27" text-anchor="middle" class="editorial" font-size="12" font-weight="600" fill="#FFFFFF" fill-opacity="0.6">Monthly</text>
+        </g>
+      </g>
+    </g>
+
+    <!-- State 6: Star Rating Control -->
+    <g id="Input-State-StarRating" transform="translate(360, 156)">
+      <rect width="330" height="96" rx="14" fill="#111115" stroke="#FFFFFF" stroke-opacity="0.08"/>
+      <g transform="translate(20, 18)">
+        <text x="0" y="0" class="editorial" font-size="11" font-weight="700" fill="#FFFFFF" fill-opacity="0.75">STAR RATING <tspan fill="#E11D48">*</tspan></text>
+        <g transform="translate(0, 14)">
+          <text x="0" y="22" class="editorial" font-size="24" fill="#F59E0B">★ ★ ★ ★ ★</text>
+          <text x="140" y="20" class="editorial" font-size="11" font-weight="600" fill="#FFFFFF" fill-opacity="0.6">5 stars (hover/selected)</text>
+        </g>
+      </g>
+    </g>
+  </g>
+
+  <!-- ======================================================== -->
+  <!-- 03. BUTTONS & SEMANTIC TELEMETRY BADGES                  -->
+  <!-- ======================================================== -->
+  <g id="Section-Buttons-And-Badges" transform="translate(80, 680)">
+    <text x="0" y="0" class="editorial" font-size="12" font-weight="700" letter-spacing="0.14em" fill="#059669">03 · BUTTON HIERARCHY &amp; SEMANTIC BADGES</text>
+
+    <!-- Buttons Row -->
+    <g id="Row-Buttons" transform="translate(0, 26)">
+      <!-- Primary White -->
+      <g id="Button-Primary-White">
+        <rect width="180" height="46" rx="23" fill="#FFFFFF"/>
+        <text x="90" y="28" text-anchor="middle" class="editorial" font-size="13" font-weight="700" fill="#08080A">Primary Action</text>
+      </g>
+
+      <!-- Ghost Outline -->
+      <g id="Button-Ghost" transform="translate(200, 0)">
+        <rect width="160" height="46" rx="23" fill="none" stroke="#FFFFFF" stroke-opacity="0.25"/>
+        <text x="80" y="28" text-anchor="middle" class="editorial" font-size="13" font-weight="600" fill="#FFFFFF">Ghost Action</text>
+      </g>
+
+      <!-- Sahi Hai -->
+      <g id="Button-Sahi-Hai" transform="translate(380, 0)">
+        <rect width="180" height="46" rx="8" fill="#059669"/>
+        <text x="90" y="28" text-anchor="middle" class="editorial" font-size="13" font-weight="700" fill="#FFFFFF">✓ Sahi Hai · सही है</text>
+      </g>
+
+      <!-- Galat Hai / Dispute -->
+      <g id="Button-Galat-Hai" transform="translate(580, 0)">
+        <rect width="180" height="46" rx="8" fill="none" stroke="#EF4444" stroke-opacity="0.4"/>
+        <text x="90" y="28" text-anchor="middle" class="editorial" font-size="13" font-weight="700" fill="#EF4444">✕ Galat · विवाद</text>
+      </g>
+
+      <!-- Small Ghost -->
+      <g id="Button-Small" transform="translate(780, 4)">
+        <rect width="130" height="38" rx="19" fill="none" stroke="#FFFFFF" stroke-opacity="0.2"/>
+        <text x="65" y="23" text-anchor="middle" class="editorial" font-size="12" font-weight="600" fill="#FFFFFF">Export JSON</text>
+      </g>
+    </g>
+
+    <!-- Badges Row -->
+    <g id="Row-Badges" transform="translate(0, 92)">
+      <!-- Verified -->
+      <g id="Badge-Verified">
+        <rect width="110" height="30" rx="15" fill="rgba(5,150,105,0.15)" stroke="#059669" stroke-opacity="0.4"/>
+        <text x="55" y="19" text-anchor="middle" class="editorial" font-size="11" font-weight="700" fill="#059669">✓ Verified</text>
+      </g>
+
+      <!-- Verification Pending -->
+      <g id="Badge-Pending" transform="translate(130, 0)">
+        <rect width="160" height="30" rx="15" fill="rgba(245,158,11,0.15)" stroke="#F59E0B" stroke-opacity="0.4"/>
+        <text x="80" y="19" text-anchor="middle" class="editorial" font-size="11" font-weight="700" fill="#F59E0B">… Verification pending</text>
+      </g>
+
+      <!-- Confirmed -->
+      <g id="Badge-Confirmed" transform="translate(310, 0)">
+        <rect width="110" height="30" rx="15" fill="rgba(5,150,105,0.15)" stroke="#059669" stroke-opacity="0.4"/>
+        <circle cx="16" cy="15" r="3" fill="#059669"/>
+        <text x="62" y="19" text-anchor="middle" class="editorial" font-size="10" font-weight="800" fill="#059669">CONFIRMED</text>
+      </g>
+
+      <!-- Disputed -->
+      <g id="Badge-Disputed" transform="translate(440, 0)">
+        <rect width="105" height="30" rx="15" fill="rgba(239,68,68,0.15)" stroke="#EF4444" stroke-opacity="0.4"/>
+        <circle cx="16" cy="15" r="3" fill="#EF4444"/>
+        <text x="60" y="19" text-anchor="middle" class="editorial" font-size="10" font-weight="800" fill="#EF4444">DISPUTED</text>
+      </g>
+
+      <!-- Sealed Hisaab -->
+      <g id="Badge-Sealed" transform="translate(565, 0)">
+        <rect width="90" height="30" rx="15" fill="rgba(255,255,255,0.08)" stroke="#FFFFFF" stroke-opacity="0.18"/>
+        <circle cx="16" cy="15" r="3" fill="#FFFFFF"/>
+        <text x="52" y="19" text-anchor="middle" class="editorial" font-size="10" font-weight="800" fill="#FFFFFF">SEALED</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- ======================================================== -->
+  <!-- 04. POPUPS, MODALS & TOAST NOTIFICATIONS                 -->
+  <!-- ======================================================== -->
+  <g id="Section-Popups-And-Modals" transform="translate(80, 870)">
+    <text x="0" y="0" class="editorial" font-size="12" font-weight="700" letter-spacing="0.14em" fill="#059669">04 · POPUPS, DIALOG MODALS &amp; TOAST NOTIFICATIONS</text>
+
+    <!-- Submission Success Modal Dialog -->
+    <g id="Modal-Success-Dialog" transform="translate(0, 26)">
+      <rect width="520" height="340" rx="20" fill="#16161C" stroke="#059669" stroke-opacity="0.45" stroke-width="1.5" filter="url(#modal-shadow)"/>
+
+      <g transform="translate(36, 36)">
+        <circle cx="20" cy="20" r="20" fill="rgba(5,150,105,0.2)"/>
+        <text x="20" y="27" text-anchor="middle" class="editorial" font-size="18" font-weight="800" fill="#059669">✓</text>
+
+        <text x="56" y="28" class="monumental" font-size="24" fill="#FFFFFF">PROFILE CREATED · प्रोफाइल बन गई</text>
+
+        <g transform="translate(0, 60)">
+          <text x="0" y="20" class="editorial" font-size="14" fill="#FFFFFF" fill-opacity="0.8">
+            Your profile has been created successfully. Households can now find you in the directory.
+          </text>
+
+          <!-- Reference Code -->
+          <g transform="translate(0, 48)">
+            <text x="0" y="16" class="editorial" font-size="12" fill="#FFFFFF" fill-opacity="0.5">Reference:</text>
+            <rect x="75" y="0" width="80" height="24" rx="6" fill="rgba(255,255,255,0.08)"/>
+            <text x="115" y="16" text-anchor="middle" class="editorial tabular" font-size="12" font-weight="700" fill="#FFFFFF">w-1005</text>
+          </g>
+
+          <!-- Storage Note -->
+          <text x="0" y="100" class="editorial" font-size="12" fill="#FFFFFF" fill-opacity="0.45">
+            Saved to the JSON file on the server (data/workers.json).
+          </text>
+        </g>
+
+        <!-- Modal Actions -->
+        <g transform="translate(0, 210)">
+          <g id="Modal-Button-Close">
+            <rect width="110" height="42" rx="21" fill="#FFFFFF"/>
+            <text x="55" y="26" text-anchor="middle" class="editorial" font-size="12" font-weight="700" fill="#08080A">Close</text>
+          </g>
+
+          <g id="Modal-Button-ViewDir" transform="translate(124, 0)">
+            <rect width="160" height="42" rx="21" fill="none" stroke="#FFFFFF" stroke-opacity="0.2"/>
+            <text x="80" y="26" text-anchor="middle" class="editorial" font-size="12" font-weight="600" fill="#FFFFFF">View in directory</text>
+          </g>
+        </g>
+
+      </g>
+    </g>
+
+    <!-- Toast Notifications Column -->
+    <g id="Toast-Notifications-Set" transform="translate(560, 26)">
+      
+      <!-- Toast 1: Success -->
+      <g id="Toast-Success">
+        <rect width="380" height="52" rx="14" fill="#1B1B22" stroke="#059669" stroke-opacity="0.5" filter="url(#modal-shadow)"/>
+        <circle cx="28" cy="26" r="11" fill="#059669"/>
+        <text x="28" y="30" text-anchor="middle" class="editorial" font-size="10" font-weight="800" fill="#FFFFFF">✓</text>
+        <text x="50" y="31" class="editorial" font-size="13" font-weight="500" fill="#FFFFFF">Record saved to JSON · डेटा सुरक्षित</text>
+      </g>
+
+      <!-- Toast 2: Error -->
+      <g id="Toast-Error" transform="translate(0, 70)">
+        <rect width="380" height="52" rx="14" fill="#1B1B22" stroke="#EF4444" stroke-opacity="0.5" filter="url(#modal-shadow)"/>
+        <circle cx="28" cy="26" r="11" fill="#EF4444"/>
+        <text x="28" y="30" text-anchor="middle" class="editorial" font-size="11" font-weight="800" fill="#FFFFFF">!</text>
+        <text x="50" y="31" class="editorial" font-size="13" font-weight="500" fill="#FFFFFF">Please fix highlighted fields</text>
+      </g>
+
+      <!-- Toast 3: Info -->
+      <g id="Toast-Info" transform="translate(0, 140)">
+        <rect width="380" height="52" rx="14" fill="#1B1B22" stroke="#FFFFFF" stroke-opacity="0.18" filter="url(#modal-shadow)"/>
+        <circle cx="28" cy="26" r="11" fill="rgba(255,255,255,0.15)"/>
+        <text x="28" y="30" text-anchor="middle" class="editorial" font-size="10" font-weight="800" fill="#FFFFFF">i</text>
+        <text x="50" y="31" class="editorial" font-size="13" font-weight="500" fill="#FFFFFF">JSON file exported: data/ledger.json</text>
+      </g>
+    </g>
+
+    <!-- Quick-View Worker Popup Card -->
+    <g id="Worker-Quick-View-Popup" transform="translate(980, 26)">
+      <rect width="460" height="340" rx="20" fill="#16161C" stroke="#FFFFFF" stroke-opacity="0.15" filter="url(#modal-shadow)"/>
+
+      <g transform="translate(28, 28)">
+        <!-- Avatar, Name & Category -->
+        <circle cx="24" cy="24" r="24" fill="url(#avatar-crimson)"/>
+        <text x="24" y="32" text-anchor="middle" class="monumental" font-size="24" fill="#FFFFFF">S</text>
+
+        <text x="64" y="20" class="editorial" font-size="16" font-weight="700" fill="#FFFFFF">Sunita Sharma</text>
+        <text x="64" y="38" class="editorial" font-size="12" fill="#FFFFFF" fill-opacity="0.55">Cook · Sector 49, Gurugram</text>
+
+        <g transform="translate(0, 68)">
+          <!-- Badges -->
+          <rect width="84" height="24" rx="12" fill="rgba(5,150,105,0.15)" stroke="#059669" stroke-opacity="0.4"/>
+          <text x="42" y="16" text-anchor="middle" class="editorial" font-size="10" font-weight="700" fill="#059669">✓ Verified</text>
+
+          <g transform="translate(94, 0)">
+            <rect width="84" height="24" rx="12" fill="rgba(255,255,255,0.06)"/>
+            <text x="14" y="16" class="editorial" font-size="10" fill="#F59E0B">★</text>
+            <text x="26" y="16" class="editorial" font-size="10" font-weight="700" fill="#FFFFFF">4.8 (14)</text>
+          </g>
+        </g>
+
+        <!-- Trust Meter Quick View -->
+        <g transform="translate(0, 112)">
+          <text x="0" y="0" class="editorial" font-size="11" font-weight="700" fill="#FFFFFF" fill-opacity="0.75">Trust score · High trust</text>
+          <text x="404" y="0" text-anchor="end" class="monumental" font-size="20" fill="#FFFFFF">98/100</text>
+          <rect y="10" width="404" height="6" rx="3" fill="rgba(255,255,255,0.08)"/>
+          <rect y="10" width="395" height="6" rx="3" fill="#059669"/>
+          <text x="0" y="30" class="editorial" font-size="11" fill="#FFFFFF" fill-opacity="0.5">4 confirmed · 0 disputed in shared ledger</text>
+        </g>
+
+        <!-- Actions -->
+        <g transform="translate(0, 205)">
+          <line x1="0" y1="0" x2="404" y2="0" stroke="#FFFFFF" stroke-opacity="0.08"/>
+          <g transform="translate(0, 20)">
+            <g id="QuickView-Button-Call">
+              <rect width="180" height="42" rx="21" fill="#FFFFFF"/>
+              <text x="90" y="26" text-anchor="middle" class="editorial" font-size="12" font-weight="700" fill="#08080A">Call 9810012345</text>
+            </g>
+            <g id="QuickView-Button-Ledger" transform="translate(195, 0)">
+              <rect width="160" height="42" rx="21" fill="none" stroke="#FFFFFF" stroke-opacity="0.2"/>
+              <text x="80" y="26" text-anchor="middle" class="editorial" font-size="12" font-weight="600" fill="#FFFFFF">Open ledger</text>
+            </g>
+          </g>
+        </g>
+
+      </g>
+    </g>
+
+  </g>
+
+  <!-- ======================================================== -->
+  <!-- 05. FOOTER MASTER COMPONENT                              -->
+  <!-- ======================================================== -->
+  <g id="Section-Footer-Master" transform="translate(80, 1340)">
+    <text x="0" y="0" class="editorial" font-size="12" font-weight="700" letter-spacing="0.14em" fill="#059669">05 · STANDALONE MASTER FOOTER</text>
+    <g transform="translate(0, 30)">
+      <rect width="1440" height="180" rx="18" fill="#0C0C0E" stroke="#FFFFFF" stroke-opacity="0.1"/>
+      <g transform="translate(40, 40)">
+        <!-- Left: Brand & Tagline -->
+        <g id="Footer-Brand-Lockup">
+          <g id="Footer-Brand-Mark" transform="translate(0, 0)">
+            <g id="Brand-Mark-Icon" transform="translate(0, 0) scale(0.8125)">
+    <!-- Left Folio Page -->
+    <path d="M7 6C7 4.89543 7.89543 4 9 4H14.5C15.3284 4 16 4.67157 16 5.5V26.5C16 27.3284 15.3284 28 14.5 28H9C7.89543 28 7 27.1046 7 26V6Z" fill="#047857" fill-opacity="0.18" stroke="#047857" stroke-width="1.8" stroke-linejoin="round"/>
+    <!-- Right Folio Page -->
+    <path d="M25 6C25 4.89543 24.1046 4 23 4H17.5C16.6716 4 16 4.67157 16 5.5V26.5C16 27.3284 16.6716 28 17.5 28H23C24.1046 28 25 27.1046 25 26V6Z" fill="#047857" fill-opacity="0.18" stroke="#047857" stroke-width="1.8" stroke-linejoin="round"/>
+    <!-- Central Ledger Spine Rule (Crimson Margin) -->
+    <line x1="16" y1="3" x2="16" y2="29" stroke="#E11D48" stroke-width="1.2" stroke-linecap="round"/>
+    <!-- Central Mutual Seal Diamond -->
+    <path d="M16 11L19.5 16L16 21L12.5 16L16 11Z" fill="#047857"/>
+    <circle cx="16" cy="16" r="1.5" fill="#FFFFFF"/>
+  </g>
+          </g>
+          <text x="36" y="19" class="editorial" font-size="16" font-weight="800" letter-spacing="0.12em" fill="#FFFFFF">
+            SEVAKHATA · <tspan class="hindi" font-weight="700">सेवाखाता</tspan>
+          </text>
+          <text x="0" y="52" class="editorial" font-size="12.5" font-weight="400" fill="#FFFFFF" fill-opacity="0.55">
+            Dono ka record, ek hi hisaab · The shared domestic employment ledger.
+          </text>
+        </g>
+
+        <!-- Right: Links & Legal -->
+        <g id="Footer-Links-Col" transform="translate(1360, 0)">
+          <text x="0" y="16" text-anchor="end" class="editorial" font-size="12" font-weight="500" fill="#FFFFFF" fill-opacity="0.75">
+            Home   ·   Hire   ·   Register   ·   Directory   ·   Ledger   ·   Support
+          </text>
+          <text x="0" y="44" text-anchor="end" class="editorial" font-size="11" font-weight="400" fill="#FFFFFF" fill-opacity="0.35">
+            © 2026 SevaKhata. Designed for mutual trust and dignity in Indian households.
+          </text>
+        </g>
+      </g>
+    </g>
+  </g>
+
+</svg>

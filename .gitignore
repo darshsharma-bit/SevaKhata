@@ -54,3 +54,8 @@ actual_metrics_1440.json
 walkthrough.md
 AGENTS.md
 
+postman/
+.postman/
+# Figma generation scripts
+scripts/generate-figma-svgs.js
+scripts/figma/
