@@ -1,48 +1,53 @@
 <p align="center">
-  <img src="./assets/brand/sevakhata-mark.svg" alt="SevaKhata Brand Mark" width="80" height="80" />
+  <img src="./docs/assets/readme/hero-sevakhata.svg" alt="SevaKhata Master Product Showcase Hero" width="100%" />
 </p>
 
 <h1 align="center">SevaKhata (सेवाखाता)</h1>
 
 <p align="center">
   <strong>"Dono ka record, ek hi hisaab."</strong><br>
-  <em>Jo dono maane, wahi hisaab.</em>
+  <em>Jo dono maane, wahi hisaab.</em> • <strong>जो दोनों मानें, वही हिसाब।</strong>
 </p>
 
 <p align="center">
-  A bilingual, two-sided shared work-and-payment ledger engineered for domestic employment.<br>
-  Establishing a single, mutually verified source of truth between households and domestic helpers.
+  <strong>A bilingual, two-sided shared work-and-payment ledger engineered for domestic employment.</strong><br>
+  Establishing a single, mutually verified source of truth between urban households and domestic helpers through bilateral consensus.
 </p>
 
 <p align="center">
   <a href="./package.json"><img src="https://img.shields.io/badge/version-0.2.0-059669.svg?style=flat-square" alt="Version 0.2.0" /></a>
-  <a href="https://nodejs.org/"><img src="https://img.shields.io/badge/node-%3E%3D18-339933.svg?style=flat-square&logo=node.js&logoColor=white" alt="Node.js Version" /></a>
-  <a href="https://expressjs.com/"><img src="https://img.shields.io/badge/express-4.21.2-000000.svg?style=flat-square&logo=express&logoColor=white" alt="Express Version" /></a>
+  <a href="https://nodejs.org/"><img src="https://img.shields.io/badge/node-%3E%3D18.0.0-339933.svg?style=flat-square&logo=node.js&logoColor=white" alt="Node.js Version" /></a>
+  <a href="https://expressjs.com/"><img src="https://img.shields.io/badge/express-4.21.2-000000.svg?style=flat-square&logo=express&logoColor=white" alt="Express Framework" /></a>
   <a href="./package.json"><img src="https://img.shields.io/badge/license-MIT-059669.svg?style=flat-square" alt="MIT License" /></a>
-  <img src="https://img.shields.io/badge/architecture-bilateral_consensus-E11D48.svg?style=flat-square" alt="Bilateral Consensus Architecture" />
-  <img src="https://img.shields.io/badge/i18n-English%20%7C%20%E0%A4%B9%E0%A4%BF%E0%A4%A8%E0%A5%8D%E0%A4%A6%E0%A5%80-E11D48.svg?style=flat-square" alt="Bilingual Support" />
-  <a href="./scripts/smoke-test.js"><img src="https://img.shields.io/badge/tests-passing_suite-059669.svg?style=flat-square&logo=node.js&logoColor=white" alt="Smoke Tests Passing" /></a>
-  <a href="./design/figma-svgs/"><img src="https://img.shields.io/badge/figma-vector_suite-F24E1E.svg?style=flat-square&logo=figma&logoColor=white" alt="Figma Vector Suite" /></a>
+  <a href="#the-consensus-protocol"><img src="https://img.shields.io/badge/architecture-bilateral_consensus-E11D48.svg?style=flat-square" alt="Bilateral Consensus Architecture" /></a>
+  <a href="#bilingual-experience--cultural-typography"><img src="https://img.shields.io/badge/i18n-English%20%7C%20%E0%A4%B9%E0%A4%BF%E0%A4%A8%E0%A5%8D%E0%A4%A6%E0%A5%80-E11D48.svg?style=flat-square" alt="Bilingual Localization" /></a>
+  <a href="./scripts/smoke-test.js"><img src="https://img.shields.io/badge/tests-passing_suite-059669.svg?style=flat-square&logo=node.js&logoColor=white" alt="Tests Passing" /></a>
+  <a href="./design/figma-svgs/"><img src="https://img.shields.io/badge/figma-8_vector_artboards-F24E1E.svg?style=flat-square&logo=figma&logoColor=white" alt="Figma Suite" /></a>
+</p>
+
+<p align="center">
+  <a href="https://skillicons.dev">
+    <img src="https://skillicons.dev/icons?i=html,css,js,nodejs,express,figma,postman,git,github" alt="Verified Technologies: HTML5, CSS3, JavaScript ES6+, Node.js, Express, Figma, Postman, Git, GitHub" />
+  </a>
 </p>
 
 <p align="center">
   <a href="#quick-start--evaluation-guide">Quick Start</a> •
-  <a href="#project-overview">Project Overview</a> •
-  <a href="#the-problem">The Problem</a> •
-  <a href="#the-consensus-solution">The Solution</a> •
-  <a href="#how-it-works">How It Works</a> •
-  <a href="#shared-hisaab-calculation">Hisaab Logic</a> •
-  <a href="#multi-page-workflows">Workflows</a> •
-  <a href="#technology-stack">Tech Stack</a> •
-  <a href="#system-architecture">Architecture</a> •
-  <a href="#api-specification">API Spec</a> •
-  <a href="#current-implementation-status">Status & Roadmap</a>
+  <a href="#product-overview">Product Overview</a> •
+  <a href="#the-consensus-protocol">Consensus Protocol</a> •
+  <a href="#record-lifecycle--state-machine">Lifecycle &amp; States</a> •
+  <a href="#shared-hisaab-mathematical-formulation">Hisaab Math</a> •
+  <a href="#application-showcase--workflows">Showcase</a> •
+  <a href="#system-architecture--data-flow">Architecture</a> •
+  <a href="#api-specification">API Reference</a> •
+  <a href="#actual-implementation-status-audit">Implementation Audit</a> •
+  <a href="#project-charter--academic-phases">Charter &amp; Roadmap</a>
 </p>
 
 ---
 
 <a id="quick-start--evaluation-guide"></a>
-## Quick Start & Evaluation Guide
+## Quick Start &amp; Evaluation Guide
 
 SevaKhata operates in two runtime modes: a **live server mode** saving submissions directly to atomic local JSON files, and an **offline client mode** running with zero server dependencies using browser `localStorage` and client-side JSON export.
 
@@ -51,6 +56,10 @@ SevaKhata operates in two runtime modes: a **live server mode** saving submissio
 #### Option A: Live Server Mode (Recommended — Node.js 18+)
 
 ```bash
+# Clone the repository
+git clone https://github.com/darshsharma-bit/SevaKhata.git
+cd SevaKhata
+
 # Install dependencies (Express 4.21.2)
 npm install
 
@@ -58,7 +67,7 @@ npm install
 npm start
 ```
 
-*Submissions are validated and appended to [`data/workers.json`](./data/workers.json), [`data/bookings.json`](./data/bookings.json), [`data/ledger.json`](./data/ledger.json), [`data/feedback.json`](./data/feedback.json), and [`data/logins.json`](./data/logins.json). The header badge dynamically reports `Live server · saving to data/*.json`.*
+*Submissions are validated in memory and appended to [`data/workers.json`](./data/workers.json), [`data/bookings.json`](./data/bookings.json), [`data/ledger.json`](./data/ledger.json), [`data/feedback.json`](./data/feedback.json), and [`data/logins.json`](./data/logins.json). The header badge dynamically reports `Live server · saving to data/*.json`.*
 
 To execute on a custom port:
 ```bash
@@ -67,15 +76,15 @@ PORT=4000 npm start
 
 #### Option B: Offline Demo Mode (Zero Server Dependencies)
 
-Open [`index.html`](./index.html) directly in any modern browser or run with any static file server:
+Open [`index.html`](./index.html) directly in any modern web browser or run via any static web server:
 ```bash
 python3 -m http.server 8000
 ```
-- The application automatically detects that no backend API is reachable and switches to **offline demo mode** (header badge: `Offline demo · saving in this browser`).
-- Data is seeded from [`js/seed-data.js`](./js/seed-data.js) into `localStorage`.
-- Every page provides an **Export JSON** control that downloads the updated state as a standalone `.json` Blob.
+- The application automatically probes `/api/health`, detects that no backend API is reachable, and switches to **offline demo mode** (header badge: `Offline demo · saving in this browser`).
+- Data is seeded from [`js/seed-data.js`](./js/seed-data.js) into browser `localStorage`.
+- Every page provides an **Export JSON** button in the header that serializes and downloads the updated state as a standalone `.json` Blob.
 
-### 2. Verification & Maintenance Commands
+### 2. Verification &amp; Maintenance Commands
 
 ```bash
 npm test              # Run zero-dependency smoke test (validation schemas, ledger math, and API routes)
@@ -87,26 +96,26 @@ git checkout -- data/ # Restore original clean evaluation records after a live d
 
 | # | Parameter | Source Files | Implemented Capability |
 | :-- | :--- | :--- | :--- |
-| **1** | **Multi-Page Workflows & Complete Linking** | [`index.html`](./index.html), [`ledger.html`](./ledger.html), [`directory.html`](./directory.html), [`register-worker.html`](./register-worker.html), [`hire-household.html`](./hire-household.html), [`contact-feedback.html`](./contact-feedback.html), [`login.html`](./login.html), [`pages.css`](./pages.css), [`login.css`](./login.css) | Seven dedicated pages sharing responsive navigation (with mobile hamburger drawer), consistent footers, active-page visual state, and **zero broken `#` placeholder links**. Cross-linked state transitions (e.g., directory profile links directly to pre-filled hire form: `hire-household.html?worker=w-1001`, and all navigation bars include direct access to the floating authentication folio). |
-| **2** | **Validation, Interactions & Bilingual UX** | [`js/validation.js`](./js/validation.js), [`js/ui.js`](./js/ui.js), [`js/i18n.js`](./js/i18n.js), [`js/pages/`](./js/pages/) | Real-time inline field validation on `input`/`blur` (red/green states without native browser alert popups). Regex enforcement for Indian mobile numbers (`^[6-9]\d{9}$`), email formats, Aadhaar/PAN validation, and positive wages. Live search/filtering in directory and ledger. Persistent **EN ⇄ हिं** toggle translating both static text and dynamic validation messages across page reloads. |
+| **1** | **Multi-Page Workflows &amp; Complete Linking** | [`index.html`](./index.html), [`ledger.html`](./ledger.html), [`directory.html`](./directory.html), [`register-worker.html`](./register-worker.html), [`hire-household.html`](./hire-household.html), [`contact-feedback.html`](./contact-feedback.html), [`login.html`](./login.html), [`pages.css`](./pages.css), [`login.css`](./login.css) | Seven dedicated pages sharing responsive navigation (with mobile hamburger drawer), consistent footers, active-page visual state, and **zero broken `#` placeholder links**. Cross-linked state transitions (e.g., directory profile links directly to pre-filled hire form: `hire-household.html?worker=w-1001`, and all navigation bars include direct access to the floating authentication folio). |
+| **2** | **Validation, Interactions &amp; Bilingual UX** | [`js/validation.js`](./js/validation.js), [`js/ui.js`](./js/ui.js), [`js/i18n.js`](./js/i18n.js), [`js/pages/`](./js/pages/) | Real-time inline field validation on `input`/`blur` (red/green states without native browser alert popups). Regex enforcement for Indian mobile numbers (`^[6-9]\d{9}$`), email formats, Aadhaar/PAN validation, and positive wages. Live search/filtering in directory and ledger. Persistent **EN ⇄ हिं** toggle translating both static text and dynamic validation messages across page reloads. |
 | **3** | **Asynchronous Form Submissions** | [`js/pages/*.js`](./js/pages/), [`js/ui.js`](./js/ui.js) (`bindForm`), [`js/store.js`](./js/store.js) | Form submissions intercepted via `e.preventDefault()`, executed through `fetch()` with `async/await`. Visual loading states with button spinners, animated confirmation modals returning unique reference IDs (`w-...`, `b-...`, `l-...`, `f-...`), and immediate in-memory UI updates without full page reload. |
 | **4** | **Data Persistence in Local JSON Files** | [`server.js`](./server.js), [`data/*.json`](./data/), [`js/store.js`](./js/store.js), [`js/seed-data.js`](./js/seed-data.js) | Express endpoints (`/api/workers`, `/api/bookings`, `/api/ledger`, `/api/feedback`, `/api/logins`) performing serialized, atomic writes to disk (`.tmp` write followed by `fs.rename`). Offline mode transparently falls back to `localStorage` with client-side JSON file downloads. |
 
 ### 4. Suggested 3-Minute Viva Demonstration
 
-1. **Onboarding & Validation ([`register-worker.html`](./register-worker.html)):** Trigger an empty submit to showcase instant inline error states. Enter invalid phone and Aadhaar values to demonstrate regex validation. Complete a valid registration, submit, and observe the new record appended directly to `data/workers.json` (with Aadhaar stored as `idLast4` only).
-2. **Directory Search & Pre-filled Handoff ([`directory.html`](./directory.html)):** Search for "cook", toggle the *Verified only* filter, inspect the transparent 0–100 Trust Score breakdown, and click *Hire*. The application transitions to `hire-household.html?worker=w-1001` with the helper's details pre-populated.
+1. **Onboarding &amp; Validation ([`register-worker.html`](./register-worker.html)):** Trigger an empty submit to showcase instant inline error states. Enter invalid phone and Aadhaar values to demonstrate regex validation. Complete a valid registration, submit, and observe the new record appended directly to `data/workers.json` (with Aadhaar stored as `idLast4` only).
+2. **Directory Search &amp; Pre-filled Handoff ([`directory.html`](./directory.html)):** Search for "cook", toggle the *Verified only* filter, inspect the transparent 0–100 Trust Score breakdown, and click *Hire*. The application transitions to `hire-household.html?worker=w-1001` with the helper's details pre-populated.
 3. **Ledger as Employer ([`ledger.html`](./ledger.html)):** With the role selector set to *View as Employer*, log a new daily attendance entry (₹500). Observe that the row appears tagged as **Pending** in amber, and the confirmed net balance does **not** change.
 4. **Bilateral Review as Helper ([`ledger.html`](./ledger.html)):** Switch the role selector to *View as Helper*. Click **Confirm (*Sahi Hai*)** on the pending entry: the badge transitions to emerald and the confirmed balance increases by ₹500. Click **Dispute (*Galat Hai*)** on another entry, enter a reason (e.g., "Amount was ₹300, not ₹500"), and verify that the entry remains excluded from the confirmed balance.
-5. **Correction & Resubmission as Employer:** Switch back to *View as Employer*. Click *Correct & resend* on the disputed entry, modify the amount, and resubmit. The entry returns to the **Pending** state awaiting helper re-verification.
-6. **Bilingual Toggle & Export:** Toggle the **EN ⇄ हिं** switch in the navigation bar to demonstrate full Devanagari translation, then click **Export JSON** to verify client-side data serialization.
+5. **Correction &amp; Resubmission as Employer:** Switch back to *View as Employer*. Click *Correct & resend* on the disputed entry, modify the amount, and resubmit. The entry returns to the **Pending** state awaiting helper re-verification.
+6. **Bilingual Toggle &amp; Export:** Toggle the **EN ⇄ हिं** switch in the navigation bar to demonstrate full Devanagari translation, then click **Export JSON** to verify client-side data serialization.
 
 ---
 
-<a id="project-overview"></a>
-## Project Overview
+<a id="product-overview"></a>
+## Product Overview
 
-Domestic employment in urban and semi-urban India represents one of the largest informal labor sectors, employing millions of domestic helpers, cooks, cleaners, nannies, caregivers, and drivers. 
+Domestic employment in urban and semi-urban India represents one of the largest informal labor sectors, employing over 50 million domestic helpers, cooks, cleaners, nannies, caregivers, and drivers.
 
 This sector operates almost entirely without written employment contracts, formal digital bookkeeping, or synchronized records.
 
@@ -134,28 +143,36 @@ The product's identity is defined by its core axiom:
 
 > **"Dono ka record, ek hi hisaab."**  
 > *Jo dono maane, wahi hisaab.*  
-> *(What both acknowledge becomes the single official truth.)*
+> **(जो दोनों मानें, वही हिसाब — What both acknowledge becomes the single official truth.)**
 
-Unlike unilateral tracking applications that treat workers merely as entries to be managed, SevaKhata is a **two-sided, bilateral consensus ledger**. The domestic helper is an equal participant with independent authority to review, verify, or contest every single record.
+### Core Differentiator: Bilateral Consensus
+
+Conventional attendance and worker-tracking software treats domestic workers merely as passive entries to be monitored by an administrator.
+
+**SevaKhata is different.** It is engineered as a **two-sided, bilateral consensus ledger**. The domestic helper is an equal participant with independent authority to review, confirm, or contest every single attendance day, cash advance, payment, or bonus.
 
 ---
 
 <a id="the-problem"></a>
 ## The Problem
 
-| Traditional Practice | Structural Failure Mode | Human & Relationship Cost |
+| Traditional Practice | Structural Failure Mode | Human &amp; Relationship Cost |
 | :--- | :--- | :--- |
 | **Wall Calendar Tick Marks** | Pencil marks cannot distinguish between full-days, half-days, extra chores, or substitute staff. Marks smudge, fade, or are lost. | Ambiguity on the 1st of every month regarding exact days worked versus missed. |
 | **Doorway Cash Advances (*Pesgi*)** | Cash handovers occur hurriedly at the doorway during morning departures without timestamps or receipts. | Recall divergence by month-end: disputes over whether an advance was ₹500 or ₹1,000. |
 | **Unilateral Smartphone Notes** | Entries are stored solely on the employer's device, entirely invisible to the helper until settlement day. | The helper feels excluded from their own earning records; lack of transparency breeds suspicion. |
-| **Memory & Unwritten Recall** | Relying on human memory across a 30-day billing cycle inevitably produces cognitive bias and recall errors. | Loss of dignity, awkward arguments, and emotional stress during month-end payment settlement. |
+| **Memory &amp; Unwritten Recall** | Relying on human memory across a 30-day billing cycle inevitably produces cognitive bias and recall errors. | Loss of dignity, awkward arguments, and emotional stress during month-end payment settlement. |
 
-**The Root Technical Cause:** The absence of a shared, concurrent state between the two participating stakeholders.
+**The Underlying Technical Root Cause:** The absence of a shared, concurrent state between the two participating stakeholders.
 
 ---
 
-<a id="the-consensus-solution"></a>
-## The Consensus Solution
+<a id="the-consensus-protocol"></a>
+## The Consensus Protocol
+
+<p align="center">
+  <img src="./docs/assets/readme/consensus-workflow.svg" alt="Bilateral Consensus Architecture Diagram" width="100%" />
+</p>
 
 SevaKhata enforces an **asymmetric recording and symmetric acknowledgement** workflow. Either party can initiate transparency, but neither can unilaterally commit a financial change:
 
@@ -164,7 +181,7 @@ SevaKhata enforces an **asymmetric recording and symmetric acknowledgement** wor
 3. **Verification Phase:** The helper reviews the entry in clear Hindi (Devanagari) on their mobile interface.
 4. **Resolution Phase:**
    - **Confirm (*Sahi Hai · सही है*):** The entry transitions to `CONFIRMED`. Its value is released from quarantine and incorporated into the official *Hisaab*.
-   - **Dispute (*Galat Hai · गलत है*):** The entry transitions to `DISPUTED` with a mandatory reason. It remains quarantined at ₹0.00 weight until reconciled.
+   - **Dispute (*Galat Hai · गलत है*):** The entry transitions to `DISPUTED` with a mandatory explanation ($\ge 10$ characters). It remains quarantined at ₹0.00 weight until reconciled.
 
 ```mermaid
 flowchart TD
@@ -184,10 +201,12 @@ flowchart TD
 
 ---
 
-<a id="how-it-works"></a>
-## How It Works
+<a id="record-lifecycle--state-machine"></a>
+## Record Lifecycle &amp; State Machine
 
-### The Consensus State Machine
+<p align="center">
+  <img src="./docs/assets/readme/record-lifecycle.svg" alt="Record State Machine and Domain Lifecycle" width="100%" />
+</p>
 
 A ledger entry exists in exactly one of three operational states. Transitions are strictly governed by caller role and current state:
 
@@ -213,16 +232,34 @@ stateDiagram-v2
 
 ### Operational State Specifications
 
-| State | Balance Weight | Visual Treatment | Operational Rules |
+| State | Balance Weight | Visual Treatment | Operational Invariants |
 | :--- | :--- | :--- | :--- |
 | **`PENDING`** | **₹0.00 (Quarantined)** | Amber Badge / Warning Reticle | Newly logged entry awaiting review. Completely excluded from the official balance to prevent unverified liabilities. |
-| **`CONFIRMED`** | **Active Value (`±₹Amount`)** | Emerald Badge / Dual Checkmark | Mutually verified entry. Value is permanently committed to the shared running balance. **Confirmed is final by design.** |
-| **`DISPUTED`** | **₹0.00 (Quarantined)** | Rose Badge / Alert Reticle | Contested entry with a mandatory explanation. Held off the official balance. Can be corrected and resent only by the employer. |
+| **`CONFIRMED`** | **Nominal Value (`±₹Amount`)** | Emerald Badge / Dual Checkmark | Mutually verified entry. Value is permanently committed to the shared running balance. **Confirmed is final by design.** |
+| **`DISPUTED`** | **₹0.00 (Quarantined)** | Rose Badge / Alert Reticle | Contested entry with a mandatory explanation ($\ge 10$ characters). Held off the official balance. Can be corrected and resent only by the employer. |
+
+### The 7 Domain Entry Types &amp; Polarity
+
+Preserve these exact domain entity types and polarities across both client and server:
+
+| Entry Type (`type`) | Polarity | Description | Example Scenario |
+| :--- | :--- | :--- | :--- |
+| **`WORKED`** (`attendance`) | Credit (`+₹`) | Standard full-day household work, cooking, cleaning, or childcare | 8 Full Days Housework $= +₹4,000$ |
+| **`HALF_DAY`** (`attendance`) | Credit (`+₹`) | Half-day shift or partial chore execution ($0.5\times$ wage) | Morning dusting only $= +₹250$ |
+| **`ABSENT`** (`attendance`) | Zero (`₹0`) | Recorded absence or sick leave without wage credit | Notified family absence $= ₹0.00$ |
+| **`PAYMENT`** (`payment`) | Debit (`−₹`) | Formal mid-month salary disbursements or bank transfers | Mid-month partial cash payment $= -₹6,000$ |
+| **`ADVANCE`** (`advance`) | Debit (`−₹`) | Early cash handovers (*pesgi*) for family, medical, or school expenses | School fee advance $= -₹1,000$ |
+| **`BONUS`** (`bonus`) | Credit (`+₹`) | Festival bonuses (Diwali, Eid), deep cleaning, special catering | Raksha Bandhan Bonus $= +₹1,000$ |
+| **`ADJUSTMENT`** (`adjustment`) | Signed (`±₹`) | Reconciled corrections mutually agreed upon by both parties | Agreed rate differential adjustment $= \pm₹200$ |
 
 ---
 
-<a id="shared-hisaab-calculation"></a>
-## Shared Hisaab Calculation
+<a id="shared-hisaab-mathematical-formulation"></a>
+## Shared Hisaab Mathematical Formulation
+
+<p align="center">
+  <img src="./docs/assets/readme/hisaab-calculation.svg" alt="The Shared Hisaab Mathematical Formula Breakdown" width="100%" />
+</p>
 
 The running payable balance (*Official Hisaab*) is derived exclusively from mutually acknowledged records. Unverified or contested entries hold zero weight:
 
@@ -230,17 +267,7 @@ $$\text{Official Hisaab} = \sum \text{Confirmed Earnings} + \sum \text{Confirmed
 
 $$\text{Pending Entries} \times 0.00 + \text{Disputed Entries} \times 0.00 = 0.00$$
 
-### Financial Record Polarity
-
-| Record Type (`type`) | Financial Polarity | Domain Description | Example Entry |
-| :--- | :--- | :--- | :--- |
-| **`attendance`** | Credit (`+₹`) | Standard full-day, half-day, or extra household work | 8 Full Days Housework $= +₹4,000$ |
-| **`bonus`** | Credit (`+₹`) | Festival bonuses (Diwali, Eid), deep cleaning, special catering | Raksha Bandhan Bonus $= +₹1,000$ |
-| **`adjustment`** | Signed (`±₹`) | Reconciled corrections mutually agreed upon | Rate differential adjustment $= \pm₹200$ |
-| **`payment`** | Debit (`−₹`) | Formal mid-month salary payments or bank transfers | Mid-month partial cash payment $= -₹6,000$ |
-| **`advance`** | Debit (`−₹`) | Early cash handovers (*pesgi*) for family, medical, or school expenses | School fee advance $= -₹1,000$ |
-
-### Concrete Demonstration Scenario
+### Concrete Worked Demonstration Scenario
 
 The interactive prototype demonstrates this logic using the baseline scenario for **Sharma Household × Sunita Sharma (August 2026)**:
 
@@ -258,62 +285,24 @@ The interactive prototype demonstrates this logic using the baseline scenario fo
 
 ---
 
-<a id="product-roles"></a>
-## Product Roles & Responsibilities
+<a id="application-showcase--workflows"></a>
+## Application Showcase &amp; Workflows
 
-```
-┌──────────────────────────────────────────────┬──────────────────────────────────────────────┐
-│                EMPLOYER ROLE                 │                 HELPER ROLE                  │
-├──────────────────────────────────────────────┼──────────────────────────────────────────────┤
-│ • Set up monthly household folio             │ • Access mobile ledger in Hindi (Devanagari) │
-│ • Log daily attendance & half-days           │ • Review pending entries recorded by employer│
-│ • Record cash advances (pesgi) at handover   │ • Tap 'Sahi Hai' to confirm valid records    │
-│ • Record mid-month and month-end payments    │ • Tap 'Galat Hai' with reason for errors     │
-│ • Review helper dispute explanations         │ • Inspect running confirmed net balance      │
-│ • Correct and resend disputed records        │ • Review historical monthly payment receipts │
-│ • View audit history of all verifications    │ • Request profile verification & support     │
-└──────────────────────────────────────────────┴──────────────────────────────────────────────┘
-```
+### 1. Shared Digital Ledger (`ledger.html`)
 
-> [!NOTE]
-> **Authentication Scope Disclosure:** In the current Evaluation 2 release, the "View as Employer / Helper" switcher and the API `actor` parameter are demonstration controls designed for interactive evaluation. Production multi-tenant authentication with mobile OTP is scheduled for Phase 1 of the backend roadmap.
+<p align="center">
+  <img src="./docs/assets/readme/showcase-desktop-ledger.svg" alt="Desktop Shared Ledger Interface Mockup" width="100%" />
+</p>
 
----
+### 2. Helper Mobile Review &amp; Authentication Folio (`login.html`)
 
-<a id="bilingual-experience"></a>
-## Bilingual Experience & Cultural Typography
+<p align="center">
+  <img src="./docs/assets/readme/showcase-mobile-helper.svg" alt="Mobile Helper Interface &amp; Floating Login Folio" width="100%" />
+</p>
 
-SevaKhata integrates Hindi (Devanagari) as an **intrinsic, first-class design system foundation**, not as an auxiliary translation.
+### 3. Multi-Page Workflows Architecture
 
-### Domain Vocabulary Lockups
-
-| Concept | English Term | Authentic Hindi / Devanagari | Cultural & Operational Meaning |
-| :--- | :--- | :--- | :--- |
-| **Service & Account** | SevaKhata | सेवाखाता (*SevaKhata*) | Mutual household work register and accounting folio |
-| **Shared Balance** | Net Hisaab | साझा हिसाब (*Sajha Hisaab*) | Mutually acknowledged running balance owed |
-| **Cash Advance** | Cash Advance | अग्रिम / पेसगी (*Pesgi*) | Mid-month cash handovers for family or emergency needs |
-| **Work Attendance** | Attendance | हाज़िरी (*Haaziri*) | Daily household labor, cooking, cleaning, or childcare |
-| **Payment** | Payment | भुगतान (*Bhugtan*) | Formal wage transfers or cash settlement |
-| **Confirmation** | Confirm | सही है (*Sahi Hai*) | Worker verification: entry released into official balance |
-| **Dispute** | Dispute | गलत है (*Galat Hai*) | Worker contestation: quarantined at ₹0.00 balance weight |
-| **Pending State** | Pending | लंबित (*Lambit*) | Awaiting mutual acknowledgement (₹0.00 weight) |
-| **Confirmed State** | Confirmed | पुष्टि की गई (*Pushti Ki Gayi*) | Mutually locked and committed balance entry |
-
-### Typography Hierarchy & Type Stack
-
-```
-Bebas Neue               MONUMENTAL NUMERALS & KICKERS (₹3,000, SEVAKHATA)
-Inter                    System UI, Navigation, Gridded Ledger Cells, Metadata
-Noto Sans Devanagari     Primary Hindi UI Actions (सही है, गलत है, पेसगी, विवरण)
-Tiro Devanagari Hindi    Traditional Hindi Cultural Axioms ("जो दोनों मानें, वही हिसाब")
-```
-
----
-
-<a id="multi-page-workflows"></a>
-## Multi-Page Workflows
-
-SevaKhata comprises six cohesive, inter-linked application pages built with vanilla semantic technologies:
+SevaKhata comprises seven cohesive, inter-linked application pages built with vanilla semantic web standards:
 
 ```
                                   ┌────────────────────────┐
@@ -332,78 +321,77 @@ SevaKhata comprises six cohesive, inter-linked application pages built with vani
 │• Confirm/Dispute ││• Direct hire   ││• Aadhaar last-4│  helper links    │• Verification    │
 │• Live Hisaab math│  profile links  │  sanitization   │• Schedule & rate │  inquiries       │
 └──────────────────┘└────────────────┘└────────────────┘└─────────────────┘└─────────────────┘
+                                              │
+                                              ▼
+                                     ┌─────────────────┐
+                                     │   login.html    │
+                                     │• 3D tilt folio  │
+                                     │• OTP inputs     │
+                                     │• Session sync   │
+                                     └─────────────────┘
 ```
 
 ### Detailed Workflow Matrix
 
-| Page | Route / File | Key Features & Interactions | Persistence Mapping |
+| Page | Route / File | Key Features &amp; User Interactions | Persistence Target |
 | :--- | :--- | :--- | :--- |
 | **Home / Landing** | [`index.html`](./index.html) | Editorial narrative in 5 movements; interactive living khata slab; cubic ease-out counter ticker (₹3,000 $\leftrightarrow$ ₹3,500); 3-stage consensus stepper; spatial memory parallax. | In-memory demonstration state |
 | **Shared Ledger** | [`ledger.html`](./ledger.html) | View as Employer / View as Helper toggle; live Hisaab balance summary; record daily attendance, advances, payments, and bonuses; inline Confirm, Dispute (with reason modal), and Resubmit actions. | `GET/POST /api/ledger`<br>`PATCH /api/ledger/:id`<br>[`data/ledger.json`](./data/ledger.json) |
 | **Helper Directory** | [`directory.html`](./directory.html) | Live search across helper names, skills, and locations; category filter pills; *Verified only* toggle; transparent 0–100 Trust Score breakdown cards; direct *Hire* action linking to booking form. | `GET /api/workers`<br>[`data/workers.json`](./data/workers.json) |
 | **Worker Onboarding** | [`register-worker.html`](./register-worker.html) | Multi-step helper registration; category picker; dynamic skill tags; wage type selection; real-time Aadhaar/PAN regex validation (stores only last 4 characters); success modal with ID. | `POST /api/workers`<br>[`data/workers.json`](./data/workers.json) |
 | **Household Booking** | [`hire-household.html`](./hire-household.html) | Request household services; supports new general requests or targeted bookings (`?worker=w-1001`); schedule specifications; offered budget validation; auto-populates worker details. | `POST /api/bookings`<br>[`data/bookings.json`](./data/bookings.json) |
-| **Support & Feedback** | [`contact-feedback.html`](./contact-feedback.html) | Inquiries across support, disputes, profile verification, and general feedback; star rating selector; character count validation; generates trackable ticket reference ID. | `POST /api/feedback`<br>[`data/feedback.json`](./data/feedback.json) |
-| **Authentication Folio** | [`login.html`](./login.html) | Floating Apple-grade translucent folio with interactive 3D perspective tilt physics; Email & Password mode with show/hide toggle; Mobile OTP tab with 6-digit auto-advancing input; complete bilingual validation & session state. | `GET/POST /api/logins`<br>[`data/logins.json`](./data/logins.json) |
+| **Support &amp; Feedback** | [`contact-feedback.html`](./contact-feedback.html) | Inquiries across support, disputes, profile verification, and general feedback; star rating selector; character count validation; generates trackable ticket reference ID. | `POST /api/feedback`<br>[`data/feedback.json`](./data/feedback.json) |
+| **Authentication Folio** | [`login.html`](./login.html) | Floating Apple-grade translucent folio with interactive 3D perspective tilt physics; Email &amp; Password mode with show/hide toggle; Mobile OTP tab with 6-digit auto-advancing input; complete bilingual validation &amp; session state. | `GET/POST /api/logins`<br>[`data/logins.json`](./data/logins.json) |
 
-### Transparent Trust Score Calculation
+### Transparent Trust Score Formulation
 
 The directory features a mathematical 0–100 Trust Score implemented in [`js/records.js`](./js/records.js):
 
 $$\text{Trust Score} = \text{ID Check (30)} + \text{Rating (30)} + \text{Experience (10)} + \text{Record Reliability (30)}$$
 
-- **ID Check:** 30 points if government ID format is verified.
-- **Rating:** Scaled up to 30 points based on 5-star rating $\left(\frac{\text{Rating}}{5} \times 30\right)$.
-- **Experience:** 1 point per year, capped at 10 years (10 points).
-- **Record Reliability:** Ratio of confirmed vs total reviewed records $\left(\frac{\text{Confirmed}}{\text{Reviewed}} \times 30\right)$. For new helpers with 0 reviewed entries, a neutral baseline of 15 points is assigned to prevent penalizing newcomers.
+- **ID Check (30 pts):** Verified government ID format (Aadhaar/PAN).
+- **Rating (30 pts):** Scaled up to 30 points based on 5-star rating $\left(\frac{\text{Rating}}{5} \times 30\right)$.
+- **Experience (10 pts):** 1 point per year of experience, capped at 10 years (10 points).
+- **Record Reliability (30 pts):** Ratio of confirmed vs total reviewed records $\left(\frac{\text{Confirmed}}{\text{Reviewed}} \times 30\right)$. For new helpers with 0 reviewed entries, a neutral baseline of 15 points is assigned to prevent penalizing newcomers.
 
 ---
 
-<a id="technology-stack"></a>
-## Technology Stack
+<a id="bilingual-experience--cultural-typography"></a>
+## Bilingual Experience &amp; Cultural Typography
+
+SevaKhata integrates Hindi (Devanagari) as an **intrinsic, first-class design system foundation**, not as an auxiliary afterthought.
+
+### Authentic Domain Vocabulary
+
+| English Term | authentic Hindi / Devanagari | Operational &amp; Cultural Meaning |
+| :--- | :--- | :--- |
+| **SevaKhata** | सेवाखाता (*SevaKhata*) | Mutual household work register and accounting folio |
+| **Shared Balance** | साझा हिसाब (*Sajha Hisaab*) | Mutually acknowledged running balance owed |
+| **Cash Advance** | अग्रिम / पेसगी (*Pesgi*) | Mid-month cash handovers for family or emergency needs |
+| **Work Attendance** | हाज़िरी (*Haaziri*) | Daily household labor, cooking, cleaning, or childcare |
+| **Payment** | भुगतान (*Bhugtan*) | Formal wage transfers or cash settlement |
+| **Confirm** | सही है (*Sahi Hai*) | Worker verification: entry released into official balance |
+| **Dispute** | गलत है (*Galat Hai*) | Worker contestation: quarantined at ₹0.00 balance weight |
+| **Pending** | लंबित (*Lambit*) | Awaiting mutual acknowledgement (₹0.00 weight) |
+| **Confirmed** | पुष्टि की गई (*Pushti Ki Gayi*) | Mutually locked and committed balance entry |
+
+### Typography Hierarchy &amp; Type Stack
+
+```
+Bebas Neue               MONUMENTAL NUMERALS & KICKERS (₹3,500, SEVAKHATA)
+Inter                    System UI, Navigation, Gridded Ledger Cells, Form Labels
+Noto Sans Devanagari     Primary Hindi UI Actions (सही है, गलत है, पेसगी, विवरण)
+Tiro Devanagari Hindi    Traditional Cultural Axioms ("जो दोनों मानें, वही हिसाब")
+```
+
+---
+
+<a id="system-architecture--data-flow"></a>
+## System Architecture &amp; Data Flow
 
 <p align="center">
-  <img src="https://skillicons.dev/icons?i=html,css,js,nodejs,express,figma" alt="Verified Technologies: HTML5, CSS3, JavaScript, Node.js, Express, Figma" />
+  <img src="./docs/assets/readme/architecture-overview.svg" alt="System Architecture Overview Diagram" width="100%" />
 </p>
-
-The SevaKhata architecture leverages clean, standards-compliant web technologies with minimal runtime overhead:
-
-```
-┌─────────────────────────────────────────────────────────────────────────────────────────────┐
-│                                       FRONTEND LAYER                                        │
-│  Semantic HTML5       Vanilla CSS3 Tokens      Vanilla ES6+ Modules       Google Fonts CDN  │
-│  (ARIA Landmarks)     (CSS Grid & Variables)   (UMD Shared Logic)         (4 Type Families) │
-└──────────────────────────────────────────────┬──────────────────────────────────────────────┘
-                                               │
-                                 HTTP / REST   │   Fallback Mode
-                                 Fetch API     │   (No Server)
-                                               ▼
-┌─────────────────────────────────────────────────────────────────────────────────────────────┐
-│                                BACKEND & PERSISTENCE LAYER                                  │
-│  Node.js (>= 18)     Express 4.21.2 API       Atomic JSON Files          Browser Storage    │
-│  Runtime Environment REST Endpoints           (data/*.json via fs)       (localStorage)     │
-└─────────────────────────────────────────────────────────────────────────────────────────────┘
-```
-
-### Verified Implementation Stack
-
-| Category | Technology | Version / Spec | Badge | Purpose in Project |
-| :--- | :--- | :--- | :--- | :--- |
-| **Frontend Markup** | HTML5 | Living Standard | ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white) | Semantic document outline (`<header>`, `<main>`, `<nav>`, `<article>`, `<section>`, `<footer>`), ARIA live regions and accessibility labels. |
-| **Frontend Styling** | CSS3 | Custom Properties | ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white) | Atomic design token architecture in [`style.css`](./style.css) and [`pages.css`](./pages.css), strict 4-column CSS Grid ledger layout, fluid clamp typography, zero CSS frameworks. |
-| **Frontend Logic** | JavaScript | ECMAScript 2020+ | ![JavaScript](https://img.shields.io/badge/JavaScript_ES6+-F7DF1E?style=flat-square&logo=javascript&logoColor=black) | Vanilla client-side modules, DOM event delegation, `requestAnimationFrame` cubic ease-out counter ticker, inline form binder, UMD modularity. |
-| **Backend Runtime** | Node.js | `>= 18.0.0` | ![Node.js](https://img.shields.io/badge/Node.js_18+-339933?style=flat-square&logo=node.js&logoColor=white) | Server runtime executing [`server.js`](./server.js), custom test runner, and seed synchronizer. |
-| **Web Framework** | Express.js | `^4.21.2` | ![Express](https://img.shields.io/badge/Express_4.21.2-000000?style=flat-square&logo=express&logoColor=white) | Minimalist HTTP server serving static assets, CORS negotiation, and RESTful JSON endpoints. |
-| **Persistence (Live)** | File System (JSON) | Node.js `fs.promises` | ![JSON](https://img.shields.io/badge/JSON_Storage-000000?style=flat-square&logo=json&logoColor=white) | Serialized queue-based atomic write system (`.tmp` write + `fs.rename`) into [`data/*.json`](./data/). |
-| **Persistence (Offline)** | Web Storage API | `localStorage` + `Blob` | ![WebStorage](https://img.shields.io/badge/Web_Storage-059669?style=flat-square) | Automatic fallback persistence when server is absent; dynamic client-side JSON export download. |
-| **Quality Assurance** | Node.js Test Harness | Built-in `assert` | ![Tests](https://img.shields.io/badge/Node_Assert-339933?style=flat-square&logo=node.js&logoColor=white) | Zero-dependency automated test runner in [`scripts/smoke-test.js`](./scripts/smoke-test.js). |
-| **Design Specification** | Figma Vector Suite | SVG 1.1 Standard | ![Figma](https://img.shields.io/badge/Figma_Suite-F24E1E?style=flat-square&logo=figma&logoColor=white) | 7 component-structured, native text vector artboards in [`design/figma-svgs/`](./design/figma-svgs/). |
-| **API Tooling** | Built-in Test Runner | Zero Dependency | ![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=node.js&logoColor=white) | Automated verification suite in [`scripts/smoke-test.js`](./scripts/smoke-test.js). |
-
----
-
-<a id="system-architecture"></a>
-## System Architecture & Data Flow
 
 ### Dual-Runtime Operational Architecture
 
@@ -430,6 +418,7 @@ flowchart TD
         BData["bookings.json"]
         LData["ledger.json"]
         FData["feedback.json"]
+        LGData["logins.json"]
     end
 
     UI --> ClientVal
@@ -448,37 +437,59 @@ flowchart TD
     AtomicWrite --> BData
     AtomicWrite --> LData
     AtomicWrite --> FData
+    AtomicWrite --> LGData
 ```
 
 ### Shared Code Philosophy (UMD Modules)
 
-To prevent discrepancies between client validation and server enforcement, core domain logic is written as Universal Module Definition (UMD) scripts that run natively in both environments:
-- **[`js/validation.js`](./js/validation.js):** Contains canonical validation schemas for workers, bookings, ledger entries, dispute notes, and feedback.
+To prevent discrepancies between client validation and server enforcement, core domain logic is written as Universal Module Definition (UMD) scripts that execute natively in both environments:
+- **[`js/validation.js`](./js/validation.js):** Canonical validation schemas for workers, bookings, ledger entries, dispute notes, and feedback.
 - **[`js/records.js`](./js/records.js):** Encapsulates the state machine (`applyLedgerAction`), sanitization rules (`clean`), the canonical balance equation (`balance`), and the transparent trust score algorithm (`trustScore`).
+
+---
+
+<a id="technology-stack"></a>
+## Technology Stack
+
+### Verified Implementation Stack
+
+| Layer | Technology | Spec / Version | Purpose in Repository |
+| :--- | :--- | :--- | :--- |
+| **Frontend Markup** | HTML5 | Living Standard | Semantic document outline (`<header>`, `<main>`, `<nav>`, `<article>`, `<section>`, `<footer>`), ARIA live regions and accessibility landmarks. |
+| **Frontend Styling** | CSS3 | Custom Properties | Atomic token architecture in [`style.css`](./style.css) and [`pages.css`](./pages.css), strict 4-column CSS Grid ledger layout, fluid clamp typography, zero external CSS dependencies. |
+| **Frontend Logic** | JavaScript | ECMAScript 2020+ | Vanilla client modules, DOM event delegation, `requestAnimationFrame` cubic ease-out counter ticker, inline form binder, UMD modularity. |
+| **Backend Runtime** | Node.js | `>= 18.0.0` | Server runtime executing [`server.js`](./server.js), custom test runner, and seed synchronizer. |
+| **Web Framework** | Express.js | `^4.21.2` | Minimal HTTP server serving static assets, CORS negotiation, and RESTful JSON endpoints. |
+| **Persistence (Live)** | File System (JSON) | Node.js `fs.promises` | Serialized queue-based atomic write system (`.tmp` write + `fs.rename`) into [`data/*.json`](./data/). |
+| **Persistence (Offline)** | Web Storage API | `localStorage` + `Blob` | Automatic fallback persistence when server is absent; dynamic client-side JSON export download. |
+| **Quality Assurance** | Node.js Test Harness | Built-in `assert` | Zero-dependency automated test runner in [`scripts/smoke-test.js`](./scripts/smoke-test.js). |
+| **Design Suite** | Figma Vector Suite | SVG 1.1 Standard | 8 component-structured, native text vector artboards in [`design/figma-svgs/`](./design/figma-svgs/). |
 
 ---
 
 <a id="api-specification"></a>
 ## API Specification
 
-The Express server in [`server.js`](./server.js) exposes a clean REST API persisting to flat JSON files.
+The Express server in [`server.js`](./server.js) exposes clean RESTful endpoints persisting to atomic flat JSON files.
 
 ### Endpoint Overview
 
 | Method | Endpoint | Description | Status Code |
 | :--- | :--- | :--- | :--- |
-| `GET` | `/api/health` | Health status and available resources | `200 OK` |
+| `GET` | `/api/health` | Health status and resource diagnostics | `200 OK` |
 | `GET` | `/api/workers` | List all registered domestic helpers | `200 OK` |
 | `POST` | `/api/workers` | Register a new helper profile (stores `idLast4` only) | `201 Created` / `400 Bad Request` |
 | `GET` | `/api/bookings` | List all household booking requests | `200 OK` |
 | `POST` | `/api/bookings` | Submit a household booking request | `201 Created` / `400 Bad Request` |
 | `GET` | `/api/ledger` | Retrieve all ledger records | `200 OK` |
 | `POST` | `/api/ledger` | Create a new ledger entry (always starts `pending`) | `201 Created` / `400 Bad Request` |
-| `PATCH` | `/api/ledger/:id` | Perform helper action (confirm/dispute) or employer resubmit | `200 OK` / `400` / `403` / `409` |
-| `GET` | `/api/feedback` | List all contact/support tickets | `200 OK` |
-| `POST` | `/api/feedback` | Submit a feedback or support request | `201 Created` / `400 Bad Request` |
+| `PATCH` | `/api/ledger/:id` | Helper confirm/dispute action or employer resubmission | `200 OK` / `400` / `403` / `409` |
+| `GET` | `/api/feedback` | List all contact and support tickets | `200 OK` |
+| `POST` | `/api/feedback` | Submit a support ticket or dispute claim | `201 Created` / `400 Bad Request` |
+| `GET` | `/api/logins` | List authenticated session records | `200 OK` |
+| `POST` | `/api/logins` | Authenticate session via email/password or mobile OTP | `201 Created` / `400 Bad Request` |
 
-### Key Request & Response Examples
+### Key Request &amp; Response Examples
 
 <details>
 <summary><strong>1. Create Ledger Entry: <code>POST /api/ledger</code></strong></summary>
@@ -520,7 +531,7 @@ The Express server in [`server.js`](./server.js) exposes a clean REST API persis
 </details>
 
 <details>
-<summary><strong>2. Confirm Entry: <code>PATCH /api/ledger/:id</code></strong></summary>
+<summary><strong>2. Helper Confirm Entry: <code>PATCH /api/ledger/:id</code></strong></summary>
 
 **Request Body:**
 ```json
@@ -543,14 +554,14 @@ The Express server in [`server.js`](./server.js) exposes a clean REST API persis
 </details>
 
 <details>
-<summary><strong>3. Dispute Entry: <code>PATCH /api/ledger/:id</code></strong></summary>
+<summary><strong>3. Helper Dispute Entry: <code>PATCH /api/ledger/:id</code></strong></summary>
 
 **Request Body:**
 ```json
 {
   "action": "dispute",
   "actor": "helper",
-  "reason": "I worked a full day, but the amount is logged as half-day."
+  "reason": "I worked a full day, but the amount is logged as half-day rate."
 }
 ```
 
@@ -560,7 +571,7 @@ The Express server in [`server.js`](./server.js) exposes a clean REST API persis
   "id": "l-2009",
   "status": "disputed",
   "disputedAt": "2026-08-15T19:35:00.000Z",
-  "disputeReason": "I worked a full day, but the amount is logged as half-day."
+  "disputeReason": "I worked a full day, but the amount is logged as half-day rate."
 }
 ```
 *Dispute requests without a reason or with a reason shorter than 10 characters return `400 Bad Request`.*
@@ -590,7 +601,7 @@ The Express server in [`server.js`](./server.js) exposes a clean REST API persis
   "history": [
     {
       "status": "disputed",
-      "reason": "I worked a full day, but the amount is logged as half-day.",
+      "reason": "I worked a full day, but the amount is logged as half-day rate.",
       "amount": 250,
       "at": "2026-08-15T19:35:00.000Z"
     }
@@ -601,7 +612,7 @@ The Express server in [`server.js`](./server.js) exposes a clean REST API persis
 </details>
 
 <details>
-<summary><strong>5. Register Helper: <code>POST /api/workers</code></strong></summary>
+<summary><strong>5. Register Domestic Helper: <code>POST /api/workers</code></strong></summary>
 
 **Request Body:**
 ```json
@@ -639,8 +650,101 @@ The Express server in [`server.js`](./server.js) exposes a clean REST API persis
   "createdAt": "2026-08-23T11:00:00.000Z"
 }
 ```
-*Privacy Invariant: The full `idNumber` is validated in memory and discarded; only `idLast4` is preserved.*
+*Privacy Invariant: The full `idNumber` is validated in memory and discarded; only `idLast4` is preserved on disk.*
 </details>
+
+---
+
+<a id="actual-implementation-status-audit"></a>
+## Actual Implementation Status Audit
+
+In accordance with transparent engineering principles, every claimed feature is audited directly against runtime behavior and source files:
+
+| # | System Component | Verified Status | Concrete Evidence / Source Files |
+| :-- | :--- | :--- | :--- |
+| 1 | **Landing Page Narrative** | **Implemented** | [`index.html`](./index.html), [`main.js`](./main.js); 5-movement scroll narrative, living khata slab, cubic ease-out counter. |
+| 2 | **Authentication Folio** | **Implemented** | [`login.html`](./login.html), [`login.css`](./login.css), [`js/pages/login.js`](./js/pages/login.js); 3D perspective physics, 6-digit OTP auto-advance. |
+| 3 | **Employer Ledger View** | **Implemented** | [`ledger.html`](./ledger.html), [`js/pages/ledger.js`](./js/pages/ledger.js); attendance logging, advance recording, resubmit action. |
+| 4 | **Helper Review View** | **Implemented** | [`ledger.html`](./ledger.html), [`js/pages/ledger.js`](./js/pages/ledger.js); Devanagari review cards, inline Confirm and Dispute actions. |
+| 5 | **Helper Directory** | **Implemented** | [`directory.html`](./directory.html), [`js/pages/directory.js`](./js/pages/directory.js); category filtering, live text search, pre-filled hire links. |
+| 6 | **Worker Onboarding** | **Implemented** | [`register-worker.html`](./register-worker.html), [`js/pages/register-worker.js`](./js/pages/register-worker.js); Aadhaar/PAN regex validation, ID sanitization. |
+| 7 | **Household Booking** | **Implemented** | [`hire-household.html`](./hire-household.html), [`js/pages/hire-household.js`](./js/pages/hire-household.js); schedule picker, pre-filled worker handoff. |
+| 8 | **Support &amp; Feedback** | **Implemented** | [`contact-feedback.html`](./contact-feedback.html), [`js/pages/contact-feedback.js`](./js/pages/contact-feedback.js); star rating selector, ticket ID generator. |
+| 9 | **Shared Consensus Engine** | **Implemented** | [`js/records.js`](./js/records.js) (`applyLedgerAction`, `balance`); pending quarantine, bilateral state machine. |
+| 10 | **Transparent Trust Score** | **Implemented** | [`js/records.js`](./js/records.js) (`trustScore`); 0–100 mathematical scoring algorithm. |
+| 11 | **Bilingual Localization** | **Implemented** | [`js/i18n.js`](./js/i18n.js); English/Hindi translation dictionary with persistent `localStorage` preference. |
+| 12 | **Local REST API Backend** | **Implemented** | [`server.js`](./server.js); Express endpoints with static hardening and serialized mutation queue. |
+| 13 | **Atomic File Persistence** | **Implemented** | [`server.js`](./server.js); POSIX atomic file replacement (`.tmp` write + `fs.rename`) into [`data/*.json`](./data/). |
+| 14 | **Offline Browser Fallback** | **Implemented** | [`js/store.js`](./js/store.js), [`js/seed-data.js`](./js/seed-data.js); graceful degradation to `localStorage` + JSON Blob export. |
+| 15 | **Figma Vector Suite** | **Implemented** | [`design/figma-svgs/`](./design/figma-svgs/); 8 editable SVG artboards with native vector `<text>`. |
+| 16 | **Automated Smoke Tests** | **Implemented** | [`scripts/smoke-test.js`](./scripts/smoke-test.js); zero-dependency Node.js test harness covering validation, math, and API. |
+| 17 | **Cloud Database (MongoDB)** | **Planned** | Approved in Project Charter Phase 3 (Mongoose schemas for `Household`, `User`, `LedgerFolio`, `LedgerRecord`). |
+| 18 | **Production Mobile OTP** | **Planned** | Approved in Project Charter Phase 3 (SMS gateway integration; current login persists to `data/logins.json`). |
+| 19 | **WhatsApp Business API** | **Future Scope** | Automated daily verification prompts dispatched via WhatsApp webhook. |
+| 20 | **UPI Deep Link Settlement** | **Future Scope** | Direct Google Pay / PhonePe deep links pre-populated with confirmed Hisaab balance. |
+
+---
+
+<a id="project-charter--academic-phases"></a>
+## Project Charter &amp; Academic Phases
+
+<p align="center">
+  <img src="./docs/assets/readme/implementation-roadmap.svg" alt="Project Charter Evaluation Roadmap" width="100%" />
+</p>
+
+The project roadmap strictly adheres to the approved academic project charter and evaluation milestones:
+
+### Charter Phase Allocation
+
+```
+┌─────────────────────────────────┬─────────────────────────────────┬─────────────────────────────────┐
+│     PHASE 1 (Weight: 30%)       │     PHASE 2 (Weight: 30%)       │     PHASE 3 (Weight: 40%)       │
+│      Frontend Foundation        │    JavaScript & Interaction     │    Full-Stack Implementation    │
+├─────────────────────────────────┼─────────────────────────────────┼─────────────────────────────────┤
+│ • Master Figma Design System    │ • ECMAScript DOM event handling │ • Node.js & Express REST Server │
+│ • 6 Semantic HTML5 Workflows    │ • Form validation regex engines │ • Atomic JSON disk persistence  │
+│ • CSS3 Atomic Design Tokens     │ • Consensus state machine logic │ • Zero-dependency smoke test    │
+│ • Responsive Grid Layouts       │ • Dynamic Hisaab balance math   │ • Shared UMD client/server code │
+│ • ARIA Accessibility Outline    │ • 0–100 Trust Score algorithm   │ • Static route hardening        │
+│ • Devanagari Cultural Font Spec │ • EN ⇄ हिं localization engine  │ • Seed synchronization scripts  │
+│ [STATUS: 100% DELIVERED]        │ [STATUS: 100% DELIVERED]        │ [STATUS: 100% DELIVERED]        │
+└─────────────────────────────────┴─────────────────────────────────┴─────────────────────────────────┘
+```
+
+### Team Responsibility Matrix
+
+| Contributor | GitHub Identity | Primary Charter Responsibilities |
+| :--- | :--- | :--- |
+| **Darsh Sharma** (Lead) | [`@darshsharma-bit`](https://github.com/darshsharma-bit) | Repository architecture, master design system, Figma artboards, bilateral consensus protocol. |
+| **Akarshit Makkar** | [`@akarshitmakkar-coder`](https://github.com/akarshitmakkar-coder) | Floating login folio engineering, 3D perspective physics, OTP interaction, session persistence. |
+| **Lakshit Choudhary** | [`@lakshitchoudhary137`](https://github.com/lakshitchoudhary137) | Multi-page workflow integration, documentation engineering, accessibility compliance. |
+| **Yuvraj Singh** | [`@9dyuvrajsingh`](https://github.com/9dyuvrajsingh) | Form validation rules, directory trust scoring, project charter milestone tracking. |
+
+---
+
+<a id="future-engineering-scope"></a>
+## Future Engineering Scope
+
+The following capabilities represent approved future roadmap horizons beyond the Evaluation 2 MVP baseline:
+
+### Phase 4: Production Cloud Backend &amp; Mobile OTP
+- [ ] Implement cloud database tier using MongoDB Atlas with Mongoose schemas for `Household`, `User`, `LedgerFolio`, and `LedgerRecord`.
+- [ ] Connect SMS gateway (Twilio / MSG91) for production passwordless mobile OTP authentication.
+- [ ] Introduce cryptographic JSON Web Tokens (JWT) and true Role-Based Access Control (RBAC).
+- [ ] Transition from client-side DOM rendering to server-side dynamic Handlebars templates.
+
+### Phase 5: Messaging &amp; Webhook Integration
+- [ ] Connect WhatsApp Business API webhooks to dispatch daily attendance prompts to helpers.
+- [ ] Implement secure, tamper-evident one-tap verification links allowing helpers to confirm or dispute entries without app installation.
+- [ ] Introduce real-time WebSockets / Server-Sent Events (SSE) synchronization between paired household devices.
+
+### Phase 6: Dispute Mediation &amp; Digital Settlement
+- [ ] In-app dispute mediation workflow with photo attachment support for cash receipts.
+- [ ] Direct UPI deep links (Google Pay, PhonePe, Paytm, BHIM) pre-populated with the exact confirmed *Hisaab* balance.
+- [ ] Automated generation of sealed, downloadable month-end PDF settlement receipts.
+
+> [!IMPORTANT]
+> **Product Scope Boundary:** SevaKhata records and mutually verifies work and financial acknowledgements; **it does not transfer money or act as a bank**. It is not a financial custodian, payment gateway, hiring marketplace, or employee surveillance application.
 
 ---
 
@@ -661,15 +765,26 @@ SevaKhata/
 │   ├── logins.json                    # Authenticated session and login records
 │   └── workers.json                   # Registered helper profiles and trust scores
 ├── design/                            # Figma vector suite & design specifications
-│   ├── figma-svgs/                    # 100% editable Figma-compatible vector artboards
-│   │   ├── 01-home-index.svg          # Desktop master landing artboard
-│   │   ├── 02-ledger-records.svg      # Shared ledger folio view
-│   │   ├── 03-worker-directory-store.svg # Searchable helper directory
-│   │   ├── 04-register-worker.svg     # Worker onboarding intake
-│   │   ├── 05-hire-household.svg      # Household hiring request
-│   │   ├── 06-contact-feedback.svg    # Support ticket and dispute form
-│   │   ├── 07-components-and-popups.svg # UI stickersheet, modals, and toasts
-│   │   └── 08-login-desktop-1440.svg  # 100% editable Figma login artboard
+│   └── figma-svgs/                    # 8 editable Figma-compatible vector artboards
+│       ├── 01-home-index.svg          # Desktop master landing artboard
+│       ├── 02-ledger-records.svg      # Shared ledger folio view
+│       ├── 03-worker-directory-store.svg # Searchable helper directory
+│       ├── 04-register-worker.svg     # Worker onboarding intake
+│       ├── 05-hire-household.svg      # Household hiring request
+│       ├── 06-contact-feedback.svg    # Support ticket and dispute form
+│       ├── 07-components-and-popups.svg # UI stickersheet, modals, and toasts
+│       └── 08-login-desktop-1440.svg  # 100% editable Figma login artboard
+├── docs/                              # Project documentation assets
+│   └── assets/
+│       └── readme/                    # Static, script-free documentation artwork
+│           ├── hero-sevakhata.svg     # Master hero product showcase
+│           ├── consensus-workflow.svg # Bilateral consensus loop diagram
+│           ├── record-lifecycle.svg   # State machine & domain types
+│           ├── hisaab-calculation.svg # Mathematical formula breakdown
+│           ├── architecture-overview.svg # System architecture tier diagram
+│           ├── implementation-roadmap.svg # Charter milestones & phases
+│           ├── showcase-desktop-ledger.svg # Desktop ledger interface mockup
+│           └── showcase-mobile-helper.svg # Mobile helper review & login mockup
 ├── js/                                # Vanilla modular JavaScript engine
 │   ├── pages/                         # Page-specific controller scripts
 │   │   ├── contact-feedback.js        # Support form handling & rating interaction
@@ -694,8 +809,8 @@ SevaKhata/
 ├── index.html                         # Editorial landing page & living khata prototype
 ├── ledger.html                        # Bilateral digital ledger page
 ├── login.html                         # Floating Apple-grade authentication folio
-├── login.css                          # Apple Liquid Glass styling, specular highlights & tilt styles
 ├── register-worker.html               # Domestic worker registration page
+├── login.css                          # Apple Liquid Glass styling, specular highlights & tilt styles
 ├── main.js                            # Landing page scroll choreography & ease-out ticker
 ├── pages.css                          # Shared styles for inner workflow pages
 ├── style.css                          # Master stylesheet, design tokens, and landing styles
@@ -707,82 +822,43 @@ SevaKhata/
 
 ---
 
-<a id="getting-started"></a>
-## Getting Started
+<a id="security-privacy--data-integrity"></a>
+## Security, Privacy &amp; Data Integrity
 
-### Prerequisites
+### 1. Privacy by Design: Aadhaar Sanitization
 
-- **Node.js:** Version `18.0.0` or higher (recommended for live JSON API mode).
-- **Web Browser:** Any modern evergreen browser (Chrome, Edge, Safari, Firefox).
+In compliance with data minimization best practices, government identification numbers (Aadhaar, PAN, Voter ID) are never stored in full. 
 
-### Installation & Execution
+The client validates the complete 12-digit number format for user guidance, but strips the identifier before transmission. The server accepts and persists only `idLast4`:
 
-```bash
-# Clone the repository
-git clone https://github.com/darshsharma-bit/SevaKhata.git
-cd SevaKhata
-
-# Install dependencies (Express 4.21.2)
-npm install
-
-# Start the application server
-npm start
+```javascript
+// Enforced in js/records.js & js/validation.js
+idType: p.idType,
+idLast4: clean(p.idLast4, 4).toUpperCase()
 ```
 
-Open your browser and navigate to:
-```
-http://localhost:3000
-```
+### 2. POSIX Atomic File Persistence
 
-### Alternative Local Servers
+To prevent data corruption caused by server crashes, concurrent writes, or power failures, [`server.js`](./server.js) implements atomic file replacement:
+1. Data is written to a temporary sibling file (`target + '.tmp'`).
+2. The temporary file is committed using `fs.promises.rename()`, guaranteeing POSIX atomic replacement.
+3. Concurrent mutations are serialized through an asynchronous Promise queue (`let queue = Promise.resolve()`), eliminating race conditions.
 
-If you prefer to run the frontend without Node.js, you can use Python's built-in HTTP server:
-```bash
-python3 -m http.server 8000
-```
-Navigate to `http://localhost:8000`. The application will operate in offline demo mode using browser storage.
+### 3. Static Route Hardening
 
----
+The Express server explicitly blocks browser access to sensitive source code, configuration files, scripts, and data directories:
 
-<a id="testing--quality-assurance"></a>
-## Testing & Quality Assurance
-
-The repository includes a custom, zero-dependency test suite in [`scripts/smoke-test.js`](./scripts/smoke-test.js) that validates business invariants, validation schemas, and API behaviors.
-
-Execute the test suite:
-```bash
-npm test
-```
-
-### Verification Suite Coverage
-
-```
-Validation Rules
-  ✓ Indian phone numbers (10 digits starting with 6-9)
-  ✓ ID formats by type (Aadhaar 12-digit algorithm, PAN alphanumeric)
-  ✓ Wage amounts (positive numbers within realistic bounds)
-
-Ledger Rules
-  ✓ Only CONFIRMED entries reach the balance (quarantine invariant)
-  ✓ State machine: Pending -> Confirm / Dispute (Confirmed is final)
-  ✓ Employer cannot confirm entries on behalf of helper (role boundary)
-  ✓ Dispute requires meaningful explanation (≥10 characters)
-
-API Integration (Isolated Temporary Data Copy)
-  ✓ GET returns seeded records
-  ✓ Invalid POST payloads rejected with field-specific errors
-  ✓ Valid worker appended to workers.json (ID stored as last 4 only)
-  ✓ New ledger entry always starts pending (client status override rejected)
-  ✓ Feedback and booking submissions persist accurately
-  ✓ Static security: server source and data directories blocked from browser access
+```javascript
+const BLOCKED = /^\/(server\.js|package(-lock)?\.json|node_modules|data|scripts|\.git|\.agents|\.claude|agent|\.env)(\/|$)/i;
+app.use((req, res, next) => (BLOCKED.test(req.path) ? res.status(404).send('Not found') : next()));
 ```
 
 ---
 
-<a id="responsive-design--accessibility"></a>
-## Responsive Design & Accessibility
+<a id="accessibility--responsive-design"></a>
+## Accessibility &amp; Responsive Design
 
-### Accessibility Implementations
+### Accessibility Foundations
 
 - **Semantic Landmark Outline:** Structured `<header role="banner">`, `<nav aria-label="Primary Navigation">`, `<main id="mainCanvas">`, `<article>`, and `<footer role="contentinfo">`.
 - **Live Status Announcements:** Navigation telemetry and balance updates use `role="status"` and `aria-live="polite"`.
@@ -795,122 +871,29 @@ API Integration (Isolated Temporary Data Copy)
 | Breakpoint | Target Viewport | Architectural Adaptation |
 | :--- | :--- | :--- |
 | **`> 1024px`** | Desktop Workstations | Full 4-column ledger slab (`36px 1fr 120px 110px`), side-by-side memory cards with central tension wire, expanded top navigation. |
-| **`768px – 1023px`** | Tablets & Small Laptops | Adaptive 880px slab width, compressed header masthead, stacked telemetry indicators, 2-column directory grid. |
-| **`< 768px`** | Mobile Smartphones | Single-column stacked cards, full-width action buttons (≥48px height), slide-out hamburger navigation drawer, horizontal scroll handling with `overflow-x: hidden`. |
-
----
-
-<a id="security-privacy--data-integrity"></a>
-## Security, Privacy & Data Integrity
-
-### Privacy by Design: Aadhaar Sanitization
-
-In compliance with data minimization best practices, government identification numbers (Aadhaar, PAN, Voter ID) are never stored in full. 
-
-The client validates the complete number format for user guidance, but strips the identifier before transmission. The server accepts and persists only `idLast4`:
-
-```javascript
-// Enforced in js/records.js
-idType: p.idType,
-idLast4: clean(p.idLast4, 4).toUpperCase()
-```
-
-### Atomic File Persistence
-
-To prevent data corruption caused by server crashes or power failures during write operations, [`server.js`](./server.js) implements atomic file replacement:
-1. Data is written to a temporary sibling file (`target + '.tmp'`).
-2. The temporary file is committed using `fs.promises.rename()`, guaranteeing POSIX atomic replacement.
-3. Concurrent writes are serialized through an asynchronous Promise queue (`let queue = Promise.resolve()`), preventing race conditions.
-
-### Static Route Hardening
-
-The Express server explicitly blocks browser access to sensitive project configuration, scripts, source code, and raw data files:
-```javascript
-const BLOCKED = /^\/(server\.js|package(-lock)?\.json|node_modules|data|scripts|\.git|\.agents|\.claude|agent|\.env)(\/|$)/i;
-app.use((req, res, next) => (BLOCKED.test(req.path) ? res.status(404).send('Not found') : next()));
-```
-
----
-
-<a id="current-implementation-status"></a>
-## Current Implementation Status
-
-| System Component | Status | Implementation Details |
-| :--- | :--- | :--- |
-| **Multi-Page Workflows** | **IMPLEMENTED** | 6 complete pages (`index`, `ledger`, `directory`, `register-worker`, `hire-household`, `contact-feedback`) with responsive navigation and footer. |
-| **Shared Ledger Engine** | **IMPLEMENTED** | Full record creation, pending quarantine, helper confirm/dispute actions, and employer correction loop. |
-| **Bilingual Localization** | **IMPLEMENTED** | English and Hindi (Devanagari) toggle across all inner workflow pages with persistent `localStorage` preference. |
-| **Local JSON API** | **IMPLEMENTED** | Express backend in `server.js` with serialized atomic persistence to `data/*.json`. |
-| **Offline Fallback & Export** | **IMPLEMENTED** | Zero-server browser fallback to `localStorage` + client-side JSON Blob file exporter. |
-| **Shared Validation System** | **IMPLEMENTED** | Unified UMD validation rules in `js/validation.js` running in both browser and Node.js. |
-| **Transparent Trust Scoring** | **IMPLEMENTED** | Mathematical 0–100 score combining ID check, rating, experience, and historical record reliability. |
-| **Figma Vector Suite** | **IMPLEMENTED** | 7 editable Figma-compatible SVGs in `design/figma-svgs/` with native text layers and zero `<foreignObject>`. |
-| **Interactive Landing Demo** | **PROTOTYPE** | High-fidelity 5-movement landing page with spatial scroll parallax and ease-out counter ticker. |
-| **Authentication & RBAC** | **PLANNED** | Mobile OTP login and cryptographic session tokens. (Current role toggle is a demonstration control). |
-| **Multi-Tenant Database** | **PLANNED** | Cloud database persistence (MongoDB / PostgreSQL) replacing local JSON files. |
-| **SMS / WhatsApp Alerts** | **PLANNED** | Automated daily verification prompts sent to helper mobile numbers via WhatsApp Business API. |
+| **`768px – 1023px`** | Tablets &amp; Small Laptops | Adaptive 880px slab width, compressed header masthead, stacked telemetry indicators, 2-column directory grid. |
+| **`< 768px`** | Mobile Smartphones | Single-column stacked cards, full-width action buttons ($\ge 48\text{px}$ height), slide-out hamburger navigation drawer, horizontal scroll handling with `overflow-x: hidden`. |
 
 ---
 
 <a id="known-limitations--technical-debt"></a>
-## Known Limitations & Technical Debt
+## Known Limitations &amp; Technical Debt
 
-In accordance with transparent engineering principles, the following design boundaries are documented:
+In accordance with Ponytail engineering principles, existing system ceilings are transparently disclosed:
 
-1. **Flat-File Storage Ceiling:** Data persistence currently uses local JSON files managed by a single-process write queue. This is designed for local development and demonstration; multi-user production requires a concurrent database.
+1. **Flat-File Storage Ceiling:** Data persistence currently uses local JSON files managed by a single-process write queue. This is designed for local development and academic evaluation; multi-user cloud production requires a concurrent database.
 2. **Demonstration Authentication:** The "View as Employer / Helper" switcher on `ledger.html` and the `actor` parameter on the API are demonstration controls operating on the honour system. They demonstrate the bilateral workflow but do not enforce cryptographic access control.
 3. **Seed Data Ratings:** Ratings, review counts, and verification badges present in the initial seed files are illustrative sample values; an automated peer review system is planned for future phases.
 4. **Landing Page Bilingual Scope:** The English/Hindi toggle translates navigation, footers, and gateway cards on `index.html`; the five inner workflow pages are localized end to end.
 
 ---
 
-<a id="future-engineering-roadmap"></a>
-## Future Engineering Roadmap
-
-### Phase 1: Backend Foundation & Multi-Tenant Authentication
-- [ ] Implement cloud database layer (MongoDB with Mongoose schemas for `Household`, `User`, `LedgerFolio`, and `LedgerRecord`).
-- [ ] Integrate SMS-based mobile OTP authentication for passwordless login on both sides.
-- [ ] Implement server-side JWT session validation and role-based authorization middleware.
-
-### Phase 2: Mobile Messaging & Webhook Integration
-- [ ] Connect WhatsApp Business API webhooks to dispatch daily attendance notifications to helpers.
-- [ ] Implement secure one-tap verification links allowing helpers to confirm or dispute entries without app installation.
-- [ ] Introduce real-time WebSocket / Server-Sent Events (SSE) synchronization between paired devices.
-
-### Phase 3: Dispute Mediation & Month-End Settlement
-- [ ] Build an in-app dispute mediation workflow with photo attachment support for cash receipts.
-- [ ] Integrate direct UPI deep links (Google Pay, PhonePe, Paytm) pre-populated with the exact confirmed *Hisaab* balance.
-- [ ] Generate downloadable, tamper-evident month-end PDF settlement receipts.
-
----
-
-<a id="design-system"></a>
-## Design System
-
-A comprehensive Figma design suite is documented in [`design/FIGMA_DESIGN_SYSTEM.md`](./design/FIGMA_DESIGN_SYSTEM.md). All artboards are located in [`design/figma-svgs/`](./design/figma-svgs/) and are built with native SVG `<text>` elements for immediate editing in Figma.
-
-### Core Color Palette
-
-| Token Identifier | Hex Value | Purpose & Architectural Usage |
-| :--- | :--- | :--- |
-| `--bg-deep` | `#08080A` | Ambient canvas background and root container surface |
-| `--bg-canvas` | `#0C0C0E` | Main document body and page background |
-| `--bg-surface-base` | `#111115` | Living ledger slab, card surfaces, and equation containers |
-| `--bg-surface-elevated`| `#16161C` | Active row highlight, navigation pill, and elevated modals |
-| `--khata-crimson-spine`| `#E11D48` | Traditional Indian *bahi-khata* red book spine accent |
-| `--khata-crimson-seal` | `#C8202B` | Radial background seal disk and monumental accents |
-| `--emerald-core` | `#059669` | `Sahi Hai` confirm button, confirmed status badges, verified indicators |
-| `--amber-core` | `#F59E0B` | `Pending` status badges, quarantine indicators, warning alerts |
-| `--rose-core` | `#EF4444` | `Galat Hai` dispute button, cash advance deductions, error states |
-
----
-
 <a id="license--acknowledgements"></a>
-## License & Acknowledgements
+## License &amp; Acknowledgements
 
 ### License
 
-This project is licensed under the **MIT License**. See the [`package.json`](./package.json) file for details.
+This project is open-source software licensed under the **[MIT License](./package.json)**.
 
 ### Acknowledgements
 

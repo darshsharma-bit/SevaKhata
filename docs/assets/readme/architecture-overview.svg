@@ -1,0 +1,178 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 520" width="1100" height="520" fill="none">
+  <defs>
+    <style>
+      .monumental { font-family: 'Bebas Neue', -apple-system, sans-serif; letter-spacing: 0.08em; text-transform: uppercase; }
+      .editorial { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+      .code { font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace; }
+    </style>
+    <linearGradient id="ao-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0E0E12" />
+      <stop offset="100%" stop-color="#060608" />
+    </linearGradient>
+    <linearGradient id="layer-client" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#161824" />
+      <stop offset="100%" stop-color="#10121C" />
+    </linearGradient>
+    <linearGradient id="layer-server" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1F151E" />
+      <stop offset="100%" stop-color="#140D14" />
+    </linearGradient>
+    <linearGradient id="layer-storage" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#111E16" />
+      <stop offset="100%" stop-color="#0A140E" />
+    </linearGradient>
+  </defs>
+
+  <rect x="0" y="0" width="1100" height="520" rx="14" fill="url(#ao-bg)" stroke="#27272A" stroke-width="1.5" />
+
+  <!-- Blueprint Lines -->
+  <g stroke="rgba(255, 255, 255, 0.03)" stroke-width="1">
+    <line x1="0" y1="65" x2="1100" y2="65" />
+    <line x1="0" y1="470" x2="1100" y2="470" />
+  </g>
+
+  <!-- Header -->
+  <g transform="translate(50, 40)">
+    <text x="0" y="0" class="monumental" font-size="24" fill="#FFFFFF">SYSTEM ARCHITECTURE &amp; DATA PIPELINE</text>
+    <text x="0" y="18" class="editorial" font-size="12" fill="#71717A">
+      Dual-runtime architecture: live Express server with atomic file persistence &amp; offline browser fallback.
+    </text>
+  </g>
+
+  <!-- ==================== 3 VERTICAL ARCHITECTURAL TIERS ==================== -->
+
+  <!-- TIER 1: CLIENT BROWSER RUNTIME (LEFT TIER) -->
+  <g transform="translate(50, 85)">
+    <rect x="0" y="0" width="310" height="365" rx="10" fill="url(#layer-client)" stroke="#3B82F6" stroke-opacity="0.3" stroke-width="1.2" />
+    <!-- Header -->
+    <rect x="0" y="0" width="310" height="38" rx="10" fill="#1E293B" />
+    <rect x="0" y="26" width="310" height="12" fill="#1E293B" />
+    <circle cx="20" cy="19" r="4.5" fill="#60A5FA" />
+    <text x="34" y="23" class="editorial" font-size="11" font-weight="700" fill="#93C5FD">CLIENT BROWSER RUNTIME</text>
+
+    <!-- Components -->
+    <g transform="translate(16, 50)">
+      <!-- Box: 7 Multi-Page Workflows -->
+      <rect x="0" y="0" width="278" height="70" rx="6" fill="#0F172A" stroke="rgba(255,255,255,0.08)" stroke-width="1" />
+      <text x="12" y="18" class="editorial" font-size="11" font-weight="700" fill="#F1F5F9">7 Semantic Workflows</text>
+      <text x="12" y="34" class="code" font-size="9" fill="#94A3B8">index · ledger · directory · login</text>
+      <text x="12" y="48" class="code" font-size="9" fill="#94A3B8">register-worker · hire-household</text>
+      <text x="12" y="62" class="code" font-size="9" fill="#94A3B8">contact-feedback</text>
+
+      <!-- Box: Design Tokens & Styling -->
+      <rect x="0" y="80" width="278" height="56" rx="6" fill="#0F172A" stroke="rgba(255,255,255,0.08)" stroke-width="1" />
+      <text x="12" y="98" class="editorial" font-size="11" font-weight="700" fill="#F1F5F9">Vanilla CSS3 Design Tokens</text>
+      <text x="12" y="114" class="code" font-size="9.5" fill="#94A3B8">style.css · pages.css · login.css</text>
+      <text x="12" y="128" class="editorial" font-size="9.5" fill="#64748B">Zero frameworks · CSS Grid · Fluid clamp()</text>
+
+      <!-- Box: Controllers -->
+      <rect x="0" y="146" width="278" height="66" rx="6" fill="#0F172A" stroke="rgba(255,255,255,0.08)" stroke-width="1" />
+      <text x="12" y="164" class="editorial" font-size="11" font-weight="700" fill="#F1F5F9">Client Dispatcher (js/store.js)</text>
+      <text x="12" y="180" class="editorial" font-size="9.5" fill="#94A3B8">Probes /api/health on boot</text>
+      <text x="12" y="196" class="editorial" font-size="9.5" fill="#38BDF8">Server online: fetch() async/await</text>
+      <text x="12" y="208" class="editorial" font-size="9.5" fill="#FBBF24">Server offline: fallback localStorage</text>
+
+      <!-- Box: Offline Exporter -->
+      <rect x="0" y="222" width="278" height="68" rx="6" fill="#1E293B" />
+      <text x="12" y="240" class="editorial" font-size="10.5" font-weight="700" fill="#F1F5F9">Offline Fallback &amp; Export</text>
+      <text x="12" y="258" class="editorial" font-size="9.5" fill="#94A3B8">• Seeded from js/seed-data.js</text>
+      <text x="12" y="272" class="editorial" font-size="9.5" fill="#94A3B8">• Client-side JSON Blob downloader</text>
+      <text x="12" y="284" class="editorial" font-size="9.5" fill="#64748B">Zero-dependency fallback mode</text>
+    </g>
+  </g>
+
+  <!-- CONNECTOR CLIENT -> CORE -->
+  <g transform="translate(365, 230)">
+    <line x1="0" y1="0" x2="30" y2="0" stroke="#60A5FA" stroke-width="2" />
+    <polygon points="30,-4 36,0 30,4" fill="#60A5FA" />
+    <text x="15" y="-8" class="editorial" font-size="9" fill="#93C5FD" text-anchor="middle">UMD</text>
+  </g>
+
+  <!-- TIER 2: SHARED UMD LOGIC & SERVER (MIDDLE TIER) -->
+  <g transform="translate(405, 85)">
+    <rect x="0" y="0" width="310" height="365" rx="10" fill="url(#layer-server)" stroke="#E11D48" stroke-opacity="0.3" stroke-width="1.2" />
+    <!-- Header -->
+    <rect x="0" y="0" width="310" height="38" rx="10" fill="#2E121E" />
+    <rect x="0" y="26" width="310" height="12" fill="#2E121E" />
+    <circle cx="20" cy="19" r="4.5" fill="#F43F5E" />
+    <text x="34" y="23" class="editorial" font-size="11" font-weight="700" fill="#FDA4AF">SERVER &amp; UMD CORE</text>
+
+    <g transform="translate(16, 50)">
+      <!-- Box 1: Shared UMD Modules -->
+      <rect x="0" y="0" width="278" height="82" rx="6" fill="#1F0E17" stroke="#E11D48" stroke-opacity="0.3" stroke-width="1" />
+      <text x="12" y="18" class="editorial" font-size="11" font-weight="700" fill="#FDA4AF">Universal Module Definition (UMD)</text>
+      <text x="12" y="34" class="code" font-size="9.5" fill="#FECDD3">js/validation.js (Canonical Schemas)</text>
+      <text x="12" y="48" class="code" font-size="9.5" fill="#FECDD3">js/records.js (State Engine &amp; Math)</text>
+      <text x="12" y="64" class="editorial" font-size="9" fill="#9CA3AF">Runs identically in Browser &amp; Node.js</text>
+      <text x="12" y="76" class="editorial" font-size="9" fill="#10B981">✓ Zero discrepancy between client/server</text>
+
+      <!-- Box 2: Express Server -->
+      <rect x="0" y="92" width="278" height="76" rx="6" fill="#1A0D15" stroke="rgba(255,255,255,0.08)" stroke-width="1" />
+      <text x="12" y="110" class="editorial" font-size="11" font-weight="700" fill="#FFFFFF">Node.js + Express 4.21.2 API</text>
+      <text x="12" y="126" class="code" font-size="9" fill="#D4D4D8">/api/workers · /api/bookings</text>
+      <text x="12" y="140" class="code" font-size="9" fill="#D4D4D8">/api/ledger  · /api/feedback</text>
+      <text x="12" y="154" class="code" font-size="9" fill="#D4D4D8">/api/logins  · /api/health</text>
+
+      <!-- Box 3: Security & Mutation Queue -->
+      <rect x="0" y="178" width="278" height="112" rx="6" fill="#1A0D15" stroke="rgba(255,255,255,0.08)" stroke-width="1" />
+      <text x="12" y="196" class="editorial" font-size="10.5" font-weight="700" fill="#FDA4AF">Route Hardening &amp; Serialization</text>
+      <text x="12" y="214" class="editorial" font-size="9.5" fill="#A1A1AA">• Static block regex on server.js,</text>
+      <text x="12" y="228" class="editorial" font-size="9.5" fill="#A1A1AA">  .git, data/, scripts/ (HTTP 404)</text>
+      <text x="12" y="246" class="editorial" font-size="9.5" fill="#A1A1AA">• Serialized Async Write Queue</text>
+      <text x="12" y="260" class="code" font-size="9" fill="#FDA4AF">  queue = Promise.resolve()</text>
+      <text x="12" y="278" class="editorial" font-size="9" fill="#6EE7B7">✓ Zero write concurrency race conditions</text>
+    </g>
+  </g>
+
+  <!-- CONNECTOR SERVER -> STORAGE -->
+  <g transform="translate(720, 230)">
+    <line x1="0" y1="0" x2="35" y2="0" stroke="#059669" stroke-width="2" />
+    <polygon points="35,-4 41,0 35,4" fill="#059669" />
+    <text x="17" y="-8" class="editorial" font-size="9" fill="#34D399" text-anchor="middle">Atomic</text>
+  </g>
+
+  <!-- TIER 3: PERSISTENCE & FUTURE CLOUD (RIGHT TIER) -->
+  <g transform="translate(760, 85)">
+    <rect x="0" y="0" width="290" height="365" rx="10" fill="url(#layer-storage)" stroke="#059669" stroke-opacity="0.3" stroke-width="1.2" />
+    <!-- Header -->
+    <rect x="0" y="0" width="290" height="38" rx="10" fill="#0F2E1E" />
+    <rect x="0" y="26" width="290" height="12" fill="#0F2E1E" />
+    <circle cx="20" cy="19" r="4.5" fill="#10B981" />
+    <text x="34" y="23" class="editorial" font-size="11" font-weight="700" fill="#6EE7B7">ATOMIC DISK PERSISTENCE</text>
+
+    <g transform="translate(16, 50)">
+      <!-- Box 1: Atomic File Replacement -->
+      <rect x="0" y="0" width="258" height="100" rx="6" fill="#091810" stroke="#059669" stroke-opacity="0.4" stroke-width="1" />
+      <text x="12" y="18" class="editorial" font-size="11" font-weight="700" fill="#34D399">POSIX Atomic Replacement</text>
+      <text x="12" y="36" class="code" font-size="9.5" fill="#A7F3D0">1. write to file.tmp</text>
+      <text x="12" y="52" class="code" font-size="9.5" fill="#A7F3D0">2. fs.promises.rename()</text>
+      <text x="12" y="70" class="editorial" font-size="9.5" fill="#9CA3AF">Guarantees zero file corruption</text>
+      <text x="12" y="86" class="editorial" font-size="9.5" fill="#9CA3AF">on unexpected power loss/crash</text>
+
+      <!-- Box 2: JSON Files -->
+      <rect x="0" y="110" width="258" height="96" rx="6" fill="#091810" stroke="rgba(255,255,255,0.08)" stroke-width="1" />
+      <text x="12" y="128" class="editorial" font-size="10.5" font-weight="700" fill="#FFFFFF">data/*.json Storage Files</text>
+      <text x="12" y="146" class="code" font-size="9" fill="#6EE7B7">data/ledger.json   (entries)</text>
+      <text x="12" y="160" class="code" font-size="9" fill="#6EE7B7">data/workers.json  (idLast4 only)</text>
+      <text x="12" y="174" class="code" font-size="9" fill="#6EE7B7">data/bookings.json (requests)</text>
+      <text x="12" y="188" class="code" font-size="9" fill="#6EE7B7">data/feedback.json · logins.json</text>
+
+      <!-- Box 3: Future Planned Backend -->
+      <rect x="0" y="216" width="258" height="74" rx="6" fill="#14141A" stroke="rgba(255,255,255,0.06)" stroke-width="1" />
+      <text x="12" y="234" class="editorial" font-size="10.5" font-weight="700" fill="#9CA3AF">Future Cloud Phase (Planned)</text>
+      <text x="12" y="250" class="editorial" font-size="9.5" fill="#71717A">• MongoDB / Mongoose Schemas</text>
+      <text x="12" y="264" class="editorial" font-size="9.5" fill="#71717A">• Mobile OTP Authentication</text>
+      <text x="12" y="278" class="editorial" font-size="9.5" fill="#71717A">• WhatsApp Business API Webhooks</text>
+    </g>
+  </g>
+
+  <!-- ==================== FOOTER ==================== -->
+  <g transform="translate(50, 480)">
+    <text x="0" y="15" class="editorial" font-size="11" fill="#71717A">
+      Runtime verified on Node.js &gt;= 18.0.0 with Express 4.21.2 · Automatic offline graceful degradation.
+    </text>
+    <text x="1000" y="15" class="editorial" font-size="11" font-weight="600" fill="#38BDF8" text-anchor="end">
+      MODULAR DUAL-RUNTIME STACK
+    </text>
+  </g>
+</svg>

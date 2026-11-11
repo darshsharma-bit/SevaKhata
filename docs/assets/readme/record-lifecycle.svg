@@ -1,0 +1,188 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 500" width="1100" height="500" fill="none">
+  <defs>
+    <style>
+      .monumental { font-family: 'Bebas Neue', -apple-system, sans-serif; letter-spacing: 0.08em; text-transform: uppercase; }
+      .editorial { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+      .hindi { font-family: 'Noto Sans Devanagari', 'Inter', -apple-system, sans-serif; }
+    </style>
+    <linearGradient id="rl-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0E0E12" />
+      <stop offset="100%" stop-color="#060608" />
+    </linearGradient>
+  </defs>
+
+  <rect x="0" y="0" width="1100" height="500" rx="14" fill="url(#rl-bg)" stroke="#27272A" stroke-width="1.5" />
+
+  <!-- Grid lines -->
+  <g stroke="rgba(255, 255, 255, 0.03)" stroke-width="1">
+    <line x1="0" y1="65" x2="1100" y2="65" />
+    <line x1="0" y1="310" x2="1100" y2="310" />
+    <line x1="0" y1="460" x2="1100" y2="460" />
+  </g>
+
+  <!-- Header -->
+  <g transform="translate(50, 40)">
+    <text x="0" y="0" class="monumental" font-size="24" fill="#FFFFFF">RECORD STATE MACHINE &amp; DOMAIN ENTITY LIFECYCLE</text>
+    <text x="0" y="18" class="editorial" font-size="12" fill="#71717A">
+      Three strictly enforced lifecycle states governing financial weight and actor permissions.
+    </text>
+  </g>
+
+  <!-- ==================== TOP SECTION: THE 3 OPERATIONAL STATES ==================== -->
+
+  <!-- STATE 1: PENDING -->
+  <g transform="translate(50, 90)">
+    <rect x="0" y="0" width="280" height="195" rx="10" fill="#18150E" stroke="#F59E0B" stroke-width="1.4" />
+    <!-- Top badge -->
+    <rect x="16" y="16" width="90" height="22" rx="11" fill="#F59E0B" fill-opacity="0.2" />
+    <circle cx="28" cy="27" r="4" fill="#F59E0B" />
+    <text x="38" y="31" class="editorial" font-size="11" font-weight="700" fill="#FBBF24">PENDING</text>
+    
+    <text x="16" y="62" class="monumental" font-size="20" fill="#FFFFFF">₹0.00 BALANCE WEIGHT</text>
+    <text x="16" y="80" class="editorial" font-size="11" font-weight="600" fill="#F59E0B">Quarantined Awaiting Review</text>
+
+    <line x1="16" y1="92" x2="264" y2="92" stroke="rgba(255,255,255,0.08)" stroke-width="1" />
+    
+    <text x="16" y="112" class="editorial" font-size="11" fill="#D4D4D8">• Initial state for every newly logged record.</text>
+    <text x="16" y="130" class="editorial" font-size="11" fill="#D4D4D8">• Strict quarantine prevents unverified debt.</text>
+    <text x="16" y="148" class="editorial" font-size="11" fill="#D4D4D8">• Employer cannot confirm their own record.</text>
+    <text x="16" y="172" class="editorial" font-size="10.5" font-weight="600" fill="#71717A">Transitions to: CONFIRMED or DISPUTED</text>
+  </g>
+
+  <!-- TRANSITION 1: PENDING -> CONFIRMED -->
+  <g transform="translate(335, 140)">
+    <line x1="0" y1="0" x2="65" y2="0" stroke="#059669" stroke-width="2" />
+    <polygon points="65,-4 73,0 65,4" fill="#059669" />
+    <text x="35" y="-10" class="hindi" font-size="11" font-weight="700" fill="#34D399" text-anchor="middle">सही है (✓)</text>
+    <text x="35" y="18" class="editorial" font-size="9" fill="#10B981" text-anchor="middle">Helper confirms</text>
+  </g>
+
+  <!-- STATE 2: CONFIRMED -->
+  <g transform="translate(415, 90)">
+    <rect x="0" y="0" width="280" height="195" rx="10" fill="#0D1E15" stroke="#059669" stroke-width="1.5" />
+    <!-- Top badge -->
+    <rect x="16" y="16" width="105" height="22" rx="11" fill="#059669" fill-opacity="0.25" />
+    <circle cx="28" cy="27" r="4" fill="#10B981" />
+    <text x="38" y="31" class="editorial" font-size="11" font-weight="700" fill="#34D399">CONFIRMED</text>
+
+    <text x="16" y="62" class="monumental" font-size="20" fill="#FFFFFF">COMMITTED TO HISAAB</text>
+    <text x="16" y="80" class="editorial" font-size="11" font-weight="600" fill="#34D399">Mutually Verified Official Truth</text>
+
+    <line x1="16" y1="92" x2="264" y2="92" stroke="rgba(255,255,255,0.08)" stroke-width="1" />
+
+    <text x="16" y="112" class="editorial" font-size="11" fill="#D1FAE5">• Full nominal amount contributes to Hisaab.</text>
+    <text x="16" y="130" class="editorial" font-size="11" fill="#D1FAE5">• Confirmed is final by design (immutable).</text>
+    <text x="16" y="148" class="editorial" font-size="11" fill="#D1FAE5">• Both devices synchronized with receipt hash.</text>
+    <text x="16" y="172" class="editorial" font-size="10.5" font-weight="600" fill="#34D399">Terminal State · Mutually Sealed</text>
+  </g>
+
+  <!-- TRANSITION 2: PENDING -> DISPUTED -->
+  <g transform="translate(335, 220)">
+    <path d="M 0 0 L 40 0 L 40 30 L 440 30 L 440 0" stroke="#E11D48" stroke-width="1.8" stroke-dasharray="3 3" fill="none" />
+    <polygon points="440,0 436,-6 444,-6" fill="#E11D48" />
+    <text x="240" y="24" class="hindi" font-size="11" font-weight="700" fill="#FB7185" text-anchor="middle">गलत है (✕) Helper disputes with reason</text>
+  </g>
+
+  <!-- STATE 3: DISPUTED -->
+  <g transform="translate(775, 90)">
+    <rect x="0" y="0" width="275" height="195" rx="10" fill="#1C0E14" stroke="#E11D48" stroke-width="1.4" />
+    <rect x="16" y="16" width="95" height="22" rx="11" fill="#E11D48" fill-opacity="0.2" />
+    <circle cx="28" cy="27" r="4" fill="#F43F5E" />
+    <text x="38" y="31" class="editorial" font-size="11" font-weight="700" fill="#FB7185">DISPUTED</text>
+
+    <text x="16" y="62" class="monumental" font-size="20" fill="#FFFFFF">QUARANTINED HOLD</text>
+    <text x="16" y="80" class="editorial" font-size="11" font-weight="600" fill="#FB7185">Mandatory Reason (≥10 chars)</text>
+
+    <line x1="16" y1="92" x2="259" y2="92" stroke="rgba(255,255,255,0.08)" stroke-width="1" />
+
+    <text x="16" y="112" class="editorial" font-size="11" fill="#FFE4E6">• Balance weight resets to ₹0.00.</text>
+    <text x="16" y="130" class="editorial" font-size="11" fill="#FFE4E6">• Contested note stored in audit history.</text>
+    <text x="16" y="148" class="editorial" font-size="11" fill="#FFE4E6">• Employer receives correction notification.</text>
+    <text x="16" y="172" class="editorial" font-size="10.5" font-weight="600" fill="#F43F5E">Resubmit loop returns to PENDING</text>
+  </g>
+
+  <!-- RESUBMIT LOOP: DISPUTED -> PENDING -->
+  <g transform="translate(775, 75)">
+    <path d="M 130 0 L 130 -30 L -590 -30 L -590 10" stroke="#38BDF8" stroke-width="1.6" stroke-dasharray="4 3" fill="none" />
+    <polygon points="-590,10 -594,4 -586,4" fill="#38BDF8" />
+    <text x="-230" y="-36" class="editorial" font-size="10" font-weight="600" fill="#38BDF8" text-anchor="middle">
+      Employer corrects amount/note &amp; resubmits (PATCH /api/ledger/:id) ──▶ Resets to PENDING
+    </text>
+  </g>
+
+  <!-- ==================== BOTTOM SECTION: 7 DOMAIN ENTRY TYPES ==================== -->
+  <g transform="translate(50, 325)">
+    <text x="0" y="0" class="editorial" font-size="12" font-weight="700" fill="#E4E4E7">7 DOMAIN ENTRY TYPES &amp; FINANCIAL POLARITY</text>
+    
+    <!-- Table Grid container -->
+    <g transform="translate(0, 15)">
+      <!-- Row 1 Headers -->
+      <rect x="0" y="0" width="1000" height="24" rx="4" fill="#181820" />
+      <text x="16" y="16" class="editorial" font-size="10" font-weight="700" fill="#71717A">DOMAIN TYPE</text>
+      <text x="140" y="16" class="editorial" font-size="10" font-weight="700" fill="#71717A">POLARITY</text>
+      <text x="240" y="16" class="editorial" font-size="10" font-weight="700" fill="#71717A">IMPACT ON HISAAB</text>
+      <text x="440" y="16" class="editorial" font-size="10" font-weight="700" fill="#71717A">BUSINESS DESCRIPTION</text>
+      <text x="750" y="16" class="editorial" font-size="10" font-weight="700" fill="#71717A">EXAMPLE USE CASE</text>
+
+      <!-- Row 1: WORKED -->
+      <g transform="translate(0, 26)">
+        <rect x="0" y="0" width="1000" height="20" fill="#111115" />
+        <text x="16" y="14" class="editorial" font-size="10" font-weight="700" fill="#10B981">WORKED</text>
+        <text x="140" y="14" class="editorial" font-size="10" font-weight="600" fill="#10B981">+Credit</text>
+        <text x="240" y="14" class="editorial" font-size="10" fill="#D4D4D8">Increases confirmed payable (+1.0x)</text>
+        <text x="440" y="14" class="editorial" font-size="10" fill="#A1A1AA">Standard full-day household labor</text>
+        <text x="750" y="14" class="editorial" font-size="10" fill="#71717A">Daily cooking &amp; dusting (₹500)</text>
+      </g>
+
+      <!-- Row 2: HALF_DAY -->
+      <g transform="translate(0, 48)">
+        <rect x="0" y="0" width="1000" height="20" fill="#141418" />
+        <text x="16" y="14" class="editorial" font-size="10" font-weight="700" fill="#10B981">HALF_DAY</text>
+        <text x="140" y="14" class="editorial" font-size="10" font-weight="600" fill="#10B981">+Credit</text>
+        <text x="240" y="14" class="editorial" font-size="10" fill="#D4D4D8">Increases confirmed payable (+0.5x)</text>
+        <text x="440" y="14" class="editorial" font-size="10" fill="#A1A1AA">Partial shift or early departure</text>
+        <text x="750" y="14" class="editorial" font-size="10" fill="#71717A">Morning chores only (₹250)</text>
+      </g>
+
+      <!-- Row 3: ABSENT -->
+      <g transform="translate(0, 70)">
+        <rect x="0" y="0" width="1000" height="20" fill="#111115" />
+        <text x="16" y="14" class="editorial" font-size="10" font-weight="700" fill="#71717A">ABSENT</text>
+        <text x="140" y="14" class="editorial" font-size="10" font-weight="600" fill="#71717A">Zero</text>
+        <text x="240" y="14" class="editorial" font-size="10" fill="#71717A">No financial weight (₹0.00)</text>
+        <text x="440" y="14" class="editorial" font-size="10" fill="#A1A1AA">Leave of absence with recorded date</text>
+        <text x="750" y="14" class="editorial" font-size="10" fill="#71717A">Pre-notified sick leave (₹0)</text>
+      </g>
+
+      <!-- Row 4: PAYMENT -->
+      <g transform="translate(0, 92)">
+        <rect x="0" y="0" width="1000" height="20" fill="#141418" />
+        <text x="16" y="14" class="editorial" font-size="10" font-weight="700" fill="#F43F5E">PAYMENT</text>
+        <text x="140" y="14" class="editorial" font-size="10" font-weight="600" fill="#F43F5E">-Debit</text>
+        <text x="240" y="14" class="editorial" font-size="10" fill="#D4D4D8">Decreases running payable (-₹)</text>
+        <text x="440" y="14" class="editorial" font-size="10" fill="#A1A1AA">Salary disbursement or bank transfer</text>
+        <text x="750" y="14" class="editorial" font-size="10" fill="#71717A">Mid-month cash disbursement (-₹6,000)</text>
+      </g>
+
+      <!-- Row 5: ADVANCE -->
+      <g transform="translate(0, 114)">
+        <rect x="0" y="0" width="1000" height="20" fill="#111115" />
+        <text x="16" y="14" class="editorial" font-size="10" font-weight="700" fill="#F43F5E">ADVANCE</text>
+        <text x="140" y="14" class="editorial" font-size="10" font-weight="600" fill="#F43F5E">-Debit</text>
+        <text x="240" y="14" class="editorial" font-size="10" fill="#D4D4D8">Decreases running payable (-₹)</text>
+        <text x="440" y="14" class="editorial" font-size="10" fill="#A1A1AA">Early cash handover (pesgi)</text>
+        <text x="750" y="14" class="editorial" font-size="10" fill="#71717A">Emergency medical/school fee (-₹1,000)</text>
+      </g>
+
+      <!-- Row 6: BONUS / ADJUSTMENT -->
+      <g transform="translate(0, 136)">
+        <rect x="0" y="0" width="1000" height="20" fill="#141418" />
+        <text x="16" y="14" class="editorial" font-size="10" font-weight="700" fill="#3B82F6">BONUS / ADJ</text>
+        <text x="140" y="14" class="editorial" font-size="10" font-weight="600" fill="#3B82F6">±Variable</text>
+        <text x="240" y="14" class="editorial" font-size="10" fill="#D4D4D8">Signed adjustment or bonus credit</text>
+        <text x="440" y="14" class="editorial" font-size="10" fill="#A1A1AA">Festivals, special catering, agreed deltas</text>
+        <text x="750" y="14" class="editorial" font-size="10" fill="#71717A">Diwali gift (+₹1,000), rate reconciliation</text>
+      </g>
+    </g>
+  </g>
+</svg>

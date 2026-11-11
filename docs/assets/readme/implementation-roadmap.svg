@@ -1,0 +1,173 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 500" width="1100" height="500" fill="none">
+  <defs>
+    <style>
+      .monumental { font-family: 'Bebas Neue', -apple-system, sans-serif; letter-spacing: 0.08em; text-transform: uppercase; }
+      .editorial { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+      .code { font-family: 'SFMono-Regular', Consolas, Menlo, monospace; }
+    </style>
+    <linearGradient id="ir-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0E0E12" />
+      <stop offset="100%" stop-color="#060608" />
+    </linearGradient>
+    <linearGradient id="phase-done" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#12251B" />
+      <stop offset="100%" stop-color="#0B1711" />
+    </linearGradient>
+    <linearGradient id="phase-planned" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1A1A24" />
+      <stop offset="100%" stop-color="#111116" />
+    </linearGradient>
+  </defs>
+
+  <rect x="0" y="0" width="1100" height="500" rx="14" fill="url(#ir-bg)" stroke="#27272A" stroke-width="1.5" />
+
+  <!-- Blueprint Lines -->
+  <g stroke="rgba(255, 255, 255, 0.03)" stroke-width="1">
+    <line x1="0" y1="65" x2="1100" y2="65" />
+    <line x1="0" y1="450" x2="1100" y2="450" />
+  </g>
+
+  <!-- Header -->
+  <g transform="translate(50, 40)">
+    <text x="0" y="0" class="monumental" font-size="24" fill="#FFFFFF">PROJECT CHARTER, EVALUATION PHASES &amp; ROADMAP</text>
+    <text x="0" y="18" class="editorial" font-size="12" fill="#71717A">
+      Academic allocation breakdown, verified delivered capabilities, and approved future engineering scope.
+    </text>
+  </g>
+
+  <!-- ==================== 5 PHASE CARDS HORIZONTAL TIMELINE ==================== -->
+
+  <!-- PHASE 1 CARD: FRONTEND FOUNDATION -->
+  <g transform="translate(50, 85)">
+    <rect x="0" y="0" width="190" height="340" rx="10" fill="url(#phase-done)" stroke="#059669" stroke-width="1.2" />
+    <rect x="12" y="14" width="76" height="20" rx="10" fill="#059669" fill-opacity="0.25" />
+    <text x="50" y="28" class="editorial" font-size="9.5" font-weight="700" fill="#34D399" text-anchor="middle">PHASE 1 (30%)</text>
+    <circle cx="170" cy="24" r="5" fill="#10B981" />
+
+    <text x="12" y="58" class="editorial" font-size="14" font-weight="700" fill="#FFFFFF">Frontend Foundation</text>
+    <text x="12" y="74" class="editorial" font-size="10" font-weight="600" fill="#10B981">DELIVERED &amp; VERIFIED</text>
+
+    <line x1="12" y1="84" x2="178" y2="84" stroke="rgba(255,255,255,0.08)" stroke-width="1" />
+
+    <text x="12" y="104" class="editorial" font-size="10" fill="#D1FAE5">• 6 Semantic HTML5 Pages</text>
+    <text x="12" y="122" class="editorial" font-size="10" fill="#D1FAE5">• Vanilla CSS3 Design Tokens</text>
+    <text x="12" y="140" class="editorial" font-size="10" fill="#D1FAE5">• 4-column Responsive Grid</text>
+    <text x="12" y="158" class="editorial" font-size="10" fill="#D1FAE5">• ARIA Accessibility Landmarks</text>
+    <text x="12" y="176" class="editorial" font-size="10" fill="#D1FAE5">• Authentic Hindi Typography</text>
+    <text x="12" y="194" class="editorial" font-size="10" fill="#D1FAE5">• 8 Figma Vector Artboards</text>
+    <text x="12" y="212" class="editorial" font-size="10" fill="#D1FAE5">• Zero broken '#' links</text>
+
+    <!-- Verification Pill -->
+    <rect x="12" y="285" width="166" height="40" rx="6" fill="#064E3B" />
+    <text x="20" y="301" class="editorial" font-size="9" font-weight="700" fill="#A7F3D0">CHARTER MILESTONE:</text>
+    <text x="20" y="316" class="editorial" font-size="9.5" fill="#FFFFFF">100% Verified in Eval 1 &amp; 2</text>
+  </g>
+
+  <!-- PHASE 2 CARD: JS & INTERACTION -->
+  <g transform="translate(255, 85)">
+    <rect x="0" y="0" width="190" height="340" rx="10" fill="url(#phase-done)" stroke="#059669" stroke-width="1.2" />
+    <rect x="12" y="14" width="76" height="20" rx="10" fill="#059669" fill-opacity="0.25" />
+    <text x="50" y="28" class="editorial" font-size="9.5" font-weight="700" fill="#34D399" text-anchor="middle">PHASE 2 (30%)</text>
+    <circle cx="170" cy="24" r="5" fill="#10B981" />
+
+    <text x="12" y="58" class="editorial" font-size="14" font-weight="700" fill="#FFFFFF">Interaction &amp; Math</text>
+    <text x="12" y="74" class="editorial" font-size="10" font-weight="600" fill="#10B981">DELIVERED &amp; VERIFIED</text>
+
+    <line x1="12" y1="84" x2="178" y2="84" stroke="rgba(255,255,255,0.08)" stroke-width="1" />
+
+    <text x="12" y="104" class="editorial" font-size="10" fill="#D1FAE5">• Real-time regex validation</text>
+    <text x="12" y="122" class="editorial" font-size="10" fill="#D1FAE5">• Aadhaar/PAN sanitization</text>
+    <text x="12" y="140" class="editorial" font-size="10" fill="#D1FAE5">• Consensus State Machine</text>
+    <text x="12" y="158" class="editorial" font-size="10" fill="#D1FAE5">• Dynamic Hisaab Math</text>
+    <text x="12" y="176" class="editorial" font-size="10" fill="#D1FAE5">• Transparent Trust Score (0-100)</text>
+    <text x="12" y="194" class="editorial" font-size="10" fill="#D1FAE5">• EN ⇄ हिं Language Engine</text>
+    <text x="12" y="212" class="editorial" font-size="10" fill="#D1FAE5">• Ease-out Counter Ticker</text>
+
+    <rect x="12" y="285" width="166" height="40" rx="6" fill="#064E3B" />
+    <text x="20" y="301" class="editorial" font-size="9" font-weight="700" fill="#A7F3D0">CHARTER MILESTONE:</text>
+    <text x="20" y="316" class="editorial" font-size="9.5" fill="#FFFFFF">100% Verified in Eval 2</text>
+  </g>
+
+  <!-- PHASE 3 CARD: FULL-STACK JSON API -->
+  <g transform="translate(460, 85)">
+    <rect x="0" y="0" width="190" height="340" rx="10" fill="url(#phase-done)" stroke="#059669" stroke-width="1.2" />
+    <rect x="12" y="14" width="76" height="20" rx="10" fill="#059669" fill-opacity="0.25" />
+    <text x="50" y="28" class="editorial" font-size="9.5" font-weight="700" fill="#34D399" text-anchor="middle">PHASE 3 (40%)</text>
+    <circle cx="170" cy="24" r="5" fill="#10B981" />
+
+    <text x="12" y="58" class="editorial" font-size="14" font-weight="700" fill="#FFFFFF">JSON API &amp; Server</text>
+    <text x="12" y="74" class="editorial" font-size="10" font-weight="600" fill="#10B981">DELIVERED &amp; VERIFIED</text>
+
+    <line x1="12" y1="84" x2="178" y2="84" stroke="rgba(255,255,255,0.08)" stroke-width="1" />
+
+    <text x="12" y="104" class="editorial" font-size="10" fill="#D1FAE5">• Node.js + Express 4.21.2</text>
+    <text x="12" y="122" class="editorial" font-size="10" fill="#D1FAE5">• Serialized Mutation Queue</text>
+    <text x="12" y="140" class="editorial" font-size="10" fill="#D1FAE5">• POSIX Atomic File Writes</text>
+    <text x="12" y="158" class="editorial" font-size="10" fill="#D1FAE5">• /api/workers, bookings, ledger</text>
+    <text x="12" y="176" class="editorial" font-size="10" fill="#D1FAE5">• Zero-dep Smoke Test Suite</text>
+    <text x="12" y="194" class="editorial" font-size="10" fill="#D1FAE5">• Seed Synchronizer Script</text>
+    <text x="12" y="212" class="editorial" font-size="10" fill="#D1FAE5">• Static Route Hardening</text>
+
+    <rect x="12" y="285" width="166" height="40" rx="6" fill="#064E3B" />
+    <text x="20" y="301" class="editorial" font-size="9" font-weight="700" fill="#A7F3D0">EVALUATION 2 GOAL:</text>
+    <text x="20" y="316" class="editorial" font-size="9.5" fill="#FFFFFF">Live Saving &amp; Smoke Tests</text>
+  </g>
+
+  <!-- PHASE 4 CARD: PLANNED CLOUD BACKEND -->
+  <g transform="translate(665, 85)">
+    <rect x="0" y="0" width="180" height="340" rx="10" fill="url(#phase-planned)" stroke="#6366F1" stroke-opacity="0.4" stroke-width="1.2" />
+    <rect x="12" y="14" width="76" height="20" rx="10" fill="#6366F1" fill-opacity="0.2" />
+    <text x="50" y="28" class="editorial" font-size="9.5" font-weight="700" fill="#818CF8" text-anchor="middle">PHASE 4</text>
+    <circle cx="160" cy="24" r="4.5" fill="#6366F1" />
+
+    <text x="12" y="58" class="editorial" font-size="14" font-weight="700" fill="#FFFFFF">Database &amp; Auth</text>
+    <text x="12" y="74" class="editorial" font-size="10" font-weight="600" fill="#818CF8">APPROVED CHARTER</text>
+
+    <line x1="12" y1="84" x2="168" y2="84" stroke="rgba(255,255,255,0.08)" stroke-width="1" />
+
+    <text x="12" y="104" class="editorial" font-size="10" fill="#C7D2FE">• Cloud Database (MongoDB)</text>
+    <text x="12" y="122" class="editorial" font-size="10" fill="#C7D2FE">• Mongoose Folio Schemas</text>
+    <text x="12" y="140" class="editorial" font-size="10" fill="#C7D2FE">• Mobile OTP SMS / WhatsApp</text>
+    <text x="12" y="158" class="editorial" font-size="10" fill="#C7D2FE">• Cryptographic JWT Sessions</text>
+    <text x="12" y="176" class="editorial" font-size="10" fill="#C7D2FE">• Role-Based Access Control</text>
+    <text x="12" y="194" class="editorial" font-size="10" fill="#C7D2FE">• Dynamic Handlebars SSR</text>
+
+    <rect x="12" y="285" width="156" height="40" rx="6" fill="#1E1B4B" />
+    <text x="20" y="301" class="editorial" font-size="9" font-weight="700" fill="#A5B4FC">TARGET STATUS:</text>
+    <text x="20" y="316" class="editorial" font-size="9.5" fill="#FFFFFF">Phase 3 Full Stack Target</text>
+  </g>
+
+  <!-- PHASE 5 CARD: FUTURE EXPANSION -->
+  <g transform="translate(860, 85)">
+    <rect x="0" y="0" width="190" height="340" rx="10" fill="url(#phase-planned)" stroke="#E11D48" stroke-opacity="0.3" stroke-width="1.2" />
+    <rect x="12" y="14" width="76" height="20" rx="10" fill="#E11D48" fill-opacity="0.2" />
+    <text x="50" y="28" class="editorial" font-size="9.5" font-weight="700" fill="#FB7185" text-anchor="middle">FUTURE SCOPE</text>
+    <circle cx="170" cy="24" r="4.5" fill="#E11D48" />
+
+    <text x="12" y="58" class="editorial" font-size="14" font-weight="700" fill="#FFFFFF">WhatsApp &amp; UPI</text>
+    <text x="12" y="74" class="editorial" font-size="10" font-weight="600" fill="#FB7185">FUTURE HORIZON</text>
+
+    <line x1="12" y1="84" x2="178" y2="84" stroke="rgba(255,255,255,0.08)" stroke-width="1" />
+
+    <text x="12" y="104" class="editorial" font-size="10" fill="#FECDD3">• WhatsApp Business Alerts</text>
+    <text x="12" y="122" class="editorial" font-size="10" fill="#FECDD3">• One-tap Verification Links</text>
+    <text x="12" y="140" class="editorial" font-size="10" fill="#FECDD3">• Pre-filled UPI Payment Intent</text>
+    <text x="12" y="158" class="editorial" font-size="10" fill="#FECDD3">• Sealed PDF Hisaab Invoices</text>
+    <text x="12" y="176" class="editorial" font-size="10" fill="#FECDD3">• Voice Notes in Hindi</text>
+    <text x="12" y="194" class="editorial" font-size="10" fill="#FECDD3">• Flutter / React Native App</text>
+
+    <rect x="12" y="285" width="166" height="40" rx="6" fill="#4C0519" />
+    <text x="20" y="301" class="editorial" font-size="9" font-weight="700" fill="#FDA4AF">PRODUCT BOUNDARY:</text>
+    <text x="20" y="316" class="editorial" font-size="9.5" fill="#FFFFFF">Records only; not a bank</text>
+  </g>
+
+  <!-- ==================== FOOTER ==================== -->
+  <g transform="translate(50, 465)">
+    <text x="0" y="15" class="editorial" font-size="11" fill="#71717A">
+      Academic weights: Phase 1 (30%) + Phase 2 (30%) + Phase 3 (40%) = 100% Core Scope.
+    </text>
+    <text x="1000" y="15" class="editorial" font-size="11" font-weight="600" fill="#059669" text-anchor="end">
+      100% ALIGNED WITH PROJECT CHARTER
+    </text>
+  </g>
+</svg>
