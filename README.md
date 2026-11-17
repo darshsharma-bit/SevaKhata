@@ -28,6 +28,12 @@
 </p>
 
 <p align="center">
+  <a href="https://skillicons.dev">
+    <img src="https://skillicons.dev/icons?i=html,css,js,nodejs,express,mongodb,figma,postman,git,github" alt="Verified Technologies: HTML5, CSS3, JavaScript ES6+, Node.js, Express, MongoDB, Figma, Postman, Git, GitHub" />
+  </a>
+</p>
+
+<p align="center">
   <a href="#quick-start--evaluation-guide">Quick Start</a> •
   <a href="#project-overview">Project Overview</a> •
   <a href="#the-problem">The Problem</a> •
@@ -724,6 +730,9 @@ SevaKhata/
 │   └── workers.json                   # Registered helper profiles and trust scores
 ├── design/                            # Figma vector suite & design specifications
 │   └── figma-svgs/                    # 100% editable Figma-compatible vector artboards
+├── docs/                              # Project documentation artwork
+│   └── assets/
+│       └── readme/                    # Architectural & workflow SVG diagrams
 ├── models/                            # Mongoose database models (MongoDB mode)
 │   ├── Booking.js                     # Household booking schema
 │   ├── Feedback.js                    # Support ticket & review schema

@@ -1,0 +1,182 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 520" width="1100" height="520" fill="none">
+  <defs>
+    <style>
+      .monumental { font-family: 'Bebas Neue', -apple-system, sans-serif; letter-spacing: 0.08em; text-transform: uppercase; }
+      .editorial { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+      .hindi { font-family: 'Noto Sans Devanagari', 'Inter', -apple-system, sans-serif; }
+    </style>
+    <linearGradient id="cw-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0E0E12" />
+      <stop offset="100%" stop-color="#060608" />
+    </linearGradient>
+    <linearGradient id="step-card-bg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#181820" />
+      <stop offset="100%" stop-color="#121216" />
+    </linearGradient>
+  </defs>
+
+  <!-- Frame Box -->
+  <rect x="0" y="0" width="1100" height="520" rx="14" fill="url(#cw-bg)" stroke="#27272A" stroke-width="1.5" />
+
+  <!-- Blueprint Lines -->
+  <g stroke="rgba(255, 255, 255, 0.03)" stroke-width="1">
+    <line x1="0" y1="70" x2="1100" y2="70" />
+    <line x1="0" y1="460" x2="1100" y2="460" />
+    <line x1="280" y1="70" x2="280" y2="460" />
+    <line x1="550" y1="70" x2="550" y2="460" />
+    <line x1="820" y1="70" x2="820" y2="460" />
+  </g>
+
+  <!-- Header -->
+  <g transform="translate(50, 42)">
+    <text x="0" y="0" class="monumental" font-size="24" fill="#FFFFFF">THE BILATERAL CONSENSUS ARCHITECTURE</text>
+    <text x="0" y="18" class="editorial" font-size="12" fill="#71717A">
+      Asymmetric recording and symmetric acknowledgement workflow ensuring mutually verified balance commitments.
+    </text>
+    <rect x="910" y="-18" width="140" height="24" rx="12" fill="#059669" fill-opacity="0.15" stroke="#059669" stroke-width="1" />
+    <circle cx="924" cy="-6" r="3.5" fill="#10B981" />
+    <text x="934" y="-3" class="editorial" font-size="10" font-weight="700" fill="#34D399">CONSENSUS ENGINE</text>
+  </g>
+
+  <!-- ==================== 4 STEP COLUMNS ==================== -->
+
+  <!-- STEP 1: RECORDING PHASE -->
+  <g transform="translate(50, 95)">
+    <rect x="0" y="0" width="230" height="340" rx="10" fill="url(#step-card-bg)" stroke="#27272A" stroke-width="1.2" />
+    <!-- Step Badge -->
+    <rect x="16" y="16" width="64" height="20" rx="10" fill="#3B82F6" fill-opacity="0.2" />
+    <text x="48" y="30" class="editorial" font-size="10" font-weight="700" fill="#60A5FA" text-anchor="middle">STEP 01</text>
+    
+    <text x="16" y="62" class="editorial" font-size="15" font-weight="700" fill="#FFFFFF">Recording Phase</text>
+    <text x="16" y="80" class="editorial" font-size="11" font-weight="500" fill="#9CA3AF">Actor: Employer</text>
+
+    <!-- Content Box -->
+    <rect x="16" y="98" width="198" height="150" rx="6" fill="#0C0C0E" stroke="rgba(255,255,255,0.06)" stroke-width="1" />
+    <text x="26" y="120" class="editorial" font-size="11" font-weight="600" fill="#D4D4D8">Initiated Entries:</text>
+    <text x="26" y="140" class="editorial" font-size="10" fill="#A1A1AA">• Daily Attendance (Haaziri)</text>
+    <text x="26" y="158" class="editorial" font-size="10" fill="#A1A1AA">• Half-Day / Overtime</text>
+    <text x="26" y="176" class="editorial" font-size="10" fill="#A1A1AA">• Cash Advance (Pesgi)</text>
+    <text x="26" y="194" class="editorial" font-size="10" fill="#A1A1AA">• Mid-month Payments</text>
+    <text x="26" y="212" class="editorial" font-size="10" fill="#A1A1AA">• Special Chores / Bonus</text>
+    <text x="26" y="232" class="editorial" font-size="10" fill="#A1A1AA">• Mutual Adjustments</text>
+
+    <!-- Result -->
+    <rect x="16" y="260" width="198" height="64" rx="6" fill="#1C1C24" />
+    <text x="26" y="280" class="editorial" font-size="10" font-weight="700" fill="#E4E4E7">SYSTEM ACTION:</text>
+    <text x="26" y="296" class="editorial" font-size="10" fill="#71717A">Saves record to disk</text>
+    <text x="26" y="310" class="editorial" font-size="10" font-weight="600" fill="#F59E0B">Sets status = "pending"</text>
+  </g>
+
+  <!-- CONNECTOR 1 -> 2 -->
+  <g transform="translate(285, 255)">
+    <line x1="0" y1="0" x2="30" y2="0" stroke="#F59E0B" stroke-width="2" stroke-dasharray="3 3" />
+    <polygon points="30,-4 36,0 30,4" fill="#F59E0B" />
+  </g>
+
+  <!-- STEP 2: QUARANTINE INVARIANT -->
+  <g transform="translate(325, 95)">
+    <rect x="0" y="0" width="230" height="340" rx="10" fill="url(#step-card-bg)" stroke="#F59E0B" stroke-opacity="0.4" stroke-width="1.2" />
+    <rect x="16" y="16" width="64" height="20" rx="10" fill="#F59E0B" fill-opacity="0.2" />
+    <text x="48" y="30" class="editorial" font-size="10" font-weight="700" fill="#FBBF24" text-anchor="middle">STEP 02</text>
+    
+    <text x="16" y="62" class="editorial" font-size="15" font-weight="700" fill="#FFFFFF">Quarantine Invariant</text>
+    <text x="16" y="80" class="editorial" font-size="11" font-weight="500" fill="#F59E0B">Zero-Liability Hold</text>
+
+    <!-- State Indicator Card -->
+    <rect x="16" y="98" width="198" height="74" rx="6" fill="#1C150A" stroke="#F59E0B" stroke-opacity="0.3" stroke-width="1" />
+    <circle cx="32" cy="120" r="5" fill="#F59E0B" />
+    <text x="44" y="124" class="editorial" font-size="12" font-weight="700" fill="#FBBF24">STATUS: PENDING</text>
+    <text x="26" y="146" class="monumental" font-size="22" fill="#F59E0B">₹0.00 WEIGHT</text>
+    <text x="26" y="162" class="editorial" font-size="10" fill="#D97706">Excluded from running Hisaab</text>
+
+    <!-- Quarantine Rule Explanation -->
+    <rect x="16" y="184" width="198" height="140" rx="6" fill="#0C0C0E" stroke="rgba(255,255,255,0.06)" stroke-width="1" />
+    <text x="26" y="204" class="editorial" font-size="10" font-weight="700" fill="#E4E4E7">INVARIANT RULES:</text>
+    <text x="26" y="222" class="editorial" font-size="10" fill="#A1A1AA">• Cannot be committed</text>
+    <text x="26" y="238" class="editorial" font-size="10" fill="#A1A1AA">  unilaterally by employer.</text>
+    <text x="26" y="256" class="editorial" font-size="10" fill="#A1A1AA">• Employer confirm blocked</text>
+    <text x="26" y="272" class="editorial" font-size="10" fill="#A1A1AA">  with HTTP 403 Forbidden.</text>
+    <text x="26" y="290" class="editorial" font-size="10" fill="#A1A1AA">• Client status override</text>
+    <text x="26" y="306" class="editorial" font-size="10" fill="#A1A1AA">  strictly rejected by server.</text>
+  </g>
+
+  <!-- CONNECTOR 2 -> 3 -->
+  <g transform="translate(560, 255)">
+    <line x1="0" y1="0" x2="30" y2="0" stroke="#34D399" stroke-width="2" stroke-dasharray="3 3" />
+    <polygon points="30,-4 36,0 30,4" fill="#34D399" />
+  </g>
+
+  <!-- STEP 3: HELPER VERIFICATION -->
+  <g transform="translate(600, 95)">
+    <rect x="0" y="0" width="210" height="340" rx="10" fill="url(#step-card-bg)" stroke="#27272A" stroke-width="1.2" />
+    <rect x="16" y="16" width="64" height="20" rx="10" fill="#10B981" fill-opacity="0.2" />
+    <text x="48" y="30" class="editorial" font-size="10" font-weight="700" fill="#34D399" text-anchor="middle">STEP 03</text>
+    
+    <text x="16" y="62" class="editorial" font-size="15" font-weight="700" fill="#FFFFFF">Helper Review</text>
+    <text x="16" y="80" class="editorial" font-size="11" font-weight="500" fill="#9CA3AF">Actor: Domestic Worker</text>
+
+    <!-- Mobile view representation -->
+    <rect x="16" y="98" width="178" height="150" rx="8" fill="#0C0C0E" stroke="rgba(255,255,255,0.08)" stroke-width="1" />
+    <text x="26" y="120" class="hindi" font-size="11" font-weight="600" fill="#E4E4E7">समीक्षा करें (Review)</text>
+    <rect x="24" y="130" width="162" height="42" rx="4" fill="#16161D" />
+    <text x="32" y="146" class="hindi" font-size="10" fill="#A1A1AA">काम: पूरा दिन</text>
+    <text x="32" y="162" class="editorial" font-size="10" font-weight="700" fill="#10B981">रकम: ₹500</text>
+
+    <text x="26" y="192" class="editorial" font-size="10" font-weight="600" fill="#9CA3AF">Bilingual Mobile UX:</text>
+    <text x="26" y="208" class="editorial" font-size="9.5" fill="#71717A">• Plain Hindi / Devanagari</text>
+    <text x="26" y="224" class="editorial" font-size="9.5" fill="#71717A">• 48px touch targets</text>
+    <text x="26" y="240" class="editorial" font-size="9.5" fill="#71717A">• Zero login friction</text>
+
+    <!-- Action Prompt -->
+    <rect x="16" y="260" width="178" height="64" rx="6" fill="#1C1C24" />
+    <text x="26" y="280" class="editorial" font-size="10" font-weight="700" fill="#E4E4E7">INDEPENDENT DECISION:</text>
+    <text x="26" y="296" class="editorial" font-size="10" fill="#71717A">Helper holds sovereign</text>
+    <text x="26" y="310" class="editorial" font-size="10" fill="#34D399">power to Confirm or Dispute</text>
+  </g>
+
+  <!-- SPLIT CONNECTOR 3 -> 4 (TOP TO CONFIRM, BOTTOM TO DISPUTE) -->
+  <g transform="translate(815, 230)">
+    <!-- Branch Up to Confirm -->
+    <path d="M0 25 L 20 25 L 20 -45 L 35 -45" stroke="#059669" stroke-width="2" fill="none" />
+    <polygon points="35,-49 41,-45 35,-41" fill="#059669" />
+    <!-- Branch Down to Dispute -->
+    <path d="M0 25 L 20 25 L 20 95 L 35 95" stroke="#E11D48" stroke-width="2" fill="none" />
+    <polygon points="35,91 41,95 35,99" fill="#E11D48" />
+  </g>
+
+  <!-- STEP 4: DUAL RESOLUTION BRANCHES -->
+  <g transform="translate(860, 95)">
+    <!-- PATH A: CONFIRMED (TOP CARD) -->
+    <rect x="0" y="0" width="190" height="155" rx="8" fill="#0D2016" stroke="#059669" stroke-width="1.2" />
+    <circle cx="16" cy="20" r="4" fill="#10B981" />
+    <text x="26" y="24" class="editorial" font-size="11" font-weight="700" fill="#34D399">PATH A: CONFIRMED</text>
+    <text x="16" y="44" class="hindi" font-size="13" font-weight="700" fill="#A7F3D0">सही है (Sahi Hai ✓)</text>
+    <text x="16" y="66" class="editorial" font-size="10" fill="#D1FAE5">• Quarantined status lifts.</text>
+    <text x="16" y="82" class="editorial" font-size="10" fill="#D1FAE5">• Full amount added to</text>
+    <text x="16" y="98" class="editorial" font-size="10" font-weight="700" fill="#34D399">  Official Confirmed Hisaab.</text>
+    <text x="16" y="118" class="editorial" font-size="9.5" fill="#6EE7B7">✓ Immutable &amp; Final by design</text>
+    <text x="16" y="136" class="editorial" font-size="9.5" fill="#6EE7B7">✓ Both parties hold sync state</text>
+
+    <!-- PATH B: DISPUTED (BOTTOM CARD) -->
+    <rect x="0" y="175" width="190" height="165" rx="8" fill="#200E14" stroke="#E11D48" stroke-width="1.2" />
+    <circle cx="16" cy="195" r="4" fill="#F43F5E" />
+    <text x="26" y="199" class="editorial" font-size="11" font-weight="700" fill="#FB7185">PATH B: DISPUTED</text>
+    <text x="16" y="219" class="hindi" font-size="13" font-weight="700" fill="#FECDD3">गलत है (Galat Hai ✕)</text>
+    <text x="16" y="239" class="editorial" font-size="10" fill="#FFE4E6">• Mandatory reason (≥10 ch)</text>
+    <text x="16" y="255" class="editorial" font-size="10" fill="#FFE4E6">• Balance weight = ₹0.00</text>
+    <text x="16" y="273" class="editorial" font-size="10" fill="#F43F5E">Held for Employer Correction:</text>
+    <text x="16" y="291" class="editorial" font-size="9.5" fill="#FDA4AF">Employer resubmits corrected</text>
+    <text x="16" y="307" class="editorial" font-size="9.5" fill="#FDA4AF">value → returns to Step 02!</text>
+  </g>
+
+  <!-- ==================== FOOTER INVARIANT NOTE ==================== -->
+  <g transform="translate(50, 465)">
+    <text x="0" y="20" class="editorial" font-size="12" font-weight="700" fill="#E4E4E7">
+      CORE ENGINEERING PRINCIPLE:
+      <tspan font-weight="400" fill="#A1A1AA"> No unilateral record can create or alter financial liability without bilateral counter-party verification.</tspan>
+    </text>
+    <text x="1000" y="20" class="editorial" font-size="11" font-weight="600" fill="#059669" text-anchor="end">
+      SEVAKHATA CONSENSUS PROTOCOL
+    </text>
+  </g>
+</svg>

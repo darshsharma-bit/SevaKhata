@@ -1,0 +1,170 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" width="960" height="560" fill="none">
+  <defs>
+    <style>
+      .monumental { font-family: 'Bebas Neue', -apple-system, sans-serif; letter-spacing: 0.08em; text-transform: uppercase; }
+      .editorial { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+      .hindi { font-family: 'Noto Sans Devanagari', 'Inter', -apple-system, sans-serif; }
+      .code { font-family: 'SFMono-Regular', Consolas, Menlo, monospace; }
+    </style>
+    <linearGradient id="smh-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0E0E12" />
+      <stop offset="100%" stop-color="#050507" />
+    </linearGradient>
+    <linearGradient id="phone-body" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#181820" />
+      <stop offset="100%" stop-color="#0F0F13" />
+    </linearGradient>
+    <linearGradient id="glass-card" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="rgba(255, 255, 255, 0.08)" />
+      <stop offset="100%" stop-color="rgba(255, 255, 255, 0.02)" />
+    </linearGradient>
+  </defs>
+
+  <rect x="0" y="0" width="960" height="560" rx="14" fill="url(#smh-bg)" stroke="#27272A" stroke-width="1.5" />
+
+  <!-- Header -->
+  <g transform="translate(50, 36)">
+    <text x="0" y="0" class="monumental" font-size="22" fill="#FFFFFF">MOBILE DUAL EXPERIENCE &amp; BILINGUAL TOUCH ERGONOMICS</text>
+    <text x="0" y="16" class="editorial" font-size="11.5" fill="#71717A">
+      Dedicated domestic helper mobile review interface in Hindi (Devanagari) alongside the floating OTP authentication folio.
+    </text>
+  </g>
+
+  <!-- ==================== PHONE 1: HELPER MOBILE REVIEW (LEFT) ==================== -->
+  <g transform="translate(100, 75)">
+    <!-- Phone Bezel (320 x 450) -->
+    <rect x="0" y="0" width="340" height="450" rx="28" fill="url(#phone-body)" stroke="#3F3F46" stroke-width="2" />
+    <!-- Dynamic Island / Speaker Notch -->
+    <rect x="125" y="10" width="90" height="18" rx="9" fill="#000000" />
+    
+    <!-- Phone Screen Canvas -->
+    <rect x="10" y="32" width="320" height="408" rx="20" fill="#0C0C0E" />
+
+    <!-- Mobile Screen Content -->
+    <g transform="translate(24, 46)">
+      <!-- Top Bar -->
+      <text x="0" y="16" class="monumental" font-size="18" fill="#FFFFFF">SEVAKHATA</text>
+      <rect x="230" y="2" width="60" height="20" rx="10" fill="#059669" fill-opacity="0.2" />
+      <text x="260" y="15" class="editorial" font-size="9" font-weight="700" fill="#34D399" text-anchor="middle">हिन्दी ON</text>
+
+      <!-- Worker Greeting -->
+      <g transform="translate(0, 30)">
+        <text x="0" y="14" class="hindi" font-size="12" fill="#9CA3AF">नमस्ते, सुनीता जी</text>
+        <text x="0" y="32" class="hindi" font-size="16" font-weight="700" fill="#FFFFFF">शर्मा जी के यहाँ का हिसाब</text>
+      </g>
+
+      <!-- Confirmed Hisaab Big Card -->
+      <g transform="translate(0, 75)">
+        <rect x="0" y="0" width="292" height="74" rx="10" fill="#13241A" stroke="#059669" stroke-width="1.2" />
+        <text x="14" y="22" class="hindi" font-size="11" font-weight="600" fill="#34D399">कुल पक्का हिसाब (Confirmed):</text>
+        <text x="14" y="52" class="monumental" font-size="32" fill="#FFFFFF">₹3,500</text>
+        <text x="14" y="66" class="hindi" font-size="9.5" fill="#A7F3D0">दोनों की सहमति से पक्का किया गया</text>
+      </g>
+
+      <!-- Pending Entry for Review -->
+      <g transform="translate(0, 160)">
+        <rect x="0" y="0" width="292" height="140" rx="10" fill="#1A160F" stroke="#F59E0B" stroke-width="1.2" />
+        <rect x="12" y="12" width="110" height="18" rx="9" fill="#F59E0B" fill-opacity="0.2" />
+        <text x="67" y="24" class="hindi" font-size="9" font-weight="700" fill="#FBBF24" text-anchor="middle">जाँच के लिए लंबित</text>
+        
+        <text x="12" y="48" class="hindi" font-size="14" font-weight="700" fill="#FFFFFF">13 अगस्त · आज का काम</text>
+        <text x="12" y="66" class="hindi" font-size="11" fill="#A1A1AA">पूरा दिन: घर का काम और खाना</text>
+        <text x="280" y="66" class="monumental" font-size="20" fill="#10B981" text-anchor="end">+₹500</text>
+
+        <!-- Big Touch Buttons (48px height) -->
+        <g transform="translate(12, 80)">
+          <!-- Sahi Hai -->
+          <rect x="0" y="0" width="128" height="48" rx="8" fill="#047857" />
+          <text x="64" y="22" class="hindi" font-size="13" font-weight="700" fill="#FFFFFF" text-anchor="middle">सही है (✓)</text>
+          <text x="64" y="36" class="editorial" font-size="9.5" fill="#A7F3D0" text-anchor="middle">Confirm Entry</text>
+
+          <!-- Galat Hai -->
+          <rect x="140" y="0" width="128" height="48" rx="8" fill="#1C141A" stroke="#E11D48" stroke-width="1.2" />
+          <text x="204" y="22" class="hindi" font-size="13" font-weight="700" fill="#FB7185" text-anchor="middle">गलत है (✕)</text>
+          <text x="204" y="36" class="editorial" font-size="9.5" fill="#FECDD3" text-anchor="middle">Dispute Entry</text>
+        </g>
+      </g>
+
+      <!-- Bottom History Link -->
+      <text x="146" y="325" class="hindi" font-size="11" font-weight="500" fill="#71717A" text-anchor="middle">
+        पुराने सभी महीनों का हिसाब देखें ──▶
+      </text>
+    </g>
+  </g>
+
+  <!-- ==================== PHONE 2: FLOATING OTP LOGIN FOLIO (RIGHT) ==================== -->
+  <g transform="translate(520, 75)">
+    <!-- Phone Bezel (340 x 450) -->
+    <rect x="0" y="0" width="340" height="450" rx="28" fill="url(#phone-body)" stroke="#3F3F46" stroke-width="2" />
+    <rect x="125" y="10" width="90" height="18" rx="9" fill="#000000" />
+    
+    <!-- Phone Screen Canvas -->
+    <rect x="10" y="32" width="320" height="408" rx="20" fill="#0C0C0E" />
+
+    <!-- Screen Content: Login Folio with Apple Liquid Glass -->
+    <g transform="translate(24, 46)">
+      <!-- Brand & Title -->
+      <g transform="translate(0, 10)">
+        <text x="0" y="16" class="monumental" font-size="20" fill="#FFFFFF">LOGIN FOLIO</text>
+        <text x="0" y="32" class="editorial" font-size="10.5" fill="#71717A">Enter credentials to open your shared khata</text>
+      </g>
+
+      <!-- Glass Tabs (Email vs Mobile OTP) -->
+      <g transform="translate(0, 48)">
+        <rect x="0" y="0" width="292" height="34" rx="8" fill="#181822" stroke="rgba(255,255,255,0.08)" stroke-width="1" />
+        <rect x="146" y="3" width="143" height="28" rx="6" fill="#3B82F6" />
+        <text x="73" y="21" class="editorial" font-size="11" font-weight="500" fill="#71717A" text-anchor="middle">Email &amp; Pass</text>
+        <text x="217" y="21" class="editorial" font-size="11" font-weight="700" fill="#FFFFFF" text-anchor="middle">Mobile OTP</text>
+      </g>
+
+      <!-- Phone Number Field -->
+      <g transform="translate(0, 95)">
+        <text x="0" y="12" class="editorial" font-size="10" font-weight="600" fill="#9CA3AF">MOBILE NUMBER (10 DIGITS):</text>
+        <rect x="0" y="18" width="292" height="38" rx="6" fill="#14141A" stroke="#059669" stroke-width="1.2" />
+        <text x="12" y="42" class="code" font-size="12" fill="#FFFFFF">+91 98100 12345</text>
+        <circle cx="275" cy="37" r="4" fill="#10B981" />
+      </g>
+
+      <!-- OTP Auto-Advancing 6-Digit Slots -->
+      <g transform="translate(0, 165)">
+        <text x="0" y="12" class="editorial" font-size="10" font-weight="600" fill="#9CA3AF">6-DIGIT VERIFICATION CODE (OTP):</text>
+        <g transform="translate(0, 20)">
+          <!-- 6 digit boxes -->
+          <rect x="0" y="0" width="42" height="44" rx="6" fill="#16161F" stroke="#059669" stroke-width="1.5" />
+          <text x="21" y="28" class="monumental" font-size="22" fill="#FFFFFF" text-anchor="middle">1</text>
+          
+          <rect x="50" y="0" width="42" height="44" rx="6" fill="#16161F" stroke="#059669" stroke-width="1.5" />
+          <text x="71" y="28" class="monumental" font-size="22" fill="#FFFFFF" text-anchor="middle">2</text>
+          
+          <rect x="100" y="0" width="42" height="44" rx="6" fill="#16161F" stroke="#059669" stroke-width="1.5" />
+          <text x="121" y="28" class="monumental" font-size="22" fill="#FFFFFF" text-anchor="middle">3</text>
+          
+          <rect x="150" y="0" width="42" height="44" rx="6" fill="#16161F" stroke="#059669" stroke-width="1.5" />
+          <text x="171" y="28" class="monumental" font-size="22" fill="#FFFFFF" text-anchor="middle">4</text>
+          
+          <rect x="200" y="0" width="42" height="44" rx="6" fill="#16161F" stroke="#059669" stroke-width="1.5" />
+          <text x="221" y="28" class="monumental" font-size="22" fill="#FFFFFF" text-anchor="middle">5</text>
+          
+          <rect x="250" y="0" width="42" height="44" rx="6" fill="#16161F" stroke="#3B82F6" stroke-width="1.5" />
+          <text x="271" y="28" class="monumental" font-size="22" fill="#3B82F6" text-anchor="middle">6</text>
+        </g>
+      </g>
+
+      <!-- Submit Action Button -->
+      <g transform="translate(0, 245)">
+        <rect x="0" y="0" width="292" height="44" rx="8" fill="#E11D48" />
+        <text x="146" y="27" class="editorial" font-size="12" font-weight="700" fill="#FFFFFF" text-anchor="middle">Verify OTP &amp; Open Khata</text>
+      </g>
+
+      <!-- Security Note -->
+      <g transform="translate(0, 305)">
+        <text x="146" y="10" class="editorial" font-size="9.5" fill="#71717A" text-anchor="middle">
+          ✓ Passwordless authentication with 3D tilt physics
+        </text>
+        <text x="146" y="24" class="editorial" font-size="9" fill="#10B981" text-anchor="middle">
+          Synced with data/logins.json API
+        </text>
+      </g>
+    </g>
+  </g>
+</svg>
