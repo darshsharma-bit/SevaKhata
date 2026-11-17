@@ -148,6 +148,24 @@ window.SEVAKHATA_SEED = {
       "notes": "Logging the existing arrangement so attendance can be recorded.",
       "status": "open",
       "createdAt": "2026-08-01T09:00:00.000Z"
+    },
+    {
+      "id": "b-mwky0wu99vle",
+      "requestKind": "new",
+      "householdName": "chahar",
+      "contactName": "Darsh Sharma",
+      "phone": "9368785610",
+      "email": "darsh1may.0@gmail.com",
+      "category": "cook",
+      "workerId": "w-1001",
+      "workerName": "Sunita Sharma",
+      "location": "5 neerav nikaunj",
+      "startDate": "2026-05-01",
+      "schedule": "mon-sat",
+      "offeredRate": 7000,
+      "notes": "",
+      "status": "open",
+      "createdAt": "2026-11-17T17:05:17.888Z"
     }
   ],
   "ledger": [
@@ -357,6 +375,26 @@ window.SEVAKHATA_SEED = {
       "status": "authenticated",
       "remember": true,
       "createdAt": "2026-11-03T23:05:27.730Z"
+    },
+    {
+      "id": "log-mwkxtwqlilg0",
+      "method": "email",
+      "identifier": "darsh.sharma.25cse@bmu.edu.in",
+      "role": "employer",
+      "name": "Rajesh Sharma",
+      "status": "authenticated",
+      "remember": true,
+      "createdAt": "2026-11-17T16:59:51.164Z"
+    },
+    {
+      "id": "log-mwky3n0ezebb",
+      "method": "email",
+      "identifier": "yuvraj.singh.25cse@bmu.edu.in",
+      "role": "user",
+      "name": "yuvraj.singh.25cse",
+      "status": "authenticated",
+      "remember": true,
+      "createdAt": "2026-11-17T17:07:25.117Z"
     }
   ]
 };

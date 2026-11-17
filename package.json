@@ -1,17 +1,22 @@
 {
   "name": "sevakhata",
-  "version": "0.2.0",
-  "description": "SevaKhata (सेवाखाता) — shared domestic work-and-payment ledger. Evaluation 2: multi-page frontend with a local JSON-file server.",
+  "version": "0.3.0",
+  "description": "SevaKhata (सेवाखाता) — shared domestic work-and-payment ledger. Evaluation 3: Dual persistence (local JSON + MongoDB/Mongoose) with complete CRUD.",
   "private": true,
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
+    "migrate:mongodb": "node scripts/migrate-json-to-mongodb.js",
     "sync-seed": "node scripts/sync-seed.js",
     "test": "node scripts/smoke-test.js"
   },
-  "engines": { "node": ">=18" },
+  "engines": {
+    "node": ">=18"
+  },
   "license": "MIT",
   "dependencies": {
-    "express": "^4.21.2"
+    "dotenv": "^18.0.10",
+    "express": "^4.21.2",
+    "mongoose": "^9.12.2"
   }
 }

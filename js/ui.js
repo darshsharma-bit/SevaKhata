@@ -109,11 +109,19 @@
     if (!badges.length || !window.SKStore) return;
     const paint = () => {
       const mode = window.SKStore.mode;
+      const info = window.SKStore.serverInfo;
       badges.forEach((b) => {
         b.dataset.mode = mode;
-        b.textContent = mode === 'server' ? I.t('sync.server', 'Live server · saving to data/*.json')
-          : mode === 'offline' ? I.t('sync.offline', 'Offline demo · saving in this browser')
-          : I.t('sync.checking', 'Checking server…');
+        if (mode === 'server') {
+          const storeType = (info && info.dataStore === 'mongodb') ? 'MongoDB' : 'data/*.json';
+          b.textContent = I.lang === 'hi'
+            ? `लाइव सर्वर · ${storeType} में सहेज रहा है`
+            : `Live server · saving to ${storeType}`;
+        } else if (mode === 'offline') {
+          b.textContent = I.t('sync.offline', 'Offline demo · saving in this browser');
+        } else {
+          b.textContent = I.t('sync.checking', 'Checking server…');
+        }
       });
     };
     window.SKStore.onModeChange(paint);

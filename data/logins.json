@@ -28,5 +28,25 @@
     "status": "authenticated",
     "remember": true,
     "createdAt": "2026-11-03T23:05:27.730Z"
+  },
+  {
+    "id": "log-mwkxtwqlilg0",
+    "method": "email",
+    "identifier": "darsh.sharma.25cse@bmu.edu.in",
+    "role": "employer",
+    "name": "Rajesh Sharma",
+    "status": "authenticated",
+    "remember": true,
+    "createdAt": "2026-11-17T16:59:51.164Z"
+  },
+  {
+    "id": "log-mwky3n0ezebb",
+    "method": "email",
+    "identifier": "yuvraj.singh.25cse@bmu.edu.in",
+    "role": "user",
+    "name": "yuvraj.singh.25cse",
+    "status": "authenticated",
+    "remember": true,
+    "createdAt": "2026-11-17T17:07:25.117Z"
   }
 ]

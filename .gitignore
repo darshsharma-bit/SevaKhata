@@ -5,10 +5,17 @@ node_modules/
 .env
 .env.*
 !.env.example
+*.pem
+*.key
+*.cert
 
 # Logs
 *.log
 logs/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
 
 # Operating System Files
 .DS_Store
@@ -39,6 +46,14 @@ coverage/
 .vite/
 .tmp/
 temp/
+
+# Database dumps & local development
+*.dump
+*.sql
+*.sqlite
+*.rdb
+dump/
+data/db/
 
 # Python runtime artifacts (e.g. if using python -m http.server)
 __pycache__/

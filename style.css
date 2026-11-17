@@ -8,25 +8,25 @@
    -------------------------------------------------------------------------- */
 :root {
   /* Surfaces & Ambient Canvas */
-  --bg-deep: #08080A;
-  --bg-canvas: #0C0C0E;
+  --bg-deep: #08080a;
+  --bg-canvas: #0c0c0e;
   --bg-surface-base: #111115;
-  --bg-surface-elevated: #16161C;
-  --bg-surface-highlight: #1D1D24;
+  --bg-surface-elevated: #16161c;
+  --bg-surface-highlight: #1d1d24;
 
   /* Traditional Bahi-Khata Heritage Elements */
-  --khata-crimson-spine: #E11D48;
-  --khata-crimson-seal: #C8202B;
-  --khata-paper-tint: #F5F5F0;
+  --khata-crimson-spine: #e11d48;
+  --khata-crimson-seal: #c8202b;
+  --khata-paper-tint: #f5f5f0;
 
   /* Semantic Telemetry Colors */
   --emerald-core: #059669;
   --emerald-glow: rgba(5, 150, 105, 0.25);
   --emerald-border: rgba(5, 150, 105, 0.45);
-  --amber-core: #F59E0B;
+  --amber-core: #f59e0b;
   --amber-glow: rgba(245, 158, 11, 0.2);
   --amber-border: rgba(245, 158, 11, 0.4);
-  --rose-core: #EF4444;
+  --rose-core: #ef4444;
   --rose-glow: rgba(239, 68, 68, 0.2);
   --rose-border: rgba(239, 68, 68, 0.4);
 
@@ -36,13 +36,14 @@
   --rule-crosshair: rgba(255, 255, 255, 0.05);
 
   /* Typography Scale & Metrics */
-  --font-monumental: 'Bebas Neue', -apple-system, sans-serif;
-  --font-editorial: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-hindi: 'Noto Sans Devanagari', -apple-system, sans-serif;
-  --font-hindi-traditional: 'Tiro Devanagari Hindi', serif;
+  --font-monumental: "Bebas Neue", -apple-system, sans-serif;
+  --font-editorial:
+    "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-hindi: "Noto Sans Devanagari", -apple-system, sans-serif;
+  --font-hindi-traditional: "Tiro Devanagari Hindi", serif;
 
   /* Type Colors */
-  --text-primary: #FFFFFF;
+  --text-primary: #ffffff;
   --text-secondary: rgba(255, 255, 255, 0.72);
   --text-tertiary: rgba(255, 255, 255, 0.45);
   --text-quaternary: rgba(255, 255, 255, 0.28);
@@ -62,7 +63,9 @@
 /* --------------------------------------------------------------------------
    02. RESET & BASE FOUNDATIONS
    -------------------------------------------------------------------------- */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -83,9 +86,17 @@ body.editorial-body {
   position: relative;
   overflow-x: hidden;
   background-color: var(--bg-canvas);
-  background-image: 
-    radial-gradient(circle at 50% 12%, rgba(200, 32, 43, 0.05) 0%, transparent 60%),
-    radial-gradient(circle at 50% 85%, rgba(5, 150, 105, 0.05) 0%, transparent 60%);
+  background-image:
+    radial-gradient(
+      circle at 50% 12%,
+      rgba(200, 32, 43, 0.05) 0%,
+      transparent 60%
+    ),
+    radial-gradient(
+      circle at 50% 85%,
+      rgba(5, 150, 105, 0.05) 0%,
+      transparent 60%
+    );
   color: var(--text-primary);
 }
 
@@ -214,7 +225,11 @@ button {
   display: flex;
   justify-content: center;
   padding: 0.85rem var(--page-gutter);
-  background: linear-gradient(to bottom, rgba(8, 8, 10, 0.9) 0%, rgba(8, 8, 10, 0) 100%);
+  background: linear-gradient(
+    to bottom,
+    rgba(8, 8, 10, 0.9) 0%,
+    rgba(8, 8, 10, 0) 100%
+  );
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
 }
@@ -254,7 +269,7 @@ button {
   font-family: var(--font-monumental);
   font-size: 1.25rem;
   letter-spacing: 0.05em;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 .brand-hi {
@@ -326,7 +341,7 @@ button {
 }
 
 .hero-seal-disk::before {
-  content: '';
+  content: "";
   position: absolute;
   inset: 16%;
   border-radius: 50%;
@@ -335,7 +350,7 @@ button {
 }
 
 .hero-seal-disk::after {
-  content: '';
+  content: "";
   position: absolute;
   inset: 34%;
   border-radius: 50%;
@@ -354,7 +369,9 @@ button {
     rgba(4, 120, 87, 0.25) 68%,
     transparent 72%
   );
-  box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.6), 0 0 90px rgba(200, 32, 43, 0.35);
+  box-shadow:
+    inset 0 0 50px rgba(0, 0, 0, 0.6),
+    0 0 90px rgba(200, 32, 43, 0.35);
 }
 
 .disk-crosshair-v {
@@ -363,7 +380,12 @@ button {
   bottom: 0;
   left: 50%;
   width: 1px;
-  background: linear-gradient(to bottom, transparent, rgba(255,255,255,0.2) 50%, transparent);
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(255, 255, 255, 0.2) 50%,
+    transparent
+  );
 }
 
 .disk-crosshair-h {
@@ -372,7 +394,12 @@ button {
   right: 0;
   top: 50%;
   height: 1px;
-  background: linear-gradient(to right, transparent, rgba(255,255,255,0.2) 50%, transparent);
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(255, 255, 255, 0.2) 50%,
+    transparent
+  );
 }
 
 /* Monumental Typography Container */
@@ -448,7 +475,7 @@ button {
 
 .scroll-cue-pill:hover {
   background: rgba(255, 255, 255, 0.12);
-  color: #FFFFFF;
+  color: #ffffff;
   transform: translateY(2px);
 }
 
@@ -482,14 +509,16 @@ button {
   border: 1px solid var(--rule-hairline-bright);
   border-radius: 16px;
   overflow: hidden;
-  box-shadow: 
+  box-shadow:
     0 32px 80px -16px rgba(0, 0, 0, 0.85),
     0 0 0 1px rgba(255, 255, 255, 0.08);
-  transition: transform var(--dur-standard) var(--ease-spring), box-shadow var(--dur-standard) var(--ease-spring);
+  transition:
+    transform var(--dur-standard) var(--ease-spring),
+    box-shadow var(--dur-standard) var(--ease-spring);
 }
 
 .living-khata-folio:hover {
-  box-shadow: 
+  box-shadow:
     0 40px 96px -16px rgba(0, 0, 0, 0.95),
     0 0 0 1px rgba(255, 255, 255, 0.14);
 }
@@ -517,7 +546,7 @@ button {
 .folio-household-title {
   font-size: clamp(1.2rem, 2vw, 1.45rem);
   font-weight: 600;
-  color: #FFFFFF;
+  color: #ffffff;
   letter-spacing: -0.015em;
   margin-bottom: 0.25rem;
 }
@@ -598,7 +627,7 @@ button {
 .entry-work-title {
   font-size: 0.98rem;
   font-weight: 600;
-  color: #FFFFFF;
+  color: #ffffff;
   margin-bottom: 0.2rem;
 }
 
@@ -617,11 +646,11 @@ button {
   font-weight: 700;
   letter-spacing: -0.02em;
   font-variant-numeric: tabular-nums;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 .amount-val.negative {
-  color: #F87171;
+  color: #f87171;
 }
 
 .entry-status-cell {
@@ -635,7 +664,7 @@ button {
 }
 
 .status-clean-text.confirmed {
-  color: #34D399;
+  color: #34d399;
 }
 
 .status-clean-text.deducted {
@@ -647,7 +676,9 @@ button {
   position: relative;
   background: rgba(245, 158, 11, 0.03);
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  transition: background var(--dur-standard) ease, border-color var(--dur-standard) ease;
+  transition:
+    background var(--dur-standard) ease,
+    border-color var(--dur-standard) ease;
 }
 
 .folio-active-row.state-confirmed {
@@ -698,7 +729,7 @@ button {
 .active-task-heading {
   font-size: 1.25rem;
   font-weight: 700;
-  color: #FFFFFF;
+  color: #ffffff;
   margin-bottom: 0.25rem;
 }
 
@@ -718,11 +749,11 @@ button {
 }
 
 .active-invariant-note.confirmed {
-  color: #34D399;
+  color: #34d399;
 }
 
 .active-invariant-note.disputed {
-  color: #F87171;
+  color: #f87171;
 }
 
 .active-amount-cell {
@@ -735,7 +766,7 @@ button {
   font-size: 2rem;
   font-weight: 900;
   letter-spacing: -0.03em;
-  color: #FFFFFF;
+  color: #ffffff;
   font-variant-numeric: tabular-nums;
   line-height: 1;
 }
@@ -769,19 +800,19 @@ button {
 .semantic-state-pill.pending {
   background: rgba(245, 158, 11, 0.12);
   border: 1px solid var(--amber-border);
-  color: #FBBF24;
+  color: #fbbf24;
 }
 
 .semantic-state-pill.confirmed {
   background: rgba(5, 150, 105, 0.16);
   border: 1px solid var(--emerald-border);
-  color: #34D399;
+  color: #34d399;
 }
 
 .semantic-state-pill.disputed {
   background: rgba(239, 68, 68, 0.16);
   border: 1px solid var(--rose-border);
-  color: #F87171;
+  color: #f87171;
 }
 
 /* Integrated Verification Bar (Part of the Record, Not a Foreign Box) */
@@ -812,7 +843,7 @@ button {
   font-family: var(--font-hindi);
   font-size: 0.95rem;
   font-weight: 600;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 .review-actions-group {
@@ -838,11 +869,12 @@ button {
 .btn-confirm {
   background: var(--emerald-core);
   border: 1px solid transparent;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
-.btn-confirm:hover, .btn-confirm:focus-visible {
-  background: #10B981;
+.btn-confirm:hover,
+.btn-confirm:focus-visible {
+  background: #10b981;
   transform: translateY(-1px);
   box-shadow: 0 4px 14px rgba(5, 150, 105, 0.4);
 }
@@ -852,8 +884,10 @@ button {
 }
 
 .btn-confirm.active-action {
-  background: #10B981;
-  box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.45), 0 4px 16px rgba(5, 150, 105, 0.4);
+  background: #10b981;
+  box-shadow:
+    0 0 0 2px rgba(16, 185, 129, 0.45),
+    0 4px 16px rgba(5, 150, 105, 0.4);
 }
 
 .btn-dispute {
@@ -862,10 +896,11 @@ button {
   color: var(--text-secondary);
 }
 
-.btn-dispute:hover, .btn-dispute:focus-visible {
+.btn-dispute:hover,
+.btn-dispute:focus-visible {
   border-color: rgba(239, 68, 68, 0.4);
   background: rgba(239, 68, 68, 0.1);
-  color: #F87171;
+  color: #f87171;
 }
 
 .btn-dispute:active {
@@ -874,8 +909,8 @@ button {
 
 .btn-dispute.active-action {
   background: rgba(239, 68, 68, 0.18);
-  border-color: #EF4444;
-  color: #F87171;
+  border-color: #ef4444;
+  color: #f87171;
   box-shadow: 0 0 0 2px rgba(239, 68, 68, 0.35);
 }
 
@@ -922,20 +957,20 @@ button {
   font-size: clamp(2.2rem, 3.5vw, 2.9rem);
   font-weight: 900;
   letter-spacing: -0.03em;
-  color: #FFFFFF;
+  color: #ffffff;
   line-height: 1;
   font-variant-numeric: tabular-nums;
   transition: color var(--dur-fast) ease;
 }
 
 .balance-large-ticker.highlight-change {
-  color: #34D399;
+  color: #34d399;
 }
 
 .balance-sealed-tag {
   font-size: 0.78rem;
   font-weight: 700;
-  color: #34D399;
+  color: #34d399;
   display: flex;
   align-items: center;
   gap: 0.3rem;
@@ -998,8 +1033,12 @@ button {
 }
 
 @keyframes rotateStamp {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .hero-primary-link {
@@ -1019,7 +1058,7 @@ button {
 
 .hero-primary-link:hover {
   background: rgba(255, 255, 255, 0.09);
-  color: #FFFFFF;
+  color: #ffffff;
   border-color: rgba(255, 255, 255, 0.25);
   transform: translateY(-2px);
 }
@@ -1029,7 +1068,12 @@ button {
    -------------------------------------------------------------------------- */
 .movement-diagnostic {
   padding: 7rem 0 6rem;
-  background: linear-gradient(to bottom, var(--bg-canvas) 0%, #0F0F13 50%, var(--bg-canvas) 100%);
+  background: linear-gradient(
+    to bottom,
+    var(--bg-canvas) 0%,
+    #0f0f13 50%,
+    var(--bg-canvas) 100%
+  );
   border-top: 1px solid var(--rule-hairline);
   border-bottom: 1px solid var(--rule-hairline);
 }
@@ -1080,7 +1124,7 @@ button {
   font-weight: 800;
   line-height: 1.12;
   letter-spacing: -0.03em;
-  color: #FFFFFF;
+  color: #ffffff;
   margin-bottom: 0.75rem;
 }
 
@@ -1113,7 +1157,9 @@ button {
   flex-direction: column;
   justify-content: space-between;
   box-shadow: 0 16px 40px -12px rgba(0, 0, 0, 0.6);
-  transition: transform var(--dur-standard) var(--ease-spring), border-color var(--dur-fast) ease;
+  transition:
+    transform var(--dur-standard) var(--ease-spring),
+    border-color var(--dur-fast) ease;
 }
 
 .memory-card-side:hover {
@@ -1149,7 +1195,7 @@ button {
 .memory-card-title {
   font-size: 1.3rem;
   font-weight: 700;
-  color: #FFFFFF;
+  color: #ffffff;
   letter-spacing: -0.015em;
   margin-bottom: 0.85rem;
 }
@@ -1187,7 +1233,7 @@ button {
   font-size: 0.65rem;
   font-weight: 800;
   letter-spacing: 0.12em;
-  color: #F87171;
+  color: #f87171;
   background: rgba(239, 68, 68, 0.1);
   padding: 0.4rem 0.85rem;
   border-radius: 6px;
@@ -1204,7 +1250,8 @@ button {
   position: relative;
 }
 
-.convergence-line-top, .convergence-line-bottom {
+.convergence-line-top,
+.convergence-line-bottom {
   flex: 1;
   width: 1px;
   background-color: var(--rule-hairline-bright);
@@ -1261,14 +1308,14 @@ button {
   font-size: 0.72rem;
   font-weight: 800;
   letter-spacing: 0.16em;
-  color: #34D399;
+  color: #34d399;
   display: block;
   margin-bottom: 0.25rem;
 }
 
 .res-body {
   font-size: 0.95rem;
-  color: #FFFFFF;
+  color: #ffffff;
   line-height: 1.55;
 }
 
@@ -1307,11 +1354,11 @@ button {
 }
 
 .col-employer .lockup-verb {
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 .col-helper .lockup-verb {
-  color: #34D399;
+  color: #34d399;
 }
 
 .lockup-role {
@@ -1369,7 +1416,7 @@ button {
 .stepper-tab.active {
   background: rgba(255, 255, 255, 0.12);
   border-color: rgba(255, 255, 255, 0.3);
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 .tab-index {
@@ -1398,7 +1445,9 @@ button {
   border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 24px 64px -16px rgba(0, 0, 0, 0.7);
-  transition: opacity var(--dur-fast) ease, transform var(--dur-fast) ease;
+  transition:
+    opacity var(--dur-fast) ease,
+    transform var(--dur-fast) ease;
 }
 
 .stage-card-spine {
@@ -1432,7 +1481,7 @@ button {
   padding: 0.35rem 0.85rem;
   background: rgba(245, 158, 11, 0.15);
   border: 1px solid var(--amber-border);
-  color: #FBBF24;
+  color: #fbbf24;
   border-radius: 100px;
   transition: all var(--dur-standard) ease;
 }
@@ -1464,7 +1513,7 @@ button {
 .stage-title {
   font-size: clamp(1.35rem, 2.5vw, 1.85rem);
   font-weight: 700;
-  color: #FFFFFF;
+  color: #ffffff;
   margin-bottom: 0.75rem;
   letter-spacing: -0.02em;
 }
@@ -1498,7 +1547,7 @@ button {
   font-size: clamp(2.5rem, 4.5vw, 3.5rem);
   font-weight: 900;
   letter-spacing: -0.04em;
-  color: #FFFFFF;
+  color: #ffffff;
   line-height: 1;
   font-variant-numeric: tabular-nums;
 }
@@ -1547,7 +1596,7 @@ button {
 .sim-btn.active {
   background: rgba(255, 255, 255, 0.15);
   border-color: rgba(255, 255, 255, 0.3);
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 /* --------------------------------------------------------------------------
@@ -1555,7 +1604,11 @@ button {
    -------------------------------------------------------------------------- */
 .movement-hisaab {
   padding: 8rem 0 7rem;
-  background: radial-gradient(circle at center, rgba(5, 150, 105, 0.06) 0%, transparent 70%);
+  background: radial-gradient(
+    circle at center,
+    rgba(5, 150, 105, 0.06) 0%,
+    transparent 70%
+  );
   border-bottom: 1px solid var(--rule-hairline);
 }
 
@@ -1600,7 +1653,7 @@ button {
 }
 
 .eq-tag.highlight {
-  color: #34D399;
+  color: #34d399;
 }
 
 .eq-num {
@@ -1613,9 +1666,15 @@ button {
   font-variant-numeric: tabular-nums;
 }
 
-.eq-num.pos { color: #FFFFFF; }
-.eq-num.neg { color: var(--rose-core); }
-.eq-num.climax { color: #34D399; }
+.eq-num.pos {
+  color: #ffffff;
+}
+.eq-num.neg {
+  color: var(--rose-core);
+}
+.eq-num.climax {
+  color: #34d399;
+}
 
 .eq-detail {
   font-size: 0.75rem;
@@ -1634,7 +1693,11 @@ button {
   margin: 0 auto;
   text-align: center;
   padding: 3rem 2rem;
-  background: linear-gradient(180deg, rgba(17, 17, 21, 0.8) 0%, rgba(17, 17, 21, 0.4) 100%);
+  background: linear-gradient(
+    180deg,
+    rgba(17, 17, 21, 0.8) 0%,
+    rgba(17, 17, 21, 0.4) 100%
+  );
   border: 1px solid var(--rule-hairline-bright);
   border-radius: 20px;
   box-shadow: 0 32px 80px -20px rgba(0, 0, 0, 0.85);
@@ -1655,7 +1718,7 @@ button {
   font-weight: 400;
   line-height: 0.9;
   letter-spacing: -0.02em;
-  color: #FFFFFF;
+  color: #ffffff;
   text-shadow: 0 4px 32px rgba(5, 150, 105, 0.35);
   margin-bottom: 2rem;
 }
@@ -1681,7 +1744,7 @@ button {
   height: 26px;
   border-radius: 50%;
   background: var(--emerald-core);
-  color: #FFFFFF;
+  color: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1693,7 +1756,7 @@ button {
 .sig-name {
   font-size: 0.9rem;
   font-weight: 700;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 .sig-time {
@@ -1718,7 +1781,7 @@ button {
   font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.12em;
-  color: #34D399;
+  color: #34d399;
 }
 
 .readiness-beacon {
@@ -1745,12 +1808,12 @@ button {
   font-size: clamp(2.2rem, 4.8vw, 4rem);
   font-weight: 700;
   line-height: 1.2;
-  color: #FFFFFF;
+  color: #ffffff;
   margin-bottom: 1.5rem;
 }
 
 .covenant-highlight {
-  color: #34D399;
+  color: #34d399;
 }
 
 .covenant-prose {
@@ -1771,8 +1834,8 @@ button {
   align-items: center;
   gap: 0.75rem;
   padding: 1rem 2.5rem;
-  background: #FFFFFF;
-  color: #08080A;
+  background: #ffffff;
+  color: #08080a;
   border-radius: 100px;
   font-size: 1rem;
   font-weight: 700;
@@ -1782,7 +1845,7 @@ button {
 }
 
 .threshold-cta-button:hover {
-  background: #F3F4F6;
+  background: #f3f4f6;
   transform: translateY(-2px);
   box-shadow: 0 16px 40px -4px rgba(255, 255, 255, 0.4);
 }
@@ -1827,7 +1890,7 @@ button {
   font-family: var(--font-monumental);
   font-size: 1.25rem;
   letter-spacing: 0.05em;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 .footer-tagline-text {
@@ -1851,7 +1914,7 @@ button {
 }
 
 .footer-nav a:hover {
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 .nav-sep {
@@ -1867,9 +1930,18 @@ button {
    11. KEYFRAMES & ANIMATIONS
    -------------------------------------------------------------------------- */
 @keyframes pulseBeacon {
-  0% { transform: scale(1); opacity: 1; }
-  50% { transform: scale(1.35); opacity: 0.55; }
-  100% { transform: scale(1); opacity: 1; }
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.35);
+    opacity: 0.55;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 /* --------------------------------------------------------------------------
@@ -2170,7 +2242,9 @@ button {
    13. ACCESSIBILITY: PREFERS-REDUCED-MOTION
    -------------------------------------------------------------------------- */
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
+  *,
+  *::before,
+  *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;

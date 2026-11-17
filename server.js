@@ -1,76 +1,34 @@
 /**
- * SevaKhata — local server (Evaluation 2).
+ * SevaKhata — Node.js & Express Server (Evaluation 3).
  *
- *  - Serves the static site (HTML / CSS / JS / assets)
- *  - Exposes a small JSON API that persists to ./data/*.json
- *
- *      GET   /api/health
- *      GET   /api/workers        POST /api/workers
- *      GET   /api/bookings       POST /api/bookings
- *      GET   /api/ledger         POST /api/ledger        PATCH /api/ledger/:id
- *      GET   /api/feedback       POST /api/feedback
- *
- * Every write is re-validated here with the SAME rules the browser uses
- * (js/validation.js + js/records.js). There is no authentication yet, so the
- * helper/employer "actor" on PATCH is an honour-system field, not security.
+ * Capabilities:
+ * - Dual persistence engine: local JSON files (DATA_STORE=json) or MongoDB/Mongoose (DATA_STORE=mongodb)
+ * - Complete CRUD REST API for Workers, Bookings, Ledger, Feedback, and Logins
+ * - Re-validates every incoming write authoritative via js/validation.js & js/records.js
+ * - Serves the static multi-page frontend with protected internal routes
  */
-const fs = require('fs');
+require('dotenv').config();
+
 const path = require('path');
 const express = require('express');
-const Records = require('./js/records.js');
+const db = require('./config/db');
+const storage = require('./services/storage');
 
 const ROOT = __dirname;
-const DATA_DIR = process.env.SEVAKHATA_DATA_DIR || path.join(ROOT, 'data');
 const PORT = Number(process.env.PORT) || 3000;
 const RESOURCES = ['workers', 'bookings', 'ledger', 'feedback', 'logins'];
-
-/* ------------------------------ JSON file store ------------------------------ */
-const fileFor = (resource) => path.join(DATA_DIR, resource + '.json');
-let queue = Promise.resolve();   // serialises read-modify-write so concurrent requests cannot clobber each other
-
-async function readAll(resource) {
-  try {
-    const raw = await fs.promises.readFile(fileFor(resource), 'utf8');
-    const parsed = JSON.parse(raw);
-    return Array.isArray(parsed) ? parsed : [];
-  } catch (err) {
-    if (err.code === 'ENOENT') return [];
-    throw err;
-  }
-}
-
-async function writeAll(resource, items) {
-  const target = fileFor(resource);
-  const tmp = target + '.tmp';
-  await fs.promises.mkdir(DATA_DIR, { recursive: true });
-  await fs.promises.writeFile(tmp, JSON.stringify(items, null, 2) + '\n', 'utf8');
-  await fs.promises.rename(tmp, target);   // atomic replace: a crash never leaves half a file
-}
-
-/** Run fn(items) -> { items?, result } while holding the write queue. */
-function mutate(resource, fn) {
-  const run = queue.then(async () => {
-    const items = await readAll(resource);
-    const out = await fn(items);
-    if (out.items) await writeAll(resource, out.items);
-    return out.result;
-  });
-  queue = run.catch(() => {});
-  return run;
-}
 
 /* ---------------------------------- app ---------------------------------- */
 const app = express();
 app.disable('x-powered-by');
 app.use(express.json({ limit: '20kb' }));
 
-// Allow the pages to talk to this server when they are opened from another
-// localhost origin (e.g. VS Code Live Server on :5500).
+// Cross-origin and development headers (e.g. for VS Code Live Server on :5500)
 app.use('/api', (req, res, next) => {
   const origin = req.headers.origin || '';
   if (/^https?:\/\/(localhost|127\.0\.0\.1)(:\d+)?$/.test(origin)) {
     res.setHeader('Access-Control-Allow-Origin', origin);
-    res.setHeader('Access-Control-Allow-Methods', 'GET,POST,PATCH,OPTIONS');
+    res.setHeader('Access-Control-Allow-Methods', 'GET,POST,PUT,PATCH,DELETE,OPTIONS');
     res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
     res.setHeader('Vary', 'Origin');
   }
@@ -80,65 +38,83 @@ app.use('/api', (req, res, next) => {
   next();
 });
 
-app.get('/api/health', (req, res) => res.json({ ok: true, app: 'sevakhata', resources: RESOURCES }));
-
-const fieldErrors = (errors) =>
-  Object.fromEntries(Object.entries(errors).map(([k, v]) => [k, v.en || String(v)]));
-
-RESOURCES.forEach((resource) => {
-  app.get('/api/' + resource, async (req, res, next) => {
-    try { res.json(await readAll(resource)); } catch (err) { next(err); }
-  });
-
-  app.post('/api/' + resource, async (req, res, next) => {
-    try {
-      const record = await mutate(resource, async (items) => {
-        // Ledger, bookings, and logins need to look up helper accounts.
-        const ctx = (resource === 'ledger' || resource === 'bookings' || resource === 'logins') ? { workers: await readAll('workers') } : {};
-        const built = Records.buildRecord(resource, req.body, ctx);
-        if (built.errors) return { result: { errors: built.errors } };
-        return { items: items.concat([built.record]), result: { record: built.record } };
-      });
-      if (record.errors) return res.status(400).json({ error: 'Validation failed', errors: fieldErrors(record.errors) });
-      res.status(201).json(record.record);
-    } catch (err) { next(err); }
+// Health check endpoint
+app.get('/api/health', (req, res) => {
+  const isMongo = storage.mode === 'mongodb';
+  res.json({
+    ok: true,
+    app: 'sevakhata',
+    version: '0.3.0',
+    dataStore: storage.mode,
+    mongoStatus: db.isConnected() ? 'connected' : (isMongo ? 'disconnected' : 'n/a'),
+    resources: RESOURCES,
   });
 });
 
-app.patch('/api/ledger/:id', async (req, res, next) => {
-  try {
-    const out = await mutate('ledger', async (items) => {
-      const idx = items.findIndex((e) => e.id === req.params.id);
-      if (idx === -1) return { result: { status: 404, message: 'Ledger entry not found.' } };
-      const applied = Records.applyLedgerAction(items[idx], req.body);
-      if (applied.error) return { result: applied.error };
-      const next = items.slice(); next[idx] = applied.entry;
-      return { items: next, result: { entry: applied.entry } };
-    });
-    if (out.entry) return res.json(out.entry);
-    res.status(out.status || 400).json({ error: out.message, errors: out.errors ? fieldErrors(out.errors) : undefined });
-  } catch (err) { next(err); }
-});
+/* ------------------------------ REST API Routes ------------------------------ */
+app.use('/api/workers', require('./routes/workers'));
+app.use('/api/bookings', require('./routes/bookings'));
+app.use('/api/ledger', require('./routes/ledger'));
+app.use('/api/feedback', require('./routes/feedback'));
+app.use('/api/logins', require('./routes/logins'));
 
 app.use('/api', (req, res) => res.status(404).json({ error: 'Unknown API route.' }));
 
 /* ------------------------------ static files ------------------------------ */
-// Source/config/data are not meant to be browsed; data is reachable only via the API.
-const BLOCKED = /^\/(server\.js|package(-lock)?\.json|node_modules|data|scripts|\.git|\.agents|\.claude|agent|\.env)(\/|$)/i;
+// Internal directories and secrets are strictly blocked from being served as static assets
+const BLOCKED = /^\/(server\.js|package(-lock)?\.json|node_modules|data|scripts|config|models|services|routes|\.git|\.agents|\.claude|agent|\.env)(\/|$)/i;
 app.use((req, res, next) => (BLOCKED.test(req.path) ? res.status(404).send('Not found') : next()));
 app.use(express.static(ROOT, { extensions: ['html'], dotfiles: 'ignore', index: 'index.html' }));
 
-app.use((err, req, res, next) => {          // eslint-disable-line no-unused-vars
-  if (err && err.type === 'entity.parse.failed') return res.status(400).json({ error: 'Invalid JSON body.' });
+/* ------------------------------ error handler ------------------------------ */
+app.use((err, req, res, next) => { // eslint-disable-line no-unused-vars
+  if (err && err.type === 'entity.parse.failed') {
+    return res.status(400).json({ error: 'Invalid JSON body.' });
+  }
+  if (err && err.name === 'ValidationError') {
+    const errors = err.errors ? Object.fromEntries(Object.entries(err.errors).map(([k, v]) => [k, v.message])) : {};
+    return res.status(400).json({ error: 'Validation failed', errors });
+  }
+  if (err && err.code === 11000) {
+    return res.status(409).json({ error: 'Duplicate record: an item with this unique identifier already exists.' });
+  }
+  if (err && err.status) {
+    return res.status(err.status).json({ error: err.message, errors: err.errors });
+  }
   console.error(err);
   res.status(500).json({ error: 'Something went wrong on the server.' });
 });
 
-if (require.main === module) {
-  app.listen(PORT, () => {
-    console.log(`\n  SevaKhata is running  ->  http://localhost:${PORT}`);
-    console.log(`  JSON data files       ->  ${DATA_DIR}\n`);
+/* ------------------------------ server boot ------------------------------ */
+async function boot() {
+  if (storage.mode === 'mongodb') {
+    try {
+      await db.connectDB();
+    } catch (err) {
+      console.warn('  [NOTICE] MongoDB could not be connected on startup. Server will start, but MongoDB requests will return 503.');
+    }
+  }
+
+  return new Promise((resolve) => {
+    const server = app.listen(PORT, () => {
+      console.log(`\n  ======================================================`);
+      console.log(`  SevaKhata (सेवाखाता) — Evaluation 3 Server Active`);
+      console.log(`  ======================================================`);
+      console.log(`  URL             ->  http://localhost:${PORT}`);
+      console.log(`  Data Store Mode ->  ${storage.mode.toUpperCase()}`);
+      if (storage.mode === 'json') {
+        console.log(`  JSON Data Dir   ->  ${process.env.SEVAKHATA_DATA_DIR || path.join(ROOT, 'data')}`);
+      } else {
+        console.log(`  MongoDB Status  ->  ${db.isConnected() ? 'CONNECTED' : 'DISCONNECTED'}`);
+      }
+      console.log(`  ======================================================\n`);
+      resolve(server);
+    });
   });
+}
+
+if (require.main === module) {
+  boot();
 }
 
 module.exports = app;

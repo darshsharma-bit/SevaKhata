@@ -17,11 +17,13 @@
   const CANDIDATES = location.protocol === 'file:' ? ['http://localhost:3000'] : ['', 'http://localhost:3000'];
 
   let apiBase = null;           // null = not probed yet, false = offline, string = server base URL
+  let serverInfo = null;        // { dataStore: 'json'|'mongodb', mongoStatus, ... }
   let probing = null;
 
   const listeners = new Set();
   const store = {
     get mode() { return apiBase === false ? 'offline' : apiBase === null ? 'unknown' : 'server'; },
+    get serverInfo() { return serverInfo; },
     onModeChange(fn) { listeners.add(fn); },
   };
   const emitMode = () => listeners.forEach((fn) => fn(store.mode));
@@ -40,7 +42,11 @@
           try {
             const res = await timeoutFetch(base + '/api/health', {}, 1500);
             const body = res.ok ? await res.json() : null;
-            if (body && body.app === 'sevakhata') { apiBase = base; return apiBase; }
+            if (body && body.app === 'sevakhata') {
+              apiBase = base;
+              serverInfo = body;
+              return apiBase;
+            }
           } catch (e) { /* try next candidate */ }
         }
         apiBase = false;
@@ -90,6 +96,63 @@
       } catch (e) { apiBase = false; emitMode(); }
     }
     return readLocal(resource);
+  };
+
+  /** Get a single item by id. */
+  store.get = async function (resource, id) {
+    await detect();
+    if (apiBase !== false) {
+      try {
+        return await api('GET', '/api/' + resource + '/' + encodeURIComponent(id));
+      } catch (e) {
+        if (e instanceof ApiError && e.status === 404) return null;
+        apiBase = false; emitMode();
+      }
+    }
+    const items = readLocal(resource);
+    return items.find((e) => e.id === id || e._id === id) || null;
+  };
+
+  /** Update a record. */
+  store.update = async function (resource, id, updates) {
+    await detect();
+    if (apiBase !== false) {
+      try {
+        const record = await api('PATCH', '/api/' + resource + '/' + encodeURIComponent(id), updates);
+        writeLocal(resource, readLocal(resource).map((e) => (e.id === id ? record : e)));
+        return { record, via: 'server' };
+      } catch (e) {
+        if (e instanceof ApiError) throw e;
+        apiBase = false; emitMode();
+      }
+    }
+    const items = readLocal(resource);
+    const idx = items.findIndex((e) => e.id === id || e._id === id);
+    if (idx === -1) throw new ApiError(`${resource} not found.`, 404);
+    const updated = Object.assign({}, items[idx], updates);
+    items[idx] = updated;
+    writeLocal(resource, items);
+    return { record: updated, via: 'local' };
+  };
+
+  /** Delete a record. */
+  store.remove = async function (resource, id) {
+    await detect();
+    if (apiBase !== false) {
+      try {
+        await api('DELETE', '/api/' + resource + '/' + encodeURIComponent(id));
+        writeLocal(resource, readLocal(resource).filter((e) => e.id !== id && e._id !== id));
+        return { success: true, via: 'server' };
+      } catch (e) {
+        if (e instanceof ApiError) throw e;
+        apiBase = false; emitMode();
+      }
+    }
+    const items = readLocal(resource);
+    const filtered = items.filter((e) => e.id !== id && e._id !== id);
+    if (filtered.length === items.length) throw new ApiError(`${resource} not found.`, 404);
+    writeLocal(resource, filtered);
+    return { success: true, via: 'local' };
   };
 
   /** Create a record. Resolves { record, via: 'server' | 'local' } or throws ApiError(field errors). */
